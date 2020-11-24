@@ -1,0 +1,316 @@
+---
+scenario:
+  name: "walking on straight lines"
+  description: "Walking over an horizontal surface following a straight line
+    with no irregularities nor perturbations"
+  image: undef
+
+protocol:
+  - name: "bullet_walking"
+    name_readable: "Walking on straight lines with instrumented crutches"
+    definition: "Assessment of ground reaction forces acting on the crutches
+      used.
+      The test requires walking for 10m using instrumented crutches over an
+      horizontal surface following a straight line with no irregularities
+      nor perturbations.
+      This is a simplified version of the protocol BULLET_walking_complete
+      to be used when force platforms and mocap are not available."
+    image: bullet/img01.png
+    keywords: [Walking, instrumented crutches, gait analysis]
+    bipedal_system: [Prosthesis, exoskeleton, humans]
+    pi_algo: pi_bullet_walking
+    duration: 2 min/run/subject
+    controlled_variables:
+      - name: "crutches_height"
+        definition: undef
+        type: value
+        range: [0.5, 2]
+        unit: m
+    testbed:
+      - item: "instrumented crutches"
+        type: sensor
+        file_sheet: UniBS_InstrumentedCrutches_v6.pdf
+    step_description: "The subject has to walk along a straight line for 10 m,
+      without any particular instruction, using instrumented crutches.
+      The crutches height should be adjusted to the subject before the test.
+      Data collection is started at the beginning of the walk and
+      stopped after each walk."
+    step_list:
+      - description: Subject is welcomed and instructed on the protocol
+        detail: The current protocol should be described to the subject,
+          without giving him/her any specific instruction on the crutches usage.
+      - description: Adjust crutches' height
+        detail: If the subject is an exoskeleton user adjust the crutches'
+          height to match the height of the crutches currently used by
+          the subject
+      - description: Give crutches to the subject
+        detail: If the subject depends on the crutches for balance,
+          give him/her one crutch at a time and support the subject as needed
+      - description: Place the subject at the starting point
+        detail: Instruct the subject to reach the starting point, facing the
+          end point
+      - description: Launch the data collection software.
+      - description: Ask the subject to walk in straight line
+      - description: After 10 m stop the subject
+        detail: Allow space for the subject to complete one full step AFTER 10 m
+      - description: Stop the data collection software
+      - description: Repeat steps 4-8, 10 times
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+  - name: "bullet_walking_complete"
+    name_readable: "Walking on straight lines with instrumented crutches,
+      mocap and force platforms"
+    definition: "Assessment of the forces acting on the upper limbs due to
+      the usage of crutches.
+      The test requires using instrumented crutches over an horizontal surface
+      (with force platforms and mocap) following a straight line
+      with no irregularities nor perturbations.
+      Gait must be performed after the volumetric scanning of the subject"
+    image: [bullet/im01.png, bullet/im02.png]
+    keywords:
+      - walking
+      - instrumented crutches
+      - gait analysis
+      - biomehanical model
+    bipedal_system: [Prosthesis, exoskeleton, humans]
+    pi_algo: pi_bullet_walking_complete
+    duration: "volumetric scanning (5-10 mins), and 2 min/run/subject"
+    controlled_variables:
+      - name: "crutches_height"
+        definition: undef
+        type: value
+        range: [0.5, 2]
+        unit: m
+    testbed:
+      - item: "instrumented crutches"
+        type: sensor
+        file_sheet: UniBS_InstrumentedCrutches_v6.pdf
+      - item: "motion capture"
+        type: sensor
+        file_sheet: any available (BTS/VICON etc)
+      - item: "force platform"
+        type: sensor
+        file_sheet: any available (BTS/VICON etc)
+      - item: "volumetric sensor"
+        type: sensor
+        file_sheet: TOF Camera (AzureKinectDKHardwareSpec.pdf)
+    step_description: "The subject has to walk along a straight line for 10 m,
+      without any particular instruction, using instrumented crutches.
+      The crutches height should be adjusted to the subject before the test.
+      Motion capture should be available, as well as force platforms,
+      along the path.
+      A preliminary assessment of the subject's anthropometric data is required.
+      Data collection is started at the beginning of the walk and stopped
+      after each walk."
+    step_list:
+      - description: If not already performed, perform
+          BULLET_VolumetricScanning protocol
+        detail: If needed massess, inertia parameters and lengths could be
+          manually assessed by an expert clinician.
+      - description: Prepare the subject for motion capture
+        detail: Place markers according to the plugin gait protocol
+          or equivalent (see Eurobench Data Format for specifics of angles)
+      - description: Subject is welcomed and instructed on the protocol
+        detail: The current protocol should be described to the subject,
+          without giving him/her any specific instruction on the crutches usage.
+      - description: Adjust crutches' height
+        detail: If the subject is an exoskeleton user adjust the crutches'
+          height to match the height of the crutches currently used by the
+          subject
+      - description: Give crutches to the subject
+        detail: If the subject depends on the crutches for balance,
+          give him/her one crutch at a time and support the subject as needed
+      - description: Place the subject at the starting point
+        detail: Instruct the subject to reach the starting point, facing the
+          end point
+      - description: Launch the data collection software.
+      - description: Ask the subject to walk in straight line
+        detail: Check wheter the subject correctly walked over the
+          force platforms.
+      - description: After 10 m stop the subject
+        detail: Allow space for the subject to complete one full step AFTER 10 m
+      - description: Stop the data collection software
+      - description: Repeat steps 6-10, 10 times
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+pi:
+  - name: peak_load_left
+    name_readable: "Left load peak"
+    description: "Vector of 3 elements containing (i) mean,
+      (ii) standard deviation of the left crutch peak loads
+      (maximum force value for each stride cycle), and (iii) step number"
+    unit: [N, N, scalar]
+    output: vector
+    intra_run_aggregation: [0, mean, std_dev]
+    inter_run_aggregation: [0, mean, std_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: peak_load_right
+    name_readable: "Right load peak"
+    description: "Vector of 3 elements containing (i) mean,
+      (ii) standard deviation of the right crutch peak loads
+      (maximum force value for each stride cycle), and (iii) step number"
+    unit: [N, N, scalar]
+    output: vector
+    intra_run_aggregation: [0, mean, std_dev]
+    inter_run_aggregation: [0, mean, std_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: rms_load_left
+    name_readable: "Left load Root Mean Square"
+    description: "Root mean square value of the left crutch force"
+    unit: N
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: rms_load_right
+    name_readable: "Right load Root Mean Square"
+    description: "Root mean square value of the right crutch force"
+    unit: N
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: stance_time_left
+    name_readable: "Left stance time"
+    description: "Vector of 3 elements containing (i) mean,
+      (ii) standard deviation of the left stance time, and (iii) step number"
+    unit: [\%, \%, scalar]
+    output: vector
+    intra_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: stance_time_right
+    name_readable: "Right stance time"
+    description: "Vector of 3 elements containing (i) mean,
+      (ii) standard deviation of the right stance time, and (iii) step number"
+    unit: [\%, \%, scalar]
+    output: vector
+    intra_run_aggregation: [0, mean, std_dev]
+    inter_run_aggregation: [0, mean, std_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: peak_load_shoulders_left
+    name_readable: "Left Peak load on shoulder"
+    description: "Vector of 13 elements containing mean and standard deviation
+      of the left shoulder force X, force Y, force Z, torque X, torque Y,
+      torqueZ peaks (maximum value for each stride cycle), and step number
+      expressed in the fixed lab reference frame"
+    unit: [N, N, N, N, N, N, Nm, Nm, Nm, Nm, Nm, Nm, \#]
+    output: vector
+    intra_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: peak_load_shoulders_right
+    name_readable: "Right Peak load on shoulder"
+    description: "Vector of 13 elements containing mean and standard deviation
+      of the right shoulder force X, force Y, force Z, torque X, torque Y,
+      torqueZ peaks (maximum value for each stride cycle), and step number
+      expressed in the fixed lab reference frame"
+    unit: [N, N, N, N, N, N, Nm, Nm, Nm, Nm, Nm, Nm, \#]
+    output: vector
+    intra_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: rms_load_shoulders_left
+    name_readable: "Left Root Mean Square load on shoulder"
+    description: "Vector of 6 elements containing 3 force components (X, Y, Z)
+      and 3 torque components (X,Y,Z) of left shoulder RMS load expressed
+      in the fixed lab reference frame"
+    unit: [N, N, N, Nm, Nm, Nm]
+    output: vector
+    intra_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+  - name: rms_load_shoulders_right
+    name_readable: "Right Root Mean Square load on shoulder"
+    description: "Vector of 6 elements containing 3 force components (X, Y, Z)
+      and 3 torque components (X,Y,Z) of right shoulder RMS load expressed
+      in the fixed lab reference frame"
+    unit: [N, N, N, Nm, Nm, Nm]
+    output: vector
+    intra_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [0, mean, st_dev]
+    visu: boxplot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: [mean, std_dev]
+pi_algo:
+  - name: pi_bullet_walking
+    description: Algorithm for analysis of gait performed with instrumented
+      crutches
+    url_paper: "DOI: 10.1109/JSEN.2019.2957667"
+    url_code: https://github.com/eurobench/pi_bullet
+    docker_host: undef
+    docker_name: pi_bullet
+    pi:
+      - peak_load_left
+      - peak_load_right
+      - rms_load_left
+      - rms_load_right
+      - stance_time_left
+      - stance_time_right
+    input files:
+      - subject_N_run_R_wrench_CrutchLeft.csv
+      - subject_N_run_R_wrench_CrutchRight.csv
+      - subject_N_run_R_gaitEvents.yaml
+    input_command:
+      - ./run_pi_BulletWalking
+      - subject_N_run_R_wrench_CrutchLeft.csv
+      - subject_N_run_R_wrench_CrutchRight.csv
+      - subject_N_run_R_gaitEvents.yaml
+      - outputDir
+    language: octave
+  - name: pi_bullet_walking_complete
+    description: Algorithm for analysis of gait performed with instrumented
+      crutches using mocap system, force platform, volumetric scanner and
+      biomechanical model
+    url_paper: "DOI: 10.1142/9789813231047_0074"
+    url_code: https://github.com/eurobench/pi_bullet
+    docker_host: undef
+    docker_name: pi_bullet
+    pi:
+      - peak_load_left
+      - peak_load_right
+      - rms_load_left
+      - rms_load_right
+      - stance_time_left
+      - stance_time_right
+      - peak_load_shoulders_left
+      - peak_load_shoulders_right
+      - rms_load_shoulders_left
+      - rms_load_shoulders_right
+    # I suggest stating only wrench_CrutchLeft
+    # Alfonso suggests crutchLeft_wrench
+    input files:
+      - subject_N_run_R_wrench_CrutchLeft.csv
+      - subject_N_run_R_wrench_CrutchRight.csv
+      - subject_N_run_R_gaitEvents.yaml
+      - subject_N_run_R_wrench_ShoulderLeft.csv
+      - subject_N_run_R_wrench_ShoulderRight.csv
+    input_command:
+      - ./run_pi_BulletWalkingComplete
+      - subject_N_run_R_wrench_CrutchLeft.csv
+      - subject_N_run_R_wrench_CrutchRight.csv
+      - subject_N_run_R_gaitEvents.yaml
+      - subject_N_run_R_wrench_ShoulderLeft.csv
+      - subject_N_run_R_wrench_ShoulderRight.csv
+      - outputDir
+    language: octave

@@ -1,0 +1,983 @@
+---
+scenario:
+  name: "Walking/Standing on a moving surface"
+  description: "Perform walking task or balance one on the robotic movable
+    platform in both uperturbed and perturbed conditions."
+  image: undef
+
+protocol:
+  - name: "beat_stepping_even"
+    name_readable: "Stepping on place - even surface"
+    definition: "Subject performs stepping on place with the platform locked
+      for 60 s.
+      This protocol allows researchers to quantify the effects induced
+      by wearing a lower limb exoskeleton in walking on an even surface.
+      The effects are evaluated by means PI related to the lower limb
+      joint angles and muscle activation."
+    image: undef
+    keywords: [Stepping, unperturbed]
+    bipedal_system: [Prosthesis, exoskeleton, human]
+    pi_algo: protocol_1_stepping_even
+    duration: "1 minute excluded the time spent for the sensorization
+      of the subject"
+    controlled_variables: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Inertial sensors or optoelectronic system"
+        type: sensor
+        file_sheet: undef
+      - item: "Electromyography"
+        type: sensor
+        file_sheet: undef
+    step_description: "After the sensorization phase, subject is asked to
+      perform a stepping on place for 60 s at the preferred cadence."
+    step_list:
+      - description: Place IMU or markers on the subject body segment to examine
+        detail: "If opto-electronic system will be used the plug-in-gait
+          protocol only for lower limb has to be followed for marker placement.
+          If IMU will be used, please place one IMU on pelvis and one on thigh,
+          shank and foot for each lower limb side.
+          The reported angles are the suggested one; however they can be varied
+          based on the specific experiment (for example, exoskeleton does not
+          allow to sensorize a specific segment)."
+      - description: Place EMG probes on muscles to examine
+        detail: "The following lower limb muscles has to be considered: tensor
+        fasciae latae, rectus femoris, vastus lateralis, vastus medialis,
+        peroneous longus, tibilias anterior, soleus, gluteus maximus,
+        semitendinosus, biceps femoris, gastrocnemius lateralis,
+        gastrocnemius medialis.
+        The reported muscles are the suggested one; however they can be varied
+        based on the specific experiment (for example, exoskeleton does not
+        allow to sensorize a specific muscle)."
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+      - description: Lanch the platform software.
+      - description: Select the appropriate protocol
+        detail: "User must select \"Stepping on place - even surface\" on the
+          GUI among the seven possible protocols"
+      - description: Start the data collection
+      - description: Stop the data collection
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+  # second protocol
+  - name: "beat_stepping_uneven"
+    name_readable: "Stepping on place - uneven surface"
+    definition: "Subject performs stepping on place with the platform unlocked
+      for 60 s.
+      This protocol allows researchers to quantify the effects induced by
+      wearing a lower limb exoskeleton in walking on an uneven surface.
+      Thus, the protocol allows simulating real life condition, such as walking
+      on uneven street, on a sand and the results can allow to understand if
+      the exoskeleton can be used also outside the laboratory.
+      The effects are evaluated by means PI related to the lower limb joint
+      angles, muscle activation and balance. 			."
+    image: undef
+    keywords: [Stepping, perturbed, uneven surface]
+    bipedal_system: [Prosthesis, exoskeleton, human]
+    pi_algo: protocol_2_stepping_uneven
+    duration: "1 minute excluded the time spent for the sensorization
+      of the subject"
+    controlled_variables:
+      - name: "Platform compliance"
+        definition: "Compliance of the platform selected by experimenter
+          among three possible values"
+        type: string
+        range: [low, medium, high]
+        unit: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Inertial sensors or optoelectronic system"
+        type: sensor
+        file_sheet: undef
+      - item: "Electromyography"
+        type: sensor
+        file_sheet: undef
+    step_description: "After the sensorization phase, subject is asked to
+      perform a stepping on place for 60 s at the preferred cadence.
+      With respect to the protocol1, the platform is not fixed and subject
+      will feel a moving surface during the movement.
+      Subject should try to mantain the equilibrium during the stepping."
+    step_list:
+      - description: Place IMU or markers on the subject body segment to examine
+        detail: "If opto-electronic system will be used the plug-in-gait
+          protocol only for lower limb has to be followed for marker placement.
+          If IMU will be used, please place one IMU on pelvis and one on thigh,
+          shank and foot for each lower limb side.
+          The reported angles are the suggested one; however they can be varied
+          based on the specific experiment (for example, exoskeleton does not
+          allow to sensorize a specific segment)."
+      - description: Place EMG probes on muscles to examine
+        detail: "The following lower limb muscles has to be considered: tensor
+          fasciae latae, rectus femoris, vastus lateralis, vastus medialis,
+          peroneous longus, tibilias anterior, soleus, gluteus maximus,
+          semitendinosus, biceps femoris, gastrocnemius lateralis, gastrocnemius
+          medialis.
+          The reported muscles are the suggested one; however they can be varied
+          based on the specific experiment (for example, exoskeleton does not
+          allow to sensorize a specific muscle)."
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+      - description: Lanch the platform software.
+      - description: Select the appropriate protocol
+        detail: "User must select \"Stepping on place - uneven surface\" on the
+          GUI among the seven possible protocols"
+      - description: Select the platform compliance
+        detail: "In order to standardize the protocol, we suggest to always use
+          the \"medium\" compliance.
+          However, if the operator evaluates that this compliance is too easy or
+          too difficult to administrate with a specific subject, software offers
+          the possibility to select a lower and higher value of compliance.
+          Software will be able to memorize the selected compliance for the
+          metric computations."
+      - description: Start the data collection
+        detail: Synchronization with other system will be managed by platform
+          software
+      - description: Stop the data collection
+        detail: It is automatically managed from the software after time
+          selection
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+  # third protocol
+  - name: "beat_static_even"
+    name_readable: "Static Balance - even surface"
+    definition: "Subject stands on the locked platform with open or closed eyes.
+      This protocol allows researchers to quantify the effects induced by
+      wearing a lower limb exoskeleton during upright position on a fixed
+      platform and to understand if and how the effects change based on the
+      visual condition.
+      The effects are evaluated by means PI related to the balance."
+    image: undef
+    keywords: [balance, unperturbed]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: protocol_3_static_even
+    duration: "40 s (per each eye condition) excluded the time spent for the
+      sensorization of the subject"
+    controlled_variables:
+      - name: "eye condition"
+        definition: "Open or closed eyes"
+        type: string
+        range: [open, closed]
+        unit: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Pressure Matrix"
+        type: sensor
+        file_sheet: "Embedded in the Rotobit3D v3.0, technical sheet will be
+          provided at the end of the project"
+    step_description: "Subject is asked to maintain the equilibrium for 40 s,
+      all movements necessary to stabilize the body are allowed during the task
+      execution.
+      Task has to be repeated two times, the first one with the eyes open and
+      the second with the eyes closed.
+      In the open eyes condition, subject has to look at a fixed point for all
+      the task duration.
+      The feet of the subject must be placed in an apposite shape drawn on the
+      platform base."
+    step_list:
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+      - description: Lanch the platform software
+      - description: Select the appropriate protocol
+        detail: "User must select \"Static Balance - even surface\" on the GUI
+          among the seven possible protocols"
+      - description: Select eye condition
+        detail: "User must select the eye condition through the Boolean switch"
+      - description: Start the data collection
+      - description: Stop the data collection
+        detail: It is automatically managed from the software after time
+          selection
+      - description: The protocol consists in one run per eye condition
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_nultple_subject: true
+  # fourth protocol
+  - name: "beat_static_uneven"
+    name_readable: "Static Balance - uneven surface"
+    definition: "Subject stands on the unlocked platform with open or closed
+      eyes.
+      This protocol allows researchers to quantify the effects induced by
+      wearing a lower limb exoskeleton during upright position on a moving
+      platform and to understand if and how the effects change based on the
+      visual condition.
+      This protocol permits to simulate real life condition, such as wearing an
+      exoskeleton on a bus where the upright position can be perturbed by a
+      sudden braking.
+      The effects are evaluated by means PI related to the balance."
+    image: undef
+    keywords: [balance, perturbed]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: protocol_4_static_uneven
+    duration: "52 s (per each eye condition) excluded the time spent for the
+      sensorization of the subject"
+    controlled_variables:
+      - name: "eye condition"
+        definition: "Open or closed eyes"
+        type: string
+        range: [open, closed]
+        unit: undef
+      - name: "Platform compliance"
+        definition: "Compliance of the platform selected by experimenter
+          among three possible values"
+        type: string
+        range: [low, medium, high]
+        unit: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Pressure Matrix"
+        type: sensor
+        file_sheet: "Embedded in the Rotobit3D v3.0, technical sheet will be
+          provided at the end of the project"
+    step_description: "Subject is asked to maintain the equilibrium for 40 s,
+      all movements necessary to stabilize the body are allowed during the task
+      execution.
+      Task has to be repeated two times, the first one with the eyes open and
+      the second with the eyes closed.
+      In the open eyes condition, subject has to look at a fixed point for all
+      the task duration.
+      The feet of the subject must be placed in an opposite shape drawn on the
+      platform base.
+      With respect the protocol3, greater instability can occur during the task
+      execution since the platform is not fixed in the neutral position."
+    step_list:
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+      - description: Launch the platform software
+      - description: Select the appropriate protocol
+        detail: "User must select \"Static Balance - uneven surface\" on the GUI
+          among the seven possible protocols"
+      - description: Select eye condition and platform compliance
+        detail: "In order to standardize the protocol, we suggest to always use
+          the \"medium\" compliance.
+          However, if the operator evaluates that this compliance is too easy or
+          too difficult to administrate with a specific subject, software offers
+          the possibility to select a lower and higher value of compliance.
+          Software will be able to memorize the selected compliance for the
+          metric computations."
+      - description: Start the data collection
+      - description: Stop the data collection
+        detail: It is automatically managed from the software after time
+          selection
+      - description: "Repeat the procedure starting at step 6 by changing eye
+          conditon"
+        detail: "Do not change the  platform compliance between the two eye
+          conditions.
+          The protocol consists in one run per eye condition"
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_nultple_subject: true
+  # fifth protocol
+  - name: "beat_step_even"
+    name_readable: "Step perturbation - even surface"
+    definition: "Subjects stands on the platform and reacts to a step
+      perturbation with platform set in position control.
+      Perturbations are provided along 8 different directions,
+      according to the cardinal points.
+      This protocol allows researchers to quantify the effects induced by
+      wearing a lower limb exoskeleton during perturbation suddenly imposed to
+      the upright position.
+      This protocol permits to simulate real life condition, such as wearing an
+      exoskeleton on a bus where the upright position can be perturbed by a
+      turn.
+      The effects are evaluated by means PI related to the joint angles and
+      balance."
+    image: undef
+    keywords: [balance, perturbed]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: protocol_5_step_even
+    duration: "5 minutes excluding the time spent for the sensorization"
+    controlled_variables:
+      - name: "step_amplitude"
+        definition: "The amplitude of the step perturbation selected by
+          experimenter among three possible values"
+        type: string
+        range: [small, medium, large]
+        unit: undef
+      - name: "step_veocity"
+        definition: "The velocity of the step perturbation selected by
+          experimenter among three possible values"
+        type: string
+        range: [slow, medium, fast]
+        unit: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Pressure Matrix"
+        type: sensor
+        file_sheet: "Embedded in the Rotobit3D v3.0, technical sheet will be
+          provided at the end of the project"
+      - item: Inertial sensors or optoelectronic system
+        type: sensor
+        file_sheet: undef
+    step_description: "After the sensorization, subject has to stand on the
+      platform and naturally react to the sudden step perturbation provided by
+      the platform.
+      Subject has not to move the feet to react to the perturbation, other
+      movements of the body are allowed."
+    step_list:
+      - description: Place inertial sensors or markers on body segment to
+          examine
+        detail: "If opto-electronic system will be used the plug-in-gait
+          protocol only for lower limb has to be followed for marker placement.
+          If IMU will be used, please place one IMU on pelvis and one on thigh,
+          shank and foot for each lower limb side.
+          The reported angles are the suggested one; however they can be varied
+          based on the specific experiment (for example, exoskeleton does not
+          allow to sensorize a specific segment)."
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+        detail: Preliminary familiarization tests can be performed
+      - description: Launch the platform software
+      - description: Select the appropriate protocol
+        detail: "User must select \"Static Balance - uneven surface\" on the GUI
+          among the seven possible protocols"
+      - description: "Select parameters related to the step"
+        detail: "In order to standardize the protocol, we suggest to always use
+          the \"medium\" amplitude and velocity.
+          However, if the operator evaluates that those values are too easy or
+          too difficult to administrate with a specific subject, software offers
+          the possibility to select a lower and higher value for both
+          parameters.
+          Software will be able to memorize the selectedvalues for the metric
+          computations."
+      - description: Start the data collection
+        detail: Synchronization with other system will be managed by platform
+          software
+      - description: Stop the data collection
+        detail: It is automatically managed from the software after parameters
+          set at step 6
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+  # sixth protocol
+  - name: "beat_step_uneven"
+    name_readable: "Step perturbation - uneven surface"
+    definition: "Subjects stands on the platform and reacts to a step
+      perturbation with platform set in impedance control, it means that the
+      platform is compliance during the perturbation.
+      Perturbations are provided along 8 different directions, according to the
+      cardinal points.
+      This protocol allows researchers to quantify the effects induced by
+      wearing a lower limb exoskeleton during perturbation suddenly imposed to
+      the upright position in terms of anticipatory and compensatory postural
+      adjustment.
+      This protocol permits to simulate real life condition, such as wearing an
+      exoskeleton and performing a turn on a sand or uneven surface.
+      The effects are evaluated by means PI related to the joint angles,
+      balance and anticipatory and compensatory postural adjustment."
+    image: undef
+    keywords: [balance, perturbed]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: protocol_6_step_uneven
+    duration: "Less than 5 minutes"
+    controlled_variables:
+      - name: "step_amplitude"
+        definition: "The amplitude of the step perturbation selected by
+          experimenter among three possible values"
+        type: string
+        range: [small, medium, large]
+        unit: undef
+      - name: "step_veocity"
+        definition: "The velocity of the step perturbation selected by
+          experimenter among three possible values"
+        type: string
+        range: [slow, medium, fast]
+        unit: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Pressure Matrix"
+        type: sensor
+        file_sheet: "Embedded in the Rotobit3D v3.0, technical sheet will be
+          provided at the end of the project"
+      - item: Inertial sensors or optoelectronic system
+        type: sensor
+        file_sheet: undef
+    step_description: "After the sensorization, subject has to stand on the
+      platform and must bring back the platform at the neutral position after
+      the sudden step perturbation.
+      All body movements are allowed to complete the task."
+    step_list:
+      - description: Place inertial sensors or markers on body segment to
+          examine
+        detail: "If opto-electronic system will be used the plug-in-gait
+          protocol only for lower limb has to be followed for marker placement.
+          If IMU will be used, please place one IMU on pelvis and one on thigh,
+          shank and foot for each lower limb side.
+          The reported angles are the suggested one; however they can be varied
+          based on the specific experiment (for example, exoskeleton does not
+          allow to sensorize a specific segment)."
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+        detail: Preliminary familiarization tests can be performed and not
+          recorded
+      - description: Launch the platform software
+      - description: Select the appropriate protocol
+        detail: "User must select \"Step perturbation - uneven surface\" on the
+          GUI among the seven possible protocols"
+      - description: "Select parameters related to the step"
+        detail: "In order to standardize the protocol, we suggest to always use
+          the \"medium\" amplitude and velocity.
+          However, if the operator evaluates that those values are too easy or
+          too difficult to administrate with a specific subject, software offers
+          the possibility to select a lower and higher value for both
+          parameters.
+          Software will be able to memorize the selectedvalues for the metric
+          computations."
+      - description: Start the data collection
+        detail: Synchronization with other system will be managed by platform
+          software
+      - description: Stop the data collection
+        detail: It is automatically managed from the software after parameters
+          set at step 6
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+  # seventh protocol
+  - name: "beat_sinuzoidal_uneven"
+    name_readable: "Sinusoidal perturbation - even surface"
+    definition: "Subjects stands on platform and reacts to a sinusoidal
+      perturbation with platform set in position mode.
+      Perturbations are provided along 4 different directions
+      (anterior-posterio, medio-lateral, vertical and a mixed direction of the
+      others).
+      This protocol allows researchers to quantify the effects induced by
+      wearing a lower limb exoskeleton during perturbation suddenly imposed to
+      the upright position.
+      The effects are evaluated by means PI related to the balance and ability
+      of the subject to follow the perturbation."
+    image: undef
+    keywords: [balance, perturbed]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: protocol_7_sinusoidal_even
+    duration: "Less than 5 minutes"
+    controlled_variables:
+      - name: "Sinusoidal amplitude"
+        definition: "The amplitude of the sinusoidal perturbation selected by
+          experimenter among three possible values"
+        type: string
+        range: [small, medium, large]
+        unit: undef
+      - name: "Sinusoidal frequency"
+        definition: "The frequency of the sinusoidal perturbation selected by
+          experimenter among three possible values"
+        type: string
+        range: [slow, medium, fast]
+        unit: undef
+    testbed:
+      - item: "Rotobit3D v3.0"
+        type: actuator
+        file_sheet: undef
+      - item: "Pressure Matrix"
+        type: sensor
+        file_sheet: "Embedded in the Rotobit3D v3.0, technical sheet will be
+          provided at the end of the project"
+      - item: Inertial sensors or optoelectronic system
+        type: sensor
+        file_sheet: undef
+    step_description: "After the sensorization, subject has to stand on the
+      platform and naturally react to the sudden sinusoidal perturbation.
+      All body movements are allowed to complete the task.
+      Subject has not to move the feet to react to the perturbation, other
+      movements of the body are allowed."
+    step_list:
+      - description: Place inertial sensors or markers on body segment to
+          examine
+        detail: "Please place one IMU on head, trunk and pelvis.
+          Otherwise use markers of optoelectornic systems to compute head, trunk
+          and pelvis absolute angle.
+          This protocol can be performed only with this three body segment
+          sensorized."
+      - description: Place the subject on the platform at the reference point
+      - description: Instruct the subject on the task to perform
+        detail: Preliminary familiarization tests can be performed and not
+          recorded
+      - description: Launch the platform software
+      - description: Select the appropriate protocol
+        detail: "User must select \"Sinusoidal perturbation - even surface\" on
+          the GUI among the seven possible protocols"
+      - description: "Select the parameters related to the sinusoidal
+          perturbation"
+        detail: "In order to standardize the protocol, we suggest to always use
+          the \"medium\" amplitude and frequency.
+          However, if the operator evaluates that those values are too easy or
+          too difficult to administrate with a specific subject, software offers
+          the possibility to select a lower and higher value for both
+          parameters.
+          Software will be able to memorize the selectedvalues for the metric
+          computations."
+      - description: Start the data collection
+        detail: Synchronization with other system will be managed by platform
+          software
+      - description: Stop the data collection
+        detail: It is automatically managed from the software after parameters
+          set at step 7
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_nultple_subject: true
+
+pi:
+  - name: mrom
+    name_readable: "Mean Range of Motion (mROM)"
+    description: "Mean value of the joint angle Range of Motion (mROM).
+      Obtained values should be compared with the ones reported in literature
+      for the specific joint angle considered.
+      Smaller values indicate a reduction of the physiological movement of the
+      subject"
+    unit: degree
+    # todo: check the explanation provided
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot per each angle
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: cov
+    name_readable: " Coefficient of Variation - (CoV)"
+    description: "Coefficient of Variation related to the joing angle ROM.
+      Ratio between standard deviation and mean value of ROM across different
+      strides.
+      Greater value of CoV represents a greater variability of the kinematics,
+      which leads to a worsening of the subject motor performance."
+    unit: ratio
+    # todo: check the explanation provided
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot per each angle
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: rom_p
+    name_readable: "Range of Motion in different perturbation directions
+      (ROM_p)"
+    description: "ROM_p represents the range of motion of considered angles in
+      the eight directions of step perturbation.
+      The eight directions are: North (N), North-East (NE), East (E), South-East
+      (SE), South (S), South-West (SW), West (W), NorthWest (NW).
+      Obtained values should be compared with the ones reported in literature
+      for the specific joint angle considered.
+      Smaller values indicate a reduction of the physiological movement of the
+      subject"
+    unit: degree
+    # todo: check the explanation provided
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot per each angle
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: pl
+    name_readable: "Path Length of the Centre of Pressure (PL)"
+    description: "It represents the distance covered by the centre of pressure
+      considering all directions.
+      Centre of pressure will be computed by the pressure matrix embedded in the
+      Rotobit3D v3.0.
+      Greater value of PL indicates greater instability."
+    unit: meter
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "To compute the Romberg index, that is equal to the
+      ratio between the PI obtained in closed eyes condition and PI obtained
+      with open eyes.
+      Index equal to 1 indicate a perfect agreement between the two conditions.
+      Index lower than 1 indicate an increase of the instability when performing
+      the task with closed eyes."
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: pl_ap
+    name_readable: "Path Length of the Centre of Pressure in antero-posterior
+      direction (PL_AP)"
+    description: "It represents the distance covered by the centre of pressure
+      considering only the anterior-posterior direction.
+      Centre of pressure will be computed by the pressure matrix embedded in the
+      Rotobit3D v3.0.
+      Greater value of PL_AP indicates greater instability in antero-posterior
+      direction."
+    unit: meter
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "To compute the Romberg index, that is equal to the
+      ratio between the PI obtained in closed eyes condition and PI obtained
+      with open eyes.
+      Index equal to 1 indicate a perfect agreement between the two conditions.
+      Index lower than 1 indicate an increase of the instability when performing
+      the task with closed eyes."
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: pl_ml
+    name_readable: "Path Length of the Centre of Pressure in medio-lateral
+      direction (PL_ML)"
+    description: "It represents the  distance covered by the centre of pressure
+      considering only the medio-lateral direction.
+      Centre of pressure will be computed by the pressure matrix embedded in the
+      Rotobit3D v3.0.
+      Greater value of PL_ML indicates greater instability in medio-lateral
+      direction."
+    unit: meter
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "To compute the Romberg index, that is equal to the
+      ratio between the PI obtained in closed eyes condition and PI obtained
+      with open eyes.
+      Index equal to 1 indicate a perfect agreement between the two conditions.
+      Index lower than 1 indicate an increase of the instability when performing
+      the task with closed eyes."
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: ea
+    name_readable: "Area of the confidence ellipse (EA)"
+    description: "It represents the area of the confidence ellipse containing
+      the 95% of the point coveder by the centre of pressure.
+      Greater value of EA indicates greater instability during task. "
+    unit: meter2
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "To compute the Romberg index, that is equal to the
+      ratio between the PI obtained in closed eyes condition and PI obtained
+      with open eyes.
+      Index equal to 1 indicate a perfect agreement between the two conditions.
+      Index lower than 1 indicate an increase of the instability when performing
+      the task with closed eyes."
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: pl_p
+    name_readable: "Path Length of the Centre of Pressure after perturbation
+      (PL_p)"
+    description: "It represents the distance covered by the centre of pressure
+      reported for each perturbation direction.
+      Centre of pressure will be computed by the pressure matrix embedded in
+      the Rotobit3D v3.0.
+      Greater value of PL indicates greater instability."
+    unit: meter
+    # see description
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: ea_p
+    name_readable: Area of the confidence ellipse after perturbation (EA_p)
+    description: "It represents the area of the confidence ellipse containing
+      the 95% of the point coveder by the centre of pressure reported for each
+      perturbation direction.
+      Greater value of EA indicates greater instability during task. "
+    unit: meter2
+    # see description
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons"
+  - name: rnos
+    name_readable: Number of muscle synergies of right side (rNoS)
+    description: "It represents the number of muscle synergies.
+      Lower number of muscle synergy indicates an optimization of the muscle
+      coordination by the Central Nervous System when tasks are performed by
+      healthy subjects or an impossibility to enrol all the right muscle
+      synergies in subjects with neuromuscolar pathologies. "
+    unit: adim
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [median and mode]
+    visu: Bar plot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Median and mode of the
+      population with the same health status or patological conditons"
+  - name: lnos
+    name_readable: Number of muscle synergies of the left side (lNoS)
+    description: "It represents the number of muscle synergies.
+      Lower number of muscle synergy indicates an optimization of the muscle
+      coordination by the Central Nervous System when tasks are performed by
+      healthy subjects or an impossibility to enrol all the right muscle
+      synergies in subjects with neuromuscolar pathologies. "
+    unit: adim
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [median and mode]
+    visu: Bar plot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Median and mode of the
+      population with the same health status or patological conditons"
+  - name: os
+    name_readable: Platform angle overshoot (OS)
+    description: "It represents the overshoot of the platform angle after
+      subject's reaction under step perturbation in all the imposed directions.
+      The eight directions are: North (N), North-East (NE), East (E),
+      South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
+      Lower value of OS indicates a better anticipatory postural adjustments
+      capability of the subject."
+    unit: degree
+    # see description
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons to
+      compute per each direction."
+  - name: theta_f
+    name_readable: Final value of the platform angle (theta_f)
+    description: "It represents the final angle of the platform angle after
+      subject's reaction under step perturbation computed as the mean value of
+      the last 50 samples in all the imposed directions.
+      The eight directions are: North (N), North-East (NE), East (E),
+      South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
+      Value of theta_f close to zero indicates the perfect capability of the
+      subject to bring back the platform in the neutral position."
+    unit: degree
+    # see description
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons to
+      compute per each direction."
+  - name: delta_theta
+    name_readable: Range of motion of the platform angle (delta_theta)
+    description: "It represents the range of motion of the platform angle after
+      subject's reaction under step perturbation computed during the last 1.5 s
+      of the task for all directions.
+      The eight directions are: North (N), North-East (NE), East (E),
+      South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
+      Lower value of delta_theta indicates a greater stability after the
+      perturbation reaction."
+    unit: degree
+    # see description
+    output: labelled_matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons to
+      compute per each direction."
+  - name: g
+    name_readable: gain index (G)
+    description: "It represents the gain ratio between two signals.
+      In particular, the reference signal is the sinusoidal perturbation
+      imposed and the second signal could be one of the recorded segment in
+      order to understand how the segment follows the perturbation in terms of
+      amplitude.
+      Specifically, the considered angles will be: neck, trunk and pelvis.
+      All the angles are referred to the transversal plane.G equal to 100%
+      indicates that examined segment is in perfect agreement with the
+      perturbation."
+    unit: percentage
+    # see description
+    output: matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons to
+      compute per each direction."
+  - name: phi
+    name_readable: Phase shift (phi)
+    description: "It represents the phase shift between two signals.
+      In particular, the reference signal is the sinusoidal perturbation imposed
+      and the second signal could be one of the recorded segment in order to
+      understand how the segment follows the perturbation in terms of phase.
+      Specifically, the considered angles will be: neck, trunk and pelvis.
+      All the angles are referred to the transversal plane.
+      Phi equal to 0 indicates that examined segment is in perfect phase with
+      the perturbation; negative value indicates phase delay
+      (lower value=greater delay); positive value indicates phase anticipation
+      (greater value=greater anticipation)"
+    unit: degree
+    # see description
+    output: matrix
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: spider chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: "Mean value and standard deviation of the
+      population with the same health status or patological conditons to
+      compute per each direction."
+pi_algo:
+  - name: protocol_1_stepping_even
+    description: This algo allows to quantify the performance of exoskeleton in
+      terms of kinematics and muscle coordination when stepping on even surface
+      is performed
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - mrom
+      - cov
+      - rnos
+      - lnos
+    input files:
+      - jointAngles.csv
+      - platformData.csv
+      - emg.csv
+    input_command:
+      - ./run_protocol_1
+      - jointAngles.csv
+      - platformData.csv
+      - emg.csv
+      - outputDir
+    language: octave
+  - name: protocol_2_stepping_uneven
+    description: This algo allows to quantify the performance of exoskeleton
+      in terms of kinematics, muscle coordination and balance when stepping on
+      uneven surface is performed
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - mrom
+      - cov
+      - rnos
+      - lnos
+      - pl
+      - pl_ap
+      - pl_ml
+      - ea
+    input files:
+      - jointAngles.csv
+      - platformData.csv
+      - emg.csv
+    input_command:
+      - ./run_protocol_2
+      - jointAngles.csv
+      - platformData.csv
+      - emg.csv
+      - outputDir
+    language: octave
+  - name: protocol_3_static_even
+    description: This algo allows to quantify the performance of exoskeleton in
+      terms of  stability when static balance on even surface is performed
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - pl
+      - pl_ap
+      - pl_ml
+      - ea
+    input files:
+      - platformData.csv
+    input_command:
+      - ./run_protocol_3
+      - platformData.csv
+      - outputDir
+    language: octave
+  - name: protocol_4_static_uneven
+    description: This algo allows to quantify the performance of exoskeleton in
+      terms of  stability when static balance on uneven surface is performed
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - pl
+      - pl_ap
+      - pl_ml
+      - ea
+    input files:
+      - platformData.csv
+    input_command:
+      - ./run_protocol_4
+      - platformData.csv
+      - outputDir
+    language: octave
+  - name: protocol_5_static_even
+    description: This algo allows to quantify the performance of exoskeleton in
+      terms of  kinematic and stability when step perturbations are provided and
+      subjects stand on even surface
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - rom_p
+      - pl_p
+      - ea_p
+    input files:
+      - jointAngles.csv
+      - platformData.csv
+    input_command:
+      - ./run_protocol_5
+      - jointAngles.csv
+      - platformData.csv
+      - outputDir
+    language: octave
+  - name: protocol_6_static_uneven
+    description: This algo allows to quantify the performance of exoskeleton in
+      terms of  kinematic, stability and body reaction when step perturbations
+      are provided and subjects stand on uneven surface
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - rom_p
+      - pl_p
+      - ea_p
+      - os
+      - theta_f
+      - delta_theta
+    input files:
+      - jointAngles.csv
+      - platformData.csv
+    input_command:
+      - ./run_protocol_6
+      - jointAngles.csv
+      - platformData.csv
+      - outputDir
+    language: octave
+  - name: protocol_7_sinusoidal_even
+    description: This algo allows to quantify the performance of exoskeleton in
+      terms of  kinematic and body reaction when sinusoidal perturbations are
+      provided and subjects stand on even surface
+    url_paper: undef
+    url_code: https://github.com/aremazeilles/beat_routine
+    docker_host: undef
+    docker_name: pi_beat
+    pi:
+      - pl_p
+      - ea_p
+      - g
+      - phi
+    input files:
+      - jointAngles.csv
+      - platformData.csv
+    input_command:
+      - ./run_protocol_7
+      - jointAngles.csv
+      - platformData.csv
+      - outputDir
+    language: octave
