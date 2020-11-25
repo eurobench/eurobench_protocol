@@ -267,7 +267,7 @@ pi_algo:
       - rms_load_right
       - stance_time_left
       - stance_time_right
-    input files:
+    input_files:
       - subject_N_run_R_wrench_CrutchLeft.csv
       - subject_N_run_R_wrench_CrutchRight.csv
       - subject_N_run_R_gaitEvents.yaml
@@ -299,7 +299,7 @@ pi_algo:
       - rms_load_shoulders_right
     # I suggest stating only wrench_CrutchLeft
     # Alfonso suggests crutchLeft_wrench
-    input files:
+    input_files:
       - subject_N_run_R_wrench_CrutchLeft.csv
       - subject_N_run_R_wrench_CrutchRight.csv
       - subject_N_run_R_gaitEvents.yaml

@@ -837,7 +837,7 @@ pi_algo:
       - cov
       - rnos
       - lnos
-    input files:
+    input_files:
       - jointAngles.csv
       - platformData.csv
       - emg.csv
@@ -865,7 +865,7 @@ pi_algo:
       - pl_ap
       - pl_ml
       - ea
-    input files:
+    input_files:
       - jointAngles.csv
       - platformData.csv
       - emg.csv
@@ -888,7 +888,7 @@ pi_algo:
       - pl_ap
       - pl_ml
       - ea
-    input files:
+    input_files:
       - platformData.csv
     input_command:
       - ./run_protocol_3
@@ -907,7 +907,7 @@ pi_algo:
       - pl_ap
       - pl_ml
       - ea
-    input files:
+    input_files:
       - platformData.csv
     input_command:
       - ./run_protocol_4
@@ -926,7 +926,7 @@ pi_algo:
       - rom_p
       - pl_p
       - ea_p
-    input files:
+    input_files:
       - jointAngles.csv
       - platformData.csv
     input_command:
@@ -950,7 +950,7 @@ pi_algo:
       - os
       - theta_f
       - delta_theta
-    input files:
+    input_files:
       - jointAngles.csv
       - platformData.csv
     input_command:
@@ -972,7 +972,7 @@ pi_algo:
       - ea_p
       - g
       - phi
-    input files:
+    input_files:
       - jointAngles.csv
       - platformData.csv
     input_command:
