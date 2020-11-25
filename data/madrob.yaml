@@ -1,0 +1,226 @@
+---
+scenario:
+  name: "MADROB: using a door"
+  description: "The robot under test has to open, pass through and close a
+    standard hinged door with handle"
+  image: undef
+
+protocol:
+  - name: "madrob"
+    name_readable: "MADROB: using a door"
+    definition: "The benchmark evaluates the capability of the robot to
+      correctly operate standard (hinged) doors for human use.
+      Since doors are ubiquitous in human environments, possessing this
+      capability is crucial for an autonomous robot."
+    image: undef
+    keywords: [door, handle, lock, threshold, open, close]
+    bipedal_system: [humanoid, prosthesis, exoskeleton, human]
+    pi_algo: undef
+    duration: "10 minutes per run"
+    controlled_variables:
+      - name: opening side
+        definition: the side towards which the door is allowed to move
+        type: string
+        range: [clockwise, counterclockwise]
+        unit: undef
+      - name: destination side
+        definition: the side of the door that the robot must reach by going
+          through the door
+        type: string
+        range: [clockwise, counterclockwise]
+        unit: undef
+    testbed:
+      - item: "instrumented door"
+        type: combined
+        file_sheet: https://github.com/madrob-beast/docs/blob/master/Madrob%20User%20Manual.pdf
+    step_description: "Use a door, initially closed, to reach a new area,
+      then close the door again"
+    # todo check link https://github.com/madrob-beast/docs/blob/master/madrob_performance_indicators_and_preprocessed_data.md
+    step_list:
+      - description: Manually set robot in start pose
+        detail: "human-executed; not part of the benchmark"
+      - description: Start the benchmark
+        detail: "human-executed; not part of the benchmark"
+      - description: Touch the door handle
+        detail: "robot-executed"
+      - description: Unlock the door
+        detail: robot-executed
+      - description: "Open the door"
+        detail: robot-executed
+      - description: "Cross the threshold"
+        detail: "robot-executed		"
+      - description: "Close the door [without crossing  the threshold again]"
+        detail: robot-executed
+      - description: "Lock the door [without crossing  the threshold again]"
+        detail: "robot-executed"
+      - description: (wait for benchmark [automatic] completion)
+        detail: human-executed; not part of the benchmark
+    # todo: check information provided
+    has_multiple_run: false
+    has_multiple_condition: true
+    has_nultple_subject: false
+pi:
+  - name: execution_time
+    name_readable: "Execution time"
+    description: "Overall duration of benchmark execution.
+      This timing is affected by human factor since the robot and the benchmark
+      must be manually started at the same time."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: time_to_handle
+    name_readable: "Time to handle"
+    description: "Time elapsed from the start of the benchmark to the first time
+      the handle is touched by the robot/humanoid.
+      This PI accounts for the time the robot takes to perceive the door, plan
+      its actions and start opening the door."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: door_occupation_time
+    name_readable: "Door occupation time"
+    description: "Time elapsed between the humanoid approaching the door from
+      the starting side and the humanoid leaving the destination side (measured
+      by sensors detecting when the humanoid is present in the proximity of the
+      door on each side).
+      Passage sensors produce highly varying timings, so this PI needs to be
+      tested with real humanoid robots to assess its accuracy and stability."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: passage_time
+    name_readable: "Passage time"
+    description: "Time elapsed between the humanoid starts opening the door
+      (touching the handle) and the humanoid closes the door after reaching the
+      destination side.
+      This PI is similar to the PIs Door occupation time and Overall execution
+      time, but avoids using the timing of the benchmark start, that rely on
+      manual timing (starting benchmark and the robot at the same time). "
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: unsafety_of_door_operation
+    name_readable: "Unsafety of door operation"
+    description: "This PI is a measurement of the safety of door operation by
+      the robot based on the maximum angular acceleration of the door panel."
+    unit: "rad/(s^2)"
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std]
+      - [min, 0]
+      - [max, 0]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: smoothness_of_door_actuation
+    name_readable: "Smoothness of door actuation"
+    description: "This PI is a measurement of the smoothness of the actuation of
+      the door panel based on its  angular acceleration."
+    unit: "(s^2)/rad"
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std]
+      - [min, 0]
+      - [max, 0]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: roughness_of_actuation
+    name_readable: "Roughness of actuation"
+    description: "This PI measures how rough (or undelicate) the robot is in
+      operating the door based on the maximum force applied to the handle."
+    unit: "gram"
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std]
+      - [min, 0]
+      - [max, 0]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+  - name: capability_level
+    name_readable: "Capability level"
+    description: "Number of steps of the benchmark actually completed by the
+      robot.
+      Each step is considered completed only after all the steps preceding it
+      have been completed as well."
+    unit: none
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, median], [0, mean], [0, max]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: undef
+
+pi_algo:
+  # todo: update the template, as it is still over detailed
+  - name: madrob
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/madrob-beast/madrob_beast_pi
+    docker_host: undef
+    docker_name: pi_madrob_beast
+    pi:
+      - execution_time
+      - time_to_handle
+      - door_occupation_time
+      - passage_time
+      - unsafety_of_door_operation
+      - smoothness_of_door_actuation
+      - roughness_of_actuation
+      - capability_level
+    input files:
+      - event.csv
+      - wrench.csv
+      - jointState.csv
+      - testbed_config.yaml
+    # todo: check docker entry point
+    input_command:
+      - run_madrob
+      - event.csv
+      - wrench.csv
+      - jointState.csv
+      - testbed_config.yaml
+      - outputDir
+    language: octave

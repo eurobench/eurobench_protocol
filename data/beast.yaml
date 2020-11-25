@@ -1,0 +1,226 @@
+---
+scenario:
+  name: "BEAST: operating wheeled devices"
+  description: "The robot under test has to precisely and safely follow a
+    trajectory through an irregular environment while pushing a shopping trolley/walker"
+  image: undef
+
+protocol:
+  - name: "beast"
+    # todo: two variants: how to handle this?
+    name_readable: "BEAST: operating wheeled devices. This protocol has two
+      variants, employing two different active devices (trolley and walker)"
+    definition: "In its trolley version, the protocol evaluates the capability
+      of the robot to safely and accurately operate a self-supporting wheeled
+      transport device (the trolley) while performing navigation tasks.
+      In its walker version, aimed at scenarios where the main difficulty lies
+      in the walking process itself, the protocol evaluates the capability of
+      the robot to minimise its reliance on an external stability-supporting
+      device (the walker)."
+    image: https://raw.githubusercontent.com/madrob-beast/docs/master/img/beast_arena_checkpoints.png
+    keywords: [shopping trolley, walker, handle, wheel, swiveling wheel]
+    bipedal_system: [humanoid, prosthesis, exoskeleton, human]
+    pi_algo: undef
+    duration: "10 minutes per run"
+    controlled_variables:
+      - name: wheeled device
+        definition: wheeled device that the robot interacts with
+        type: string
+        range: [trolley, walker]
+        unit: undef
+    testbed:
+      - item: "test environment"
+        type: passive testbed element
+        file_sheet: undef
+      - item: "instrumented shopping trolley"
+        type: combined
+        file_sheet: undef
+      - item: "instrumented walker"
+        type: combined
+        file_sheet: undef
+    step_description: "Push a shopping trolley/walker through the environment
+      along a prescribed trajectory, compensating for possible disturbances to
+      its motion"
+    # todo: refer to link https://github.com/madrob-beast/docs/blob/master/beast_performance_indicators_and_preprocessed_data.md
+    step_list:
+      - description: Manually set robot in start pose
+        detail: "human-executed; not part of the benchmark"
+      - description: Start the benchmark
+        detail: "human-executed; not part of the benchmark"
+      - description: Grasp trolley/walker handle(s)
+        detail: "Optional: robot can start with end effector(s) already
+          positioned on handle(s)"
+      - description: Navigate to Checkpoint 1
+        detail: See link below for checkpoint definition
+      - description: "Drive trolley/walker to checkpoint 2 with minimum
+          deviation from a straight trajectory, avoiding collisions."
+        detail: See link below for checkpoint definition
+      - description: "Drive trolley/walker to checkpoint 3 and then to
+          checkpoint 4, keeping the nearest blue obstacle on the right and
+          avoiding collisions"
+        detail: "See link below for checkpoint definition"
+      - description: "Drive trolley/walker to checkpoint 5, keeping the red
+          obstacle on the left and avoiding collisions"
+        detail: See link below for checkpoint definition
+      - description: "Drive trolley/walker to checkpoint 6 and then to
+          checkpoint 7, keeping the nearest blue obstacle on the right and
+          avoiding collisions"
+        detail: "See link below for checkpoint definition"
+      - description: (wait for benchmark [automatic] completion)
+        detail: human-executed; not part of the benchmark
+    # todo: check information provided
+    has_multiple_run: false
+    has_multiple_condition: true
+    has_nultple_subject: false
+pi:
+  - name: execution_time
+    name_readable: "Overall execution time"
+    description: "Overall duration of benchmark execution"
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+  - name: time_to_handle
+    name_readable: "Time to handle"
+    description: "Time elapsed from the start of the benchmark to the first time
+      the handle is touched by the robot/humanoid.
+      This PI accounts for the time the robot takes to perceive the
+      walker/trolley's handle, plan its actions and grasp the handle."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+  - name: straight_time
+    name_readable: "Straight time"
+    description: "Time elapsed on the straight segment between checkpoint 1 and
+      checkpoint 2."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+  - name: slalom_time
+    name_readable: "Slalom time"
+    description: "Time elapsed on the slalom segments between checkpoint 2 and
+      checkpoint 7."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+  - name: straight_control_accuracy
+    name_readable: "Straight control accuracy"
+    description: "This PI is a measurement of the accuracy of controlling the
+      walker/trolley by the humanoid based on the trajectory of the
+      walker/trolley on the straight segment."
+    unit: meter
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std]
+      - [min, 0]
+      - [max, 0]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+  - name: safety_navigation
+    name_readable: "Safety of navigation"
+    description: "This PI is a measurement of the safety of the navigation.
+      It is obtained as the minimum distance of the walker/trolley from the
+      obstacles."
+    unit: meter
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std]
+      - [min, 0]
+      - [max, 0]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+  - name: capability_level
+    name_readable: "Capability level"
+    description: "Number of steps of the benchmark actually completed by the
+      robot.
+      Each step is considered completed only after all the steps preceding it
+      have been completed as well."
+    unit: none
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: [[0, median], [0, mean], [0, max]]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine.
+      Although ideally the number of runs with different conditions should be
+      balanced."
+    inter_subject_aggregation: "Average of score for all subjects should be
+      fine.
+      The score may be very dependant on the subject, so we advise to run the
+      experiments with the same subjects."
+
+pi_algo:
+  # todo: update the template, as it is still over detailed
+  - name: beast
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/madrob-beast/madrob_beast_pi
+    docker_host: undef
+    docker_name: pi_madrob_beast
+    pi:
+      - execution_time
+      - time_to_handle
+      - straight_time
+      - slalom_time
+      - straight_control_accuracy
+      - safety_navigation
+      - capability_level
+    input files: [wrench.csv]
+    # todo: check docker entry point
+    input_command:
+      - run_beast
+      - wrench.csv
+      - outputDir
+    language: octave
