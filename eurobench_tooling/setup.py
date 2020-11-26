@@ -14,6 +14,7 @@ else:
 setup(
     name='eurobench_tooling',
     description=('Tool for checking a yaml template spec.'),
+    long_description=long_description,
     author='Anthony Remazeilles',
     author_email='anthony.remazeilles@tecnalia.com',
     url='https://github.com/',
