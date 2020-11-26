@@ -151,7 +151,7 @@ pi:
       - [0, median]
       - [0, std]
       - [min, 0]
-      - [max, 0]]
+      - [max, 0]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -173,7 +173,7 @@ pi:
       - [0, median]
       - [0, std]
       - [min, 0]
-      - [max, 0]]
+      - [max, 0]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be

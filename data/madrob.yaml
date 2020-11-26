@@ -34,8 +34,9 @@ protocol:
         type: combined
         file_sheet: https://github.com/madrob-beast/docs/blob/master/Madrob%20User%20Manual.pdf
     step_description: "Use a door, initially closed, to reach a new area,
-      then close the door again"
-    # todo check link https://github.com/madrob-beast/docs/blob/master/madrob_performance_indicators_and_preprocessed_data.md
+      then close the door again.
+      More information at
+      https://github.com/madrob-beast/docs/blob/master/madrob_performance_indicators_and_preprocessed_data.md"
     step_list:
       - description: Manually set robot in start pose
         detail: "human-executed; not part of the benchmark"
