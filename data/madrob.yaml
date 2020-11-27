@@ -118,7 +118,10 @@ pi:
     unit: sec
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std_dev]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -135,8 +138,8 @@ pi:
       - [0, mean]
       - [0, median]
       - [0, std]
-      - [min, 0]
-      - [max, 0]
+      - [0, min]
+      - [0, max]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -153,8 +156,8 @@ pi:
       - [0, mean]
       - [0, median]
       - [0, std]
-      - [min, 0]
-      - [max, 0]
+      - [0, min]
+      - [0, max]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -171,8 +174,8 @@ pi:
       - [0, mean]
       - [0, median]
       - [0, std]
-      - [min, 0]
-      - [max, 0]
+      - [0, min]
+      - [0, max]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -187,7 +190,10 @@ pi:
     unit: none
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, median], [0, mean], [0, max]]
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std_dev]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
