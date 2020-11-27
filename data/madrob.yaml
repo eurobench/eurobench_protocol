@@ -69,7 +69,7 @@ pi:
     unit: s
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: 
+    inter_run_aggregation:
       - [0, mean]
       - [0, median]
       - [0, std]
@@ -107,7 +107,7 @@ pi:
     unit: s
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: 
+    inter_run_aggregation:
       - [0, mean]
       - [0, median]
       - [0, std]
