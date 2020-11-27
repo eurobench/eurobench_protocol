@@ -131,7 +131,7 @@ pi:
     name_readable: "Unsafety of door operation"
     description: "This PI is a measurement of the safety of door operation by
       the robot based on the maximum angular acceleration of the door panel."
-    unit: "rad/(s^2)"
+    unit: "rad/s^2"
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation:
@@ -149,7 +149,7 @@ pi:
     name_readable: "Smoothness of door actuation"
     description: "This PI is a measurement of the smoothness of the actuation of
       the door panel based on its  angular acceleration."
-    unit: "(s^2)/rad"
+    unit: "s^2/rad"
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation:
