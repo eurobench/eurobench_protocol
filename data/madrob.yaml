@@ -1,4 +1,5 @@
 ---
+user_name: "madrob"
 scenario:
   name: "MADROB: using a door"
   description: "The robot under test has to open, pass through and close a
