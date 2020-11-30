@@ -238,5 +238,4 @@ pi_algo:
       - wrench.csv
       - jointState.csv
       - testbed_config.yaml
-      - outputDir
     language: octave
