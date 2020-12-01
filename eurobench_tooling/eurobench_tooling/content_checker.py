@@ -13,10 +13,7 @@ import sys
 from termcolor import colored
 import os
 import yaml
-
-# spec (todo: move elswehere)
-FILES_INPUT = ['event.yaml', 'wrench.csv', 'jointState.csv', 'condition.csv']
-PI_OUTPUT = ['scalar', 'vector', 'matrix', 'vector_of_vector', 'vector_of_matrix']
+from eurobench_tooling import config
 
 
 def get_pi_name(spec, verbose=True):
@@ -74,7 +71,7 @@ def check_pi_output(spec):
 
   all_ok = True
   for item in loutput:
-    if item not in PI_OUTPUT:
+    if item not in config.EurobenchConfig.output_type:
       print(colored('Unknown output format: {}'.format(item), 'red'))
       all_ok = False
   return all_ok
@@ -100,7 +97,7 @@ def check_algo_input(spec):
 
   all_ok = True
   for item in linput:
-    if item not in FILES_INPUT:
+    if item not in config.EurobenchConfig.input_type:
       print(colored('Unknown input file: {}'.format(item), 'red'))
       all_ok = False
 
@@ -117,6 +114,8 @@ def main():
       print(colored(USAGE, "yellow"))
       return -1
   yaml_file = sys.argv[1]
+
+  print("Check config: {}".format(config.EurobenchConfig.input_type))
 
   try:
     with open(yaml_file, 'r') as open_file:
