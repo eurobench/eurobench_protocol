@@ -1,0 +1,733 @@
+---
+scenario:
+  name: "Industrial use cases"
+  description: "TestEd is the testbed to simulate the industrial narrow space
+    workstations.
+    It can help to reconfigured its length and width hence there are many
+    configuration that can be tested.
+    Due to the workspace optimization techniques and lean manufacturing, the
+    modern workstations are narrow.
+    TestEd can help to simulate these workstations to test the wearable
+    technology new concepts and prototypes.
+    Its modular design and flexibility can help to quickly prepare the intended
+    workstation.
+    The inbuilt sensors and actuators ensure the data collection and safety of
+    the subjects.
+    For example, TestEd project demonstrate three configurations taken from
+    automotive, construction and aeronautical industry.
+    These configurations are by varying the length and width of the testbed i.e.
+    config_Auto: L = 1533mm and W = 641mm; config_cont: L = 3000mm and
+    W = 1400mm; conf_aero: L = 4500 and W = 1410"
+  image: undef
+
+protocol:
+  - name: "tested_narrow_auto"
+    name_readable: "Industrial Use-Cases in Narrow Spaces"
+    definition: "This protocol helps to benchmark the new wearable technologies
+      for narrow workspaces.
+      The user must know number of PI's, number of subjects, length and
+      distance between the walls, number of runs and number of assiatnce levels
+      of wearable robot before starting the test.
+      Once the Testbed is configured to the desired scenario.
+      The data is collected with and without the wearable robot/device.
+      The protocol helps the user to test both relative data analysis and
+      absolute data analysis.
+      Below we describe the three configurations of the testbed:
+      conf_auto: In sitting/standing posture, with both feet on the floor of the
+      TestEd test bed with truck bending/straight.
+      The subject performs a circular inspection of a profile placed on the
+      force sensitive wall of the testbed.
+      The subject will hold the quality control gauge in one hand to find the
+      distance between the gap and flush of the profile."
+    image: tested/img01.png
+    keywords:
+      - walking
+      - standing
+      - sitting
+      - maintaining posture in industrial use-case
+    bipedal_system: [Prosthesis, exoskeleton, humans]
+    pi_algo:
+    duration: 20-30s/run/subject
+    controlled_variables:
+      - name: distance_automotive
+        definition: "Distance between mobile panel and the fix panel"
+        type: double
+        range: [0.6, 1.5]
+        unit: m
+      - name: subject_weight
+        definition: Subject weight
+        type: double
+        range: [15, 150]
+        unit: kg
+      - name: gender
+        definition: Subject gender (1 male 0 female)
+        type: Boolean
+        unit: na
+      - name: assistance_level
+        definition: Assistance device assistance (1, 2, 3, 4 - low, med, high ,
+          no. 5- noExo)
+        type: integer
+        range: [1, 5]
+        unit: na
+      - name: number_runs
+        definition: total number for runs for each testing cycle
+        type: integer
+        range: [1, max]
+        unit: na
+      - name: number_subjects
+        definition: total number of subects
+        type: integer
+        range: [1, max]
+        unit: na
+      - name: force
+        definition: max applied force measured by the force sensitive walls
+        type: double
+        range: [0, 100]
+        unit: kg
+      - name: height1
+        definition: Vertical height from floor, STARTING point for lift and
+          END point for lower
+        type: double
+        range: [0, 3]
+        unit: m
+      - name: height2
+        definition: Vertical height from floor, END point for lift and
+          STARTING point for lower
+        type: double
+        range: [0, 3]
+        unit: m
+      - name: load
+        definition: load that subject manipulate
+        type: double
+        range: [0, 15]
+        unit: kg
+      - name: velocity
+        definition: speed of walking
+        type: double
+        range: [0.1, 2]
+        unit: m/s
+      - name: horizontalMovement
+        definition: Horizontal movement of workpiece
+        type: double
+        range: [0, 1.6]
+        unit: m
+      - name: slope
+        definition: Grade of the walking surface
+        type: double
+        range: [0, 20]
+        unit: "%"
+      - name: mainOption1
+        definition: 1. Maintenance of body posture or 2. Other tasks
+        type: integer
+        range: [1, 2]
+        unit: na
+      - name: subOption1
+        definition: "If user choose 1. Maintenance of body posture user must
+          select one of the following sub options: 1. Sitting or 2. Standing or
+          3. Standing and Bending
+          If user chooses 2. Other tasks then user must select one of the
+          following 22 options:  1: Stoop lift or 2: Squat lift or 3: One hand
+          lift or 4: Arm lift or 5. Stoop lower or 6. Squat lower or 7. Arm
+          lower or 8. Walking or 9. Carrying, loads held at arms length at sides
+          (1 or 2 hands) or 10. Carrying, loads held against thighs or against
+          waist or 11. Holding, at arms length, against thighs or at sides (2
+          hands) or 12. Holding against waist or 13. Holding, at arms length in
+          one hand or 14. Pushing/pulling, at bench height (0.8 meters) or 15.
+          Pushing/pulling, at 1.5 meters height or 16. Lateral movement of arms
+          of 180 degrees, 2 hands or 17. Lateral movement of arms of 180
+          degrees, 1 hand or 18. 90 degrees arms lateral movement, standing, 1
+          or 2 hands or 19: 90 degrees arms lateral movement, sitting, 2 hands
+          or 20. 90 degrees arms lateral movement, sitting, 1 hand or 21:
+          Forward movement of arms, standing, 1 or 2 hands or 22: Forward
+          movement of arms, sitting, 1 or 2 hands"
+        type: Integer
+        range: [1, 22]
+        unit: na
+    testbed:
+      - item: Instrumented walls
+        type: combined
+        file_sheet: To be provided
+      - item: Motion Capture System
+        type: sensor
+        file_sheet: https://www.technaid.com/products/
+      - item: Force Plate
+        type: sensor
+        file_sheet: We can argue whether it is embedded into the testedbed (so to be
+          described through first line, or to be mentioned here)
+      - item: Polar H10
+        type: CTAG
+        file_sheet: https://support.polar.com/e_manuals/H10_HR_sensor/Polar_H10_user_manual_English/manual.pdf
+    step_description: undef
+    step_list:
+      - description: "Configure the TestEd software and select the scenario and
+          assistance levels of the exoskeleton (Available configuarations:
+          1. conf_auto)"
+        detail: "We have developed this software internally for managing the
+          testing.
+          This software will be available for EUROBENCH.
+          This is a web based application that can help to manage the testing
+          on the testbed.
+          In addition, it will serve as a platform to collect the user
+          feedback via questionnaires (digitally)."
+      - description: "Select the number of PI's, runs, subjects"
+        detail: "To ensure the successfull testing this information is vital.
+          The testing process can be flexible where a test manager can know
+          number of PI’s evaluated during the TestEd test session.
+          He can know number runs and can know number of subjects in advance to
+          plan the testing accordingly."
+      - description: "Configure, locate and position the measurment devices"
+        detail: "SOP of measurment devices and requirements."
+      - description: "Place the subject to the starting position for the first
+          run without exoskeleton"
+      - description: Trigger to start the data
+      - description: "a. The subject enters from the left side of the testbed
+          with tools, measurment devices and w/wout exoskeleton.
+          b. Depending on the testbed configuration the subject will take few or
+          several steps to reach the designated location, where he can perform
+          the task.
+          c. This location is predefined and prepared for the testing.
+          For example for automotive component quality check the target
+          component must must be installed in the testbed before testing starts.
+          d. The subject will complete the task. He may maintain a posture, or
+          perform a repetative task of low frequency or high frequency.
+          For example, in automotive case he will check the quality of the
+          component with the help of the quality gauge.
+          e. After task completion the subject can take few steps to exit the
+          testbed."
+        detail: "All data will be recorded from the testbed and the measurement
+          devices.
+          From testbed the proximity sensor data for entrance and exit, load
+          cell data from the middle module wall, accelerometer data from the
+          hurdles, accelerometer data from the remaining module walls.
+          We expect to collect the data from measuremnt devices: Force plate,
+          Polar H10, Fitbit 3, Motion Capture System and manual inclinometer."
+      - description: Trigger to stop the data
+      - description: Repeat the number of designated runs for without
+          exoskeleton and with exoskeleton
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_nultple_subject: true
+  - name: "tested_narrow_cont"
+    name_readable: "Industrial Use-Cases in Narrow Spaces"
+    definition: "This protocol helps to benchmark the new wearable technologies
+      for narrow workspaces.
+      The user must know number of PI's, number of subjects, length and
+      distance between the walls, number of runs and number of assiatnce levels
+      of wearable robot before starting the test.
+      Once the Testbed is configured to the desired scenario.
+      The data is collected with and without the wearable robot/device.
+      The protocol helps the user to test both relative data analysis and
+      absolute data analysis.
+      Below we describe the three configurations of the testbed:
+      conf_cont: In a standing posture, with both feet on the floor of the
+      TestEd test bed.
+      The subject performs a horizontal movement with the tip of the Tig
+      welding torch while holding the stick in another hand."
+    image: undef
+    keywords:
+      - walking
+      - standing
+      - sitting
+      - maintaining posture in industrial use-case
+    bipedal_system: [Prosthesis, exoskeleton, humans]
+    pi_algo:
+    duration: 20-30s/run/subject
+    controlled_variables:
+      - name: distance_automotive
+        definition: "Distance between mobile panel and the fix panel"
+        type: double
+        range: [0.6, 1.5]
+        unit: m
+      - name: subject_weight
+        definition: Subject weight
+        type: double
+        range: [15, 150]
+        unit: kg
+      - name: gender
+        definition: Subject gender (1 male 0 female)
+        type: Boolean
+        unit: na
+      - name: assistance_level
+        definition: Assistance device assistance (1, 2, 3, 4 - low, med, high ,
+          no. 5- noExo)
+        type: integer
+        range: [1, 5]
+        unit: na
+      - name: number_runs
+        definition: total number for runs for each testing cycle
+        type: integer
+        range: [1, max]
+        unit: na
+      - name: number_subjects
+        definition: total number of subects
+        type: integer
+        range: [1, max]
+        unit: na
+      - name: force
+        definition: max applied force measured by the force sensitive walls
+        type: double
+        range: [0, 100]
+        unit: kg
+      - name: height1
+        definition: Vertical height from floor, STARTING point for lift and
+          END point for lower
+        type: double
+        range: [0, 3]
+        unit: m
+      - name: height2
+        definition: Vertical height from floor, END point for lift and
+          STARTING point for lower
+        type: double
+        range: [0, 3]
+        unit: m
+      - name: load
+        definition: load that subject manipulate
+        type: double
+        range: [0, 15]
+        unit: kg
+      - name: velocity
+        definition: speed of walking
+        type: double
+        range: [0.1, 2]
+        unit: m/s
+      - name: horizontalMovement
+        definition: Horizontal movement of workpiece
+        type: double
+        range: [0, 1.6]
+        unit: m
+      - name: slope
+        definition: Grade of the walking surface
+        type: double
+        range: [0, 20]
+        unit: "%"
+      - name: mainOption1
+        definition: 1. Maintenance of body posture or 2. Other tasks
+        type: integer
+        range: [1, 2]
+        unit: na
+      - name: subOption1
+        definition: "If user choose 1. Maintenance of body posture user must
+          select one of the following sub options: 1. Sitting or 2. Standing or
+          3. Standing and Bending
+          If user chooses 2. Other tasks then user must select one of the
+          following 22 options:  1: Stoop lift or 2: Squat lift or 3: One hand
+          lift or 4: Arm lift or 5. Stoop lower or 6. Squat lower or 7. Arm
+          lower or 8. Walking or 9. Carrying, loads held at arms length at sides
+          (1 or 2 hands) or 10. Carrying, loads held against thighs or against
+          waist or 11. Holding, at arms length, against thighs or at sides (2
+          hands) or 12. Holding against waist or 13. Holding, at arms length in
+          one hand or 14. Pushing/pulling, at bench height (0.8 meters) or 15.
+          Pushing/pulling, at 1.5 meters height or 16. Lateral movement of arms
+          of 180 degrees, 2 hands or 17. Lateral movement of arms of 180
+          degrees, 1 hand or 18. 90 degrees arms lateral movement, standing, 1
+          or 2 hands or 19: 90 degrees arms lateral movement, sitting, 2 hands
+          or 20. 90 degrees arms lateral movement, sitting, 1 hand or 21:
+          Forward movement of arms, standing, 1 or 2 hands or 22: Forward
+          movement of arms, sitting, 1 or 2 hands"
+        type: Integer
+        range: [1, 22]
+        unit: na
+    testbed:
+      - item: Instrumented walls
+        type: combined
+        file_sheet: To be provided
+      - item: Motion Capture System
+        type: sensor
+        file_sheet: https://www.technaid.com/products/
+      - item: Force Plate
+        type: sensor
+        file_sheet: We can argue whether it is embedded into the testedbed (so to be
+          described through first line, or to be mentioned here)
+      - item: Polar H10
+        type: CTAG
+        file_sheet: https://support.polar.com/e_manuals/H10_HR_sensor/Polar_H10_user_manual_English/manual.pdf
+    step_description: undef
+    step_list:
+      - description: "Configure the TestEd software and select the scenario and
+          assistance levels of the exoskeleton (Available configuarations:
+          2. conf_cont)"
+        detail: "We have developed this software internally for managing the
+          testing.
+          This software will be available for EUROBENCH.
+          This is a web based application that can help to manage the testing
+          on the testbed.
+          In addition, it will serve as a platform to collect the user
+          feedback via questionnaires (digitally)."
+      - description: "Select the number of PI's, runs, subjects"
+        detail: "To ensure the successfull testing this information is vital.
+          The testing process can be flexible where a test manager can know
+          number of PI’s evaluated during the TestEd test session.
+          He can know number runs and can know number of subjects in advance to
+          plan the testing accordingly."
+      - description: "Configure, locate and position the measurment devices"
+        detail: "SOP of measurment devices and requirements."
+      - description: "Place the subject to the starting position for the first
+          run without exoskeleton"
+      - description: Trigger to start the data
+      - description: "a. The subject enters from the left side of the testbed
+          with tools, measurment devices and w/wout exoskeleton.
+          b. Depending on the testbed configuration the subject will take few or
+          several steps to reach the designated location, where he can perform
+          the task.
+          c. This location is predefined and prepared for the testing.
+          For example for automotive component quality check the target
+          component must must be installed in the testbed before testing starts.
+          d. The subject will complete the task. He may maintain a posture, or
+          perform a repetative task of low frequency or high frequency.
+          For example, in automotive case he will check the quality of the
+          component with the help of the quality gauge.
+          e. After task completion the subject can take few steps to exit the
+          testbed."
+        detail: "All data will be recorded from the testbed and the measurement
+          devices.
+          From testbed the proximity sensor data for entrance and exit, load
+          cell data from the middle module wall, accelerometer data from the
+          hurdles, accelerometer data from the remaining module walls.
+          We expect to collect the data from measuremnt devices: Force plate,
+          Polar H10, Fitbit 3, Motion Capture System and manual inclinometer."
+      - description: Trigger to stop the data
+      - description: Repeat the number of designated runs for without
+          exoskeleton and with exoskeleton
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_nultple_subject: true
+
+  - name: "tested_narrow_aero"
+    name_readable: "Industrial Use-Cases in Narrow Spaces"
+    definition: "This protocol helps to benchmark the new wearable technologies
+      for narrow workspaces.
+      The user must know number of PI's, number of subjects, length and
+      distance between the walls, number of runs and number of assiatnce levels
+      of wearable robot before starting the test.
+      Once the Testbed is configured to the desired scenario.
+      The data is collected with and without the wearable robot/device.
+      The protocol helps the user to test both relative data analysis and
+      absolute data analysis.
+      Below we describe the three configurations of the testbed:
+      conf_aero: In a sitting posture, with both feet on the floor of the
+      TestEd test bed with straight truck, the subject performs installation of
+      two curved sheets on the force sensitive wall and then fasten the sheets
+      in vertical straight line with electrical screw driver.
+      The fastening will be performed with one hand holding the screw driver
+      while the second hand guide the screw."
+    image: undef
+    keywords:
+      - walking
+      - standing
+      - sitting
+      - maintaining posture in industrial use-case
+    bipedal_system: [Prosthesis, exoskeleton, humans]
+    pi_algo:
+    duration: 20-30s/run/subject
+    controlled_variables:
+      - name: distance_automotive
+        definition: "Distance between mobile panel and the fix panel"
+        type: double
+        range: [0.6, 1.5]
+        unit: m
+      - name: subject_weight
+        definition: Subject weight
+        type: double
+        range: [15, 150]
+        unit: kg
+      - name: gender
+        definition: Subject gender (1 male 0 female)
+        type: Boolean
+        unit: na
+      - name: assistance_level
+        definition: Assistance device assistance (1, 2, 3, 4 - low, med, high ,
+          no. 5- noExo)
+        type: integer
+        range: [1, 5]
+        unit: na
+      - name: number_runs
+        definition: total number for runs for each testing cycle
+        type: integer
+        range: [1, max]
+        unit: na
+      - name: number_subjects
+        definition: total number of subects
+        type: integer
+        range: [1, max]
+        unit: na
+      - name: force
+        definition: max applied force measured by the force sensitive walls
+        type: double
+        range: [0, 100]
+        unit: kg
+      - name: height1
+        definition: Vertical height from floor, STARTING point for lift and
+          END point for lower
+        type: double
+        range: [0, 3]
+        unit: m
+      - name: height2
+        definition: Vertical height from floor, END point for lift and
+          STARTING point for lower
+        type: double
+        range: [0, 3]
+        unit: m
+      - name: load
+        definition: load that subject manipulate
+        type: double
+        range: [0, 15]
+        unit: kg
+      - name: velocity
+        definition: speed of walking
+        type: double
+        range: [0.1, 2]
+        unit: m/s
+      - name: horizontalMovement
+        definition: Horizontal movement of workpiece
+        type: double
+        range: [0, 1.6]
+        unit: m
+      - name: slope
+        definition: Grade of the walking surface
+        type: double
+        range: [0, 20]
+        unit: "%"
+      - name: mainOption1
+        definition: 1. Maintenance of body posture or 2. Other tasks
+        type: integer
+        range: [1, 2]
+        unit: na
+      - name: subOption1
+        definition: "If user choose 1. Maintenance of body posture user must
+          select one of the following sub options: 1. Sitting or 2. Standing or
+          3. Standing and Bending
+          If user chooses 2. Other tasks then user must select one of the
+          following 22 options:  1: Stoop lift or 2: Squat lift or 3: One hand
+          lift or 4: Arm lift or 5. Stoop lower or 6. Squat lower or 7. Arm
+          lower or 8. Walking or 9. Carrying, loads held at arms length at sides
+          (1 or 2 hands) or 10. Carrying, loads held against thighs or against
+          waist or 11. Holding, at arms length, against thighs or at sides (2
+          hands) or 12. Holding against waist or 13. Holding, at arms length in
+          one hand or 14. Pushing/pulling, at bench height (0.8 meters) or 15.
+          Pushing/pulling, at 1.5 meters height or 16. Lateral movement of arms
+          of 180 degrees, 2 hands or 17. Lateral movement of arms of 180
+          degrees, 1 hand or 18. 90 degrees arms lateral movement, standing, 1
+          or 2 hands or 19: 90 degrees arms lateral movement, sitting, 2 hands
+          or 20. 90 degrees arms lateral movement, sitting, 1 hand or 21:
+          Forward movement of arms, standing, 1 or 2 hands or 22: Forward
+          movement of arms, sitting, 1 or 2 hands"
+        type: Integer
+        range: [1, 22]
+        unit: na
+    testbed:
+      - item: Instrumented walls
+        type: combined
+        file_sheet: To be provided
+      - item: Motion Capture System
+        type: sensor
+        file_sheet: https://www.technaid.com/products/
+      - item: Force Plate
+        type: sensor
+        file_sheet: We can argue whether it is embedded into the testedbed (so to be
+          described through first line, or to be mentioned here)
+      - item: Polar H10
+        type: CTAG
+        file_sheet: https://support.polar.com/e_manuals/H10_HR_sensor/Polar_H10_user_manual_English/manual.pdf
+    step_description: undef
+    step_list:
+      - description: "Configure the TestEd software and select the scenario and
+          assistance levels of the exoskeleton (Available configuarations:
+          2. conf_aero)"
+        detail: "We have developed this software internally for managing the
+          testing.
+          This software will be available for EUROBENCH.
+          This is a web based application that can help to manage the testing
+          on the testbed.
+          In addition, it will serve as a platform to collect the user
+          feedback via questionnaires (digitally)."
+      - description: "Select the number of PI's, runs, subjects"
+        detail: "To ensure the successfull testing this information is vital.
+          The testing process can be flexible where a test manager can know
+          number of PI’s evaluated during the TestEd test session.
+          He can know number runs and can know number of subjects in advance to
+          plan the testing accordingly."
+      - description: "Configure, locate and position the measurment devices"
+        detail: "SOP of measurment devices and requirements."
+      - description: "Place the subject to the starting position for the first
+          run without exoskeleton"
+      - description: Trigger to start the data
+      - description: "a. The subject enters from the left side of the testbed
+          with tools, measurment devices and w/wout exoskeleton.
+          b. Depending on the testbed configuration the subject will take few or
+          several steps to reach the designated location, where he can perform
+          the task.
+          c. This location is predefined and prepared for the testing.
+          For example for automotive component quality check the target
+          component must must be installed in the testbed before testing starts.
+          d. The subject will complete the task. He may maintain a posture, or
+          perform a repetative task of low frequency or high frequency.
+          For example, in automotive case he will check the quality of the
+          component with the help of the quality gauge.
+          e. After task completion the subject can take few steps to exit the
+          testbed."
+        detail: "All data will be recorded from the testbed and the measurement
+          devices.
+          From testbed the proximity sensor data for entrance and exit, load
+          cell data from the middle module wall, accelerometer data from the
+          hurdles, accelerometer data from the remaining module walls.
+          We expect to collect the data from measuremnt devices: Force plate,
+          Polar H10, Fitbit 3, Motion Capture System and manual inclinometer."
+      - description: Trigger to stop the data
+      - description: Repeat the number of designated runs for without
+          exoskeleton and with exoskeleton
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_nultple_subject: true
+pi:
+  - name: hrmonitoring
+    name_readable: "HR monitoring"
+    description: "This metrics is based on the RR interval (time between
+      successive heart beats) analysis for short-term intervals.
+      The PI is composed of four values: the RMSSD (Root mean square of the
+      successive differences), the SDNN (Standard deviation of the NN (R-R)
+      intervals), NN50 (The number of adjacent NN intervals that differ from
+      each other by more than 50 ms) and the PNN50 (proportion of NN50 divided
+      by the total number of NN (R-R) intervals).
+      The obtained values can be compared with state of the art tables at:
+      1. https://hrvcourse.com/wp-content/uploads/2016/07/HRVAgeGender-Table-1080x497.png
+      2. https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118308&type=printable"
+    unit: ms
+    output: vector
+    intra_run_aggregation: na
+    # todo: check their proposition
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: metaboliccost
+    name_readable: "Metabolic cost"
+    description: "This metrics is based on the analytical prediction of the
+      metabolic rate in kilocalories (kcal) of a human performing static and
+      dynamic tasks.
+      The user can select two type of tasks:
+      1. Static task (postureMaintain) that calculates the metabolic cost based
+      on body static postures.
+      The function inputs are body weight and the opt1a.
+      The user can further select the three sub-options based on the task under
+      investigation: 1. Sitting or 2. Standing or 3. Standing and Bending
+      2. Dynamic task (otherTasks) that calculates the metabolic cost based on
+      dynamic tasks.
+      The function inputs all variables [please see the table at Initial Code
+      Structure: https://github.com/jamatics/pi_ctag/blob/master/metabolicCost/src/README.md ]
+      except opt1.
+      The user can further select the twenty-two (22) sub-options based on the
+      task under investigation:
+      1: Stoop lift, 2: Squat lift, 3: One hand lift, 4: Arm lift, 5. Stoop
+      lower, 6. Squat lower, 7. Arm lower, 8. Walking, 9. Carrying, loads held
+      at arms length at sides (1 or 2 hands), 10. Carrying, loads held against
+      thighs or against waist, 11.Holding, at arms length, against thighs or at
+      sides(2 hands), 12. Holding against waist, 13. Holding, at arms length in
+      one hand, 14. Pushing/pulling, at bench height (0.8 meters), 15.
+      Pushing/pulling, at 1.5 meters height, 16. Lateral movement of arms of 180
+      degrees, 2 hands, 17. Lateral movement of arms of 180 degrees, 1 hand,
+      18. 90 degrees arms lateral movement, standing, 1 or 2 hands, 19. 90
+      degrees arms lateral movement, sitting, 2 hands, 20. 90 degrees arms
+      lateral movement, sitting, 1 hand, 21. Forward movement of arms, standing,
+      1 or 2 hands, 22. Forward movement of arms, sitting, 1 or 2 hands.
+      The metric results can help the use to combine selected sub-task metabolic
+      cost in kcal and quickly check the metabolic load of the task under
+      investigation."
+    unit: Kcal
+    output: vector
+    intra_run_aggregation: na
+    # todo: check their proposition
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: chrono
+    name_readable: "chrono"
+    description: Time to complete the task
+    unit: seconds
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: balance
+    name_readable: "balance"
+    description: "This metrics is based on the DPSI (Dynamic Posture Stability
+      Index) that assesses the subject ability to maintain balance while
+      transformation between static to dynamic stance.
+      The PI is composed of six values: areaDPSI (sum of all the DPSI at all
+      time steps), areaDPSIvsTime (normalized sum of all the DPSI with respect
+      to time), maxat (maximum DPSI value during the experiment), maxTime
+      (time at maximum DPSI value), minat (minimum DPSI value during the
+      experiment) and mixTime (time at minimum DPSI value).
+      The obtained values can be compared with state of the art table
+      [see article table 1] (subjected to the same measurement protocol of the
+      following article):
+      https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1323292/"
+    unit: na
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: rangeomotion
+    name_readable: "Range of motion"
+    description: "This metrics will provide the user to check if the applied
+      joint angles are within the allowable permissible range established by
+      the standards.
+      The PI is composed of joint-wise three values: counter_r_[joint name]
+      (this counter represents how many times the joint angles remains within
+      or outside the permissible limits), maxVal_r_[joint name]
+      (this value represents the maximum value of the joint angle during the
+      experiment) and minVal_r_[joint name] (this value represents the minimum
+      value of the joint angle during the experiment).
+      The user can select the allowable joint angle and insert in the PI.
+      Following are the main reference that can provide such values:
+      https://books.google.com/books?hl=en&lr=&id=TSluDQAAQBAJ&oi=fnd&pg=PR1&dq=measurement+of+joint+motion&ots=2gaQs8AiB0&sig=5c8ikDlPh13i1wEhxu-FC6P-dRA"
+    unit: degree
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: questionnaire
+    name_readable: "Questionnaire"
+    description: This metric obtains the quantitative analysing in terms of
+      usability, impact and utility.
+      The questions are designed in to address these three criterion.
+    unit: na
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: borgscale10
+    name_readable: "borg scale 10"
+    description: This metric measures the Human perceived feedback by the borg
+      scale quantitative implementation.
+      It is 0-10 point scale where 0 represent no discomfort and 10 represents
+      agonizing.
+      The scale represents the increased level of discomfort as we move from 0
+      towards 10.
+    unit: na
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+
+pi_algo:
+  - name: undef
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: undef
+    docker_name: undef
+    pi: undef
+    input_files: undef
+    input_command: undef
+    language: octave

@@ -98,8 +98,17 @@ def check_algo_input(spec):
   all_ok = True
   for item in linput:
     if item not in config.EurobenchConfig.input_type:
-      print(colored('Unknown input file: {}'.format(item), 'red'))
-      all_ok = False
+      # print(colored("Issue with {}".format(item), 'yellow'))
+      # check if this something like knownTag_additionalTerm
+      item_name, item_extension = os.path.splitext(item)
+      item_name = item_name.split('_')
+      item_root = item_name[0] + item_extension
+      # print("root_item: {}".format(item_root))
+      if item_root in config.EurobenchConfig.input_type:
+        print(colored('item {} considered as {}'.format(item, item_root), 'yellow'))
+      else:
+        print(colored('Unknown input file: {}'.format(item), 'red'))
+        all_ok = False
 
   return all_ok
 
@@ -141,4 +150,8 @@ def main():
   if not check_algo_pi_connection(spec):
     all_ok = False
 
+  if all_ok:
+    print(colored("Spec seems good", 'green'))
+  else:
+    print(colored("Component to be verified", 'red'))
   return all_ok
