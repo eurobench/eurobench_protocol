@@ -1,2 +1,4 @@
 termcolor
 pyyaml
+dataclasses
+dacite
