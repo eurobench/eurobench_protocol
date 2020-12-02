@@ -16,6 +16,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 [General template sheet](https://drive.google.com/drive/u/0/folders/186_p3bJVd_ugNNAe3cgfW72ZDYCC8oIy)
 
 ### Embedded in database
+
 ### Ready to be tested in database
 
 * **beast**:
@@ -27,7 +28,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 * **beat**:
   * [code](https://docs.google.com/spreadsheets/d/16fQ5ReesRFfUHpOVV2ekaKSuec2XO0-H/edit?rtpof=true)
   * docker:
-  * yaml:
+  * [yaml](data/beat.yaml):
   * excel:
   * current state: waiting for PI output adjustment in code.
 * **bullet**:
@@ -39,6 +40,15 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * current state: ready for database trial
 
 ### Under progress
+
+* **bestable**:
+  * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes)
+  * [excel](https://docs.google.com/spreadsheets/d/1s25AMTL7PYxhq8h4dv4UFB7Mkbr5oJsI/edit#gid=2118535745)
+  * [yaml](bestable.yaml)
+  * current state: missing
+    * create github repo
+    * insert github process
+    * all PIs not described in excel sheet
 
 * **tested**
   * [code](https://github.com/jamatics/pi_ctag)

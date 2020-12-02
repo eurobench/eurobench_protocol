@@ -1,0 +1,236 @@
+---
+scenario:
+  name: "Bestable: Visually-cued stepping perturbations on a treadmill.			"
+  description: "Stepping targets are visually projected onto the surface of a
+    treadmill in unexpected timings and patterns.
+    The prescribed stepping patterns emulate responses to mechanical balance
+    perturbations, such as mediolateral and anteroposterior pushes to the pelvis
+    by the BAR-TM robot of project partner URI."
+  image: bestable/img.png
+
+protocol:
+  - name: "bestable"
+    name_readable: "Bestable: Visually-cued stepping perturbations on a
+      treadmill."
+    definition: "Walking on a treadmill and stepping on targets projected onto
+      its surface in unexpected patterns to perturb balance.
+      Outcome measures include the target hit rate, spatio-temporal stepping
+      characteristics (e.g., stepping length, width, and time), and ground
+      reaction forces."
+    image: bestable/img.png
+    keywords: [walking, perturbation, balance]
+    bipedal_system: [prosthesis, orthosis, exoskeleton, human]
+    pi_algo: bestable
+    duration: "25min"
+    controlled_variables:
+      - name: walking speed
+        definition: Average centre of mass velocity in the anteroposterior
+          direction, constrained by treadmill speed.
+        type: float
+        range: undef
+        unit: m/s
+      - name: Target step length
+        definition: Anteroposterior distance between successive heel strikes
+        type: float
+        range: undef
+        unit: m
+      - name: Target step width Mediolateral distance between successive heel
+          strikes
+        type: float
+        range: undef
+        unit: m
+    testbed:
+      - item: "IMU sensors"
+        type: sensor
+        file_sheet: Trigno Avanti wireless EMG/IMU (Delsys Inc, Natick, USA),
+          https://www.delsys.com/trigno/research/#trigno-avanti-sensor
+      - item: "instrumented treadmill"
+        type: combined
+        file_sheet: undef
+      - item: "instrumented walker"
+        type: combined
+        file_sheet: See documentation
+    step_description: "The subject will wear IMU sensors on the feet and walk on
+      an instrumented treadmill at a prescribed speed.
+      They will be asked to step on targets appearing on the surface of the
+      treadmill in unexpected locations and timings.
+      The characteristics of the stepping patterns will be recorded."
+    step_list:
+      - description: Place the 2 IMU sensors on the feet of the subject to
+          measure gait events such as heel-strike and toe-off
+        detail: A manual will be provided with detailed information.
+      - description: Place the subject on the treadmill
+      - description: Launch the software (Delsys Trigno utility and D-Flow) for
+          recording the data and administering the protocol.
+        detail: A manual will be provided with detailed information of the
+          software.
+      - description: Collect baseline data of walking to personalize the visual
+          cues to the participant's normal gait patterns.
+        detail: All instruments are recorded by the D-Flow software, and average
+          step length and step width are computed.
+          Foot placement is determined from centre of pressure measurements
+          (force plate integrated in treadmill) and heel-strike events
+          (wireless IMUs placed on feet).
+      - description: Start the protocol.
+          The treadmill will start running and the visual cues will be projected
+          on the treadmill
+      - description: Data collection will be automatically triggered during the
+          tests
+        detail: Data is recorded from all instruments with the D-Flow software.
+      - description: Subject starts walking and different visual perturbation
+          conditions will be applied, depending on the test condition.
+          Conditions will be randomly ordered and repeated N times per limb.
+        detail: "The timing, frequency, size, and direction of visual
+          perturbations will be configurable by the experimenter, and
+          perturbations will be administered in random order.
+          Our submitted data will include the visual target shifted in 4
+          different directions from nominal foot placement: forward, backward,
+          left, and right."
+      - description: The subject is expected to step on the visual
+          perturbations, which are designed to destabalize the subject.
+      - description: The raw signals are logged.
+          The participant performance is evaluated by computation of outcome
+          measures.
+        detail: Performance can alternatively be computed off-site with the
+          Eurobench software.
+    # todo they state 10 run per condition
+    has_multiple_run: true
+    # todo they say around 4 to 8s
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: step_error
+    name_readable: "Step error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre. Values for both anteroposterior and mediolateral
+      directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: step_length_right
+    name_readable: "Right step length"
+    description: "Length of a step for the right leg"
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: step_length_left
+    name_readable: "left step length"
+    description: "Length of a step for the left leg"
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: step_width_left
+    name_readable: "left step width"
+    description: Width of a step for the left leg
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: step_width_right
+    name_readable: "right step width"
+    description: Width of a step for the right leg
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: stride_time_left
+    name_readable: Left stride time
+    description: Also known as the gait cycle duration.
+      Is defined as the time elapsed between the first contact of two
+      consecutive footsteps of the same foot.
+    unit: s
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: stride_time_right
+    name_readable: "right stride time"
+    description:  Also known as the gait cycle duration.
+      Is defined as the time elapsed between the first contact of two
+      consecutive footsteps of the same foot.
+    unit: s
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: step_time_left
+    name_readable: Left step time
+    description: The step time is the time between heel strike of one leg and
+      heel strike of the contra-lateral leg.
+    unit: s
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+  - name: step_time_right
+    name_readable: "right step time"
+    description:  The step time is the time between heel strike of one leg and
+      heel strike of the contra-lateral leg.
+    unit: s
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of a distribution
+      and mean across subjects.
+      Users will be compared to this mean and distribution."
+
+pi_algo:
+  # todo: update the template, as it is still over detailed
+  - name: bestable
+    description: undef
+    url_paper: undef
+    url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
+    docker_host: undef
+    docker_name: pi_bestabe
+    # todo the code generates something like 40 PI files. They are not all listed here.
+    pi: undef
+    input_files: [platformData.csv, testbed.yaml, personalData.yaml]
+    # todo: check docker entry point
+    input_command:
+      - run_pi
+      - platformData.csv
+      - testbed.yaml
+      - personalData.yaml
+    language: octave
