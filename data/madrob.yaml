@@ -240,4 +240,4 @@ pi_algo:
       - jointState.csv
       - testbed_config.yaml
     language: octave
-    implemented: 1
+    implemented: true
