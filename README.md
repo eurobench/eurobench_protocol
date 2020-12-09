@@ -48,7 +48,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * current state: missing
     * create github repo
     * insert github process
-    * all PIs not described in excel sheet
+    * adjust some PI output files generating labelled_matrix
+    * official template file to be adjusted with the PI excel present in the code repo.
 
 * **tested**
   * [code](https://github.com/jamatics/pi_ctag)
@@ -57,5 +58,15 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * [excel](https://docs.google.com/spreadsheets/d/1N8o89BSfUftSgnNhfLfsSkG39G1vy0Ej/edit#gid=714596252)
   * current state: PR on updated CI process.
     Open discussion on PI Algo structure.
+
+* **pepato**:
+  * [code](https://github.com/dzhvansky/pepato/tree/octave_version)
+  * [template](https://docs.google.com/spreadsheets/d/19HB6j2O9O_58Vs_J8xOiOlo_4o82bRgQ/edit?rtpof=true#gid=1199258036)
+  * private repo
+  * pending on:
+    * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
+    * asked to have an explicit naming of the input files.
+  * Request to create public repo as well (or maintain it private?)
+  * yaml file to be created.
 
 ### Not (really) started
