@@ -137,8 +137,8 @@ pi:
     inter_run_aggregation: na
     visu: Stacked lines with markers
     inter_cond_aggregation: na
-    inter_subject_aggregation: [mean, std], using
-      matching_standard_reference_index PI
+    # additional comment: , using matching_standard_reference_index PI
+    inter_subject_aggregation: [mean, std]
   - name: pattern_coa
     name_readable: "Pattern COA"
     description: "centre-of-activity (CoA) of basic patterns (for each speed).
@@ -151,8 +151,8 @@ pi:
     inter_run_aggregation: na
     visu: Stacked lines with markers
     inter_cond_aggregation: na
-    inter_subject_aggregation: [circular mean, circular std], using
-      matching_standard_reference_index PI
+    # additional comment: , using matching_standard_reference_index PI
+    inter_subject_aggregation: [circular mean, circular std]
   - name: muscle_module_similarity
     name_readable: "Muscle module similarity"
     description: "The degree of similarity of muscle synergies and basic
@@ -168,8 +168,8 @@ pi:
     inter_run_aggregation: na
     visu: Color coded 2D table
     inter_cond_aggregation: na
-    inter_subject_aggregation: [mean, std], using
-      matching_standard_reference_index PI
+    # additional comment: , using matching_standard_reference_index PI
+    inter_subject_aggregation: [mean, std]
   - name: matching_standard_reference_index
     name_readable: "matching_standard_reference_index"
     description: "This index is not PI but it is used for aggregation
@@ -182,6 +182,6 @@ pi:
     inter_run_aggregation: na
     visu: Color coded 2D table
     inter_cond_aggregation: na
-    inter_subject_aggregation: [mean, std], using
-      matching_standard_reference_index PI
+    # additional comment: , using matching_standard_reference_index PI
+    inter_subject_aggregation: [mean, std]
 
