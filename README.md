@@ -19,18 +19,20 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 ### Ready to be tested in database
 
-* **beast**:
-  * [code](https://docs.google.com/spreadsheets/d/1Wp9QYMm_V1tOCheF185pOYPcIm9yt6AU/edit?rtpof=true)
+* **madrob**:
+  * [code](https://github.com/madrob-beast/madrob_beast_pi)
   * docker:
-  * yaml:
-  * excel:
+  * [yaml](data/madrob.yaml)
+  * [excel](https://docs.google.com/spreadsheets/d/1-PaNEjkP6uf4XaTbmNykUySV5ok0mSn_/edit#gid=439895919)
   * current state: ready for database trial
+
 * **beat**:
-  * [code](https://docs.google.com/spreadsheets/d/16fQ5ReesRFfUHpOVV2ekaKSuec2XO0-H/edit?rtpof=true)
+  * [code](https://github.com/aremazeilles/beat_routine)
   * docker:
   * [yaml](data/beat.yaml):
-  * excel:
+  * [excel](https://docs.google.com/spreadsheets/d/16fQ5ReesRFfUHpOVV2ekaKSuec2XO0-H/edit?rtpof=true)
   * current state: waiting for PI output adjustment in code.
+
 * **bullet**:
   * [code](https://github.com/eurobench/pi_bullet)
   * [yaml](data/bullet.yaml)
@@ -41,6 +43,13 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 ### Under progress
 
+* **beast**:
+  * [code](https://docs.google.com/spreadsheets/d/1Wp9QYMm_V1tOCheF185pOYPcIm9yt6AU/edit?rtpof=true)
+  * docker:
+  * yaml:
+  * excel:
+  * current state: waiting for reference data set
+
 * **bestable**:
   * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes)
   * [excel](https://docs.google.com/spreadsheets/d/1s25AMTL7PYxhq8h4dv4UFB7Mkbr5oJsI/edit#gid=2118535745)
@@ -48,7 +57,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * current state: missing
     * create github repo
     * insert github process
-    * all PIs not described in excel sheet
+    * adjust some PI output files generating labelled_matrix
+    * official template file to be adjusted with the PI excel present in the code repo.
 
 * **tested**
   * [code](https://github.com/jamatics/pi_ctag)
@@ -57,5 +67,15 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * [excel](https://docs.google.com/spreadsheets/d/1N8o89BSfUftSgnNhfLfsSkG39G1vy0Ej/edit#gid=714596252)
   * current state: PR on updated CI process.
     Open discussion on PI Algo structure.
+
+* **pepato**:
+  * [code](https://github.com/dzhvansky/pepato/tree/octave_version)
+  * [template](https://docs.google.com/spreadsheets/d/19HB6j2O9O_58Vs_J8xOiOlo_4o82bRgQ/edit?rtpof=true#gid=1199258036)
+  * private repo
+  * pending on:
+    * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
+    * asked to have an explicit naming of the input files.
+  * Request to create public repo as well (or maintain it private?)
+  * yaml file to be finished.
 
 ### Not (really) started
