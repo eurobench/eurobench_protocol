@@ -23,12 +23,15 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * [code](https://github.com/madrob-beast/madrob_beast_pi)
   * docker:
   * [yaml](data/madrob.yaml)
+  * [github repo](https://github.com/eurobench/pi_madrob_beast)
+  * [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast)
   * [excel](https://docs.google.com/spreadsheets/d/1-PaNEjkP6uf4XaTbmNykUySV5ok0mSn_/edit#gid=439895919)
   * current state: ready for database trial
 
 * **beat**:
   * [code](https://github.com/aremazeilles/beat_routine)
-  * docker:
+  * [github repo](https://github.com/eurobench/pi_beat)
+  * [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_beat)
   * [yaml](data/beat.yaml):
   * [excel](https://docs.google.com/spreadsheets/d/16fQ5ReesRFfUHpOVV2ekaKSuec2XO0-H/edit?rtpof=true)
   * current state: waiting for PI output adjustment in code.
@@ -41,6 +44,17 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * [walking_complete](https://docs.google.com/spreadsheets/d/1rAJXqnzodYghTHCIcKvOM6r8MwtHygkn/edit#gid=716373661)
   * current state: ready for database trial
 
+* **bestable**:
+  * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes)
+  * [excel](https://docs.google.com/spreadsheets/d/1s25AMTL7PYxhq8h4dv4UFB7Mkbr5oJsI/edit#gid=2118535745)
+  * [yaml](data/bestable.yaml)
+  * [github repo](https://github.com/eurobench/pi_bestable)
+  * [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_bestable)
+  * Mising:
+    * official template file to be adjusted with the PI excel present in the code repo.
+    * some words about the data collected file
+    * double check docker entry in yaml
+
 ### Under progress
 
 * **beast**:
@@ -49,16 +63,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * yaml:
   * excel:
   * current state: waiting for reference data set
-
-* **bestable**:
-  * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes)
-  * [excel](https://docs.google.com/spreadsheets/d/1s25AMTL7PYxhq8h4dv4UFB7Mkbr5oJsI/edit#gid=2118535745)
-  * [yaml](bestable.yaml)
-  * current state: missing
-    * create github repo
-    * insert github process
-    * adjust some PI output files generating labelled_matrix
-    * official template file to be adjusted with the PI excel present in the code repo.
 
 * **tested**
   * [code](https://github.com/jamatics/pi_ctag)
