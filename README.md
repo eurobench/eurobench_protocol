@@ -39,6 +39,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 * **bullet**:
   * [code](https://github.com/eurobench/pi_bullet)
   * [yaml](data/bullet.yaml)
+  * [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
   * excels:
     * [walking](https://docs.google.com/spreadsheets/d/1BPKyCwdTW-pmccuSc34m4ZglnibAZeu4/edit#gid=766575927)
     * [walking_complete](https://docs.google.com/spreadsheets/d/1rAJXqnzodYghTHCIcKvOM6r8MwtHygkn/edit#gid=716373661)
@@ -50,7 +51,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * [yaml](data/bestable.yaml)
   * [github repo](https://github.com/eurobench/pi_bestable)
   * [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_bestable)
-  * Mising:
+  * Missing:
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file
     * double check docker entry in yaml
@@ -75,6 +76,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version)
   * [template](https://docs.google.com/spreadsheets/d/19HB6j2O9O_58Vs_J8xOiOlo_4o82bRgQ/edit?rtpof=true#gid=1199258036)
+  * [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato)
+  * [github_repo](https://github.com/eurobench/pi_pepato)
   * private repo
   * pending on:
     * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
