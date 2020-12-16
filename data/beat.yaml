@@ -539,7 +539,7 @@ pi:
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -555,7 +555,7 @@ pi:
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -575,7 +575,7 @@ pi:
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -590,7 +590,7 @@ pi:
     unit: meter
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -612,7 +612,7 @@ pi:
     unit: meter
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -634,7 +634,7 @@ pi:
     unit: meter
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -652,7 +652,7 @@ pi:
     unit: meter2
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -674,7 +674,7 @@ pi:
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -689,7 +689,7 @@ pi:
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the

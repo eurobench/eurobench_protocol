@@ -143,8 +143,8 @@ pi:
       (maximum force value for each stride cycle), and (iii) step number"
     unit: [N, N, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, std_dev]
-    inter_run_aggregation: [0, mean, std_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -155,8 +155,8 @@ pi:
       (maximum force value for each stride cycle), and (iii) step number"
     unit: [N, N, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, std_dev]
-    inter_run_aggregation: [0, mean, std_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -166,17 +166,17 @@ pi:
     unit: N
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
-    inter_subject_aggregation: [0, mean, std_dev]
+    inter_subject_aggregation: [[0, mean], [0, std]]
   - name: rms_load_right
     name_readable: "Right load Root Mean Square"
     description: "Root mean square value of the right crutch force"
     unit: N
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -186,8 +186,8 @@ pi:
       (ii) standard deviation of the left stance time, and (iii) step number"
     unit: [\%, \%, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -197,8 +197,8 @@ pi:
       (ii) standard deviation of the right stance time, and (iii) step number"
     unit: [\%, \%, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, std_dev]
-    inter_run_aggregation: [0, mean, std_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -210,8 +210,8 @@ pi:
       expressed in the fixed lab reference frame"
     unit: [N, N, N, N, N, N, Nm, Nm, Nm, Nm, Nm, Nm, \#]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -223,8 +223,8 @@ pi:
       expressed in the fixed lab reference frame"
     unit: [N, N, N, N, N, N, Nm, Nm, Nm, Nm, Nm, Nm, \#]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -235,8 +235,8 @@ pi:
       in the fixed lab reference frame"
     unit: [N, N, N, Nm, Nm, Nm]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -247,8 +247,8 @@ pi:
       in the fixed lab reference frame"
     unit: [N, N, N, Nm, Nm, Nm]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
