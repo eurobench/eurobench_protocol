@@ -112,7 +112,7 @@ pi:
     visu: Bar plot
     inter_cond_aggregation: na
     inter_subject_aggregation: [mean, std]
-  - name: emg_reconstruction_quality
+  - name: emg_reco_quality
     name_readable: "EMG reconstruction quality"
     description: "Reconstruction quality (R2) of EMG patterns from muscle
       synergies (for each speed).
@@ -153,6 +153,7 @@ pi:
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [circular mean, circular std]
+  # TODO: the following one is not created in the example.
   - name: muscle_module_similarity
     name_readable: "Muscle module similarity"
     description: "The degree of similarity of muscle synergies and basic
@@ -184,3 +185,98 @@ pi:
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [mean, std]
+  - name: motor_pool_coact_index
+    name_readable: "motor_pool_coact_index"
+    description: undef
+    unit: undef
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: na
+    inter_subject_aggregation: undef
+  - name: motor_pool_fwhm
+    name_readable: "motor_pool_fwhm"
+    description: undef
+    unit: undef
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: na
+    inter_subject_aggregation: undef
+  - name: motor_pool_max_activation
+    name_readable: "motor_pool_max_activation"
+    description: undef
+    unit: undef
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: na
+    inter_subject_aggregation: undef
+  - name: motor_pool_similarity
+    name_readable: "motor_pool_similarity"
+    description: undef
+    unit: undef
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: na
+    inter_subject_aggregation: undef
+  - name: patterns_similarity
+    name_readable: "patterns_similarity"
+    description: undef
+    unit: undef
+    output: vector_of_matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: na
+    inter_subject_aggregation: undef
+  - name: synergies_similarity
+    name_readable: "synergies_similarity"
+    description: undef
+    unit: undef
+    output: vector_of_matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: na
+    inter_subject_aggregation: undef
+pi_algo:
+  - name: pi_pepato
+    description: EMG analysis algorythms
+    url_paper: undef
+    url_code: https://github.com/dzhvansky/pepato/tree/octave_version
+    docker_host: eurobenchtest/pi_pepato:v0.0.0
+    docker_name: eurobenchtest/pi_pepato:v0.0.0
+    pi:
+      - muscle_synergy_number
+      - emg_reco_quality
+      - pattern_fwhm
+      - pattern_coa
+      - matching_standard_reference_index
+      - motor_pool_coact_index
+      - motor_pool_fwhm
+      - motor_pool_max_activation
+      - motor_pool_similarity
+      - patterns_similarity
+      - synergies_similarity
+    input_files:
+      - speed2kmh_emg.csv
+      - speed2kmh_gaitEvents.yaml
+      - speed4kmh_emg.csv
+      - speed4kmh_gaitEvents.yaml
+      - speed6kmh_emg.csv
+    # todo: check docker entry point
+    input_command:
+      - run_pepato left BLF db_healthy_adults_8m
+      - speed2kmh_emg.csv
+      - speed2kmh_gaitEvents.yaml
+      - speed4kmh_emg.csv
+      - speed4kmh_gaitEvents.yaml
+      - speed6kmh_emg.csv
+    language: octave
+    implemented: false

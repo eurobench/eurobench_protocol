@@ -103,6 +103,9 @@ def get_algo_input(spec, verbose=True):
 def check_algo_input(spec):
   linput = get_algo_input(spec)
 
+  if not linput:
+    return False
+
   all_ok = True
   for item in linput:
     if item not in config.EurobenchConfig.input_type:
@@ -132,7 +135,7 @@ def main():
       return -1
   yaml_file = sys.argv[1]
 
-  print("Check config: {}".format(config.EurobenchConfig.input_type))
+  # print("Check config: {}".format(config.EurobenchConfig.input_type))
 
   try:
     with open(yaml_file, 'r') as open_file:
@@ -147,15 +150,20 @@ def main():
   all_ok = True
 
   print(colored("check PI", 'blue'))
-  if not check_pi_output(spec):
+  if check_pi_output(spec):
+    print(colored("ok", 'green'))
+  else:
     all_ok = False
 
-  print(colored("Checking Algo", 'blue'))
-  print(colored("check input files"))
-  if not check_algo_input(spec):
+  print(colored("check input files", 'blue'))
+  if check_algo_input(spec):
+    print(colored("ok", 'green'))
+  else:
     all_ok = False
-  print(colored('check algo_pi connection'))
-  if not check_algo_pi_connection(spec):
+  print(colored('check algo_pi connection', 'blue'))
+  if check_algo_pi_connection(spec):
+    print(colored("ok", 'green'))
+  else:
     all_ok = False
 
   if all_ok:

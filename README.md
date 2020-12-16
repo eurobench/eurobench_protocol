@@ -87,12 +87,11 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [template](https://docs.google.com/spreadsheets/d/19HB6j2O9O_58Vs_J8xOiOlo_4o82bRgQ/edit?rtpof=true#gid=1199258036),
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
     [github_repo](https://github.com/eurobench/pi_pepato),
-  * private repo
   * pending on:
     * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
     * asked to have an explicit naming of the input files.
-  * Request to create public repo as well (or maintain it private?)
-  * yaml file to be finished.
+  * all PI not described
+  * check if input file should be `speed2kmh_emg`, or `emg_speed2kmh`.
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
