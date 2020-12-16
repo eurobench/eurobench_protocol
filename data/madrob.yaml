@@ -174,7 +174,7 @@ pi:
       balanced."
     inter_subject_aggregation: undef
   - name: roughness_of_door_actuation
-    name_readable: "Roughness of actuation"
+    name_readable: "Roughness of door actuation"
     description: "This PI measures how rough (or undelicate) the robot is in
       operating the door based on the maximum force applied to the handle."
     unit: "g"
@@ -191,6 +191,21 @@ pi:
       Although ideally the number of runs with different conditions should be
       balanced."
     inter_subject_aggregation: undef
+  - name: door_handle_smoothness
+    name_readable: "Door handle smoothness"
+    description: "This PI measures how smooth the robot is in operating the door based on the sum of force changes (impulse) applied to the handle."
+    unit: "none"
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation:
+      - [0, mean]
+      - [0, median]
+      - [0, std]
+      - [0, min]
+      - [0, max]
+    visu: Bar plot
+    inter_cond_aggregation: "Average of score for all conditions should be fine. Although ideally the number of runs with different conditions should be balanced."
+    inter_subject_aggregation: undef
   - name: capability_level
     name_readable: "Capability level"
     description: "Number of steps of the benchmark actually completed by the
@@ -204,6 +219,8 @@ pi:
       - [0, mean]
       - [0, median]
       - [0, std]
+      - [0, min]
+      - [0, max]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -227,6 +244,7 @@ pi_algo:
       - smoothness_of_door_actuation
       - roughness_of_door_actuation
       - capability_level
+      - door_handle_smoothness
     input_files:
       - events.csv
       - wrench.csv
