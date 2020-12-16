@@ -57,7 +57,7 @@ protocol:
       - description: Repeat steps 4-8, 10 times
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   - name: "bullet_walking_complete"
     name_readable: "Walking on straight lines with instrumented crutches,
       mocap and force platforms"
@@ -134,7 +134,7 @@ protocol:
       - description: Repeat steps 6-10, 10 times
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
 pi:
   - name: peak_load_left
     name_readable: "Left load peak"

@@ -61,7 +61,7 @@ protocol:
       - description: Stop the data collection
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # second protocol
   - name: "beat_stepping_uneven"
     name_readable: "Stepping on place - uneven surface"
@@ -142,7 +142,7 @@ protocol:
           selection
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # third protocol
   - name: "beat_static_even"
     name_readable: "Static Balance - even surface"
@@ -197,7 +197,7 @@ protocol:
       - description: The protocol consists in one run per eye condition
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
   # fourth protocol
   - name: "beat_static_uneven"
     name_readable: "Static Balance - uneven surface"
@@ -274,7 +274,7 @@ protocol:
           The protocol consists in one run per eye condition"
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
   # fifth protocol
   - name: "beat_step_even"
     name_readable: "Step perturbation - even surface"
@@ -358,7 +358,7 @@ protocol:
           set at step 6
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # sixth protocol
   - name: "beat_step_uneven"
     name_readable: "Step perturbation - uneven surface"
@@ -443,7 +443,7 @@ protocol:
           set at step 6
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # seventh protocol
   - name: "beat_sinuzoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
@@ -525,7 +525,7 @@ protocol:
           set at step 7
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
 
 pi:
   - name: mrom

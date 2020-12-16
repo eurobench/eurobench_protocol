@@ -206,7 +206,7 @@ protocol:
           exoskeleton and with exoskeleton
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
   - name: "tested_narrow_cont"
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
@@ -390,7 +390,7 @@ protocol:
           exoskeleton and with exoskeleton
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
 
   - name: "tested_narrow_aero"
     name_readable: "Industrial Use-Cases in Narrow Spaces"
@@ -577,7 +577,7 @@ protocol:
           exoskeleton and with exoskeleton
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
 pi:
   - name: hrmonitoring
     name_readable: "HR monitoring"
@@ -727,7 +727,7 @@ pi_algo:
     url_code: https://github.com/jamatics/pi_ctag
     docker_host: undef
     docker_name: undef
-    pi: undef
-    input_files: undef
-    input_command: undef
+    pi: []
+    input_files: []
+    input_command: []
     language: octave

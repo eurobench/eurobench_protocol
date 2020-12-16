@@ -70,17 +70,20 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [excel](https://docs.google.com/spreadsheets/d/16fQ5ReesRFfUHpOVV2ekaKSuec2XO0-H/edit?rtpof=true)
   * current state: waiting for reference data set
 
-* **tested**
+* **tested**:
   * [code](https://github.com/jamatics/pi_ctag),
     [yaml](data/tested.yaml),
     [excel](https://docs.google.com/spreadsheets/d/1N8o89BSfUftSgnNhfLfsSkG39G1vy0Ej/edit#gid=714596252),
+    [fork](https://github.com/eurobench/pi_ctag),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_ctag)
   * current state:
-    * added docker and CI process
     * Maybe still discussion on data format?
     * Answer received the 20/11.
       Answered back the 23/11
-    * Eurobench repo not yet created
-      Open discussion on PI Algo structure.
+    * PR on latest CI process
+    * Open discussion on PI Algo structure.
+    * Eurobench repo created, with access secret to docker hub.
+      Waiting for CI process PR merging
 
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
@@ -95,12 +98,13 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
-    [template](https://docs.google.com/spreadsheets/d/1aWFmSCAFN7uPAP6EE4EbTqAzXHEhEsBR/edit#gid=1429738760)
+    [template](https://docs.google.com/spreadsheets/d/1aWFmSCAFN7uPAP6EE4EbTqAzXHEhEsBR/edit#gid=1429738760),
+    [yaml](data/bench.yaml)
   * docker: **not yet**
-  * yaml: **not yet**
   * pending on:
     * github repo creation
     * discussion on the input data (calib file per user, not in the current options)
+    * check output format
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),
