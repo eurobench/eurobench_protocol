@@ -51,6 +51,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * [yaml](data/bestable.yaml)
   * [github repo](https://github.com/eurobench/pi_bestable)
   * [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_bestable)
+  * [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master)
+
   * Missing:
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file
