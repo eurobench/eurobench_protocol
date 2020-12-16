@@ -94,7 +94,7 @@ protocol:
       - description: Remove markers and EMG sensors
       - description: Doff exoskeleton
     has_multiple_run: false
-    #todo 3 different speed, but needs to be processed together
+    # TODO: 3 different speed, but needs to be processed together
     has_multiple_condition: false
     has_multiple_subject: undef
 
@@ -162,7 +162,7 @@ pi:
       of the muscle modules (neural control) of exoskeleton walking from those
       of normal walking."
     unit: undef
-    #todo: more information in the excel sheet
+    # TODO: more information in the excel sheet
     output: vector_of_matrix
     intra_run_aggregation: na
     inter_run_aggregation: na
@@ -184,4 +184,3 @@ pi:
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [mean, std]
-

@@ -152,8 +152,8 @@ protocol:
         file_sheet: https://www.technaid.com/products/
       - item: Force Plate
         type: sensor
-        file_sheet: We can argue whether it is embedded into the testedbed (so to be
-          described through first line, or to be mentioned here)
+        file_sheet: We can argue whether it is embedded into the testedbed
+          (so to be described through first line, or to be mentioned here)
       - item: Polar H10
         type: CTAG
         file_sheet: https://support.polar.com/e_manuals/H10_HR_sensor/Polar_H10_user_manual_English/manual.pdf
