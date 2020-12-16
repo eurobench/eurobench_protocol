@@ -258,8 +258,8 @@ pi_algo:
       crutches
     url_paper: "DOI: 10.1109/JSEN.2019.2957667"
     url_code: https://github.com/eurobench/pi_bullet
-    docker_host: undef
-    docker_name: pi_bullet
+    docker_host: eurobenchtest/pi_bullet:v0.0.0
+    docker_name: eurobenchtest/pi_bullet:v0.0.0
     pi:
       - peak_load_left
       - peak_load_right
@@ -283,8 +283,8 @@ pi_algo:
       biomechanical model
     url_paper: "DOI: 10.1142/9789813231047_0074"
     url_code: https://github.com/eurobench/pi_bullet
-    docker_host: undef
-    docker_name: pi_bullet
+    docker_host: eurobenchtest/pi_bullet:v0.0.0
+    docker_name: eurobenchtest/pi_bullet:v0.0.0
     pi:
       - peak_load_left
       - peak_load_right

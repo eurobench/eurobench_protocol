@@ -1062,8 +1062,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
-    docker_host: undef
-    docker_name: pi_bestabe
+    docker_host: eurobenchtest/pi_bestable:v0.0.0
+    docker_name: eurobenchtest/pi_bestable:v0.0.0
     # todo the code generates something like 40 PI files. They are not all listed here.
     pi:
       - base_step_length_left

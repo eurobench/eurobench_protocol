@@ -207,8 +207,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/madrob-beast/madrob_beast_pi
-    docker_host: undef
-    docker_name: pi_madrob_beast
+    docker_host: eurobenchtest/pi_madrob_beast:v0.0.0
+    docker_name: eurobenchtest/pi_madrob_beast:v0.0.0
     pi:
       - execution_time
       - time_to_handle
