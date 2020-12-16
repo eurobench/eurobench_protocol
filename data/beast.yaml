@@ -71,7 +71,7 @@ protocol:
     # todo: check information provided
     has_multiple_run: false
     has_multiple_condition: true
-    has_nultple_subject: false
+    has_multiple_subject: false
 pi:
   - name: execution_time
     name_readable: "Overall execution time"

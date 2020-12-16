@@ -169,7 +169,7 @@ pi:
     inter_run_aggregation: [0, mean, st_dev]
     visu: boxplot
     inter_cond_aggregation: undef
-    inter_subject_aggregation: [mean, std_dev]
+    inter_subject_aggregation: [0, mean, std_dev]
   - name: rms_load_right
     name_readable: "Right load Root Mean Square"
     description: "Root mean square value of the right crutch force"
@@ -268,15 +268,14 @@ pi_algo:
       - stance_time_left
       - stance_time_right
     input_files:
-      - subject_N_run_R_wrench_CrutchLeft.csv
-      - subject_N_run_R_wrench_CrutchRight.csv
-      - subject_N_run_R_gaitEvents.yaml
+      - wrench_CrutchLeft.csv
+      - wrench_CrutchRight.csv
+      - gaitEvents.yaml
     input_command:
       - ./run_pi_BulletWalking
-      - subject_N_run_R_wrench_CrutchLeft.csv
-      - subject_N_run_R_wrench_CrutchRight.csv
-      - subject_N_run_R_gaitEvents.yaml
-      - outputDir
+      - wrench_CrutchLeft.csv
+      - wrench_CrutchRight.csv
+      - gaitEvents.yaml
     language: octave
   - name: pi_bullet_walking_complete
     description: Algorithm for analysis of gait performed with instrumented
@@ -300,17 +299,16 @@ pi_algo:
     # I suggest stating only wrench_CrutchLeft
     # Alfonso suggests crutchLeft_wrench
     input_files:
-      - subject_N_run_R_wrench_CrutchLeft.csv
-      - subject_N_run_R_wrench_CrutchRight.csv
-      - subject_N_run_R_gaitEvents.yaml
-      - subject_N_run_R_wrench_ShoulderLeft.csv
-      - subject_N_run_R_wrench_ShoulderRight.csv
+      - wrench_CrutchLeft.csv
+      - wrench_CrutchRight.csv
+      - gaitEvents.yaml
+      - wrench_ShoulderLeft.csv
+      - wrench_ShoulderRight.csv
     input_command:
       - ./run_pi_BulletWalkingComplete
-      - subject_N_run_R_wrench_CrutchLeft.csv
-      - subject_N_run_R_wrench_CrutchRight.csv
-      - subject_N_run_R_gaitEvents.yaml
-      - subject_N_run_R_wrench_ShoulderLeft.csv
-      - subject_N_run_R_wrench_ShoulderRight.csv
-      - outputDir
+      - wrench_CrutchLeft.csv
+      - wrench_CrutchRight.csv
+      - gaitEvents.yaml
+      - wrench_ShoulderLeft.csv
+      - wrench_ShoulderRight.csv
     language: octave

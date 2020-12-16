@@ -1,0 +1,1138 @@
+---
+scenario:
+  name: "Bestable: Visually-cued stepping perturbations on a treadmill.			"
+  description: "Stepping targets are visually projected onto the surface of a
+    treadmill in unexpected timings and patterns.
+    The prescribed stepping patterns emulate responses to mechanical balance
+    perturbations, such as mediolateral and anteroposterior pushes to the pelvis
+    by the BAR-TM robot of project partner URI."
+  image: bestable/img.png
+
+protocol:
+  - name: "bestable"
+    name_readable: "Bestable: Visually-cued stepping perturbations on a
+      treadmill."
+    definition: "Walking on a treadmill and stepping on targets projected onto
+      its surface in unexpected patterns to perturb balance.
+      Outcome measures include the target hit rate, spatio-temporal stepping
+      characteristics (e.g., stepping length, width, and time), and ground
+      reaction forces."
+    image: bestable/img.png
+    keywords: [walking, perturbation, balance]
+    bipedal_system: [prosthesis, orthosis, exoskeleton, human]
+    pi_algo: bestable
+    duration: "25min"
+    controlled_variables:
+      - name: walking speed
+        definition: Average centre of mass velocity in the anteroposterior
+          direction, constrained by treadmill speed.
+        type: float
+        range: undef
+        unit: m/s
+      - name: Target step length
+        definition: Anteroposterior distance between successive heel strikes
+        type: float
+        range: undef
+        unit: m
+      - name: Target step width Mediolateral distance between successive heel
+          strikes
+        type: float
+        range: undef
+        unit: m
+    testbed:
+      - item: "IMU sensors"
+        type: sensor
+        file_sheet: Trigno Avanti wireless EMG/IMU (Delsys Inc, Natick, USA),
+          https://www.delsys.com/trigno/research/#trigno-avanti-sensor
+      - item: "instrumented treadmill"
+        type: combined
+        file_sheet: undef
+      - item: "instrumented walker"
+        type: combined
+        file_sheet: See documentation
+    step_description: "The subject will wear IMU sensors on the feet and walk on
+      an instrumented treadmill at a prescribed speed.
+      They will be asked to step on targets appearing on the surface of the
+      treadmill in unexpected locations and timings.
+      The characteristics of the stepping patterns will be recorded."
+    step_list:
+      - description: Place the 2 IMU sensors on the feet of the subject to
+          measure gait events such as heel-strike and toe-off
+        detail: A manual will be provided with detailed information.
+      - description: Place the subject on the treadmill
+      - description: Launch the software (Delsys Trigno utility and D-Flow) for
+          recording the data and administering the protocol.
+        detail: A manual will be provided with detailed information of the
+          software.
+      - description: Collect baseline data of walking to personalize the visual
+          cues to the participant's normal gait patterns.
+        detail: All instruments are recorded by the D-Flow software, and average
+          step length and step width are computed.
+          Foot placement is determined from centre of pressure measurements
+          (force plate integrated in treadmill) and heel-strike events
+          (wireless IMUs placed on feet).
+      - description: Start the protocol.
+          The treadmill will start running and the visual cues will be projected
+          on the treadmill
+      - description: Data collection will be automatically triggered during the
+          tests
+        detail: Data is recorded from all instruments with the D-Flow software.
+      - description: Subject starts walking and different visual perturbation
+          conditions will be applied, depending on the test condition.
+          Conditions will be randomly ordered and repeated N times per limb.
+        detail: "The timing, frequency, size, and direction of visual
+          perturbations will be configurable by the experimenter, and
+          perturbations will be administered in random order.
+          Our submitted data will include the visual target shifted in 4
+          different directions from nominal foot placement: forward, backward,
+          left, and right."
+      - description: The subject is expected to step on the visual
+          perturbations, which are designed to destabalize the subject.
+      - description: The raw signals are logged.
+          The participant performance is evaluated by computation of outcome
+          measures.
+        detail: Performance can alternatively be computed off-site with the
+          Eurobench software.
+    # todo they state 10 run per condition
+    has_multiple_run: true
+    # todo they say around 4 to 8s
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: base_step_length_left
+    name_readable: "base step length left"
+    description: "Length of a step for the left leg during unperturbed (base)
+    walking before enabling perturbations.
+    Step length was calculated as distance between two consecutive COP positions
+    of the heel strikes (i.e. distance between COP position of the left heel
+    strike and COP position of the right heel strike, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: base_step_length_right
+    name_readable: "base step length right"
+    description: "Length of a step for the right leg during unperturbed (base)
+    walking before enabling perturbations.
+    Step length was calculated as distance between two consecutive COP positions
+    of the heel strikes (i.e. distance between COP position of the left heel
+    strike and COP position of the right heel strike, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: base_step_width_left
+    name_readable: "base step width left"
+    description: "Width of a step for the left leg during unperturbed (base)
+      walking before enabling perturbations.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: base_step_width_right
+    name_readable: "base step width right"
+    description: "Width of a step for the right leg during unperturbed (base)
+      walking before enabling perturbations.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: base_step_time_left
+    name_readable: "base step time left"
+    description: "Duration of a step for the left leg during unperturbed (base)
+      walking before enabling perturbations.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: base_step_time_right
+    name_readable: "base step time right"
+    description: "Duration of a step for the right leg during unperturbed (base)
+      walking before enabling perturbations.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: free_step_length_left
+    name_readable: "free step length left"
+    description: "Length of a step for the left leg during unperturbed (free)
+      walking between perturbations.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: free_step_length_right
+    name_readable: "free step length right"
+    description: "Length of a step for the right leg during unperturbed (free)
+      walking between perturbations.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: free_step_width_left
+    name_readable: "free step width left"
+    description: "Width of a step for the left leg during unperturbed (free)
+      walking between perturbations.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: free_step_width_right
+    name_readable: "free step width right"
+    description: "Width of a step for the right leg during unperturbed (free)
+      walking between perturbations.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: free_step_time_left
+    name_readable: "free step time left"
+    description: "Duration of a step for the left leg during unperturbed (free)
+      walking between perturbations.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: free_step_time_right
+    name_readable: "free step time right"
+    description: "Duration of a step for the left leg during unperturbed (free)
+      walking between perturbations.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+
+  - name: pert_left_fw_step_length
+    name_readable: "pert left fw step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fw_step_length
+    name_readable: "pert right fw step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwiw_step_length
+    name_readable: "pert left fwiw step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwiw_step_length
+    name_readable: "pert right fwiw step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwow_step_length
+    name_readable: "pert left fwow step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwow_step_length
+    name_readable: "pert right fwow step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_iw_step_length
+    name_readable: "pert left iw step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_iw_step_length
+    name_readable: "pert right iw step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_ow_step_length
+    name_readable: "pert left ow step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_ow_step_length
+    name_readable: "pert right ow step length"
+    description: "A matrix containing four consecutive step lengths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step length was calculated as distance between two consecutive COP
+      positions of the heel strikes (i.e. distance between COP position of the
+      left heel strike and COP position of the right heel strike, and vice
+      versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+
+  - name: pert_left_fw_step_width
+    name_readable: "pert left fw step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fw_step_width
+    name_readable: "pert right fw step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwiw_step_width
+    name_readable: "pert left fwiw step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwiw_step_width
+    name_readable: "pert right fwiw step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwow_step_width
+    name_readable: "pert left fwow step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwow_step_width
+    name_readable: "pert right fwow step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_iw_step_width
+    name_readable: "pert left iw step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_iw_step_width
+    name_readable: "pert right iw step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_ow_step_width
+    name_readable: "pert left ow step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_ow_step_width
+    name_readable: "pert right ow step width"
+    description: "A matrix containing four consecutive step widths of
+      alternating left and right step width starting from the target step
+      onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step width was calculated as distance between two consecutive average COP
+      positions during single stances of both legs (i.e. distance between
+      average COP of the left single stance and average COP of the right single
+      stance, and vice versa)"
+    unit: m
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+
+  - name: pert_left_fw_step_time
+    name_readable: "pert left fw step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fw_step_time
+    name_readable: "pert right fw step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwiw_step_time
+    name_readable: "pert left fwiw step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwiw_step_time
+    name_readable: "pert right fwiw step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwow_step_time
+    name_readable: "pert left fwow step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwow_step_time
+    name_readable: "pert right fwow step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_iw_step_time
+    name_readable: "pert left iw step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_iw_step_time
+    name_readable: "pert right iw step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_ow_step_time
+    name_readable: "pert left ow step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_ow_step_time
+    name_readable: "pert right ow step time"
+    description: "A matrix containing four consecutive step times of alternating
+      left and right step times starting from the target step onward.
+      Rows of the matrix contain all perturbation repetitions.
+      Step time was calculated between two consecutive heel strikes (i.e. left
+      heel strike to right heel strike, and vice versa)"
+    unit: s
+    output: matrix
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fw_target_error
+    name_readable: "pert left fw target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fw_target_error
+    name_readable: "pert right fw target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwiw_target_error
+    name_readable: "pert left fwiw target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwiw_target_error
+    name_readable: "pert right fwiw target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwow_target_error
+    name_readable: "pert left fwow target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwow_target_error
+    name_readable: "pert right fwow target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_iw_target_error
+    name_readable: "pert left iw target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_iw_target_error
+    name_readable: "pert right iw target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_ow_target_error
+    name_readable: "pert left ow target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_ow_target_error
+    name_readable: "pert right ow target error"
+    description: "Minimum distance between foot placement (centre of pressure)
+      and target centre.
+      Values for both anteroposterior and mediolateral directions."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: box plot
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+
+  - name: pert_left_fw_success_rate
+    name_readable: "pert left fw success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fw_success_rate
+    name_readable: "pert right fw success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwiw_success_rate
+    name_readable: "pert left fwiw success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwiw_success_rate
+    name_readable: "pert right fwiw success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_fwow_success_rate
+    name_readable: "pert left fwow success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_fwow_success_rate
+    name_readable: "pert right fwow success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_iw_success_rate
+    name_readable: "pert left iw success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_iw_success_rate
+    name_readable: "pert right iw success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_left_ow_success_rate
+    name_readable: "pert left ow success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+  - name: pert_right_ow_success_rate
+    name_readable: "pert right ow success rate"
+    description: "Hit rate of particular targets.
+      Calculated as (number of targets hit)/(number of repetitions of each
+      target)*100%."
+    unit: \%
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar graph
+    inter_cond_aggregation: "median (preferred) or mean score"
+    inter_subject_aggregation: "Benchmarking data will consist of boxplots
+      across subjects."
+
+pi_algo:
+  # todo: update the template, as it is still over detailed
+  - name: bestable
+    description: undef
+    url_paper: undef
+    url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
+    docker_host: undef
+    docker_name: pi_bestabe
+    # todo the code generates something like 40 PI files. They are not all listed here.
+    pi:
+      - base_step_length_left
+      - base_step_length_right
+      - base_step_width_left
+      - base_step_width_right
+      - base_step_time_left
+      - base_step_time_right
+      - free_step_length_left
+      - free_step_length_right
+      - free_step_width_left
+      - free_step_width_right
+      - free_step_time_left
+      - free_step_time_right
+      - pert_left_fw_step_length
+      - pert_right_fw_step_length
+      - pert_left_fwiw_step_length
+      - pert_right_fwiw_step_length
+      - pert_left_fwow_step_length
+      - pert_right_fwow_step_length
+      - pert_left_iw_step_length
+      - pert_right_iw_step_length
+      - pert_left_ow_step_length
+      - pert_right_ow_step_length
+      - pert_left_fw_step_width
+      - pert_right_fw_step_width
+      - pert_left_fwiw_step_width
+      - pert_right_fwiw_step_width
+      - pert_left_fwow_step_width
+      - pert_right_fwow_step_width
+      - pert_left_iw_step_width
+      - pert_right_iw_step_width
+      - pert_left_ow_step_width
+      - pert_right_ow_step_width
+      - pert_left_fw_step_time
+      - pert_right_fw_step_time
+      - pert_left_fwiw_step_time
+      - pert_right_fwiw_step_time
+      - pert_left_fwow_step_time
+      - pert_right_fwow_step_time
+      - pert_left_iw_step_time
+      - pert_right_iw_step_time
+      - pert_left_ow_step_time
+      - pert_right_ow_step_time
+      - pert_left_fw_target_error
+      - pert_right_fw_target_error
+      - pert_left_fwiw_target_error
+      - pert_right_fwiw_target_error
+      - pert_left_fwow_target_error
+      - pert_right_fwow_target_error
+      - pert_left_iw_target_error
+      - pert_right_iw_target_error
+      - pert_left_ow_target_error
+      - pert_right_ow_target_error
+      - pert_left_fw_success_rate
+      - pert_right_fw_success_rate
+      - pert_left_fwiw_success_rate
+      - pert_right_fwiw_success_rate
+      - pert_left_fwow_success_rate
+      - pert_right_fwow_success_rate
+      - pert_left_iw_success_rate
+      - pert_right_iw_success_rate
+      - pert_left_ow_success_rate
+      - pert_right_ow_success_rate
+    input_files: [platformData.csv, condition.yaml, info.yaml]
+    # todo: check docker entry point
+    input_command:
+      - run_pi
+      - platformData.csv
+      - condition.yaml
+      - info.yaml
+    language: octave

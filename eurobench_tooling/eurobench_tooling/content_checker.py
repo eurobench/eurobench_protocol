@@ -20,8 +20,11 @@ def get_pi_name(spec, verbose=True):
   if 'pi' not in spec:
     print(colored('no pi defined', 'yellow'))
     return set()
-
+  if spec['pi'] == 'undef':
+    print(colored('no pi defined', 'yellow'))
+    return set()
   lname = set()
+
   for item in spec['pi']:
     lname.add(item['name'])
   return lname
@@ -29,7 +32,7 @@ def get_pi_name(spec, verbose=True):
 def check_algo_pi_connection(spec):
   if 'pi_algo' not in spec:
     print(colored('no algo defined', 'yellow'))
-    return set()
+    return False
 
   lpis_n = get_pi_name(spec)
   print ('PIS in file: {}'.format(lpis_n))
@@ -38,6 +41,11 @@ def check_algo_pi_connection(spec):
 
   all_ok = True
   for item in spec['pi_algo']:
+    if 'pi' not in item or item['pi'] == 'undef':
+      print(colored('No pi associated to the algo', 'yellow'))
+      all_ok = False
+      continue
+
     for item_pi in item['pi']:
       lpi_in_algo.add(item_pi)
       if item_pi not in lpis_n:
@@ -98,8 +106,17 @@ def check_algo_input(spec):
   all_ok = True
   for item in linput:
     if item not in config.EurobenchConfig.input_type:
-      print(colored('Unknown input file: {}'.format(item), 'red'))
-      all_ok = False
+      # print(colored("Issue with {}".format(item), 'yellow'))
+      # check if this something like knownTag_additionalTerm
+      item_name, item_extension = os.path.splitext(item)
+      item_name = item_name.split('_')
+      item_root = item_name[0] + item_extension
+      # print("root_item: {}".format(item_root))
+      if item_root in config.EurobenchConfig.input_type:
+        print(colored('item {} considered as {}'.format(item, item_root), 'yellow'))
+      else:
+        print(colored('Unknown input file: {}'.format(item), 'red'))
+        all_ok = False
 
   return all_ok
 
@@ -141,4 +158,8 @@ def main():
   if not check_algo_pi_connection(spec):
     all_ok = False
 
+  if all_ok:
+    print(colored("Spec seems good", 'green'))
+  else:
+    print(colored("Component to be verified", 'red'))
   return all_ok
