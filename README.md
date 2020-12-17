@@ -20,15 +20,14 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 ### Embedded in database
 
-### Ready to be tested in database
-
 * **madrob**:
   * [code](https://github.com/madrob-beast/madrob_beast_pi),
     [yaml](data/madrob.yaml),
     [github repo](https://github.com/eurobench/pi_madrob_beast),
     [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
     [excel](https://docs.google.com/spreadsheets/d/1-PaNEjkP6uf4XaTbmNykUySV5ok0mSn_/edit#gid=439895919)
-  * current state: ready for database trial
+
+### Ready to be tested in database
 
 * **beat**:
   * [code](https://github.com/aremazeilles/beat_routine),
