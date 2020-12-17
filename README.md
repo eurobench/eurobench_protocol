@@ -103,7 +103,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * pending on:
     * github repo creation
     * discussion on the input data (calib file per user, not in the current options)
-    * check output format
+    * Issues on output format consistency (excel vs test data)
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),

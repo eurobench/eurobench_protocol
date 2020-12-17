@@ -223,9 +223,9 @@ pi:
     inter_cond_aggregation: na
     inter_subject_aggregation: [mean]
 pi_algo:
-  - name: pi_bench_5
-    description: undef
-    url_paper: "DOI: 10.1109/JSEN.2019.2957667"
+  - name: calculate_5sts_metrics
+    description: Sit to stand analysis algorithm
+    url_paper: na
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
     docker_host: undef
     docker_name: undef
@@ -241,11 +241,11 @@ pi_algo:
       - platformData.csv
       - platformData_calib.csv
     input_command:
-      - ./run_bench_pi_5
+      - ./run_bench_pi
       - platformData.csv
       - platformData_calib.csv
     language: octave
-  - name: pi_bench_30
+  - name: calculate_30sts_metrics
     description: undef
     url_paper: "DOI: 10.1109/JSEN.2019.2957667"
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
@@ -263,7 +263,7 @@ pi_algo:
       - platformData.csv
       - platformData_calib.csv
     input_command:
-      - ./run_bench_pi_30
+      - ./run_bench_pi
       - platformData.csv
       - platformData_calib.csv
     language: octave
