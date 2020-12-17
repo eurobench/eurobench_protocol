@@ -12,15 +12,19 @@ class EurobenchSetting:
 
 config_set= {
   'input_type': [
+    'angularMomentum.csv',
+    'com.csv',
     'condition.yaml',
     'emg.csv',
     'event.yaml',
     'gaitEvents.yaml',
-    'wrench.csv',
+    'inertiaTensor.csv',
+    'info.yaml',
     'jointAngles.csv',
     'jointState.csv',
+    'jointTrajectories.csv',
     'platformData.csv',
-    'info.yaml'
+    'wrench.csv'
   ],
   'output_type': [
     'scalar',

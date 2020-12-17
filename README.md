@@ -107,10 +107,15 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),
-    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true)
+    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
+    [yaml](data/udbenchmark.yaml),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
+    [github clone](https://github.com/eurobench/pi_udbenchmark)
+
   * current state:
-    * create repo clone
-    * create yaml file, and check template content
+    * PR on CI update (unclear issue with csvlint?)
+    * Check template content (missing PI)
+    * deploy release.
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
@@ -127,6 +132,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * 01/12: PI code provided
     * 09/12: opened a set of question to start the work with them
     * matlab code, far from the requested format.
+    * 17/12: ping
 
 * **benchbalance**:
   * [code](https://github.com/FraCampus/PI_BenchBalance),
