@@ -79,7 +79,7 @@ pi:
     unit: sec
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, median], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -97,7 +97,7 @@ pi:
     unit: sec
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, median], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -113,7 +113,7 @@ pi:
     unit: sec
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, median], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -129,7 +129,7 @@ pi:
     unit: sec
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, median], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, median], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -150,8 +150,8 @@ pi:
       - [0, mean]
       - [0, median]
       - [0, std]
-      - [min, 0]
-      - [max, 0]
+      - [0, min]
+      - [0, max]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -172,8 +172,8 @@ pi:
       - [0, mean]
       - [0, median]
       - [0, std]
-      - [min, 0]
-      - [max, 0]
+      - [0, min]
+      - [0, max]
     visu: Bar plot
     inter_cond_aggregation: "Average of score for all conditions should be fine.
       Although ideally the number of runs with different conditions should be
@@ -207,8 +207,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/madrob-beast/madrob_beast_pi
-    docker_host: undef
-    docker_name: pi_madrob_beast
+    docker_host: eurobenchtest/pi_madrob_beast:v0.0.0
+    docker_name: eurobenchtest/pi_madrob_beast:v0.0.0
     pi:
       - execution_time
       - time_to_handle

@@ -57,7 +57,7 @@ protocol:
       - description: Repeat steps 4-8, 10 times
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   - name: "bullet_walking_complete"
     name_readable: "Walking on straight lines with instrumented crutches,
       mocap and force platforms"
@@ -134,7 +134,7 @@ protocol:
       - description: Repeat steps 6-10, 10 times
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
 pi:
   - name: peak_load_left
     name_readable: "Left load peak"
@@ -143,8 +143,8 @@ pi:
       (maximum force value for each stride cycle), and (iii) step number"
     unit: [N, N, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, std_dev]
-    inter_run_aggregation: [0, mean, std_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -155,8 +155,8 @@ pi:
       (maximum force value for each stride cycle), and (iii) step number"
     unit: [N, N, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, std_dev]
-    inter_run_aggregation: [0, mean, std_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -166,17 +166,17 @@ pi:
     unit: N
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
-    inter_subject_aggregation: [0, mean, std_dev]
+    inter_subject_aggregation: [[0, mean], [0, std]]
   - name: rms_load_right
     name_readable: "Right load Root Mean Square"
     description: "Root mean square value of the right crutch force"
     unit: N
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [0, mean, st_dev]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -186,8 +186,8 @@ pi:
       (ii) standard deviation of the left stance time, and (iii) step number"
     unit: [\%, \%, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -197,8 +197,8 @@ pi:
       (ii) standard deviation of the right stance time, and (iii) step number"
     unit: [\%, \%, scalar]
     output: vector
-    intra_run_aggregation: [0, mean, std_dev]
-    inter_run_aggregation: [0, mean, std_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -210,8 +210,8 @@ pi:
       expressed in the fixed lab reference frame"
     unit: [N, N, N, N, N, N, Nm, Nm, Nm, Nm, Nm, Nm, \#]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -223,8 +223,8 @@ pi:
       expressed in the fixed lab reference frame"
     unit: [N, N, N, N, N, N, Nm, Nm, Nm, Nm, Nm, Nm, \#]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -235,8 +235,8 @@ pi:
       in the fixed lab reference frame"
     unit: [N, N, N, Nm, Nm, Nm]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -247,8 +247,8 @@ pi:
       in the fixed lab reference frame"
     unit: [N, N, N, Nm, Nm, Nm]
     output: vector
-    intra_run_aggregation: [0, mean, st_dev]
-    inter_run_aggregation: [0, mean, st_dev]
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
@@ -258,8 +258,8 @@ pi_algo:
       crutches
     url_paper: "DOI: 10.1109/JSEN.2019.2957667"
     url_code: https://github.com/eurobench/pi_bullet
-    docker_host: undef
-    docker_name: pi_bullet
+    docker_host: eurobenchtest/pi_bullet:v0.0.0
+    docker_name: eurobenchtest/pi_bullet:v0.0.0
     pi:
       - peak_load_left
       - peak_load_right
@@ -283,8 +283,8 @@ pi_algo:
       biomechanical model
     url_paper: "DOI: 10.1142/9789813231047_0074"
     url_code: https://github.com/eurobench/pi_bullet
-    docker_host: undef
-    docker_name: pi_bullet
+    docker_host: eurobenchtest/pi_bullet:v0.0.0
+    docker_name: eurobenchtest/pi_bullet:v0.0.0
     pi:
       - peak_load_left
       - peak_load_right

@@ -28,7 +28,7 @@ protocol:
           direction, constrained by treadmill speed.
         type: float
         range: undef
-        unit: m/s
+        unit: m/sec
       - name: Target step length
         definition: Anteroposterior distance between successive heel strikes
         type: float
@@ -651,7 +651,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -666,7 +666,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -681,7 +681,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -696,7 +696,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -711,7 +711,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -726,7 +726,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -741,7 +741,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -756,7 +756,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -771,7 +771,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -786,7 +786,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: s
+    unit: sec
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1062,8 +1062,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
-    docker_host: undef
-    docker_name: pi_bestabe
+    docker_host: eurobenchtest/pi_bestable:v0.0.0
+    docker_name: eurobenchtest/pi_bestable:v0.0.0
     # todo the code generates something like 40 PI files. They are not all listed here.
     pi:
       - base_step_length_left

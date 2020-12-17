@@ -105,7 +105,7 @@ protocol:
         definition: speed of walking
         type: double
         range: [0.1, 2]
-        unit: m/s
+        unit: m/sec
       - name: horizontalMovement
         definition: Horizontal movement of workpiece
         type: double
@@ -152,8 +152,8 @@ protocol:
         file_sheet: https://www.technaid.com/products/
       - item: Force Plate
         type: sensor
-        file_sheet: We can argue whether it is embedded into the testedbed (so to be
-          described through first line, or to be mentioned here)
+        file_sheet: We can argue whether it is embedded into the testedbed
+          (so to be described through first line, or to be mentioned here)
       - item: Polar H10
         type: CTAG
         file_sheet: https://support.polar.com/e_manuals/H10_HR_sensor/Polar_H10_user_manual_English/manual.pdf
@@ -206,7 +206,7 @@ protocol:
           exoskeleton and with exoskeleton
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
   - name: "tested_narrow_cont"
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
@@ -289,7 +289,7 @@ protocol:
         definition: speed of walking
         type: double
         range: [0.1, 2]
-        unit: m/s
+        unit: m/sec
       - name: horizontalMovement
         definition: Horizontal movement of workpiece
         type: double
@@ -390,7 +390,7 @@ protocol:
           exoskeleton and with exoskeleton
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
 
   - name: "tested_narrow_aero"
     name_readable: "Industrial Use-Cases in Narrow Spaces"
@@ -476,7 +476,7 @@ protocol:
         definition: speed of walking
         type: double
         range: [0.1, 2]
-        unit: m/s
+        unit: m/sec
       - name: horizontalMovement
         definition: Horizontal movement of workpiece
         type: double
@@ -577,7 +577,7 @@ protocol:
           exoskeleton and with exoskeleton
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
 pi:
   - name: hrmonitoring
     name_readable: "HR monitoring"
@@ -591,7 +591,7 @@ pi:
       The obtained values can be compared with state of the art tables at:
       1. https://hrvcourse.com/wp-content/uploads/2016/07/HRVAgeGender-Table-1080x497.png
       2. https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118308&type=printable"
-    unit: ms
+    unit: msec
     output: vector
     intra_run_aggregation: na
     # todo: check their proposition
@@ -643,7 +643,7 @@ pi:
   - name: chrono
     name_readable: "chrono"
     description: Time to complete the task
-    unit: seconds
+    unit: sec
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: undef
@@ -727,7 +727,7 @@ pi_algo:
     url_code: https://github.com/jamatics/pi_ctag
     docker_host: undef
     docker_name: undef
-    pi: undef
-    input_files: undef
-    input_command: undef
+    pi: []
+    input_files: []
+    input_command: []
     language: octave
