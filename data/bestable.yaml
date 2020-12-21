@@ -35,8 +35,8 @@ protocol:
         type: float
         range: undef
         unit: m
-      - name: Target step width Mediolateral distance between successive heel
-          strikes
+      - name: Target step width 
+        definition: Mediolateral distance between successive heel strikes
         type: float
         range: undef
         unit: m
@@ -66,7 +66,7 @@ protocol:
         detail: A manual will be provided with detailed information of the
           software.
       - description: Collect baseline data of walking to personalize the visual
-          cues to the participant's normal gait patterns.
+          cues to the participant''s normal gait patterns.
         detail: All instruments are recorded by the D-Flow software, and average
           step length and step width are computed.
           Foot placement is determined from centre of pressure measurements
