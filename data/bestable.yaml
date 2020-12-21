@@ -927,7 +927,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -940,7 +940,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -953,7 +953,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -966,7 +966,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -979,7 +979,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -992,7 +992,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1005,7 +1005,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1018,7 +1018,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1031,7 +1031,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1044,7 +1044,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
