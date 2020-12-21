@@ -282,7 +282,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_step_length
     name_readable: "pert left fw step length"
     description: "A matrix containing four consecutive step lengths of
@@ -463,7 +462,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_step_width
     name_readable: "pert left fw step width"
     description: "A matrix containing four consecutive step widths of
@@ -644,7 +642,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_step_time
     name_readable: "pert left fw step time"
     description: "A matrix containing four consecutive step times of alternating
@@ -925,7 +922,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_success_rate
     name_readable: "pert left fw success rate"
     description: "Hit rate of particular targets.
@@ -1137,3 +1133,4 @@ pi_algo:
       - condition.yaml
       - info.yaml
     language: octave
+    implemented: true
