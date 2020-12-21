@@ -1,4 +1,5 @@
 ---
+user_name: "bestable"
 scenario:
   name: "Bestable: Visually-cued stepping perturbations on a treadmill.			"
   description: "Stepping targets are visually projected onto the surface of a
