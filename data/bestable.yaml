@@ -35,7 +35,7 @@ protocol:
         type: float
         range: undef
         unit: m
-      - name: Target step width 
+      - name: Target step width
         definition: Mediolateral distance between successive heel strikes
         type: float
         range: undef
