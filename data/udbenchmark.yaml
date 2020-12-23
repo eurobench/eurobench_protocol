@@ -182,11 +182,26 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_fpe
-    name_readable: Foot Placement Estimates
-    description: "The euclidean distance from the estimated position of foot
-      placement to come to stable stance within one step to the actual step
-      position, i.e., a smaller distance suggests more stable gait."
+  - name: pi_fpe_ml
+    name_readable: mediolateral Foot Placement Estimates
+    description: "The euclidean distance (mediolateral) from the estimated
+      position of foot placement to come to stable stance within one step to the
+      actual step position (defined at heelstrike), i.e., a smaller distance
+      suggests more stable gait."
+    unit: meter
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_fpe_ap
+    name_readable: Anteroposterior Foot Placement Estimates
+    description: "The euclidean distance (anteroposterior) from the
+      estimated position of foot placement to come to stable stance
+      within one step to the actual step position (defined at
+      heelstrike), i.e., a smaller distance suggests more stable
+      gait."
     unit: meter
     output: vector
     intra_run_aggregation: [0, mean]
@@ -241,7 +256,7 @@ pi_algo:
       - angularMomentum.csv
       - inertiaTensor.csv
       - gaitEvents.yaml
-      - testbed.yaml
+      - condition.yaml
     input_command:
       - run_fpe
       - jointTrajectories.csv
@@ -249,7 +264,7 @@ pi_algo:
       - angularMomentum.csv
       - inertiaTensor.csv
       - gaitEvents.yaml
-      - cond_23_testbed.yaml
+      - condition.yaml
     language: python
   - name: pi_lde
     description: Local divergence stability algorithm

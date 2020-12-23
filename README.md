@@ -38,6 +38,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file
     * double check docker entry in yaml
+
 ### Ready to be tested in database
 
 * **beat**:
@@ -58,6 +59,12 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
 
+* **udbenchmarking**:
+  * [code](https://github.com/nickkluft/udbenchmark_PIs),
+    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
+    [yaml](data/udbenchmark.yaml),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
+    [github clone](https://github.com/eurobench/pi_udbenchmark)
 
 ### Under progress
 
@@ -104,18 +111,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * github repo creation
     * discussion on the input data (calib file per user, not in the current options)
     * Issues on output format consistency (excel vs test data)
-
-* **udbenchmarking**:
-  * [code](https://github.com/nickkluft/udbenchmark_PIs),
-    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
-    [yaml](data/udbenchmark.yaml),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
-    [github clone](https://github.com/eurobench/pi_udbenchmark)
-
-  * current state:
-    * PR on CI update (unclear issue with csvlint?)
-    * Check template content (missing PI)
-    * deploy release.
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
@@ -187,3 +182,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [template](https://docs.google.com/spreadsheets/d/1yNLcaj91ECUWv9wxQz-sFBWKsg0A_OPaPxXvauqpyew/edit)
   * current state:
     * not started
+
+* **uhei**:
+  * [code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
