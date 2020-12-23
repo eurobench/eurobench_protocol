@@ -1128,7 +1128,7 @@ pi_algo:
     input_files: [platformData.csv, condition.yaml, info.yaml]
     # todo: check docker entry point
     input_command:
-      - run_pi
+      - ./run_pi
       - platformData.csv
       - condition.yaml
       - subject_info.yaml

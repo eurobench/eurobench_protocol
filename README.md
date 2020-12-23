@@ -36,8 +36,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master),
   * Missing:
     * official template file to be adjusted with the PI excel present in the code repo.
-    * some words about the data collected file
-    * double check docker entry in yaml
+    * some words about the data collected file.
 
 ### Ready to be tested in database
 
@@ -117,7 +116,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [template](https://docs.google.com/spreadsheets/d/15D-Y3-Ww13DznaztmUy-Gm7DIwyBc2RrfWgHs92U84U/edit#gid=2119968338)
   * current state:
     * begining
-    * 11/12: sent a set of issues (Nan results
+    * 11/12: sent a set of issues (Nan results)
+
 ### Not (really) started
 
 * **dysturbance**
