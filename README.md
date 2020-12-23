@@ -165,8 +165,9 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * 14/12: not yet ready
 
 * **stepByStep**
-  * [code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
-    [template](https://docs.google.com/spreadsheets/d/1h962eXf1NHLEpMpGme9hqomxpiUZnLzS/edit?rtpof=true)
+  * [OLD code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
+    [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
+    [template](https://docs.google.com/spreadsheets/d/1h962eXf1NHLEpMpGme9hqomxpiUZnLzS/edit?rtpof=true),
   * current state:
     * not started. Code to be separated from other documentation
 
