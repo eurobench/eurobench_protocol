@@ -141,7 +141,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * new ping 17/11
     * Answered the 19/11.
       Should conduct experiment the we of the 23
-    * Ping sent the 11/12/2020
+    * Ping sent the 11/12/2020, 17/12/2020
 
 * **forecast**:
   * [code](https://gitlab.com/altairLab/elasticteam/SESim)
