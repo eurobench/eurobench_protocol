@@ -1131,6 +1131,6 @@ pi_algo:
       - run_pi
       - platformData.csv
       - condition.yaml
-      - info.yaml
+      - subject_info.yaml
     language: octave
     implemented: true
