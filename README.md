@@ -27,6 +27,17 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
     [excel](https://docs.google.com/spreadsheets/d/1-PaNEjkP6uf4XaTbmNykUySV5ok0mSn_/edit#gid=439895919)
 
+* **bestable**:
+  * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
+    [excel](https://docs.google.com/spreadsheets/d/1s25AMTL7PYxhq8h4dv4UFB7Mkbr5oJsI/edit#gid=2118535745),
+    [yaml](data/bestable.yaml),
+    [github repo](https://github.com/eurobench/pi_bestable),
+    [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_bestable),
+    [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master),
+  * Missing:
+    * official template file to be adjusted with the PI excel present in the code repo.
+    * some words about the data collected file.
+
 ### Ready to be tested in database
 
 * **beat**:
@@ -46,18 +57,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * [walking_complete](https://docs.google.com/spreadsheets/d/1rAJXqnzodYghTHCIcKvOM6r8MwtHygkn/edit#gid=716373661)
   * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
-
-* **bestable**:
-  * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
-    [excel](https://docs.google.com/spreadsheets/d/1s25AMTL7PYxhq8h4dv4UFB7Mkbr5oJsI/edit#gid=2118535745),
-    [yaml](data/bestable.yaml),
-    [github repo](https://github.com/eurobench/pi_bestable),
-    [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_bestable),
-    [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master),
-  * Missing:
-    * official template file to be adjusted with the PI excel present in the code repo.
-    * some words about the data collected file
-    * double check docker entry in yaml
 
 ### Under progress
 
