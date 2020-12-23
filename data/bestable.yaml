@@ -1,4 +1,5 @@
 ---
+user_name: "bestable"
 scenario:
   name: "Bestable: Visually-cued stepping perturbations on a treadmill.			"
   description: "Stepping targets are visually projected onto the surface of a
@@ -28,14 +29,14 @@ protocol:
           direction, constrained by treadmill speed.
         type: float
         range: undef
-        unit: m/sec
+        unit: m/s
       - name: Target step length
         definition: Anteroposterior distance between successive heel strikes
         type: float
         range: undef
         unit: m
-      - name: Target step width Mediolateral distance between successive heel
-          strikes
+      - name: Target step width
+        definition: Mediolateral distance between successive heel strikes
         type: float
         range: undef
         unit: m
@@ -65,7 +66,7 @@ protocol:
         detail: A manual will be provided with detailed information of the
           software.
       - description: Collect baseline data of walking to personalize the visual
-          cues to the participant's normal gait patterns.
+          cues to the participant''s normal gait patterns.
         detail: All instruments are recorded by the D-Flow software, and average
           step length and step width are computed.
           Foot placement is determined from centre of pressure measurements
@@ -281,7 +282,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_step_length
     name_readable: "pert left fw step length"
     description: "A matrix containing four consecutive step lengths of
@@ -462,7 +462,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_step_width
     name_readable: "pert left fw step width"
     description: "A matrix containing four consecutive step widths of
@@ -643,7 +642,6 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_step_time
     name_readable: "pert left fw step time"
     description: "A matrix containing four consecutive step times of alternating
@@ -651,7 +649,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -666,7 +664,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -681,7 +679,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -696,7 +694,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -711,7 +709,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -726,7 +724,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -741,7 +739,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -756,7 +754,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -771,7 +769,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -786,7 +784,7 @@ pi:
       Rows of the matrix contain all perturbation repetitions.
       Step time was calculated between two consecutive heel strikes (i.e. left
       heel strike to right heel strike, and vice versa)"
-    unit: sec
+    unit: s
     output: matrix
     intra_run_aggregation: [[0, mean], [0, std]]
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -924,13 +922,12 @@ pi:
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
-
   - name: pert_left_fw_success_rate
     name_readable: "pert left fw success rate"
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -943,7 +940,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -956,7 +953,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -969,7 +966,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -982,7 +979,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -995,7 +992,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1008,7 +1005,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1021,7 +1018,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1034,7 +1031,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1047,7 +1044,7 @@ pi:
     description: "Hit rate of particular targets.
       Calculated as (number of targets hit)/(number of repetitions of each
       target)*100%."
-    unit: \%
+    unit: "%"
     output: scalar
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -1134,5 +1131,6 @@ pi_algo:
       - run_pi
       - platformData.csv
       - condition.yaml
-      - info.yaml
+      - subject_info.yaml
     language: octave
+    implemented: true
