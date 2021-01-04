@@ -23,7 +23,7 @@ protocol:
     image: bench/img02.png
     keywords: [Sit to stand, biomechanics, neuromechanics]
     bipedal_system: [Prosthesis, orthosis, human, humanoid]
-    pi_algo:
+    pi_algo: calculate_5sts_metrics
     duration: 1 minute
     controlled_variables:
       - name: "seat_height"
@@ -79,7 +79,7 @@ protocol:
     keywords: [Sit to stand, biomechanics, neuromechanics]
     # TODO: list differs with the previous protocol
     bipedal_system: [Prosthesis, orthosis, human, humanoid, exoskeleton]
-    pi_algo:
+    pi_algo: calculate_30sts_metrics
     duration: 1 minute
     controlled_variables:
       - name: "seat_height"
@@ -241,7 +241,7 @@ pi_algo:
       - platformData.csv
       - platformData_calib.csv
     input_command:
-      - ./run_bench_pi
+      - ./run_bench_5sts_pi
       - platformData.csv
       - platformData_calib.csv
     language: octave
@@ -263,7 +263,7 @@ pi_algo:
       - platformData.csv
       - platformData_calib.csv
     input_command:
-      - ./run_bench_pi
+      - ./run_bench_30sts_pi
       - platformData.csv
       - platformData_calib.csv
     language: octave

@@ -99,17 +99,17 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
     * asked to have an explicit naming of the input files.
   * all PI not described
-  * check if input file should be `speed2kmh_emg`, or `emg_speed2kmh`.
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
     [template](https://docs.google.com/spreadsheets/d/1aWFmSCAFN7uPAP6EE4EbTqAzXHEhEsBR/edit#gid=1429738760),
-    [yaml](data/bench.yaml)
-  * docker: **not yet**
+    [yaml](data/bench.yaml),
+    [github_repo](https://github.com/eurobench/pi_bench),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench)
   * pending on:
-    * github repo creation
     * discussion on the input data (calib file per user, not in the current options)
     * Issues on output format consistency (excel vs test data)
+    * docker image pull
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
