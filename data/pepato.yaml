@@ -250,8 +250,8 @@ pi_algo:
     description: EMG analysis algorythms
     url_paper: undef
     url_code: https://github.com/dzhvansky/pepato/tree/octave_version
-    docker_host: eurobenchtest/pi_pepato:v0.0.0
-    docker_name: eurobenchtest/pi_pepato:v0.0.0
+    docker_host: eurobenchtest/pi_pepato:v1.0.0
+    docker_name: eurobenchtest/pi_pepato:v1.0.0
     pi:
       - muscle_synergy_number
       - emg_reco_quality

@@ -58,6 +58,13 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
   * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
 
+* **udbenchmarking**:
+  * [code](https://github.com/nickkluft/udbenchmark_PIs),
+    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
+    [yaml](data/udbenchmark.yaml),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
+    [github clone](https://github.com/eurobench/pi_udbenchmark)
+
 ### Under progress
 
 * **beast**:
@@ -104,24 +111,13 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * discussion on the input data (calib file per user, not in the current options)
     * Issues on output format consistency (excel vs test data)
 
-* **udbenchmarking**:
-  * [code](https://github.com/nickkluft/udbenchmark_PIs),
-    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
-    [yaml](data/udbenchmark.yaml),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
-    [github clone](https://github.com/eurobench/pi_udbenchmark)
-
-  * current state:
-    * PR on CI update (unclear issue with csvlint?)
-    * Check template content (missing PI)
-    * deploy release.
-
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
     [template](https://docs.google.com/spreadsheets/d/15D-Y3-Ww13DznaztmUy-Gm7DIwyBc2RrfWgHs92U84U/edit#gid=2119968338)
   * current state:
     * begining
-    * 11/12: sent a set of issues (Nan results
+    * 11/12: sent a set of issues (Nan results)
+
 ### Not (really) started
 
 * **dysturbance**
@@ -169,8 +165,9 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * 14/12: not yet ready
 
 * **stepByStep**
-  * [code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
-    [template](https://docs.google.com/spreadsheets/d/1h962eXf1NHLEpMpGme9hqomxpiUZnLzS/edit?rtpof=true)
+  * [OLD code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
+    [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
+    [template](https://docs.google.com/spreadsheets/d/1h962eXf1NHLEpMpGme9hqomxpiUZnLzS/edit?rtpof=true),
   * current state:
     * not started. Code to be separated from other documentation
 
@@ -186,3 +183,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [template](https://docs.google.com/spreadsheets/d/1yNLcaj91ECUWv9wxQz-sFBWKsg0A_OPaPxXvauqpyew/edit)
   * current state:
     * not started
+
+* **uhei**:
+  * [code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
