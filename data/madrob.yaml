@@ -249,13 +249,13 @@ pi_algo:
       - events.csv
       - wrench.csv
       - jointState.csv
-      - testbed_config.yaml
+      - condition.yaml
     # todo: check docker entry point
     input_command:
       - run_madrob
       - events.csv
       - wrench.csv
       - jointState.csv
-      - testbed_config.yaml
+      - condition.yaml
     language: octave
     implemented: true
