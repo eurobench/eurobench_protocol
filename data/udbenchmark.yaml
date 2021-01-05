@@ -13,7 +13,7 @@ scenario:
   image: udbenchmark/img0.png
 
 protocol:
-  - name: "walking_inclined_treadmill"
+  - name: "udbenchmarking"
     name_readable: "Walking on an inclined treadmill"
     definition: "Participants walk in an Computer Assisted Rehabilitation
       environment (CAREN, Motek, Forcelink, Amsterdam, The Netherlands), which
