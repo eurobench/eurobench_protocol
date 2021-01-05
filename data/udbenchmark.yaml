@@ -268,6 +268,7 @@ pi_algo:
       - gaitEvents.yaml
       - condition.yaml
     language: python
+    implemented: true
   - name: pi_lde
     description: Local divergence stability algorithm
     url_paper: https://www.sciencedirect.com/science/article/pii/016727899390009P
@@ -284,6 +285,7 @@ pi_algo:
       - com.csv
       - gaitEvents.yaml
     language: python
+    implemented: true
   - name: pi_fpm
     description: Algorithm to determine the goodness of fit of a linear
       regression model for foot placements
@@ -304,6 +306,7 @@ pi_algo:
       - com.csv
       - gaitEvents.yaml
     language: python
+    implemented: true
   - name: pi_spattemp
     description: undef
     url_paper: undef
@@ -323,3 +326,4 @@ pi_algo:
       - jointTrajectories.csv
       - gaitEvents.yaml
     language: python
+    implemented: true
