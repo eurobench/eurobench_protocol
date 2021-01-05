@@ -22,10 +22,10 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 * **madrob**:
   * [code](https://github.com/madrob-beast/madrob_beast_pi),
+    [excel](https://docs.google.com/spreadsheets/d/1-PaNEjkP6uf4XaTbmNykUySV5ok0mSn_/edit#gid=439895919)
     [yaml](data/madrob.yaml),
     [github repo](https://github.com/eurobench/pi_madrob_beast),
-    [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
-    [excel](https://docs.google.com/spreadsheets/d/1-PaNEjkP6uf4XaTbmNykUySV5ok0mSn_/edit#gid=439895919)
+    [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast)
 
 * **bestable**:
   * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -33,10 +33,17 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     [yaml](data/bestable.yaml),
     [github repo](https://github.com/eurobench/pi_bestable),
     [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_bestable),
-    [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master),
+    [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master)
   * Missing:
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file.
+
+* **udbenchmarking**:
+  * [code](https://github.com/nickkluft/udbenchmark_PIs),
+    [excel](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
+    [yaml](data/udbenchmark.yaml),
+    [github repo](https://github.com/eurobench/pi_udbenchmark),
+    [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark)
 
 ### Ready to be tested in database
 
@@ -57,13 +64,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
     * [walking_complete](https://docs.google.com/spreadsheets/d/1rAJXqnzodYghTHCIcKvOM6r8MwtHygkn/edit#gid=716373661)
   * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
-
-* **udbenchmarking**:
-  * [code](https://github.com/nickkluft/udbenchmark_PIs),
-    [template](https://docs.google.com/spreadsheets/d/1-RljxtIx78AwL1OhIunS7IkDdmNun782/edit?rtpof=true),
-    [yaml](data/udbenchmark.yaml),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
-    [github clone](https://github.com/eurobench/pi_udbenchmark)
 
 ### Under progress
 
