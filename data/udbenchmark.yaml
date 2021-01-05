@@ -1,4 +1,5 @@
 ---
+user_name: "udbenchmarking"
 scenario:
   name: Walking on Slopes"
   description: "The stability of bipedal locomotion is challenged when walking
