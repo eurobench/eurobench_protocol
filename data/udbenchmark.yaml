@@ -126,7 +126,7 @@ pi:
     inter_subject_aggregation: Mean (if normally distributed)
   - name: pi_lde
     name_readable: Local Divergence Stability
-    desription: "Quantifying the rate of separation of nearest neighbour
+    description: "Quantifying the rate of separation of nearest neighbour
       trajectory (i.e., position) in a phase space.
       A larger LDS suggests a less stable gait pattern."
     unit: na
