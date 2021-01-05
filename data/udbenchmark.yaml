@@ -71,7 +71,7 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
 pi:
-  - name: pi_l_mos_ml
+  - name: pi_l_MOS_ml
     name_readable: "Mediolateral Margin of Stability for left foot"
     description: "Euclidian distance from the extrapolated centre of mass to the
       base of support [in the medio-lateral direction] at contralateral toe off.
@@ -84,7 +84,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_r_mos_ml
+  - name: pi_r_MOS_ml
     name_readable: "Mediolateral Margin of Stability for right foot"
     description: "Euclidian distance from the extrapolated centre of mass to the
       base of support [in the medio-lateral direction] at contralateral toe off.
@@ -97,7 +97,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_l_mos_ap
+  - name: pi_l_MOS_ap
     name_readable: "Anteroposterior Margin of Stability for left foot"
     description: "Euclidian distance from the extrapolated centre of mass to the
       base of support [in the anterior-posterior direction] at ipsilateral heel
@@ -111,7 +111,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_r_mos_ap
+  - name: pi_r_MOS_ap
     name_readable: "Anteroposterior Margin of Stability for right foot"
     description: "Euclidian distance from the extrapolated centre of mass to the
       base of support [in the anterior-posterior direction] at ipsilateral heel
@@ -125,7 +125,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_lde
+  - name: pi_LDE
     name_readable: Local Divergence Stability
     description: "Quantifying the rate of separation of nearest neighbour
       trajectory (i.e., position) in a phase space.
@@ -184,7 +184,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_fpe_ml
+  - name: pi_FPE_ml
     name_readable: mediolateral Foot Placement Estimates
     description: "The euclidean distance (mediolateral) from the estimated
       position of foot placement to come to stable stance within one step to the
@@ -197,7 +197,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_fpe_ap
+  - name: pi_FPE_ap
     name_readable: Anteroposterior Foot Placement Estimates
     description: "The euclidean distance (anteroposterior) from the
       estimated position of foot placement to come to stable stance
@@ -211,7 +211,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_r_fpm
+  - name: pi_r_FPM
     name_readable: "Explained Variance by a Linear Foot Placement Model Right
       Foot"
     description: "The goodness of fit of a linear regression model for foot
@@ -225,7 +225,7 @@ pi:
     visu: Line graph with error bars
     inter_cond_aggregation: Should be compared within conditions
     inter_subject_aggregation: Mean (if normally distributed)
-  - name: pi_l_fpm
+  - name: pi_l_FPM
     name_readable: "Explained Variance by a Linear Foot Placement Model Left
       Foot"
     description: "The goodness of fit of a linear regression model for foot
@@ -244,15 +244,15 @@ pi_algo:
     description: Foot placement estimator algorithm
     url_paper: https://asmedigitalcollection.asme.org/computationalnonlinear/article-abstract/3/1/011009/440250/Introduction-of-the-Foot-Placement-Estimator-A?redirectedFrom=fulltext
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
     pi:
-      - pi_fpe_ap
-      - pi_fpe_ml
-      - pi_l_mos_ap
-      - pi_l_mos_ml
-      - pi_r_mos_ap
-      - pi_r_mos_ml
+      - pi_FPE_ap
+      - pi_FPE_ml
+      - pi_l_MOS_ap
+      - pi_l_MOS_ml
+      - pi_r_MOS_ap
+      - pi_r_MOS_ml
     input_files:
       - com.csv
       - angularMomentum.csv
@@ -273,10 +273,10 @@ pi_algo:
     description: Local divergence stability algorithm
     url_paper: https://www.sciencedirect.com/science/article/pii/016727899390009P
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
     pi:
-      - pi_lde
+      - pi_LDE
     input_files:
       - com.csv
       - gaitEvents.yaml
@@ -291,11 +291,11 @@ pi_algo:
       regression model for foot placements
     url_paper: https://royalsocietypublishing.org/doi/10.1098/rsbl.2014.0405
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
     pi:
-      - pi_l_fpm
-      - pi_r_fpm
+      - pi_l_FPM
+      - pi_r_FPM
     input_files:
       - jointTrajectories.csv
       - com.csv
@@ -311,8 +311,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
     pi:
       - pi_l_steplength
       - pi_r_steplength
