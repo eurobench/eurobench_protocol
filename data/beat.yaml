@@ -63,8 +63,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-    algorithms:
-      - protocol_1_stepping_even
   # second protocol
   - name: "beat_stepping_uneven"
     name_readable: "Stepping on place - uneven surface"
@@ -146,8 +144,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-    algorithms:
-      - protocol_2_stepping_uneven
   # third protocol
   - name: "beat_static_even"
     name_readable: "Static Balance - even surface"
@@ -203,8 +199,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-    algorithms:
-      - protocol_3_static_even
   # fourth protocol
   - name: "beat_static_uneven"
     name_readable: "Static Balance - uneven surface"
@@ -282,8 +276,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-    algorithms:
-      - protocol_4_static_uneven
   # fifth protocol
   - name: "beat_step_even"
     name_readable: "Step perturbation - even surface"
@@ -368,8 +360,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-    algorithms:
-      - protocol_5_static_even
   # sixth protocol
   - name: "beat_step_uneven"
     name_readable: "Step perturbation - uneven surface"
@@ -455,8 +445,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-    algorithms:
-      - protocol_6_static_uneven
   # seventh protocol
   - name: "beat_sinuzoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
@@ -539,8 +527,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-    algorithms:
-      - protocol_7_sinusoidal_even
 
 pi:
   - name: mrom
