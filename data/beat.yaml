@@ -446,7 +446,7 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # seventh protocol
-  - name: "beat_sinuzoidal_uneven"
+  - name: "beat_sinusoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
     definition: "Subjects stands on platform and reacts to a sinusoidal
       perturbation with platform set in position mode.
@@ -915,7 +915,7 @@ pi_algo:
       - platformData.csv
       - outputDir
     language: octave
-  - name: protocol_5_static_even
+  - name: protocol_5_step_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic and stability when step perturbations are provided and
       subjects stand on even surface
@@ -936,7 +936,7 @@ pi_algo:
       - platformData.csv
       - outputDir
     language: octave
-  - name: protocol_6_static_uneven
+  - name: protocol_6_step_uneven
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic, stability and body reaction when step perturbations
       are provided and subjects stand on uneven surface
