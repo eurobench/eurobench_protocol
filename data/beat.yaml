@@ -536,7 +536,7 @@ pi:
       for the specific joint angle considered.
       Smaller values indicate a reduction of the physiological movement of the
       subject"
-    unit: degree
+    unit: "º"
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -552,7 +552,7 @@ pi:
       strides.
       Greater value of CoV represents a greater variability of the kinematics,
       which leads to a worsening of the subject motor performance."
-    unit: ratio
+    unit: "%"
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -572,7 +572,7 @@ pi:
       for the specific joint angle considered.
       Smaller values indicate a reduction of the physiological movement of the
       subject"
-    unit: degree
+    unit: "º"
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -588,7 +588,7 @@ pi:
       Centre of pressure will be computed by the pressure matrix embedded in the
       Rotobit3D v3.0.
       Greater value of PL indicates greater instability."
-    unit: meter
+    unit: m
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -610,7 +610,7 @@ pi:
       Rotobit3D v3.0.
       Greater value of PL_AP indicates greater instability in antero-posterior
       direction."
-    unit: meter
+    unit: m
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -632,7 +632,7 @@ pi:
       Rotobit3D v3.0.
       Greater value of PL_ML indicates greater instability in medio-lateral
       direction."
-    unit: meter
+    unit: m
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -650,7 +650,7 @@ pi:
     description: "It represents the area of the confidence ellipse containing
       the 95% of the point coveder by the centre of pressure.
       Greater value of EA indicates greater instability during task. "
-    unit: meter2
+    unit: "m^2"
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -671,7 +671,7 @@ pi:
       Centre of pressure will be computed by the pressure matrix embedded in
       the Rotobit3D v3.0.
       Greater value of PL indicates greater instability."
-    unit: meter
+    unit: m
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -686,7 +686,7 @@ pi:
       the 95% of the point coveder by the centre of pressure reported for each
       perturbation direction.
       Greater value of EA indicates greater instability during task. "
-    unit: meter2
+    unit: "m^2"
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -733,7 +733,7 @@ pi:
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
       Lower value of OS indicates a better anticipatory postural adjustments
       capability of the subject."
-    unit: degree
+    unit: "º"
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -752,7 +752,7 @@ pi:
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
       Value of theta_f close to zero indicates the perfect capability of the
       subject to bring back the platform in the neutral position."
-    unit: degree
+    unit: "º"
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -771,7 +771,7 @@ pi:
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
       Lower value of delta_theta indicates a greater stability after the
       perturbation reaction."
-    unit: degree
+    unit: "º"
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
@@ -792,7 +792,7 @@ pi:
       All the angles are referred to the transversal plane.G equal to 100%
       indicates that examined segment is in perfect agreement with the
       perturbation."
-    unit: percentage
+    unit: "%"
     # see description
     output: matrix
     intra_run_aggregation: undef
@@ -814,7 +814,7 @@ pi:
       the perturbation; negative value indicates phase delay
       (lower value=greater delay); positive value indicates phase anticipation
       (greater value=greater anticipation)"
-    unit: degree
+    unit: "º"
     # see description
     output: matrix
     intra_run_aggregation: undef
