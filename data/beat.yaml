@@ -847,7 +847,6 @@ pi_algo:
       - jointAngles.csv
       - platformData.csv
       - emg.csv
-      - outputDir
     language: octave
   - name: protocol_2_stepping_uneven
     description: This algo allows to quantify the performance of exoskeleton
@@ -875,7 +874,6 @@ pi_algo:
       - jointAngles.csv
       - platformData.csv
       - emg.csv
-      - outputDir
     language: octave
   - name: protocol_3_static_even
     description: This algo allows to quantify the performance of exoskeleton in
@@ -894,7 +892,6 @@ pi_algo:
     input_command:
       - ./run_protocol_3
       - platformData.csv
-      - outputDir
     language: octave
   - name: protocol_4_static_uneven
     description: This algo allows to quantify the performance of exoskeleton in
@@ -913,7 +910,6 @@ pi_algo:
     input_command:
       - ./run_protocol_4
       - platformData.csv
-      - outputDir
     language: octave
   - name: protocol_5_step_even
     description: This algo allows to quantify the performance of exoskeleton in
@@ -934,7 +930,6 @@ pi_algo:
       - ./run_protocol_5
       - jointAngles.csv
       - platformData.csv
-      - outputDir
     language: octave
   - name: protocol_6_step_uneven
     description: This algo allows to quantify the performance of exoskeleton in
@@ -958,7 +953,6 @@ pi_algo:
       - ./run_protocol_6
       - jointAngles.csv
       - platformData.csv
-      - outputDir
     language: octave
   - name: protocol_7_sinusoidal_even
     description: This algo allows to quantify the performance of exoskeleton in
@@ -980,5 +974,4 @@ pi_algo:
       - ./run_protocol_7
       - jointAngles.csv
       - platformData.csv
-      - outputDir
     language: octave
