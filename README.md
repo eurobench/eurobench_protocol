@@ -56,6 +56,7 @@ The hyperlinks refer to:
     [excel](data/beat/beat-v4.3.xlsx)
     [yaml](data/beat.yaml),
   * current state: waiting for PI output adjustment in code.
+    * CI process failing due to csv linting issue
 
 * **bullet**:
   * [Eurobench repo](https://github.com/eurobench/pi_bullet),
@@ -83,6 +84,7 @@ The hyperlinks refer to:
     [excel](data/beast/beast-v3.xlsx),
     [yaml](data/beast.yaml)
   * current state: waiting for reference data set
+
 
 * **tested**:
   * [code](https://github.com/jamatics/pi_ctag),
@@ -125,7 +127,8 @@ The hyperlinks refer to:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
     [template](data/csic-irregular/csic-irregular-terrain.xlsx)
   * current state:
-    * 11/12: pending on code update
+    * 15/01: pending on code update (output file)
+    * CI created
 
 ### Very early stage
 
