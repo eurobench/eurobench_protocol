@@ -75,6 +75,14 @@ The hyperlinks refer to:
     [template](data/udbenchmarking/udbenchmarking.xlsx),
     [yaml](data/udbenchmark.yaml),
 
+* **bench**:
+  * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
+    [Eurobench_repo](https://github.com/eurobench/pi_bench),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
+    [template](data/bench/bench.xlsx),
+    [yaml](data/bench.yaml)
+  * Discussion on the input data (calib file per user, not in the current options)
+
 ### Under progress
 
 * **beast**:
@@ -84,7 +92,6 @@ The hyperlinks refer to:
     [excel](data/beast/beast-v3.xlsx),
     [yaml](data/beast.yaml)
   * current state: waiting for reference data set
-
 
 * **tested**:
   * [code](https://github.com/jamatics/pi_ctag),
@@ -111,17 +118,6 @@ The hyperlinks refer to:
     * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
     * asked to have an explicit naming of the input files.
   * all PI not described in excel sheet
-
-* **bench**:
-  * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
-    [Eurobench_repo](https://github.com/eurobench/pi_bench),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
-    [template](data/bench/bench.xlsx),
-    [yaml](data/bench.yaml)
-  * pending on:
-    * Discussion on the input data (calib file per user, not in the current options)
-    * Issues on output format consistency (excel vs test data)
-    * docker image pull
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
