@@ -244,8 +244,8 @@ pi_algo:
     description: Foot placement estimator algorithm
     url_paper: https://asmedigitalcollection.asme.org/computationalnonlinear/article-abstract/3/1/011009/440250/Introduction-of-the-Foot-Placement-Estimator-A?redirectedFrom=fulltext
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
-    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.1
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.1
     pi:
       - pi_FPE_ap
       - pi_FPE_ml
@@ -273,8 +273,8 @@ pi_algo:
     description: Local divergence stability algorithm
     url_paper: https://www.sciencedirect.com/science/article/pii/016727899390009P
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
-    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.1
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.1
     pi:
       - pi_LDE
     input_files:
@@ -291,8 +291,8 @@ pi_algo:
       regression model for foot placements
     url_paper: https://royalsocietypublishing.org/doi/10.1098/rsbl.2014.0405
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
-    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.1
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.1
     pi:
       - pi_l_FPM
       - pi_r_FPM
@@ -311,8 +311,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/nickkluft/udbenchmark_PIs
-    docker_host: eurobenchtest/pi_udbenchmark:v0.0.0
-    docker_name: eurobenchtest/pi_udbenchmark:v0.0.0
+    docker_host: eurobenchtest/pi_udbenchmark:v0.0.1
+    docker_name: eurobenchtest/pi_udbenchmark:v0.0.1
     pi:
       - pi_l_steplength
       - pi_r_steplength
