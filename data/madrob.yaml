@@ -26,9 +26,15 @@ protocol:
         unit: undef
       - name: destination side
         definition: the side of the door that the robot must reach by going
-          through the door
+          through the door (opposite of the approach side)
         type: string
         range: [clockwise, counterclockwise]
+        unit: undef
+      - name: distrubance type
+        definition: The profile of breaking action applied to the door panel
+          based on its angle
+        type: string
+        range: [No Force, Constant Force, Sudden Force, Sudden Ramp, Wind Ramp]
         unit: undef
     testbed:
       - item: "instrumented door"
