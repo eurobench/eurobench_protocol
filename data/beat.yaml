@@ -61,7 +61,7 @@ protocol:
       - description: Stop the data collection
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # second protocol
   - name: "beat_stepping_uneven"
     name_readable: "Stepping on place - uneven surface"
@@ -142,7 +142,7 @@ protocol:
           selection
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # third protocol
   - name: "beat_static_even"
     name_readable: "Static Balance - even surface"
@@ -197,7 +197,7 @@ protocol:
       - description: The protocol consists in one run per eye condition
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
   # fourth protocol
   - name: "beat_static_uneven"
     name_readable: "Static Balance - uneven surface"
@@ -274,7 +274,7 @@ protocol:
           The protocol consists in one run per eye condition"
     has_multiple_run: true
     has_multiple_condition: true
-    has_nultple_subject: true
+    has_multiple_subject: true
   # fifth protocol
   - name: "beat_step_even"
     name_readable: "Step perturbation - even surface"
@@ -358,7 +358,7 @@ protocol:
           set at step 6
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # sixth protocol
   - name: "beat_step_uneven"
     name_readable: "Step perturbation - uneven surface"
@@ -443,7 +443,7 @@ protocol:
           set at step 6
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
   # seventh protocol
   - name: "beat_sinuzoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
@@ -525,7 +525,7 @@ protocol:
           set at step 7
     has_multiple_run: true
     has_multiple_condition: false
-    has_nultple_subject: true
+    has_multiple_subject: true
 
 pi:
   - name: mrom
@@ -539,7 +539,7 @@ pi:
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -555,7 +555,7 @@ pi:
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -575,7 +575,7 @@ pi:
     # todo: check the explanation provided
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -590,7 +590,7 @@ pi:
     unit: meter
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -612,7 +612,7 @@ pi:
     unit: meter
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -634,7 +634,7 @@ pi:
     unit: meter
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -652,7 +652,7 @@ pi:
     unit: meter2
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot
     inter_cond_aggregation: "To compute the Romberg index, that is equal to the
       ratio between the PI obtained in closed eyes condition and PI obtained
@@ -674,7 +674,7 @@ pi:
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -689,7 +689,7 @@ pi:
     # see description
     output: labelled_matrix
     intra_run_aggregation: undef
-    inter_run_aggregation: [[0, mean], [0, std_dev]]
+    inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
@@ -830,8 +830,8 @@ pi_algo:
       is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - mrom
       - cov
@@ -854,8 +854,8 @@ pi_algo:
       uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - mrom
       - cov
@@ -881,8 +881,8 @@ pi_algo:
       terms of  stability when static balance on even surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - pl
       - pl_ap
@@ -900,8 +900,8 @@ pi_algo:
       terms of  stability when static balance on uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - pl
       - pl_ap
@@ -920,8 +920,8 @@ pi_algo:
       subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - rom_p
       - pl_p
@@ -941,8 +941,8 @@ pi_algo:
       are provided and subjects stand on uneven surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - rom_p
       - pl_p
@@ -965,8 +965,8 @@ pi_algo:
       provided and subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: undef
-    docker_name: pi_beat
+    docker_host: eurobenchtest/pi_beat:v0.0.0
+    docker_name: eurobenchtest/pi_beat:v0.0.0
     pi:
       - pl_p
       - ea_p

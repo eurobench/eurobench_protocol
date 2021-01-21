@@ -1,0 +1,269 @@
+---
+scenario:
+  name: "Sit to stand"
+  description: "Sit-to-stand (STS) is an important task for assessing dynamic
+    balance and lower limb coordination and has a significant clinical
+    relevance.
+    STS is important also for assessing the performance of wearable lower-limb
+    exoskeletons for assistance and humanoid robots that imitate human
+    movements.
+    These protocols and the associated PIs aim at the the assessment and
+    benchmarking of the sit-to-stand gesture in intact and impaired individuals,
+    in human/exoskeleton systems and in humanoid robots."
+  image: bench/img0.png
+
+protocol:
+  - name: "5 sit to stand"
+    name_readable: "5STS measures how long it takes to complete 5 full STS
+      cycles, starting from a sat position and reaching again the initial
+      position.
+      The output of this protocol and the associated PIs have a documented
+      clinical relevance and are highly correlated with motor performance of
+      different categories of subjects."
+    image: bench/img02.png
+    keywords: [Sit to stand, biomechanics, neuromechanics]
+    bipedal_system: [Prosthesis, orthosis, human, humanoid]
+    pi_algo: calculate_5sts_metrics
+    duration: 1 minute
+    controlled_variables:
+      - name: "seat_height"
+        definition: height from the ground
+        type: float
+        range: [0.3, 0.58]
+        unit: m
+      - name: "handrails_height"
+        definition: height from seat
+        type: float
+        range: [0.2, 0.4]
+        unit: m
+    testbed:
+      - item: "instrumented chair"
+        type: custom
+        file_sheet: BENCH technical document
+      - item: "imu sensors"
+        type: sensor
+        file_sheet: available from Shimmer Sensing
+    step_description: "The subject sits on the device in a comfortable position
+      with the arms across the chest leaning on the back rest.
+      At the _go_ signal, the subject is instructed to perform 5 complete
+      sit-to-stand cycles as rapidly as possible, without touching the back rest
+      between consecutive cycles, and reaching the full extended upright posture
+      at the end of each standing."
+    step_list:
+      - description: Collect anthropometric data
+      - description: Place the IMU sensor onto the subject body segments
+        detail: IMUs will be placed on the segments in an arbitrary positions
+      - description: Adjust height of the chair and handrails
+        detail: either standardized or based on subjects' anthropometrics
+      - description: Perform calibration according to the documentation
+        detail: Calibration is needed for kinematics estimation
+      - description: Place the subject at the starting point (i.e., sit)
+      - description: start recording
+      - description: subject start command
+        detail: verbal
+      - description: Execution of STS movement
+        detail: 5 times
+      - description: subject stop command
+        detail: verbal
+      - description: Acquisition stop
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: true
+  - name: "30 seconds sit to stand"
+    name_readable: "30sSTS measures how many full STS cycles are completed
+      within a 30s time frame, starting from a sat position.
+      The output of this protocol and the associated PIs have a documented
+      clinical relevance and are highly correlated with motor performance of
+      different categories of subjects."
+    image: bench/img03.png
+    keywords: [Sit to stand, biomechanics, neuromechanics]
+    # TODO: list differs with the previous protocol
+    bipedal_system: [Prosthesis, orthosis, human, humanoid, exoskeleton]
+    pi_algo: calculate_30sts_metrics
+    duration: 1 minute
+    controlled_variables:
+      - name: "seat_height"
+        definition: height from the ground
+        type: float
+        range: [0.3, 0.58]
+        unit: m
+      - name: "handrails_height"
+        definition: height from seat
+        type: float
+        range: [0.2, 0.4]
+        unit: m
+    testbed:
+      - item: "instrumented chair"
+        type: custom
+        file_sheet: BENCH technical document
+      - item: "imu sensors"
+        type: sensor
+        file_sheet: available from Shimmer Sensing
+    step_description: "The subject sits on the device in a comfortable position
+      with the arms across the chest leaning on the back rest.
+      At the _go_ signal, the subject is instructed to perform as many complete
+      sit-to-stand cycles as possible, without touching the back rest between
+      consecutive cycles, and reaching the full extended upright posture at the
+      end of each standing.
+      A stop signal is communicated at the end of the 30s time frame"
+    step_list:
+      - description: Collect anthropometric data
+      - description: Place the IMU sensor onto the subject body segments
+        detail: IMUs will be placed on the segments in an arbitrary positions
+      - description: Adjust height of the chair and handrails
+        detail: either standardized or based on subjects' anthropometrics
+      - description: Perform calibration according to the documentation
+        detail: Calibration is needed for kinematics estimation
+      - description: Place the subject at the starting point (i.e., sit)
+      - description: start recording
+      - description: subject start command
+        detail: verbal
+      - description: Execution of STS movement
+        detail: for 30 seconds
+      - description: subject stop command
+        detail: verbal
+      - description: Acquisition stop
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: true
+
+pi:
+  - name: 5sts_duration
+    name_readable: "5sts duration"
+    description: "time to execute 5 times STS (only under 5 sit to stand
+      protocol).
+      It refers to the time necessary to the subject to complete all the 5
+      repetitions of the STS movement and it is defined as the time elapsed
+      between the command start and the end the last repetition.
+      The lower the 5STS duration, the higher the performance."
+    unit: sec
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: barplot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: 30sts_repetition
+    name_readable: "30s STS number of repetitions"
+    description: "how many time STS is executed in 30 seconds (only under 30s
+      STS protocol).
+      The higher the number of complete STS cycles in 30s, the higher the
+      performance"
+    unit: quantity of completed repetitions (i.e., number of cycles)
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: barplot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: subphases_duration
+    name_readable: "STS subphases duration"
+    description: "Duration of each STS subphase"
+    unit: sec
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: to be defined
+    visu: Pie chart percentage of the different subphases with respect to the
+      total duration
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: sts_cop_stability
+    name_readable: "STS stability"
+    description: "Distance traveled by the CoP during the movement, averaged
+      across cycles (smaller is better)"
+    unit: meter
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar plot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: ult_time
+    name_readable: "time to reach stading COP (low is good)"
+    description: "time to reach stading COP (low is good)"
+    unit: sec
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar plot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: ult_overshoot
+    name_readable: "Unidirectional load transfer overshoot"
+    description: "distance between the average standing CoP position and the
+      local maxima of anteroposterior and latero-lateral CoP during transition
+      - (smaller is better)"
+    unit: meter
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: to be defined
+    visu: bar plot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: kinematic_repeatability
+    name_readable: "Kinematic repeatability"
+    description: "regularity of ankle, knee, hip and trunk kinematics measured
+      using autocorrelation (closer to 1 is better)"
+    unit: undef
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: to be defined
+    visu: bar plot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+  - name: com_work
+    name_readable: "Total mechanical power"
+    desription: Total work done by the CoM during one STS repetition
+      (goodness TBD)
+    unit: W
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: bar plot
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean]
+pi_algo:
+  - name: calculate_5sts_metrics
+    description: Sit to stand analysis algorithm
+    url_paper: na
+    url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - 5sts_duration
+      - com_work
+      - kinematic_repeatability
+      - sts_cop_stability
+      - subphases_duration
+      - ult_overshoot
+      - ult_time
+    input_files:
+      - platformData.csv
+      - platformData_calib.csv
+    input_command:
+      - ./run_bench_5sts_pi
+      - platformData.csv
+      - platformData_calib.csv
+    language: octave
+  - name: calculate_30sts_metrics
+    description: undef
+    url_paper: "DOI: 10.1109/JSEN.2019.2957667"
+    url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - 30sts_repetition
+      - com_work
+      - kinematic_repeatability
+      - sts_cop_stability
+      - subphases_duration
+      - ult_overshoot
+      - ult_time
+    input_files:
+      - platformData.csv
+      - platformData_calib.csv
+    input_command:
+      - ./run_bench_30sts_pi
+      - platformData.csv
+      - platformData_calib.csv
+    language: octave

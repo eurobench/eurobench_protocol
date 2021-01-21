@@ -1,0 +1,323 @@
+---
+scenario:
+  name: Walking on Slopes"
+  description: "The stability of bipedal locomotion is challenged when walking
+    on an inclined surface.
+    Changes of surface orientation asks for adequate adaption to the new
+    situation, and therefore requires enhanced control of fore-aft and lateral
+    stability.
+    By assessing the control of gait stability and foot placement strategies,
+    the gait stability of people using wearable robotic assistive devices or
+    humanoid robots can be quantified."
+  image: udbenchmark/img0.png
+
+protocol:
+  - name: "Walking on an inclined treadmill"
+    name_readable: "Participants walk in an Computer Assisted Rehabilitation
+      environment (CAREN, Motek, Forcelink, Amsterdam, The Netherlands), which
+      comprises of an instrumented treadmill mounted on top of a 6 degrees of
+      freedom moving platform.
+      This set-up allows for changes in walking surface orientation by inclining
+      the treadmill in either lateral or fore-aft direction.
+      Furthermore, in this set-up the gait stability at different treadmill
+      speeds can be assessed.
+      Participants walk on varying treadmill orientations in both fore-aft and
+      lateral directions, with varying treadmill speeds.
+      Three dimensional full-body kinematics of participant and treadmill are
+      recorded using a Vicon motion capture system."
+    image: undef
+    keywords: [Walking, walking stability, gait stability]
+    bipedal_system: [Humanoid, Prosthesis, Exoskeleton, Human]
+    pi_algo: [pi_fpe, pi_lde, pi_fpm, pi_spattemp]
+    duration: 3 minutes / treadmill orientation / subject
+    controlled_variables:
+      - name: "Number of strides"
+        definition: Number of heel strikes of the ipsilateral leg.
+        type: int
+        range: "> 72"
+        unit: steps
+      - name: "Lateral slopes"
+        definition: Mediolateral Inclination of the treadmill
+        type: int
+        range: [-15, 15]
+        unit: degree
+      - name: "Fore-aft slopes"
+        definition: Fore-aft Inclination of the treadmill
+        type: int
+        range: [-12, 12]
+        unit: degree
+      - name: "Treadmill speed"
+        definition: Running speed of treadmill
+        type: float
+        range: [0.3, 15]
+        unit: m/sec
+    testbed:
+      - item: "motion capture system"
+        type: sensor
+        file_sheet: UDBenchmarking documentation
+      - item: "instrumented treadmill"
+        type: combined
+        file_sheet: UDBenchmarking documentation
+    step_description: "undef"
+    step_list:
+      - description: Walk
+        detail: Participants walk on a treadmill with varying walking surface
+          orientations and treadmill speeds.
+          Participants are instructed to walk normal, and while walking to keep
+          looking straight ahead.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: pi_l_mos_ml
+    name_readable: "Mediolateral Margin of Stability for left foot"
+    description: "Euclidian distance from the extrapolated centre of mass to the
+      base of support [in the medio-lateral direction] at contralateral toe off.
+      Negative values indicating that the extrapolated CoM is beyond basis of
+      support hence not balanced."
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_r_mos_ml
+    name_readable: "Mediolateral Margin of Stability for right foot"
+    description: "Euclidian distance from the extrapolated centre of mass to the
+      base of support [in the medio-lateral direction] at contralateral toe off.
+      Negative values indicating that the extrapolated CoM is beyond basis of
+      support hence not balanced."
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_l_mos_ap
+    name_readable: "Anteroposterior Margin of Stability for left foot"
+    description: "Euclidian distance from the extrapolated centre of mass to the
+      base of support [in the anterior-posterior direction] at ipsilateral heel
+      strike.
+      Negative values indicating that the extrapolated CoM is beyond basis of
+      support hence not balanced."
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_r_mos_ap
+    name_readable: "Anteroposterior Margin of Stability for right foot"
+    description: "Euclidian distance from the extrapolated centre of mass to the
+      base of support [in the anterior-posterior direction] at ipsilateral heel
+      strike.
+      Negative values indicating that the extrapolated CoM is beyond basis of
+      support hence not balanced."
+    unit: m
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_lde
+    name_readable: Local Divergence Stability
+    desription: "Quantifying the rate of separation of nearest neighbour
+      trajectory (i.e., position) in a phase space.
+      A larger LDS suggests a less stable gait pattern."
+    unit: na
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_l_steplength
+    name_readable: Left Step Length
+    description: "Distance of the centre of gravity of the left foot to the
+      centre of gravity of the right foot in antero-posterior direction at left
+      heel strike."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_r_steplength
+    name_readable: Left Step Length
+    description: "Distance of the centre of gravity of the right foot to the
+      centre of gravity of the left foot in antero-posterior direction at right
+      heel strike."
+    unit: m
+    output: vector
+    intra_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: [[0, mean], [0, std]]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_stridetime
+    name_readable: Stide time
+    description: "Time between heel strike of one leg to the next heel
+      ipsilateral heel strike."
+    unit: sec
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_stepwidth
+    name_readable: Step width
+    description: "The distance of the centre of gravity of the left foot to
+      the centre of gravity of the right foot in mediolateral direction at left
+      heel strike."
+    unit: meter
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_fpe_ml
+    name_readable: mediolateral Foot Placement Estimates
+    description: "The euclidean distance (mediolateral) from the estimated
+      position of foot placement to come to stable stance within one step to the
+      actual step position (defined at heelstrike), i.e., a smaller distance
+      suggests more stable gait."
+    unit: meter
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_fpe_ap
+    name_readable: Anteroposterior Foot Placement Estimates
+    description: "The euclidean distance (anteroposterior) from the
+      estimated position of foot placement to come to stable stance
+      within one step to the actual step position (defined at
+      heelstrike), i.e., a smaller distance suggests more stable
+      gait."
+    unit: meter
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_r_fpm
+    name_readable: "Explained Variance by a Linear Foot Placement Model Right
+      Foot"
+    description: "The goodness of fit of a linear regression model for foot
+      placements.
+      A higher score suggests less active control, which indicates better
+      performance."
+    unit: "variance explained [%]"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+  - name: pi_l_fpm
+    name_readable: "Explained Variance by a Linear Foot Placement Model Left
+      Foot"
+    description: "The goodness of fit of a linear regression model for foot
+      placements.
+      A higher score suggests less active control, which indicates better
+      performance."
+    unit: "variance explained [%]"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [0, mean]
+    visu: Line graph with error bars
+    inter_cond_aggregation: Should be compared within conditions
+    inter_subject_aggregation: Mean (if normally distributed)
+pi_algo:
+  - name: pi_fpe
+    description: Foot placement estimator algorithm
+    url_paper: https://asmedigitalcollection.asme.org/computationalnonlinear/article-abstract/3/1/011009/440250/Introduction-of-the-Foot-Placement-Estimator-A?redirectedFrom=fulltext
+    url_code: https://github.com/nickkluft/udbenchmark_PIs
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - pi_fpe_ap
+      - pi_fpe_ml
+      - pi_l_mos_ap
+      - pi_l_mos_ml
+      - pi_r_mos_ap
+      - pi_r_mos_ml
+    input_files:
+      - com.csv
+      - angularMomentum.csv
+      - inertiaTensor.csv
+      - gaitEvents.yaml
+      - condition.yaml
+    input_command:
+      - run_fpe
+      - jointTrajectories.csv
+      - com.csv
+      - angularMomentum.csv
+      - inertiaTensor.csv
+      - gaitEvents.yaml
+      - condition.yaml
+    language: python
+  - name: pi_lde
+    description: Local divergence stability algorithm
+    url_paper: https://www.sciencedirect.com/science/article/pii/016727899390009P
+    url_code: https://github.com/nickkluft/udbenchmark_PIs
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - pi_lde
+    input_files:
+      - com.csv
+      - gaitEvents.yaml
+    input_command:
+      - run_lde
+      - com.csv
+      - gaitEvents.yaml
+    language: python
+  - name: pi_fpm
+    description: Algorithm to determine the goodness of fit of a linear
+      regression model for foot placements
+    url_paper: https://royalsocietypublishing.org/doi/10.1098/rsbl.2014.0405
+    url_code: https://github.com/nickkluft/udbenchmark_PIs
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - pi_l_fpm
+      - pi_r_fpm
+    input_files:
+      - jointTrajectories.csv
+      - com.csv
+      - gaitEvents.yaml
+    input_command:
+      - run_fpm
+      - jointTrajectories.csv
+      - com.csv
+      - gaitEvents.yaml
+    language: python
+  - name: pi_spattemp
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/nickkluft/udbenchmark_PIs
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - pi_l_steplength
+      - pi_r_steplength
+      - pi_stepwidth
+      - pi_stridetime
+    input_files:
+      - jointTrajectories.csv
+      - gaitEvents.yaml
+    input_command:
+      - run_spattemp
+      - jointTrajectories.csv
+      - gaitEvents.yaml
+    language: python
