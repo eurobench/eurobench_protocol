@@ -16,7 +16,7 @@ protocol:
     image: undef
     keywords: [door, handle, lock, threshold, open, close]
     bipedal_system: [humanoid, prosthesis, exoskeleton, human]
-    pi_algo: undef
+    pi_algo: madrob
     duration: "10 minutes per run"
     controlled_variables:
       - name: opening side
@@ -191,21 +191,6 @@ pi:
       Although ideally the number of runs with different conditions should be
       balanced."
     inter_subject_aggregation: undef
-  - name: door_handle_smoothness
-    name_readable: "Door handle smoothness"
-    description: "This PI measures how smooth the robot is in operating the door based on the sum of force changes (impulse) applied to the handle."
-    unit: "none"
-    output: scalar
-    intra_run_aggregation: undef
-    inter_run_aggregation:
-      - [0, mean]
-      - [0, median]
-      - [0, std]
-      - [0, min]
-      - [0, max]
-    visu: Bar plot
-    inter_cond_aggregation: "Average of score for all conditions should be fine. Although ideally the number of runs with different conditions should be balanced."
-    inter_subject_aggregation: undef
   - name: capability_level
     name_readable: "Capability level"
     description: "Number of steps of the benchmark actually completed by the
@@ -233,8 +218,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/madrob-beast/madrob_beast_pi
-    docker_host: eurobenchtest/pi_madrob_beast:v0.0.0
-    docker_name: eurobenchtest/pi_madrob_beast:v0.0.0
+    docker_host: eurobenchtest/pi_madrob_beast:v1.0.0
+    docker_name: eurobenchtest/pi_madrob_beast:v1.0.0
     pi:
       - execution_time
       - time_to_handle
@@ -244,7 +229,6 @@ pi_algo:
       - smoothness_of_door_actuation
       - roughness_of_door_actuation
       - capability_level
-      - door_handle_smoothness
     input_files:
       - events.csv
       - wrench.csv
