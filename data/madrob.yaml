@@ -236,14 +236,14 @@ pi_algo:
       - roughness_of_door_actuation
       - capability_level
     input_files:
-      - events.csv
+      - event.csv
       - wrench.csv
       - jointState.csv
       - condition.yaml
     # todo: check docker entry point
     input_command:
       - run_madrob
-      - events.csv
+      - event.csv
       - wrench.csv
       - jointState.csv
       - condition.yaml
