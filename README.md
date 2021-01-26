@@ -83,6 +83,13 @@ The hyperlinks refer to:
     [yaml](data/bench.yaml)
   * Discussion on the input data (calib file per user, not in the current options)
 
+* **pepato**:
+  * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
+    [Eurobench_repo](https://github.com/eurobench/pi_pepato),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
+    [template](data/pepato/pepato.xlsx),
+    [yaml](data/pepato.yaml)
+
 ### Under progress
 
 * **beast**:
@@ -107,17 +114,6 @@ The hyperlinks refer to:
     * Open discussion on PI Algo structure.
     * Eurobench repo created, with access secret to docker hub.
       Waiting for CI process PR merging
-
-* **pepato**:
-  * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
-    [Eurobench_repo](https://github.com/eurobench/pi_pepato),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
-    [template](data/pepato/pepato.xlsx),
-    [yaml](data/pepato.yaml)
-  * pending on:
-    * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
-    * asked to have an explicit naming of the input files.
-  * all PI not described in excel sheet
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
