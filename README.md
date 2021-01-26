@@ -120,10 +120,11 @@ The hyperlinks refer to:
     [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
     [docker](https://hub.docker.com/r/eurobenchtest/pi_csic_irregular),
     [template](data/csic-irregular/csic-irregular-terrain.xlsx),
-    **no yaml**
+    [yaml](data/csic_irregular.yaml)
   * current state (26/01):
+    * verify input data file
     * data collection check
-    * excel sheet check and yaml creation
+    * excel sheet check
 
 ### Very early stage
 
