@@ -117,10 +117,13 @@ The hyperlinks refer to:
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
-    [template](data/csic-irregular/csic-irregular-terrain.xlsx)
-  * current state:
-    * 15/01: pending on code update (output file)
-    * CI created
+    [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
+    [docker](https://hub.docker.com/r/eurobenchtest/pi_csic_irregular),
+    [template](data/csic-irregular/csic-irregular-terrain.xlsx),
+    **no yaml**
+  * current state (26/01):
+    * data collection check
+    * excel sheet check and yaml creation
 
 ### Very early stage
 
