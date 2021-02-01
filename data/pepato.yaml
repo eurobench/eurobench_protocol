@@ -39,7 +39,7 @@ protocol:
     image: pepato/img1.png
     keywords: [walking]
     bipedal_system: [prosthesis, exoskeleton, human]
-    pi_algo: undef
+    pi_algo: pi_pepato
     duration: "10 minutes per run"
     controlled_variables:
       - name: treadmill speed
@@ -153,15 +153,14 @@ pi:
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [circular mean, circular std]
-  # TODO: the following one is not created in the example.
-  - name: muscle_module_similarity
-    name_readable: "Muscle module similarity"
-    description: "The degree of similarity of muscle synergies and basic
-      patterns with the reference group (4 module clusters for each speed) =
-      the mean distance to the nearest module cluster center (measured in
-      standard deviations). The smaller the distance, the smaller the deviation
-      of the muscle modules (neural control) of exoskeleton walking from those
-      of normal walking."
+  - name: patterns_similarity
+    name_readable: "Patterns similarity"
+    description: "The degree of similarity of temporal components with the
+      reference group (4 muscle module clusters for each speed) = the
+      correlation between temporal components and reference temporal components
+      of the module cluster centers.
+      The larger the correlation, the larger the similarity between the
+      temporal patterns of exoskeleton walking and those of normal walking."
     unit: undef
     # TODO: more information in the excel sheet
     output: vector_of_matrix
@@ -171,87 +170,107 @@ pi:
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [mean, std]
+  - name: synergies_similarity
+    name_readable: "Synergies similarity"
+    description: "The degree of similarity of muscle synergies with the
+      reference group (4 muscle module clusters for each speed) = the
+      scalar product of muscle weightings to the reference muscle
+      weightings of the module cluster centers.
+      The larger the dot product, the larger the similarity between the muscle
+      synergies of exoskeleton walking and those of normal walking."
+    unit: undef
+    # TODO: more information in the excel sheet
+    output: vector_of_matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: Color coded 2D table
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean, std]
   - name: matching_standard_reference_index
     name_readable: "matching_standard_reference_index"
     description: "This index is not PI but it is used for aggregation
-      (inter-subject scoring) of the followint PIs: pattern_fwhm, pattern_coa,
+      (inter-subject scoring) of the following PIs: pattern_fwhm, pattern_coa,
       muscle_module_similarity.
-      Each value corresponds to the index of the nearest module in the reference database. If the value is missing (NaN), the module does not match any in the reference."
+      Each value corresponds to the index of the nearest module in the reference
+      database.
+      If the value is missing (NaN), the module does not match any in the
+      reference."
     unit: undef
-    output: vector_of_matrix
+    output: vector_of_vector
     intra_run_aggregation: na
     inter_run_aggregation: na
     visu: Color coded 2D table
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [mean, std]
+  - name: motor_pool_max_activation
+    name_readable: "motor pool max activation timming"
+    description: "Timing of the main loci of MN activity: timing of
+      maximum activation of sacral (S1+S2) and upper lumbar (L3+L4)
+      motor pools (for each speed).
+      Alterations in the relative activation timing of sacral and lumbar
+      motor pools represent important biomarkers of changes in the spinal
+      locomotor output.
+      The larger its deviation from the reference database, the more
+      different the segmental control of walking in the exoskeleton is.
+      An abnormal spatiotemporal integration of activity in specific spinal
+      segments may result in a risk for failure or abnormalities in gait
+      recovery (Ivanenko et al. Front Comput Neurosci 2013, 7:123)."
+    unit: percentage of gait cycle
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: Stacked lines with markers
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean, std]
+  - name: motor_pool_fwhm
+    name_readable: "motor pool fwhm"
+    description: "FWHM of activation of sacral and upper lumbar spinal motor
+      pools (for each speed).
+      Widening of spinal segmental output represents important physiological
+      marker of pathological gait and/or unstable walking conditions
+      (Martino et al. J Neurophysiol 2015, 114(5):2867-82; Martino et al.
+      Clin Neurophysiol 2018, 129:516–525)."
+    unit: percentage of gait cycle
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: Stacked lines with markers
+    inter_cond_aggregation: na
+    inter_subject_aggregation: [mean, std]
   - name: motor_pool_coact_index
-    name_readable: "motor_pool_coact_index"
-    description: undef
+    name_readable: "motor pool coactivation index"
+    description: "Co-activation index of sacral and upper lumbar motor pools
+      (for each speed).
+      Higher coactivation of sacral and lumber motor pools may characterize
+      abnormal functioning of the spinal locomotor output."
     unit: undef
     output: vector
     intra_run_aggregation: na
     inter_run_aggregation: na
-    visu: undef
+    visu: bar plot
     inter_cond_aggregation: na
-    inter_subject_aggregation: undef
-  - name: motor_pool_fwhm
-    name_readable: "motor_pool_fwhm"
-    description: undef
-    unit: undef
-    output: matrix
-    intra_run_aggregation: na
-    inter_run_aggregation: na
-    visu: undef
-    inter_cond_aggregation: na
-    inter_subject_aggregation: undef
-  - name: motor_pool_max_activation
-    name_readable: "motor_pool_max_activation"
-    description: undef
-    unit: undef
-    output: matrix
-    intra_run_aggregation: na
-    inter_run_aggregation: na
-    visu: undef
-    inter_cond_aggregation: na
-    inter_subject_aggregation: undef
+    inter_subject_aggregation: [mean, std]
   - name: motor_pool_similarity
-    name_readable: "motor_pool_similarity"
-    description: undef
+    name_readable: "motor pool similarity"
+    description: "The degree of similarity (correlation) of activation of sacral
+      and lumbar motor pools with respect to the reference group.
+      The higher the similarity, the smaller the deviation of the neural control
+      of exoskeleton walking from that of normal walking."
     unit: undef
     output: matrix
     intra_run_aggregation: na
     inter_run_aggregation: na
-    visu: undef
+    visu: bar plot
     inter_cond_aggregation: na
-    inter_subject_aggregation: undef
-  - name: patterns_similarity
-    name_readable: "patterns_similarity"
-    description: undef
-    unit: undef
-    output: vector_of_matrix
-    intra_run_aggregation: na
-    inter_run_aggregation: na
-    visu: undef
-    inter_cond_aggregation: na
-    inter_subject_aggregation: undef
-  - name: synergies_similarity
-    name_readable: "synergies_similarity"
-    description: undef
-    unit: undef
-    output: vector_of_matrix
-    intra_run_aggregation: na
-    inter_run_aggregation: na
-    visu: undef
-    inter_cond_aggregation: na
-    inter_subject_aggregation: undef
+    inter_subject_aggregation: [mean, std]
 pi_algo:
   - name: pi_pepato
     description: EMG analysis algorythms
     url_paper: undef
     url_code: https://github.com/dzhvansky/pepato/tree/octave_version
-    docker_host: eurobenchtest/pi_pepato:v1.0.0
-    docker_name: eurobenchtest/pi_pepato:v1.0.0
+    docker_host: eurobenchtest/pi_pepato:v1.1.0
+    docker_name: eurobenchtest/pi_pepato:v1.1.0
     pi:
       - muscle_synergy_number
       - emg_reco_quality
@@ -265,18 +284,19 @@ pi_algo:
       - patterns_similarity
       - synergies_similarity
     input_files:
-      - speed2kmh_emg.csv
-      - speed2kmh_gaitEvents.yaml
-      - speed4kmh_emg.csv
-      - speed4kmh_gaitEvents.yaml
-      - speed6kmh_emg.csv
-    # todo: check docker entry point
+      - emg_speed2kmh.csv
+      - gaitEvents_speed2kmh.yaml
+      - emg_speed4kmh.csv
+      - gaitEvents_speed4kmh.yaml
+      - emg_speed6kmh.csv
+      - gaitEvents_speed6kmh.yaml
     input_command:
       - run_pepato left BLF db_healthy_adults_8m
-      - speed2kmh_emg.csv
-      - speed2kmh_gaitEvents.yaml
-      - speed4kmh_emg.csv
-      - speed4kmh_gaitEvents.yaml
-      - speed6kmh_emg.csv
+      - emg_speed2kmh.csv
+      - gaitEvents_speed2kmh.yaml
+      - emg_speed4kmh.csv
+      - gaitEvents_speed4kmh.yaml
+      - emg_speed6kmh.csv
+      - gaitEvents_speed6kmh.yaml
     language: octave
     implemented: false
