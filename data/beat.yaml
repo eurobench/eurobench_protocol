@@ -843,11 +843,12 @@ pi_algo:
       - platformData.csv
       - emg.csv
     input_command:
-      - ./run_protocol_1
+      - ./run_protocol1
       - jointAngles.csv
       - platformData.csv
       - emg.csv
     language: octave
+    implemented: true
   - name: protocol_2_stepping_uneven
     description: This algo allows to quantify the performance of exoskeleton
       in terms of kinematics, muscle coordination and balance when stepping on
@@ -870,11 +871,12 @@ pi_algo:
       - platformData.csv
       - emg.csv
     input_command:
-      - ./run_protocol_2
+      - ./run_protocol2
       - jointAngles.csv
       - platformData.csv
       - emg.csv
     language: octave
+    implemented: true
   - name: protocol_3_static_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  stability when static balance on even surface is performed
@@ -890,9 +892,10 @@ pi_algo:
     input_files:
       - platformData.csv
     input_command:
-      - ./run_protocol_3
+      - ./run_protocol3
       - platformData.csv
     language: octave
+    implemented: true
   - name: protocol_4_static_uneven
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  stability when static balance on uneven surface is performed
@@ -908,9 +911,10 @@ pi_algo:
     input_files:
       - platformData.csv
     input_command:
-      - ./run_protocol_4
+      - ./run_protocol4
       - platformData.csv
     language: octave
+    implemented: true
   - name: protocol_5_step_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic and stability when step perturbations are provided and
@@ -927,10 +931,11 @@ pi_algo:
       - jointAngles.csv
       - platformData.csv
     input_command:
-      - ./run_protocol_5
+      - ./run_protocol5
       - jointAngles.csv
       - platformData.csv
     language: octave
+    implemented: true
   - name: protocol_6_step_uneven
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic, stability and body reaction when step perturbations
@@ -950,10 +955,11 @@ pi_algo:
       - jointAngles.csv
       - platformData.csv
     input_command:
-      - ./run_protocol_6
+      - ./run_protocol6
       - jointAngles.csv
       - platformData.csv
     language: octave
+    implemented: true
   - name: protocol_7_sinusoidal_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic and body reaction when sinusoidal perturbations are
@@ -971,7 +977,8 @@ pi_algo:
       - jointAngles.csv
       - platformData.csv
     input_command:
-      - ./run_protocol_7
+      - ./run_protocol7
       - jointAngles.csv
       - platformData.csv
     language: octave
+    implemented: true
