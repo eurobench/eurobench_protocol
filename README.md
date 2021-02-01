@@ -47,6 +47,13 @@ The hyperlinks refer to:
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file.
 
+* **udbenchmarking**:
+  * [code](https://github.com/nickkluft/udbenchmark_PIs),
+    [Eurobench repo](https://github.com/eurobench/pi_udbenchmark),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
+    [template](data/udbenchmarking/udbenchmarking.xlsx),
+    [yaml](data/udbenchmark.yaml)
+
 ### Ready to be tested for insertion in database
 
 * **beat**:
@@ -67,13 +74,6 @@ The hyperlinks refer to:
   * [yaml](data/bullet.yaml),
   * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
-
-* **udbenchmarking**:
-  * [code](https://github.com/nickkluft/udbenchmark_PIs),
-    [Eurobench repo](https://github.com/eurobench/pi_udbenchmark)
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
-    [template](data/udbenchmarking/udbenchmarking.xlsx),
-    [yaml](data/udbenchmark.yaml),
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
