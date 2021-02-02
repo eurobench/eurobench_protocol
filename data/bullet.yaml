@@ -18,7 +18,7 @@ protocol:
       to be used when force platforms and mocap are not available."
     image: bullet/img01.png
     keywords: [Walking, instrumented crutches, gait analysis]
-    bipedal_system: [Prosthesis, exoskeleton, humans]
+    bipedal_system: [Prosthesis, exoskeleton, human]
     pi_algo: pi_bullet_walking
     duration: 2 min/run/subject
     controlled_variables:
