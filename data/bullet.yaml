@@ -203,7 +203,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: peak_load_shoulders_left
+  - name: peak_load_shoulder_left
     name_readable: "Left Peak load on shoulder"
     description: "Vector of 13 elements containing mean and standard deviation
       of the left shoulder force X, force Y, force Z, torque X, torque Y,
@@ -216,7 +216,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: peak_load_shoulders_right
+  - name: peak_load_shoulder_right
     name_readable: "Right Peak load on shoulder"
     description: "Vector of 13 elements containing mean and standard deviation
       of the right shoulder force X, force Y, force Z, torque X, torque Y,
@@ -229,7 +229,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: rms_load_shoulders_left
+  - name: rms_load_shoulder_left
     name_readable: "Left Root Mean Square load on shoulder"
     description: "Vector of 6 elements containing 3 force components (X, Y, Z)
       and 3 torque components (X,Y,Z) of left shoulder RMS load expressed
@@ -241,7 +241,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: rms_load_shoulders_right
+  - name: rms_load_shoulder_right
     name_readable: "Right Root Mean Square load on shoulder"
     description: "Vector of 6 elements containing 3 force components (X, Y, Z)
       and 3 torque components (X,Y,Z) of right shoulder RMS load expressed
