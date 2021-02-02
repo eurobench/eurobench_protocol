@@ -1,4 +1,5 @@
 ---
+user_name: "pepato"
 scenario:
   name: "How walking in the exoskeleton affects muscle coordination"
   description: "The rationale of this scenario is to characterize gait
@@ -96,7 +97,8 @@ protocol:
     has_multiple_run: false
     # TODO: 3 different speed, but needs to be processed together
     has_multiple_condition: false
-    has_multiple_subject: undef
+    # it was undef, set to false
+    has_multiple_subject: false
 
 pi:
   - name: muscle_synergy_number
@@ -266,7 +268,7 @@ pi:
     inter_subject_aggregation: [mean, std]
 pi_algo:
   - name: pi_pepato
-    description: EMG analysis algorythms
+    description: EMG analysis algorithms
     url_paper: undef
     url_code: https://github.com/dzhvansky/pepato/tree/octave_version
     docker_host: eurobenchtest/pi_pepato:v1.1.0
@@ -299,4 +301,4 @@ pi_algo:
       - emg_speed6kmh.csv
       - gaitEvents_speed6kmh.yaml
     language: octave
-    implemented: false
+    implemented: true
