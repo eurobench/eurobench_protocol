@@ -680,7 +680,7 @@ pi:
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: ea_p
+  - name: eap
     name_readable: Area of the confidence ellipse after perturbation (EA_p)
     description: "It represents the area of the confidence ellipse containing
       the 95% of the point coveder by the centre of pressure reported for each
@@ -926,7 +926,7 @@ pi_algo:
     pi:
       - rom_p
       - pl_p
-      - ea_p
+      - eap
     input_files:
       - jointAngles.csv
       - platformData.csv
@@ -947,7 +947,7 @@ pi_algo:
     pi:
       - rom_p
       - pl_p
-      - ea_p
+      - eap
       - os
       - theta_f
       - delta_theta
@@ -970,7 +970,7 @@ pi_algo:
     docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl_p
-      - ea_p
+      - eap
       - g
       - phi
     input_files:
