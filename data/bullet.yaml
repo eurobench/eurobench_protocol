@@ -1,4 +1,5 @@
 ---
+user_name: "bullet"
 scenario:
   name: "walking on straight lines"
   description: "Walking over an horizontal surface following a straight line
@@ -277,6 +278,7 @@ pi_algo:
       - wrench_CrutchRight.csv
       - gaitEvents.yaml
     language: octave
+    implemented: true
   - name: pi_bullet_walking_complete
     description: Algorithm for analysis of gait performed with instrumented
       crutches using mocap system, force platform, volumetric scanner and
@@ -312,3 +314,4 @@ pi_algo:
       - wrench_ShoulderLeft.csv
       - wrench_ShoulderRight.csv
     language: octave
+    implemented: true
