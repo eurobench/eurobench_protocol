@@ -74,7 +74,7 @@ protocol:
       - instrumented crutches
       - gait analysis
       - biomehanical model
-    bipedal_system: [Prosthesis, exoskeleton, humans]
+    bipedal_system: [Prosthesis, exoskeleton, human]
     pi_algo: pi_bullet_walking_complete
     duration: "volumetric scanning (5-10 mins), and 2 min/run/subject"
     controlled_variables:
@@ -101,7 +101,7 @@ protocol:
       The crutches height should be adjusted to the subject before the test.
       Motion capture should be available, as well as force platforms,
       along the path.
-      A preliminary assessment of the subject's anthropometric data is required.
+      A preliminary assessment of the subject''s anthropometric data is required.
       Data collection is started at the beginning of the walk and stopped
       after each walk."
     step_list:
