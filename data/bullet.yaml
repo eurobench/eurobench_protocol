@@ -40,8 +40,8 @@ protocol:
       - description: Subject is welcomed and instructed on the protocol
         detail: The current protocol should be described to the subject,
           without giving him/her any specific instruction on the crutches usage.
-      - description: Adjust crutches' height
-        detail: If the subject is an exoskeleton user adjust the crutches'
+      - description: Adjust crutches\' height
+        detail: If the subject is an exoskeleton user adjust the crutches\'
           height to match the height of the crutches currently used by
           the subject
       - description: Give crutches to the subject
@@ -115,8 +115,8 @@ protocol:
       - description: Subject is welcomed and instructed on the protocol
         detail: The current protocol should be described to the subject,
           without giving him/her any specific instruction on the crutches usage.
-      - description: Adjust crutches' height
-        detail: If the subject is an exoskeleton user adjust the crutches'
+      - description: Adjust crutches\' height
+        detail: If the subject is an exoskeleton user adjust the crutches\'
           height to match the height of the crutches currently used by the
           subject
       - description: Give crutches to the subject
