@@ -294,10 +294,10 @@ pi_algo:
       - rms_load_right
       - stance_time_left
       - stance_time_right
-      - peak_load_shoulders_left
-      - peak_load_shoulders_right
-      - rms_load_shoulders_left
-      - rms_load_shoulders_right
+      - peak_load_shoulder_left
+      - peak_load_shoulder_right
+      - rms_load_shoulder_left
+      - rms_load_shoulder_right
     # I suggest stating only wrench_CrutchLeft
     # Alfonso suggests crutchLeft_wrench
     input_files:
