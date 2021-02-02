@@ -293,7 +293,7 @@ pi_algo:
       - emg_speed6kmh.csv
       - gaitEvents_speed6kmh.yaml
     input_command:
-      - run_pepato left BLF db_healthy_adults_8m
+      - ./run_pepato left BLF db_healthy_adults_8m
       - emg_speed2kmh.csv
       - gaitEvents_speed2kmh.yaml
       - emg_speed4kmh.csv
