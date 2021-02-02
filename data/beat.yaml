@@ -538,7 +538,7 @@ pi:
       subject"
     unit: "º"
     # todo: check the explanation provided
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
@@ -554,7 +554,7 @@ pi:
       which leads to a worsening of the subject motor performance."
     unit: "%"
     # todo: check the explanation provided
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
@@ -574,7 +574,7 @@ pi:
       subject"
     unit: "º"
     # todo: check the explanation provided
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
@@ -601,7 +601,7 @@ pi:
       the task with closed eyes."
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: pl_ap
+  - name: plap
     name_readable: "Path Length of the Centre of Pressure in antero-posterior
       direction (PL_AP)"
     description: "It represents the distance covered by the centre of pressure
@@ -623,7 +623,7 @@ pi:
       the task with closed eyes."
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: pl_ml
+  - name: plml
     name_readable: "Path Length of the Centre of Pressure in medio-lateral
       direction (PL_ML)"
     description: "It represents the  distance covered by the centre of pressure
@@ -673,7 +673,7 @@ pi:
       Greater value of PL indicates greater instability."
     unit: m
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -688,7 +688,7 @@ pi:
       Greater value of EA indicates greater instability during task. "
     unit: "m^2"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -735,7 +735,7 @@ pi:
       capability of the subject."
     unit: "º"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -754,7 +754,7 @@ pi:
       subject to bring back the platform in the neutral position."
     unit: "º"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -773,7 +773,7 @@ pi:
       perturbation reaction."
     unit: "º"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -831,8 +831,8 @@ pi_algo:
       is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - mrom
       - cov
@@ -855,16 +855,16 @@ pi_algo:
       uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - mrom
       - cov
       - rnos
       - lnos
       - pl
-      - pl_ap
-      - pl_ml
+      - plap
+      - plml
       - ea
     input_files:
       - jointAngles.csv
@@ -882,12 +882,12 @@ pi_algo:
       terms of  stability when static balance on even surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl
-      - pl_ap
-      - pl_ml
+      - plap
+      - plml
       - ea
     input_files:
       - platformData.csv
@@ -901,12 +901,12 @@ pi_algo:
       terms of  stability when static balance on uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl
-      - pl_ap
-      - pl_ml
+      - plap
+      - plml
       - ea
     input_files:
       - platformData.csv
@@ -921,8 +921,8 @@ pi_algo:
       subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - rom_p
       - pl_p
@@ -942,8 +942,8 @@ pi_algo:
       are provided and subjects stand on uneven surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - rom_p
       - pl_p
@@ -966,8 +966,8 @@ pi_algo:
       provided and subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl_p
       - ea_p
