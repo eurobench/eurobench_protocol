@@ -131,7 +131,7 @@ protocol:
     has_multiple_subject: true
 
 pi:
-  - name: 5sts_duration
+  - name: 5STS_duration
     name_readable: "5sts duration"
     description: "time to execute 5 times STS (only under 5 sit to stand
       protocol).
@@ -170,7 +170,7 @@ pi:
       total duration
     inter_cond_aggregation: na
     inter_subject_aggregation: [mean]
-  - name: sts_cop_stability
+  - name: CoP_stability
     name_readable: "STS stability"
     description: "Distance traveled by the CoP during the movement, averaged
       across cycles (smaller is better)"
@@ -214,7 +214,7 @@ pi:
     visu: bar plot
     inter_cond_aggregation: na
     inter_subject_aggregation: [mean]
-  - name: com_work
+  - name: CoM_work
     name_readable: "Total mechanical power"
     description: Total work done by the CoM during one STS repetition
       (goodness TBD)
@@ -233,10 +233,10 @@ pi_algo:
     docker_host: eurobenchtest/pi_bench:v0.0.0
     docker_name: eurobenchtest/pi_bench:v0.0.0
     pi:
-      - 5sts_duration
-      - com_work
+      - 5STS_duration
+      - CoM_work
       - kinematic_repeatability
-      - sts_cop_stability
+      - CoP_stability
       - subphases_duration
       - ult_overshoot
       - ult_time
@@ -256,10 +256,10 @@ pi_algo:
     docker_host: eurobenchtest/pi_bench:v0.0.0
     docker_name: eurobenchtest/pi_bench:v0.0.0
     pi:
-      - 30sts_repetition
-      - com_work
+      - 30sSTS_repetitions
+      - CoM_work
       - kinematic_repeatability
-      - sts_cop_stability
+      - CoP_stability
       - subphases_duration
       - ult_overshoot
       - ult_time
