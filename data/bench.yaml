@@ -214,7 +214,7 @@ pi:
     inter_subject_aggregation: [mean]
   - name: com_work
     name_readable: "Total mechanical power"
-    desription: Total work done by the CoM during one STS repetition
+    description: Total work done by the CoM during one STS repetition
       (goodness TBD)
     unit: W
     output: scalar
