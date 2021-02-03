@@ -54,6 +54,16 @@ The hyperlinks refer to:
     [template](data/udbenchmarking/udbenchmarking.xlsx),
     [yaml](data/udbenchmark.yaml)
 
+* **bullet**:
+  * [Eurobench repo](https://github.com/eurobench/pi_bullet),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
+  * excels:
+    * [walking](data/bullet/bullet_walking.xlsx)
+    * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
+  * [yaml](data/bullet.yaml),
+  * current state: ready for database trial
+  * discussion opened on the inter-intra aggregation
+
 ### Ready to be tested for insertion in database
 
 * **beat**:
@@ -64,16 +74,6 @@ The hyperlinks refer to:
     [yaml](data/beat.yaml),
   * current state: waiting for PI output adjustment in code.
     * CI process failing due to csv linting issue
-
-* **bullet**:
-  * [Eurobench repo](https://github.com/eurobench/pi_bullet),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
-  * excels:
-    * [walking](data/bullet/bullet_walking.xlsx)
-    * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
-  * [yaml](data/bullet.yaml),
-  * current state: ready for database trial
-  * discussion opened on the inter-intra aggregation
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
