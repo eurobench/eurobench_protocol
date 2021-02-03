@@ -56,7 +56,7 @@ protocol:
       - description: Place the IMU sensor onto the subject body segments
         detail: IMUs will be placed on the segments in an arbitrary positions
       - description: Adjust height of the chair and handrails
-        detail: either standardized or based on subjects' anthropometrics
+        detail: either standardized or based on subjects'' anthropometrics
       - description: Perform calibration according to the documentation
         detail: Calibration is needed for kinematics estimation
       - description: Place the subject at the starting point (i.e., sit)
@@ -114,7 +114,7 @@ protocol:
       - description: Place the IMU sensor onto the subject body segments
         detail: IMUs will be placed on the segments in an arbitrary positions
       - description: Adjust height of the chair and handrails
-        detail: either standardized or based on subjects' anthropometrics
+        detail: either standardized or based on subjects'' anthropometrics
       - description: Perform calibration according to the documentation
         detail: Calibration is needed for kinematics estimation
       - description: Place the subject at the starting point (i.e., sit)
