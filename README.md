@@ -64,6 +64,14 @@ The hyperlinks refer to:
   * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
 
+* **bench**:
+  * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
+    [Eurobench_repo](https://github.com/eurobench/pi_bench),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
+    [template](data/bench/bench.xlsx),
+    [yaml](data/bench.yaml)
+  * Discussion on the input data (calib file per user, not in the current options)
+
 ### Ready to be tested for insertion in database
 
 * **beat**:
@@ -74,14 +82,6 @@ The hyperlinks refer to:
     [yaml](data/beat.yaml),
   * current state: waiting for PI output adjustment in code.
     * CI process failing due to csv linting issue
-
-* **bench**:
-  * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
-    [Eurobench_repo](https://github.com/eurobench/pi_bench),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
-    [template](data/bench/bench.xlsx),
-    [yaml](data/bench.yaml)
-  * Discussion on the input data (calib file per user, not in the current options)
 
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
