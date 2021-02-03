@@ -14,8 +14,9 @@ scenario:
   image: bench/img0.png
 
 protocol:
-  - name: "5 sit to stand"
-    name_readable: "5STS measures how long it takes to complete 5 full STS
+  - name: "5_sit_to_stand"
+    name_readable: "5 sit to stand"
+    definition: "5STS measures how long it takes to complete 5 full STS
       cycles, starting from a sat position and reaching again the initial
       position.
       The output of this protocol and the associated PIs have a documented
@@ -70,8 +71,9 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-  - name: "30 seconds sit to stand"
-    name_readable: "30sSTS measures how many full STS cycles are completed
+  - name: "30s_sit_to_stand"
+    name_readable: "30 seconds sit to stand"
+    definition: "30sSTS measures how many full STS cycles are completed
       within a 30s time frame, starting from a sat position.
       The output of this protocol and the associated PIs have a documented
       clinical relevance and are highly correlated with motor performance of
