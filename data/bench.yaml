@@ -230,8 +230,8 @@ pi_algo:
     description: Sit to stand analysis algorithm
     url_paper: na
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_bench:v0.0.0
+    docker_name: eurobenchtest/pi_bench:v0.0.0
     pi:
       - 5sts_duration
       - com_work
@@ -253,8 +253,8 @@ pi_algo:
     description: undef
     url_paper: "DOI: 10.1109/JSEN.2019.2957667"
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_bench:v0.0.0
+    docker_name: eurobenchtest/pi_bench:v0.0.0
     pi:
       - 30sts_repetition
       - com_work
