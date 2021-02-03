@@ -40,7 +40,7 @@ protocol:
         unit: m
     testbed:
       - item: "instrumented chair"
-        type: custom
+        type: combined
         file_sheet: BENCH technical document
       - item: "imu sensors"
         type: sensor
