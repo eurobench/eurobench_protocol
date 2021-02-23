@@ -114,6 +114,7 @@ The hyperlinks refer to:
     * Open discussion on PI Algo structure.
     * Eurobench repo created, with access secret to docker hub.
       Waiting for CI process PR merging
+    * waiting for some input file delivery
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
@@ -135,7 +136,7 @@ The hyperlinks refer to:
     * 01/12: PI code provided
     * 09/12: opened a set of question to start the integration process
     * matlab code, far from the requested format.
-    * 17/12: ping
+    * 22/12: working on a code revision.
 
 * **benchbalance**:
   * [code](https://github.com/FraCampus/PI_BenchBalance),
@@ -155,16 +156,17 @@ The hyperlinks refer to:
 * **comtest**:
   * [code](https://github.com/VittorioFreiburg/COMTEST),
     [template](data/comtest/comtest_v5.xlsx)
-  * octave code.
+  * octave code. Still requires significant afjustment.
   * current state:
-    * to be revised
+    * ping 19/02
 
 * **stepByStep**
   * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
     [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
     [template](data/stepByStep/stepByStep.xlsx),
   * current state:
-    * waiting for issues to be handled
+    * introduce docker and CI process
+    * code only covering one protocol.
 
 * **experience**:
   * [code](https://github.com/FraCampus/EXPERIENCE),
@@ -177,7 +179,7 @@ The hyperlinks refer to:
   * [code](https://github.com/AdrianaTorres/Manipulation),
     [template](data/csic-manipulation/csic-manipulation.xlsx)
   * current state:
-    * not started
+    * 22/12: very early stage.
 
 * **uhei**:
   * [code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
