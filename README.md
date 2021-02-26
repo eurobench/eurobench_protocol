@@ -72,6 +72,13 @@ The hyperlinks refer to:
     [yaml](data/bench.yaml)
   * Discussion on the input data (calib file per user, not in the current options)
 
+* **pepato**:
+  * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
+    [Eurobench_repo](https://github.com/eurobench/pi_pepato),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
+    [template](data/pepato/pepato.xlsx),
+    [yaml](data/pepato.yaml)
+
 ### Ready to be tested for insertion in database
 
 * **beat**:
@@ -82,13 +89,6 @@ The hyperlinks refer to:
     [yaml](data/beat.yaml),
   * current state: waiting for PI output adjustment in code.
     * CI process failing due to csv linting issue
-
-* **pepato**:
-  * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
-    [Eurobench_repo](https://github.com/eurobench/pi_pepato),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
-    [template](data/pepato/pepato.xlsx),
-    [yaml](data/pepato.yaml)
 
 ### Under progress
 
