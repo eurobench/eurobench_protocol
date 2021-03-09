@@ -61,7 +61,6 @@ The hyperlinks refer to:
     * [walking](data/bullet/bullet_walking.xlsx)
     * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
   * [yaml](data/bullet.yaml),
-  * current state: ready for database trial
   * discussion opened on the inter-intra aggregation
 
 * **bench**:
@@ -77,7 +76,8 @@ The hyperlinks refer to:
     [Eurobench_repo](https://github.com/eurobench/pi_pepato),
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
     [template](data/pepato/pepato.xlsx),
-    [yaml](data/pepato.yaml)
+    [yaml](data/pepato.yaml),
+    [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw)
 
 ### Ready to be tested for insertion in database
 
