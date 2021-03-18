@@ -1,4 +1,5 @@
 ---
+user_name: "beat"
 scenario:
   name: "Walking/Standing on a moving surface"
   description: "Perform walking task or balance one on the robotic movable
@@ -445,7 +446,7 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # seventh protocol
-  - name: "beat_sinuzoidal_uneven"
+  - name: "beat_sinusoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
     definition: "Subjects stands on platform and reacts to a sinusoidal
       perturbation with platform set in position mode.
@@ -535,9 +536,9 @@ pi:
       for the specific joint angle considered.
       Smaller values indicate a reduction of the physiological movement of the
       subject"
-    unit: degree
+    unit: "º"
     # todo: check the explanation provided
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
@@ -551,9 +552,9 @@ pi:
       strides.
       Greater value of CoV represents a greater variability of the kinematics,
       which leads to a worsening of the subject motor performance."
-    unit: ratio
+    unit: "%"
     # todo: check the explanation provided
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
@@ -571,9 +572,9 @@ pi:
       for the specific joint angle considered.
       Smaller values indicate a reduction of the physiological movement of the
       subject"
-    unit: degree
+    unit: "º"
     # todo: check the explanation provided
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: Bar plot per each angle
@@ -587,7 +588,7 @@ pi:
       Centre of pressure will be computed by the pressure matrix embedded in the
       Rotobit3D v3.0.
       Greater value of PL indicates greater instability."
-    unit: meter
+    unit: m
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -600,7 +601,7 @@ pi:
       the task with closed eyes."
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: pl_ap
+  - name: plap
     name_readable: "Path Length of the Centre of Pressure in antero-posterior
       direction (PL_AP)"
     description: "It represents the distance covered by the centre of pressure
@@ -609,7 +610,7 @@ pi:
       Rotobit3D v3.0.
       Greater value of PL_AP indicates greater instability in antero-posterior
       direction."
-    unit: meter
+    unit: m
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -622,7 +623,7 @@ pi:
       the task with closed eyes."
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: pl_ml
+  - name: plml
     name_readable: "Path Length of the Centre of Pressure in medio-lateral
       direction (PL_ML)"
     description: "It represents the  distance covered by the centre of pressure
@@ -631,7 +632,7 @@ pi:
       Rotobit3D v3.0.
       Greater value of PL_ML indicates greater instability in medio-lateral
       direction."
-    unit: meter
+    unit: m
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -649,7 +650,7 @@ pi:
     description: "It represents the area of the confidence ellipse containing
       the 95% of the point coveder by the centre of pressure.
       Greater value of EA indicates greater instability during task. "
-    unit: meter2
+    unit: "m^2"
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
@@ -670,24 +671,24 @@ pi:
       Centre of pressure will be computed by the pressure matrix embedded in
       the Rotobit3D v3.0.
       Greater value of PL indicates greater instability."
-    unit: meter
+    unit: m
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: ea_p
+  - name: eap
     name_readable: Area of the confidence ellipse after perturbation (EA_p)
     description: "It represents the area of the confidence ellipse containing
       the 95% of the point coveder by the centre of pressure reported for each
       perturbation direction.
       Greater value of EA indicates greater instability during task. "
-    unit: meter2
+    unit: "m^2"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -701,10 +702,10 @@ pi:
       coordination by the Central Nervous System when tasks are performed by
       healthy subjects or an impossibility to enrol all the right muscle
       synergies in subjects with neuromuscolar pathologies. "
-    unit: adim
+    unit: None
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [median and mode]
+    inter_run_aggregation: [[0, median], [0, mode]]
     visu: Bar plot
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Median and mode of the
@@ -716,10 +717,10 @@ pi:
       coordination by the Central Nervous System when tasks are performed by
       healthy subjects or an impossibility to enrol all the right muscle
       synergies in subjects with neuromuscolar pathologies. "
-    unit: adim
+    unit: None
     output: scalar
     intra_run_aggregation: undef
-    inter_run_aggregation: [median and mode]
+    inter_run_aggregation: [[0, median], [0, mode]]
     visu: Bar plot
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Median and mode of the
@@ -732,9 +733,9 @@ pi:
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
       Lower value of OS indicates a better anticipatory postural adjustments
       capability of the subject."
-    unit: degree
+    unit: "º"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -751,9 +752,9 @@ pi:
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
       Value of theta_f close to zero indicates the perfect capability of the
       subject to bring back the platform in the neutral position."
-    unit: degree
+    unit: "º"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -770,9 +771,9 @@ pi:
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
       Lower value of delta_theta indicates a greater stability after the
       perturbation reaction."
-    unit: degree
+    unit: "º"
     # see description
-    output: labelled_matrix
+    output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: spider chart
@@ -791,7 +792,7 @@ pi:
       All the angles are referred to the transversal plane.G equal to 100%
       indicates that examined segment is in perfect agreement with the
       perturbation."
-    unit: percentage
+    unit: "%"
     # see description
     output: matrix
     intra_run_aggregation: undef
@@ -813,7 +814,7 @@ pi:
       the perturbation; negative value indicates phase delay
       (lower value=greater delay); positive value indicates phase anticipation
       (greater value=greater anticipation)"
-    unit: degree
+    unit: "º"
     # see description
     output: matrix
     intra_run_aggregation: undef
@@ -830,8 +831,8 @@ pi_algo:
       is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - mrom
       - cov
@@ -842,111 +843,111 @@ pi_algo:
       - platformData.csv
       - emg.csv
     input_command:
-      - ./run_protocol_1
+      - ./run_protocol1
       - jointAngles.csv
       - platformData.csv
       - emg.csv
-      - outputDir
     language: octave
+    implemented: true
   - name: protocol_2_stepping_uneven
     description: This algo allows to quantify the performance of exoskeleton
       in terms of kinematics, muscle coordination and balance when stepping on
       uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - mrom
       - cov
       - rnos
       - lnos
       - pl
-      - pl_ap
-      - pl_ml
+      - plap
+      - plml
       - ea
     input_files:
       - jointAngles.csv
       - platformData.csv
       - emg.csv
     input_command:
-      - ./run_protocol_2
+      - ./run_protocol2
       - jointAngles.csv
       - platformData.csv
       - emg.csv
-      - outputDir
     language: octave
+    implemented: true
   - name: protocol_3_static_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  stability when static balance on even surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl
-      - pl_ap
-      - pl_ml
+      - plap
+      - plml
       - ea
     input_files:
       - platformData.csv
     input_command:
-      - ./run_protocol_3
+      - ./run_protocol3
       - platformData.csv
-      - outputDir
     language: octave
+    implemented: true
   - name: protocol_4_static_uneven
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  stability when static balance on uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl
-      - pl_ap
-      - pl_ml
+      - plap
+      - plml
       - ea
     input_files:
       - platformData.csv
     input_command:
-      - ./run_protocol_4
+      - ./run_protocol4
       - platformData.csv
-      - outputDir
     language: octave
-  - name: protocol_5_static_even
+    implemented: true
+  - name: protocol_5_step_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic and stability when step perturbations are provided and
       subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - rom_p
       - pl_p
-      - ea_p
+      - eap
     input_files:
       - jointAngles.csv
       - platformData.csv
     input_command:
-      - ./run_protocol_5
+      - ./run_protocol5
       - jointAngles.csv
       - platformData.csv
-      - outputDir
     language: octave
-  - name: protocol_6_static_uneven
+    implemented: true
+  - name: protocol_6_step_uneven
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic, stability and body reaction when step perturbations
       are provided and subjects stand on uneven surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - rom_p
       - pl_p
-      - ea_p
+      - eap
       - os
       - theta_f
       - delta_theta
@@ -954,30 +955,30 @@ pi_algo:
       - jointAngles.csv
       - platformData.csv
     input_command:
-      - ./run_protocol_6
+      - ./run_protocol6
       - jointAngles.csv
       - platformData.csv
-      - outputDir
     language: octave
+    implemented: true
   - name: protocol_7_sinusoidal_even
     description: This algo allows to quantify the performance of exoskeleton in
       terms of  kinematic and body reaction when sinusoidal perturbations are
       provided and subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.0.0
-    docker_name: eurobenchtest/pi_beat:v0.0.0
+    docker_host: eurobenchtest/pi_beat:v0.1.0
+    docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
       - pl_p
-      - ea_p
+      - eap
       - g
       - phi
     input_files:
       - jointAngles.csv
       - platformData.csv
     input_command:
-      - ./run_protocol_7
+      - ./run_protocol7
       - jointAngles.csv
       - platformData.csv
-      - outputDir
     language: octave
+    implemented: true

@@ -1,4 +1,5 @@
 ---
+user_name: "pepato"
 scenario:
   name: "How walking in the exoskeleton affects muscle coordination"
   description: "The rationale of this scenario is to characterize gait
@@ -39,7 +40,7 @@ protocol:
     image: pepato/img1.png
     keywords: [walking]
     bipedal_system: [prosthesis, exoskeleton, human]
-    pi_algo: undef
+    pi_algo: pi_pepato
     duration: "10 minutes per run"
     controlled_variables:
       - name: treadmill speed
@@ -96,7 +97,8 @@ protocol:
     has_multiple_run: false
     # TODO: 3 different speed, but needs to be processed together
     has_multiple_condition: false
-    has_multiple_subject: undef
+    # it was undef, set to false
+    has_multiple_subject: false
 
 pi:
   - name: muscle_synergy_number
@@ -153,7 +155,6 @@ pi:
     inter_cond_aggregation: na
     # additional comment: , using matching_standard_reference_index PI
     inter_subject_aggregation: [circular mean, circular std]
-  # TODO: the following one is not created in the example.
   - name: patterns_similarity
     name_readable: "Patterns similarity"
     description: "The degree of similarity of temporal components with the
@@ -162,7 +163,7 @@ pi:
       of the module cluster centers.
       The larger the correlation, the larger the similarity between the
       temporal patterns of exoskeleton walking and those of normal walking."
-    unit: vector_of_matrices
+    unit: undef
     # TODO: more information in the excel sheet
     output: vector_of_matrix
     intra_run_aggregation: na
@@ -179,7 +180,7 @@ pi:
       weightings of the module cluster centers.
       The larger the dot product, the larger the similarity between the muscle
       synergies of exoskeleton walking and those of normal walking."
-    unit: vector_of_matrices
+    unit: undef
     # TODO: more information in the excel sheet
     output: vector_of_matrix
     intra_run_aggregation: na
@@ -190,9 +191,12 @@ pi:
   - name: matching_standard_reference_index
     name_readable: "matching_standard_reference_index"
     description: "This index is not PI but it is used for aggregation
-      (inter-subject scoring) of the followint PIs: pattern_fwhm, pattern_coa,
+      (inter-subject scoring) of the following PIs: pattern_fwhm, pattern_coa,
       muscle_module_similarity.
-      Each value corresponds to the index of the nearest module in the reference database. If the value is missing (NaN), the module does not match any in the reference."
+      Each value corresponds to the index of the nearest module in the reference
+      database.
+      If the value is missing (NaN), the module does not match any in the
+      reference."
     unit: undef
     output: vector_of_vector
     intra_run_aggregation: na
@@ -264,11 +268,11 @@ pi:
     inter_subject_aggregation: [mean, std]
 pi_algo:
   - name: pi_pepato
-    description: EMG analysis algorythms
+    description: EMG analysis algorithms
     url_paper: undef
     url_code: https://github.com/dzhvansky/pepato/tree/octave_version
-    docker_host: eurobenchtest/pi_pepato:v1.0.0
-    docker_name: eurobenchtest/pi_pepato:v1.0.0
+    docker_host: eurobenchtest/pi_pepato:v1.1.0
+    docker_name: eurobenchtest/pi_pepato:v1.1.0
     pi:
       - muscle_synergy_number
       - emg_reco_quality
@@ -282,18 +286,19 @@ pi_algo:
       - patterns_similarity
       - synergies_similarity
     input_files:
-      - speed2kmh_emg.csv
-      - speed2kmh_gaitEvents.yaml
-      - speed4kmh_emg.csv
-      - speed4kmh_gaitEvents.yaml
-      - speed6kmh_emg.csv
-    # todo: check docker entry point
+      - emg_speed2kmh.csv
+      - gaitEvents_speed2kmh.yaml
+      - emg_speed4kmh.csv
+      - gaitEvents_speed4kmh.yaml
+      - emg_speed6kmh.csv
+      - gaitEvents_speed6kmh.yaml
     input_command:
-      - run_pepato left BLF db_healthy_adults_8m
-      - speed2kmh_emg.csv
-      - speed2kmh_gaitEvents.yaml
-      - speed4kmh_emg.csv
-      - speed4kmh_gaitEvents.yaml
-      - speed6kmh_emg.csv
+      - ./run_pepato left BLF db_healthy_adults_8m
+      - emg_speed2kmh.csv
+      - gaitEvents_speed2kmh.yaml
+      - emg_speed4kmh.csv
+      - gaitEvents_speed4kmh.yaml
+      - emg_speed6kmh.csv
+      - gaitEvents_speed6kmh.yaml
     language: octave
-    implemented: false
+    implemented: true

@@ -26,9 +26,15 @@ protocol:
         unit: undef
       - name: destination side
         definition: the side of the door that the robot must reach by going
-          through the door
+          through the door (opposite of the approach side)
         type: string
         range: [clockwise, counterclockwise]
+        unit: undef
+      - name: distrubance type
+        definition: The profile of breaking action applied to the door panel
+          based on its angle
+        type: string
+        range: [No Force, Constant Force, Sudden Force, Sudden Ramp, Wind Ramp]
         unit: undef
     testbed:
       - item: "instrumented door"
@@ -123,8 +129,8 @@ pi:
       (touching the handle) and the humanoid closes the door after reaching the
       destination side.
       This PI is similar to the PIs Door occupation time and Overall execution
-      time, but avoids using the timing of the benchmark start, that rely on
-      manual timing (starting benchmark and the robot at the same time). "
+      time, but avoids using the timing of the benchmark start, that relies on
+      manual timing (starting benchmark and the robot at the same time)."
     unit: s
     output: scalar
     intra_run_aggregation: undef
@@ -158,10 +164,10 @@ pi:
   - name: smoothness_of_door_actuation
     name_readable: "Smoothness of door actuation"
     description: "This PI is a measurement of the smoothness of the actuation of
-      the door panel based on its  angular acceleration."
-    unit: "s^2/rad"
+      the door panel based on its angular jerk."
+    unit: "s^3/rad"
     output: scalar
-    intra_run_aggregation: undef
+    intra_run_aggregation: none
     inter_run_aggregation:
       - [0, mean]
       - [0, median]
@@ -177,7 +183,7 @@ pi:
     name_readable: "Roughness of door actuation"
     description: "This PI measures how rough (or undelicate) the robot is in
       operating the door based on the maximum force applied to the handle."
-    unit: "g"
+    unit: "N"
     output: scalar
     intra_run_aggregation: undef
     inter_run_aggregation:
@@ -213,7 +219,6 @@ pi:
     inter_subject_aggregation: undef
 
 pi_algo:
-  # todo: update the template, as it is still over detailed
   - name: madrob
     description: undef
     url_paper: undef
@@ -230,14 +235,13 @@ pi_algo:
       - roughness_of_door_actuation
       - capability_level
     input_files:
-      - events.csv
+      - event.csv
       - wrench.csv
       - jointState.csv
       - condition.yaml
-    # todo: check docker entry point
     input_command:
       - run_madrob
-      - events.csv
+      - event.csv
       - wrench.csv
       - jointState.csv
       - condition.yaml

@@ -47,6 +47,38 @@ The hyperlinks refer to:
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file.
 
+* **udbenchmarking**:
+  * [code](https://github.com/nickkluft/udbenchmark_PIs),
+    [Eurobench repo](https://github.com/eurobench/pi_udbenchmark),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
+    [template](data/udbenchmarking/udbenchmarking.xlsx),
+    [yaml](data/udbenchmark.yaml)
+
+* **bullet**:
+  * [Eurobench repo](https://github.com/eurobench/pi_bullet),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
+  * excels:
+    * [walking](data/bullet/bullet_walking.xlsx)
+    * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
+  * [yaml](data/bullet.yaml),
+  * discussion opened on the inter-intra aggregation
+
+* **bench**:
+  * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
+    [Eurobench_repo](https://github.com/eurobench/pi_bench),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
+    [template](data/bench/bench.xlsx),
+    [yaml](data/bench.yaml)
+  * Discussion on the input data (calib file per user, not in the current options)
+
+* **pepato**:
+  * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
+    [Eurobench_repo](https://github.com/eurobench/pi_pepato),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
+    [template](data/pepato/pepato.xlsx),
+    [yaml](data/pepato.yaml),
+    [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw)
+
 ### Ready to be tested for insertion in database
 
 * **beat**:
@@ -57,31 +89,6 @@ The hyperlinks refer to:
     [yaml](data/beat.yaml),
   * current state: waiting for PI output adjustment in code.
     * CI process failing due to csv linting issue
-
-* **bullet**:
-  * [Eurobench repo](https://github.com/eurobench/pi_bullet),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
-  * excels:
-    * [walking](data/bullet/bullet_walking.xlsx)
-    * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
-  * [yaml](data/bullet.yaml),
-  * current state: ready for database trial
-  * discussion opened on the inter-intra aggregation
-
-* **udbenchmarking**:
-  * [code](https://github.com/nickkluft/udbenchmark_PIs),
-    [Eurobench repo](https://github.com/eurobench/pi_udbenchmark)
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
-    [template](data/udbenchmarking/udbenchmarking.xlsx),
-    [yaml](data/udbenchmark.yaml),
-
-* **bench**:
-  * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
-    [Eurobench_repo](https://github.com/eurobench/pi_bench),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
-    [template](data/bench/bench.xlsx),
-    [yaml](data/bench.yaml)
-  * Discussion on the input data (calib file per user, not in the current options)
 
 ### Under progress
 
@@ -107,24 +114,18 @@ The hyperlinks refer to:
     * Open discussion on PI Algo structure.
     * Eurobench repo created, with access secret to docker hub.
       Waiting for CI process PR merging
-
-* **pepato**:
-  * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
-    [Eurobench_repo](https://github.com/eurobench/pi_pepato),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
-    [template](data/pepato/pepato.xlsx),
-    [yaml](data/pepato.yaml)
-  * pending on:
-    * check the change of parameters, as mentioned in [this post](https://github.com/dzhvansky/pepato/issues/1#issuecomment-685111620)
-    * asked to have an explicit naming of the input files.
-  * all PI not described in excel sheet
+    * waiting for some input file delivery
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
-    [template](data/csic-irregular/csic-irregular-terrain.xlsx)
-  * current state:
-    * 15/01: pending on code update (output file)
-    * CI created
+    [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
+    [docker](https://hub.docker.com/r/eurobenchtest/pi_csic_irregular),
+    [template](data/csic-irregular/csic-irregular-terrain.xlsx),
+    [yaml](data/csic_irregular.yaml)
+  * current state (26/01):
+    * verify input data file
+    * data collection check
+    * excel sheet check
 
 ### Very early stage
 
@@ -135,7 +136,7 @@ The hyperlinks refer to:
     * 01/12: PI code provided
     * 09/12: opened a set of question to start the integration process
     * matlab code, far from the requested format.
-    * 17/12: ping
+    * 22/12: working on a code revision.
 
 * **benchbalance**:
   * [code](https://github.com/FraCampus/PI_BenchBalance),
@@ -155,16 +156,17 @@ The hyperlinks refer to:
 * **comtest**:
   * [code](https://github.com/VittorioFreiburg/COMTEST),
     [template](data/comtest/comtest_v5.xlsx)
-  * octave code.
+  * octave code. Still requires significant afjustment.
   * current state:
-    * to be revised
+    * ping 19/02
 
 * **stepByStep**
   * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
     [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
     [template](data/stepByStep/stepByStep.xlsx),
   * current state:
-    * waiting for issues to be handled
+    * introduce docker and CI process
+    * code only covering one protocol.
 
 * **experience**:
   * [code](https://github.com/FraCampus/EXPERIENCE),
@@ -177,7 +179,7 @@ The hyperlinks refer to:
   * [code](https://github.com/AdrianaTorres/Manipulation),
     [template](data/csic-manipulation/csic-manipulation.xlsx)
   * current state:
-    * not started
+    * 22/12: very early stage.
 
 * **uhei**:
   * [code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
