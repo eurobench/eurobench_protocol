@@ -239,8 +239,8 @@ pi_algo:
     description: Compute all metrics related to beast protocol
     url_paper: undef
     url_code: https://github.com/madrob-beast/madrob_beast_pi
-    docker_host: eurobenchtest/pi_madrob_beast:v0.0.0
-    docker_name: eurobenchtest/pi_madrob_beast:v0.0.0
+    docker_host: eurobenchtest/pi_madrob_beast:v2.0.0
+    docker_name: eurobenchtest/pi_madrob_beast:v2.0.0
     pi:
       - capability_level
       - safety_of_navigation
