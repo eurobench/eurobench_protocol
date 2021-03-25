@@ -90,7 +90,6 @@ The hyperlinks refer to:
   * current state: waiting for PI output adjustment in code.
     * CI process failing due to csv linting issue
 
-### Under progress
 
 * **beast**:
   * [code](https://github.com/madrob-beast/madrob_beast_pi),
@@ -99,6 +98,7 @@ The hyperlinks refer to:
     [excel](data/beast/beast-v3.xlsx),
     [yaml](data/beast.yaml)
   * current state: waiting for reference data set
+### Under progress
 
 * **tested**:
   * [code](https://github.com/jamatics/pi_ctag),
