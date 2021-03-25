@@ -163,6 +163,7 @@ The hyperlinks refer to:
 * **stepByStep**
   * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
     [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
+    [second repo](https://github.com/STEPbySTEPproj/HF_metrics)
     [template](data/stepByStep/stepByStep.xlsx),
   * current state:
     * introduce docker and CI process
@@ -182,6 +183,10 @@ The hyperlinks refer to:
     * 22/12: very early stage.
 
 * **uhei**:
-  * [code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
+  * [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
+  * [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
   * no Excel sheet available
-  * List of issues created, waiting for answer
+  * 25/03: repo changed, waiting for call example and input files.
+
+* **rrd**:
+  * [code](https://github.com/eurobench/rrd_pi_slope)
