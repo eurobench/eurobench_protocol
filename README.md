@@ -127,6 +127,21 @@ The hyperlinks refer to:
     * data collection check
     * excel sheet check
 
+* **benchbalance**:
+  * [code](https://github.com/FraCampus/PI_BenchBalance),
+    [template](data/benchbalance/benchbalance.xlsx)
+  * current state:
+    * Matlab code, not likely to be Octave-compatible
+    * code evolution proposed 13/01
+
+* **experience**:
+  * [code](https://github.com/FraCampus/EXPERIENCE),
+    [template](data/experience/experience.xlsx),
+    [yaml](data/experience.yaml)
+  * current state:
+    * Matlab, with specific licences. Not likely to be Matlab compatible
+    * should resume the analysis, even if the code is not launched yet.
+
 ### Very early stage
 
 * **dysturbance**
@@ -137,13 +152,6 @@ The hyperlinks refer to:
     * 09/12: opened a set of question to start the integration process
     * matlab code, far from the requested format.
     * 22/12: working on a code revision.
-
-* **benchbalance**:
-  * [code](https://github.com/FraCampus/PI_BenchBalance),
-    [template](data/benchbalance/benchbalance.xlsx)
-  * current state:
-    * Matlab code, not likely to be Octave-compatible
-    * code evolution proposed 13/01
 
 * **forecast**:
   * [code](https://gitlab.com/altairLab/elasticteam/SESim)
@@ -168,13 +176,6 @@ The hyperlinks refer to:
   * current state:
     * introduce docker and CI process
     * code only covering one protocol.
-
-* **experience**:
-  * [code](https://github.com/FraCampus/EXPERIENCE),
-    [template](data/experience/experience.xlsx)
-  * current state:
-    * Matlab, with specific licences. Not likely to be Matlab compatible
-    * should resume the analysis, even if the code is not launched yet.
 
 * **csic manipulation**:
   * [code](https://github.com/AdrianaTorres/Manipulation),
