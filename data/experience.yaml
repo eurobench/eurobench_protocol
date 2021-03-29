@@ -80,7 +80,7 @@ protocol:
           time_stand_baseline."
       - description: "Start the robot-assisted walking session and wait until
           steady-state condition is reached."
-        detail: ""Steady-state condition is reached when assistance parameters
+        detail: "Steady-state condition is reached when assistance parameters
           are not changed anymore and the subject is walking comfortably without
           any major change."
       - description: "Flag the start of the recording of the walking condition
@@ -169,7 +169,7 @@ protocol:
           time_stand_baseline."
       - description: "Start the robot-assisted walking session and wait until
           steady-state condition is reached."
-        detail: ""Steady-state condition is reached when assistance parameters
+        detail: "Steady-state condition is reached when assistance parameters
           are not changed anymore and the subject is walking comfortably without
           any major change."
       - description: "Flag the start of the recording of the walking condition
@@ -250,12 +250,12 @@ pi:
       analyzed aspects."
     unit: undef
     output: vector
-    intra_run_aggregation: use the 1th value ('experience')
+    intra_run_aggregation: "use the 1th value ('experience')"
     inter_run_aggregation: unclear
     visu: Bar plot, spider chart
     inter_cond_aggregation: na
     inter_subject_aggregation: na
- - name: stress
+  - name: stress
     name_readable: "stress"
     description: "It is defined as a state of mental or emotional strain caused
       by adverse circumstances.
@@ -267,7 +267,7 @@ pi:
     visu: xy graph
     inter_cond_aggregation: na
     inter_subject_aggregation: na
- - name: fatigue
+  - name: fatigue
     name_readable: "fatigue"
     description: "It can be described as a type of distress generally
       conditioned by the exhaustion of one’s muscles due to the execution of a
@@ -280,8 +280,8 @@ pi:
     visu: xy graph
     inter_cond_aggregation: na
     inter_subject_aggregation: na
- - name: energie
-    name_readable: "Energie expenditure"
+  - name: energy
+    name_readable: "Energy expenditure"
     description: "It is the amount of energy that is needed to carry out
       physical functions.
       High value of this PI indicates that the robot use requires high effort."
@@ -292,7 +292,7 @@ pi:
     visu: xy graph
     inter_cond_aggregation: na
     inter_subject_aggregation: na
- - name: attention
+  - name: attention
     name_readable: "Attention"
     description: "It refers to the degree to which the user is consciously and
       continuously involved in the task.
@@ -344,7 +344,7 @@ pi_algo:
     pi:
       - stress
       - fatigue
-      - energy_expenditure
+      - energy
       - attention
     input_files:
       - part_sit_physiological.csv
