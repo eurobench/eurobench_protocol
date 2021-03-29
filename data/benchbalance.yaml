@@ -1,0 +1,167 @@
+---
+scenario:
+  name: "Perturbated balance assessment"
+  description: "Standing wearing an exoskeleton and maintaining balance reacting
+    to well-defined external perturbations manually provided by an
+    experimenter."
+  image: undef
+
+protocol:
+  - name: "benchbalance"
+    name_readable: "Perturbated balance assessment"
+    definition: "Standing wearing an exoskeleton and maintaining balance
+      reacting to well-defined external perturbations manually provided by an
+      experimenter."
+    image: benchbalance/image/benchbalance.png
+    keywords: [Perturbated balance, standing, exoskeleton]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: [pi_benchbalance]
+    duration: "10-30 minutes per run, per subject"
+    # todo check the comments about the controlled variables
+    controlled_variables:
+      - name: perturbation_type
+        definition: Label indicating the perturbation level.
+        type: string
+        range: [small, large]
+        unit: na
+      - name: perturbation_magnitude
+        definition: The amplitude of the force applied by the experimenter to
+          the subject by means of the perturbator.
+        type: float
+        range: [6, 18]
+        unit: "% body weight"
+      - name: perturbation_duration
+        definition: The time interval in which the force is applied by the
+          experimenter to subjects by means of the perturbator.
+          This is calculated as the elapsed time of the force exceeding a
+          predefined (no force) threshold.
+        type: float
+        range: [0.2, 0.5]
+        unit: sec
+      - name: perturbation_orientation
+        definition: The relative orientation between the human upper body and
+          the direction of the force applied by the experimenter to subject by
+          means of the perturbator.
+        type: undef
+        range: undef
+        unit: deg
+      - name: perturbation_location
+        definition: The position on the subject's upper body where the
+          perturbation is applied by the experimenter by means of the
+          perturbator.
+        type: undef
+        range: undef
+        unit: undef
+      - name: exoskeleton
+        definition: Indication if an exoskeleton was used or not.
+        type: bool
+        range: [true, false]
+        unit: na
+    testbed:
+      - item: "Motion Capture System"
+        type: sensor
+        file_sheet: undef
+      - item: "Perturbator"
+        type: sensor
+        file_sheet: undef
+      - item: "Smart garment"
+        type: sensor
+        file_sheet: undef
+    step_description: "The subject is standing wearing or not an exoskeleton.
+      The pertrubed balance is assessed and in particular the capability of
+      recovering from measured manually delivered pushes.
+      The subject receives perturbations by means of perturbator and have to
+      recover from them without taking a step."
+    step_list:
+      - description: Place the smart garment onto the subject body.
+      - description: Place the exoskeleton (if any) onto the subject body.
+      - description: Place motion sensors (if any) onto the subject body.
+        detail: If an exoskeleton is not present or if it does not record/output
+          joint angles data, a motion capture system is needed.
+      - description: Turn on the Smart Garment
+      - description: Turn on the Pusher
+      - description: Connect the devices
+        detail: Details on the 'Devices connection' are provided in the
+          documentation
+      - description: Launch the BenchBalance data collection software
+        detail: Details on the acquisition software are provided in the
+          documentation
+      - description: Place the subject in a fixed standing position with feet
+          distance equal to the shoulder width and launch the calibration
+        detail: Details on the calibration procedure are reported in the
+          documentation
+      - description: Put the subject in a standing position with feet at a fixed
+          confortable distance and start the perturbation protocol procedures by
+          choosing Full or Reduced protocol.
+        detail: "Details on the two procedures are provided in the documentation.
+          Based on the selected protocol, the experimenter will collect 5
+          correct pushes per conditions.
+          Perturbations will be classified based on push features: magnitude,
+          duration, orientation, and location and the software automatically ask
+          the experimenter for 5 good repetitions of the same push, based on a
+          set of desired pre-selected ranges."
+      - description: Stop data collection software.
+    has_multiple_run: true
+    has_multiple_condition: yes
+    has_multiple_subject: true
+pi:
+  - name: body_sway
+    name_readable: "Body sway"
+    description: "The maximum body sway angle in response to a perturbation.
+      For antero-posterior perturbations: considering in the sagittal plane the
+      line from the CoM to the ankle joints rotation axis, the body sway is
+      calculated as the maximum angle between this line at rest and the same
+      line after the perturbation.
+      For lateral perturbations: considering in the frontal the line from the
+      CoM intersecting the ankle joints rotation axis in the middle point
+      between the feet, the body sway is calculated as the maximum angle between
+      this line at rest and the same line after the perturbation.
+      A high value of the body sway indicates less ability of the subject in
+      maintaining the balance."
+    unit: undef
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: unclear
+    visu: Bar plot
+    inter_cond_aggregation: unclear
+    inter_subject_aggregation: unclear
+  - name: recovery_time
+    name_readable: "Recovery time"
+    description: "Time to recover from a perturbation.
+      This is calculated as the time needed for the CoM to go back to the rest
+      position (i.e. when the sway angle velocity becomes lower than a
+      threshold) after the perturbation.
+      A high value of the recovery time indicates less ability of the subject in
+      maintaining the balance."
+    unit: undef
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: unclear
+    visu: Bar plot
+    inter_cond_aggregation: unclear
+    inter_subject_aggregation: unclear
+
+pi_algo:
+  - name: pi_benchbalance
+    description: "Perturbed balance algorithm."
+    url_paper: undef
+    url_code: https://github.com/fraBent/PI_BenchBalance
+    docker_host: eurobenchtest/pi_benchbalance:v0.0.0
+    docker_name: eurobenchtest/pi_benchbalance:v0.0.0
+    pi:
+      - body_sway
+      - recovery_time
+    input_files:
+      - jointAngles.csv
+      - pushstick.csv
+      - smartgarment.csv
+      - condition.yaml
+      - subject_info.yaml
+    input_command:
+      - run_pi
+      - jointAngles.csv
+      - pushstick.csv
+      - smartgarment.csv
+      - condition.yaml
+      - subject_info.yaml
+    language: matlab

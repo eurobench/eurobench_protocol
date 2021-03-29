@@ -130,6 +130,7 @@ The hyperlinks refer to:
 * **benchbalance**:
   * [code](https://github.com/FraCampus/PI_BenchBalance),
     [template](data/benchbalance/benchbalance.xlsx)
+    [yaml](data/benchbalance.yaml)
   * current state:
     * Matlab code, not likely to be Octave-compatible
     * code evolution proposed 13/01

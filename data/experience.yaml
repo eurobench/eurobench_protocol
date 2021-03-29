@@ -3,7 +3,7 @@ scenario:
   name: "Exoskeleton-assisted walking"
   description: "Characterization of user experience during exoskeleton-assisted
     walking"
-  image: image/logo.png
+  image: experience/image/logo.png
 
 protocol:
   - name: "experience"
@@ -17,7 +17,7 @@ protocol:
       derives psychological indicators and by
       measuring physiological information to compute psychophysiological
       indicators."
-    image: image/experience.png
+    image: experience/image/experience.png
     keywords: [Exoskeleton, walking, user experience]
     bipedal_system: [humanoid, prosthesis, exoskeleton, human]
     pi_algo: [pi_questionnaire, pi_psychophysiological]
@@ -106,7 +106,7 @@ protocol:
       This is achieved by administering a novel multi-factor questionnaire to
       derives psychological indicators and by measuring physiological
       information to compute psychophysiological indicators."
-    image: image/experience_treadmill.png
+    image: experience/mage/experience_treadmill.png
     keywords: [Exoskeleton, walking, user experience, treadmill]
     bipedal_system: [humanoid, prosthesis, exoskeleton, human]
     pi_algo: [pi_questionnaire, pi_psychophysiological]
