@@ -1125,7 +1125,7 @@ pi_algo:
       - pert_right_iw_success_rate
       - pert_left_ow_success_rate
       - pert_right_ow_success_rate
-    input_files: [platformData.csv, condition.yaml, info.yaml]
+    input_files: [platformData.csv, subject_condition.yaml, info.yaml]
     # todo: check docker entry point
     input_command:
       - ./run_pi
