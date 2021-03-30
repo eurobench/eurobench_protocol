@@ -255,44 +255,44 @@ pi:
     visu: Bar plot, spider chart
     inter_cond_aggregation: na
     inter_subject_aggregation: na
- - name: stress
-    name_readable: "stress"
-    description: "It is defined as a state of mental or emotional strain caused
-      by adverse circumstances.
-      High value of this PI indicates that the robot use is stressful."
-    unit: undef
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: unclear
-    visu: xy graph
-    inter_cond_aggregation: na
-    inter_subject_aggregation: na
- - name: fatigue
-    name_readable: "fatigue"
-    description: "It can be described as a type of distress generally
-      conditioned by the exhaustion of one’s muscles due to the execution of a
-      task.
-      High value of this PI indicates that the robot use induces fatigue."
-    unit: undef
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: unclear
-    visu: xy graph
-    inter_cond_aggregation: na
-    inter_subject_aggregation: na
- - name: energie
-    name_readable: "Energie expenditure"
-    description: "It is the amount of energy that is needed to carry out
-      physical functions.
-      High value of this PI indicates that the robot use requires high effort."
-    unit: undef
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: unclear
-    visu: xy graph
-    inter_cond_aggregation: na
-    inter_subject_aggregation: na
- - name: attention
+  - name: stress
+      name_readable: "stress"
+      description: "It is defined as a state of mental or emotional strain caused
+        by adverse circumstances.
+        High value of this PI indicates that the robot use is stressful."
+      unit: undef
+      output: vector
+      intra_run_aggregation: undef
+      inter_run_aggregation: unclear
+      visu: xy graph
+      inter_cond_aggregation: na
+      inter_subject_aggregation: na
+  - name: fatigue
+      name_readable: "fatigue"
+      description: "It can be described as a type of distress generally
+        conditioned by the exhaustion of one’s muscles due to the execution of a
+        task.
+        High value of this PI indicates that the robot use induces fatigue."
+      unit: undef
+      output: vector
+      intra_run_aggregation: undef
+      inter_run_aggregation: unclear
+      visu: xy graph
+      inter_cond_aggregation: na
+      inter_subject_aggregation: na
+  - name: energie
+      name_readable: "Energie expenditure"
+      description: "It is the amount of energy that is needed to carry out
+        physical functions.
+        High value of this PI indicates that the robot use requires high effort."
+      unit: undef
+      output: vector
+      intra_run_aggregation: undef
+      inter_run_aggregation: unclear
+      visu: xy graph
+      inter_cond_aggregation: na
+      inter_subject_aggregation: na
+  - name: attention
     name_readable: "Attention"
     description: "It refers to the degree to which the user is consciously and
       continuously involved in the task.
