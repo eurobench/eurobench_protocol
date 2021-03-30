@@ -13,7 +13,7 @@ protocol:
   - name: "bestable"
     name_readable: "Bestable: Visually-cued stepping perturbations on a
       treadmill."
-    definition: ""Walking on a treadmill and stepping on targets projected onto
+    definition: "Walking on a treadmill and stepping on targets projected onto
       its surface in unexpected patterns to perturb balance.
       Outcome measures include spatio-temporal stepping characteristics
       (step length, step width and step time), target error (i.e. minimum
@@ -69,7 +69,7 @@ protocol:
           with locking mechanism 2 Ceiling Hooks)"
         type: other
         file_sheet: Provided by Motek Medical BV
-    step_description: "The protocol is composed of the gathering subject's
+    step_description: "The protocol is composed of the gathering subject''s
       native gait and perturbed gait after applying different perturbations -
       visual cues, that will appear on the surface of the treadmill.
       The subject should wear safety harness and would be instructed to walk in
@@ -114,7 +114,7 @@ protocol:
           from the start menu"
         detail: "use D-Flow and not D-Flow Frontend"
       - description: Open the latest version of our BeStable application
-        detail: "(File/Open…/Browse to D:\CAREN Resources\Projects\BeStable platform ver2\Applications\Bestable_v10.caren)
+        detail: "(File/Open…/Browse to D:/CAREN Resources/Projects/BeStable platform ver2/Applications/Bestable_v10.caren)
           Note: a shortcut to “Bestable_v10.caren” is placed on the desktop"
       - description: "On the treadmill’s control panel disengage the emergency
           stop (twist and it will pop up), press the black arrow button (Enter
@@ -142,7 +142,7 @@ protocol:
           parameters (including treadmill speed) or check “Import protocol
           from …”, which loads protocol parameters from the “protocol.yaml” file
           located in
-          “D:\CAREN Resources\Projects\BeStable platform ver2\Protocols”."
+          “D:/CAREN Resources/Projects/BeStable platform ver2/Protocols”."
         detail: "Note 1: The treadmill will not run until the “Play” button is
           pressed.
           Note 2: Data recording is enabled by default.
@@ -212,7 +212,7 @@ protocol:
       - description: "Press the “STOP” button when you want to stop.
           This will also stop the recording module and save files to the folder
           named “subject ID” (example: subject ID 15) in the following location:
-          D:\CAREN Resources\Projects\BeStable platform ver2\Data\subject 15 "
+          D:/CAREN Resources/Projects/BeStable platform ver2/Data/subject 15 "
         detail:
       - description: "The output files can be processed by the Octave scripts of
           the BeStable project."
