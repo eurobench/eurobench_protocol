@@ -220,7 +220,7 @@ pi:
       emotion, perception and quality of life."
     unit: undef
     output: vector
-    intra_run_aggregation: use the 5th value ('perceptibility')
+    intra_run_aggregation: undef #use the 5th value (perceptibility)
     inter_run_aggregation: unclear
     visu: Bar plot, spider chart
     inter_cond_aggregation: na
@@ -234,7 +234,7 @@ pi:
       of analyzed aspects."
     unit: undef
     output: vector
-    intra_run_aggregation: use the 5th value ('functionality')
+    intra_run_aggregation: use the 5th value (''functionality'')
     inter_run_aggregation: unclear
     visu: Bar plot, spider chart
     inter_cond_aggregation: na
@@ -250,7 +250,7 @@ pi:
       analyzed aspects."
     unit: undef
     output: vector
-    intra_run_aggregation: use the 1th value ('experience')
+    intra_run_aggregation: use the 1th value (''experience'')
     inter_run_aggregation: unclear
     visu: Bar plot, spider chart
     inter_cond_aggregation: na
