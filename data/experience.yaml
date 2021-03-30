@@ -80,7 +80,7 @@ protocol:
           time_stand_baseline."
       - description: "Start the robot-assisted walking session and wait until
           steady-state condition is reached."
-        detail: ""Steady-state condition is reached when assistance parameters
+        detail: "Steady-state condition is reached when assistance parameters
           are not changed anymore and the subject is walking comfortably without
           any major change."
       - description: "Flag the start of the recording of the walking condition
@@ -169,7 +169,7 @@ protocol:
           time_stand_baseline."
       - description: "Start the robot-assisted walking session and wait until
           steady-state condition is reached."
-        detail: ""Steady-state condition is reached when assistance parameters
+        detail: "Steady-state condition is reached when assistance parameters
           are not changed anymore and the subject is walking comfortably without
           any major change."
       - description: "Flag the start of the recording of the walking condition
