@@ -250,7 +250,7 @@ pi:
       analyzed aspects."
     unit: undef
     output: vector
-    intra_run_aggregation: use the 1th value (''experience'')
+    intra_run_aggregation: "use the 1th value (''experience'')"
     inter_run_aggregation: unclear
     visu: Bar plot, spider chart
     inter_cond_aggregation: na
@@ -280,8 +280,8 @@ pi:
     visu: xy graph
     inter_cond_aggregation: na
     inter_subject_aggregation: na
-  - name: energie
-    name_readable: "Energie expenditure"
+  - name: energy
+    name_readable: "Energy expenditure"
     description: "It is the amount of energy that is needed to carry out
       physical functions.
       High value of this PI indicates that the robot use requires high effort."
@@ -344,7 +344,7 @@ pi_algo:
     pi:
       - stress
       - fatigue
-      - energy_expenditure
+      - energy
       - attention
     input_files:
       - part_sit_physiological.csv
