@@ -15,9 +15,11 @@ protocol:
       treadmill."
     definition: "Walking on a treadmill and stepping on targets projected onto
       its surface in unexpected patterns to perturb balance.
-      Outcome measures include the target hit rate, spatio-temporal stepping
-      characteristics (e.g., stepping length, width, and time), and ground
-      reaction forces."
+      Outcome measures include spatio-temporal stepping characteristics
+      (step length, step width and step time), target error (i.e. minimum
+      distance to target) and success rate. Ground reaction force, center
+      of pressure and gait events (i.e. toe off, heel strike) serve as 
+      additional time-stamped output signals."
     image: bestable/img.png
     keywords: [walking, perturbation, balance]
     bipedal_system: [prosthesis, orthosis, exoskeleton, human]
