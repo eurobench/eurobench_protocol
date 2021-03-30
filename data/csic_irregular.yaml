@@ -1,0 +1,210 @@
+---
+scenario:
+  name: "Irregular terrain"
+  description: "Walking through different configurable irregular terrains."
+  image: csic_irregular/img0.png
+
+protocol:
+  - name: "csic_irregular"
+    name_readable: "Walking over irregular terrains"
+    definition: "Passing through the specific testbed that can hold fourteen
+      different irregular terrain conditions.
+      The subject must perform four walks through each configuration."
+    image: csic_irregular/img1.png
+    keywords: [balance, stability]
+    bipedal_system: [human, prosthesis, exoskeleton]
+    pi_algo: [margin_stability, ratio_index, variability, walk_ratio]
+    duration: "240min"
+    controlled_variables:
+      - name: exoskeleton
+        definition: Robot used in the trial
+        type: undef
+        range: undef
+        unit: undef
+      - name: terrain_configuration
+        definition: Type of terrain the subject is facing
+        type: int
+        range: [0-13]
+        unit: na
+
+    testbed:
+      - item: "Optoelectronic motion capture system, or Vicon"
+        type: sensor
+        file_sheet: https://docs.vicon.com/display/Nexus210
+      - item: "Testbed"
+        # TODO: how to name such part that is neither a sensor nor an actuator?
+        type: equipment
+        file_sheet: "Commercial platform with a fixed wooden board with holes
+          into which anti-slip 50x50cm wooden modules, terrasensa modules or
+          mats can be fitted."
+    step_description: "The subject must walk through each terrain configuration
+      4 times with an without wearing an exoskeleton."
+    step_list:
+      - description: Place the optical markers and Delsys sensors onto the
+          subject's body and take the required anthropometric measurements.
+          Place the sensorized insoles in the subjects' shoes.
+        detail: Following the VICON's "Full Body Plug in Gait" marker set
+          specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
+          and adding 8 clusters (thighs, tibias, feet, pelvis, chest).
+      - description: Place the subject in the middle of the recording area.
+      - description: Launch the Data collection software.
+      - description: Take a static capture of the subject.
+        detail: The subject must be standing in motorbike position (upright
+          posture, both arms at shoulder's height with upper arm and forearm at
+          90 degrees).
+      - description: Place the subject at the starting point.
+      - description: Ask the subject to walk through the testbed at a
+          comfortable speed four times.
+        detail: A capture per walk should be recorded.
+      - description: Change the irregular terrain configuration of the testbed.
+        detail: The order must be randomized.
+      - description: Repeat the procedure starting at step 5 until completing
+          all the terrain conditions.
+      - description: Remove from the subject the optical markers from the
+          pelvis, thighs, knees, tibias and ankles and put him/her the
+          exoskeleton.
+      - description: Let the subject walk with the exoskeleton over flat floor
+          for 10 minutes so that he/she gets familiarized with it.
+      - description: Repeat steps 5 to 8 until completing again four walks per
+          terrain condition.
+      - description: Remove the exoskeleton and optical markers from the subject.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: margin_stability
+    name_readable: "Margin of Stability (MoS)"
+    description: "Analogous parameter to the condition of standing stability
+      which states that the center of mass (CoM) should be within the base of
+      support (BoS).
+      The extrapolation to dynamic stability states that the position of the
+      vertical projection of the CoM (PCoM) plus its velocity times a factor
+      (extrapolated center of mass position (XCoM)) should be within the BoS."
+    unit: mm
+    output: vector
+    intra_run_aggregation: [[0, mean]]
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: gait_deviation_index
+    name_readable: "Gait Deviation Index (GDI)"
+    description: "Scaled distance between 15 gait feature scores for a subject
+      and the average of the same 15 gait feature scores for a control group of
+      typically developing (TD) children."
+    unit: na
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: walk_ratio
+    name_readable: "Walk Ratio (WR)"
+    description: "Division of step length by cadence.
+      It is used to measure overall gait control."
+    unit: mm/(step/min)
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: variability
+    name_readable: "Gait Parameters Variability"
+    description: "Difference between the value of a gait parameter when walking
+      without the exoskeleton and the value of the same gait parameter obtained
+      when walking wearing the exoskeleton."
+    unit: Unit of the gait parameter
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: ratio_index
+    name_readable: "Ratio Index (RI)"
+    description: "Division of a gait parameter by the same gait parameter of the
+      contralateral limb.
+      It is used for quantifying gait symmetry."
+    unit: Unit of the gait parameter
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject
+
+pi_algo:
+  - name: margin_stability
+    description: Margin of stability algorithm
+    url_paper: https://pubmed.ncbi.nlm.nih.gov/15519333/
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - margin_stability
+    input_files:
+      - COM_plano01.csv
+      - gaitEvents_plano01.csv
+      - FeetTrajectories_plano01.csv
+      - Anthropometry.yaml
+    input_command:
+      - ./run_pi_margin_stability
+      - COM_plano01.csv
+      - gaitEvents_plano01.csv
+      - FeetTrajectories_plano01.csv
+      - Anthropometry.yaml
+    language: octave
+    implemented: false
+  - name: walk_ratio
+    description: Walking ratio algorithm
+    url_paper: https://www.researchgate.net/publication/51180936_Walk_ratio_step_lengthcadence_as_a_summary_index_of_neuromotor_control_of_gait_Application_to_multiple_sclerosis
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - walk_ratio
+    input_files:
+      - gaitParameters.yaml
+    input_command:
+      - ./run_pi_walk_ratio
+      - GaitParameters_noExo.yaml
+    language: octave
+    implemented: false
+  - name: variability
+    description: Gait parameters variability algorithm
+    url_paper: undef
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - variability
+    input_files:
+      - gaitParameters.yaml
+    input_command:
+      - ./run_pi_variability
+      - GaitParameters_exo.yaml
+      - GaitParameters_noExo.yaml
+    language: octave
+    implemented: false
+  - name: ratio_index
+    description: Ratio index algorithm
+    url_paper: https://www.sciencedirect.com/science/article/abs/pii/S1746809418300193
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - ratio_index
+    input_files:
+      - gaitParameters.yaml
+    input_command:
+      - ./run_pi_ratio_index
+      - GaitParameters_noExo.yaml
+    language: octave
+    implemented: false

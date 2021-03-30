@@ -7,20 +7,20 @@ scenario:
     The prescribed stepping patterns emulate responses to mechanical balance
     perturbations, such as mediolateral and anteroposterior pushes to the pelvis
     by the BAR-TM robot of project partner URI."
-  image: bestable/img.png
+  image: bestable/image/scenario.png
 
 protocol:
   - name: "bestable"
     name_readable: "Bestable: Visually-cued stepping perturbations on a
       treadmill."
-    definition: "Walking on a treadmill and stepping on targets projected onto
+    definition: ""Walking on a treadmill and stepping on targets projected onto
       its surface in unexpected patterns to perturb balance.
       Outcome measures include spatio-temporal stepping characteristics
       (step length, step width and step time), target error (i.e. minimum
-      distance to target) and success rate. Ground reaction force, center
-      of pressure and gait events (i.e. toe off, heel strike) serve as 
-      additional time-stamped output signals."
-    image: bestable/img.png
+      distance to target) and success rate.
+      Ground reaction force, center of pressure and gait events (i.e. toe off,
+      heel strike) serve as additional time-stamped output signals."
+    image: bestable/image/protocol.png
     keywords: [walking, perturbation, balance]
     bipedal_system: [prosthesis, orthosis, exoskeleton, human]
     pi_algo: bestable
@@ -30,75 +30,199 @@ protocol:
         definition: Average centre of mass velocity in the anteroposterior
           direction, constrained by treadmill speed.
         type: float
-        range: undef
+        range: [0.4, 0.8]
         unit: m/s
-      - name: Target step length
-        definition: Anteroposterior distance between successive heel strikes
-        type: float
-        range: undef
-        unit: m
-      - name: Target step width
-        definition: Mediolateral distance between successive heel strikes
-        type: float
-        range: undef
-        unit: m
     testbed:
-      - item: "IMU sensors"
+      - item: "Wireless IMU sensors"
         type: sensor
         file_sheet: Trigno Avanti wireless EMG/IMU (Delsys Inc, Natick, USA),
           https://www.delsys.com/trigno/research/#trigno-avanti-sensor
-      - item: "instrumented treadmill"
+      - item: "Customized instrumented treadmill"
         type: combined
-        file_sheet: undef
-      - item: "instrumented walker"
-        type: combined
-        file_sheet: See documentation
-    step_description: "The subject will wear IMU sensors on the feet and walk on
-      an instrumented treadmill at a prescribed speed.
-      They will be asked to step on targets appearing on the surface of the
-      treadmill in unexpected locations and timings.
-      The characteristics of the stepping patterns will be recorded."
+        file_sheet: https://drive.google.com/file/d/16GI2iPzNInzbGciA-sC6vP2AeM8N1Im2/view?usp=sharing
+      - item: "Force plate"
+        type: sensor
+        file_sheet: see below
+      - item: "treadmill"
+        type: actuator
+        file_sheet: N-Mill (Motek Medical BV, Amsterdam, NL)
+      - item: Projection system
+        type: actuator
+        file_sheet: https://www.casioprojector.com/products/Ultra_Short_Throw/XJ-UT312WN
+      - item: "Software: wireless IMU low-level communications"
+        type: other
+        file_sheet: "Delsys Trigno Utility (Delsys Inc, Natick, USA)
+          https://delsys.com/support/software "
+      - item: "Software: data logging, treadmill/projector control, and protocol
+          administration"
+        type: other
+        file_sheet: "D-Flow (Motek Medical BV, Amsterdam, NL)
+          https://www.motekmedical.com/software/d-flow/	"
+      - item: PC
+        type: other
+        file_sheet:
+      - item: Data Acquisititon Board (in the PC console)
+        type: other
+        file_sheet: "NI USB-6210
+          https://www.ni.com/en-us/support/model.usb-6210.html"
+      - item: "Safety system (Safety Harness - 3 different sizes, safety rope
+          with locking mechanism 2 Ceiling Hooks)"
+        type: other
+        file_sheet: Provided by Motek Medical BV
+    step_description: "The protocol is composed of the gathering subject's
+      native gait and perturbed gait after applying different perturbations -
+      visual cues, that will appear on the surface of the treadmill.
+      The subject should wear safety harness and would be instructed to walk in
+      the center of the treadmill at the particular treadmill speed.
+      During the unperturbed session (before enabling visual perturbations), the
+      system is gathering/recording performance indicators (step length, step
+      width, step time), which are calculated from the gait events (toe-off,
+      heel-strike).
+      Gait events are detected by using a COP-based algorithm that monitors COP
+      pattern of the walking subject and outputs gait events of the left and
+      right toe-offs and heel-strikes.
+      After enabling visual perturbations, the visual target appear on the
+      treadmill surface at (random) location, which deviates from the normal
+      stepping position, while the subject needs to quickly react by stepping on
+      a visual cue.
+      This provokes a balance response of the next few steps.
+      The system calculates target error, which is the minimum distance between
+      COP and the center of the visual cue in a period, when visual cue is
+      visible.
+      After (random) number of recovery steps the new visual target appears for
+      placing the left or right foot (depends on a protocol settings).
+      The protocol finishes when all selected perturbations are triggered.
+      The number of all perturbations (visual cues/targets) depends on selected
+      perturbation direction (forward, inward, outward, forward-inward and
+      forward-outward), number of repetitions and selection of the step targets
+      (left foot, right foot or both feet).
+      In case of all perturbation directions, one repetition per perturbation
+      direction and both feet are selected, the number of all perturbations is
+      10.
+      The system outputs files about subject info, protocol condition,
+      platformData (step-stamped data) and gaitEvents data (time-stamped data,
+      includes COP and vertical GRF)."
     step_list:
-      - description: Place the 2 IMU sensors on the feet of the subject to
-          measure gait events such as heel-strike and toe-off
-        detail: A manual will be provided with detailed information.
-      - description: Place the subject on the treadmill
-      - description: Launch the software (Delsys Trigno utility and D-Flow) for
-          recording the data and administering the protocol.
-        detail: A manual will be provided with detailed information of the
-          software.
-      - description: Collect baseline data of walking to personalize the visual
-          cues to the participant''s normal gait patterns.
-        detail: All instruments are recorded by the D-Flow software, and average
-          step length and step width are computed.
-          Foot placement is determined from centre of pressure measurements
-          (force plate integrated in treadmill) and heel-strike events
-          (wireless IMUs placed on feet).
-      - description: Start the protocol.
-          The treadmill will start running and the visual cues will be projected
-          on the treadmill
-      - description: Data collection will be automatically triggered during the
-          tests
-        detail: Data is recorded from all instruments with the D-Flow software.
-      - description: Subject starts walking and different visual perturbation
-          conditions will be applied, depending on the test condition.
-          Conditions will be randomly ordered and repeated N times per limb.
-        detail: "The timing, frequency, size, and direction of visual
-          perturbations will be configurable by the experimenter, and
-          perturbations will be administered in random order.
-          Our submitted data will include the visual target shifted in 4
-          different directions from nominal foot placement: forward, backward,
-          left, and right."
-      - description: The subject is expected to step on the visual
-          perturbations, which are designed to destabalize the subject.
-      - description: The raw signals are logged.
-          The participant performance is evaluated by computation of outcome
-          measures.
-        detail: Performance can alternatively be computed off-site with the
-          Eurobench software.
+      - description: Turn on the treadmill and PC console
+        detail:
+      - description: "Login to the PC with the admin profile (user: admin,
+          password: admin)."
+        detail:
+      - description: Start Delsys Trigno software
+        detail: Shortcut on the desktop
+      - description: "Start D-Flow software using the shortcut in desktop or
+          from the start menu"
+        detail: "use D-Flow and not D-Flow Frontend"
+      - description: Open the latest version of our BeStable application
+        detail: "(File/Open…/Browse to D:\CAREN Resources\Projects\BeStable platform ver2\Applications\Bestable_v10.caren)
+          Note: a shortcut to “Bestable_v10.caren” is placed on the desktop"
+      - description: "On the treadmill’s control panel disengage the emergency
+          stop (twist and it will pop up), press the black arrow button (Enter
+          button).
+          The message on the LCD screen should change from “Stop” to “Stand by”.
+          Press the “Enter button” again to enable the treadmill motor.
+          The speed will be visible."
+        detail:
+      - description: "Double click on the MoCap module, ensure that it is in
+          “Live” mode, calibrate the force plate by clicking on the calibrate
+          button in analog tab."
+        detail:
+      - description: "Open View/Runtime Console (shortcut F2), where the
+          parameters of the subject and protocol can be selected"
+        detail:
+      - description: "Runtime Console - in “Hardware” tab, force plates can also
+          be zero-levelled here.
+          All hardware from the list needs to be checked in order to proceed
+          with the “Acknowledge >>” button"
+        detail:
+      - description: "After clicking “Acknowledge >>” button from the “Hardware”
+          tab, the subject characteristics should be set in the “Subject” tab"
+        detail:
+      - description: "In the “Perturbation” tab, select custom protocol
+          parameters (including treadmill speed) or check “Import protocol
+          from …”, which loads protocol parameters from the “protocol.yaml” file
+          located in
+          “D:\CAREN Resources\Projects\BeStable platform ver2\Protocols”."
+        detail: "Note 1: The treadmill will not run until the “Play” button is
+          pressed.
+          Note 2: Data recording is enabled by default.
+          Protocol parameters (condition 1):
+          treadmill_speed: 0.4 m/s
+          perturbation_directions: fw, fwow, fwiw, iw, ow
+          perturbation_randomized: true
+          target_step: both_feet
+          perturbation_repetitions: 5
+          sound: true
+
+          Protocol parameters (condition 2):
+          treadmill_speed: 0.6 m/s
+          perturbation_directions: fw, fwow, fwiw, iw, ow
+          perturbation_randomized: true
+          target_step: both_feet
+          perturbation_repetitions: 5
+          sound: true
+
+          Protocol parameters (condition 3):
+          treadmill_speed: 0.8 m/s
+          perturbation_directions: fw, fwow, fwiw, iw, ow
+          perturbation_randomized: true
+          target_step: both_feet
+          perturbation_repetitions: 5
+          sound: true"
+      - description: "Put the safety harness on a subject and ask the subject to
+          step on a treadmill positioned with the feet on the central line
+          projected on the treadmill surface.
+          Attach the safety harness on a safety hook."
+        detail:
+      - description: "Open the “Main script” block window in order to monitor
+          program states"
+        detail:
+      - description: "Instruct subject to walk within the dark area surrounded
+          by red_zone_front and red_zone_rear, or for example, stepping on a
+          central line.
+          Instruct subject to step on a target with the leg, which is in the
+          swing phase."
+        detail: "Note that, red visual cue (red ellipse) is a left foot target
+          and blue visual cue (blue ellipse) is a right foot target.
+          The subjects needs to be very concentrated and focused on the
+          projection on the walking surface in order to react quickly when
+          visual target appears. "
+      - description: "To start the experiment, press the “PLAY” button in the
+          Runtime console.
+          The treadmill will start to accelerate (max. acceleration is set in
+          the Treadmill block) until it reaches the desired velocity."
+        detail: "The system will start calculating PI data and writing it to the
+          step-stamped data file “subject_X_cond_Y_run_Z_platformData.csv”.
+          Note: Sometimes the error “Script timeout” might appear in the Output
+          window of the main script for an unknown reason.
+          In this case, press the “STOP” button in the “Runtime console”, press
+          the “REWIND” and start again by pressing the “PLAY” button."
+      - description: "Subject should walk for approx. 2 minutes in order to
+          gather enough unperturbed steps, which can serve as subject native
+          gait."
+        detail:
+      - description: "After gathering enough step data of the unperturbed
+          walking, press the “TOGGLE PERTURBATIONS” button in the Runtime
+          console to apply perturbations.
+          The average values of the toe-off locations for left and rigth leg
+          will freeze and the new target steps (visual cues) will appear based
+          on freezed toe-off locationsThe perturbations will be automatically
+          disabled after finishing the protocol."
+        detail:
+      - description: "Press the “STOP” button when you want to stop.
+          This will also stop the recording module and save files to the folder
+          named “subject ID” (example: subject ID 15) in the following location:
+          D:\CAREN Resources\Projects\BeStable platform ver2\Data\subject 15 "
+        detail:
+      - description: "The output files can be processed by the Octave scripts of
+          the BeStable project."
+        detail: "Instructions and Octave scripts can be found in the following
+          repository:
+          https://gitlab.com/matjazzadravec/bestable-platform-codes"
+
+
     # todo they state 10 run per condition
-    has_multiple_run: true
-    # todo they say around 4 to 8s
+    has_multiple_run: false
     has_multiple_condition: true
     has_multiple_subject: true
 pi:
@@ -296,8 +420,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -314,8 +438,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -332,8 +456,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -350,8 +474,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -368,8 +492,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -386,8 +510,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -404,8 +528,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -422,8 +546,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -440,8 +564,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -458,8 +582,8 @@ pi:
       versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -476,8 +600,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -494,8 +618,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -512,8 +636,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -530,8 +654,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -548,8 +672,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -566,8 +690,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -584,8 +708,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -602,8 +726,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -620,8 +744,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -638,8 +762,8 @@ pi:
       stance, and vice versa)"
     unit: m
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -653,8 +777,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -668,8 +792,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -683,8 +807,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -698,8 +822,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -713,8 +837,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -728,8 +852,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -743,8 +867,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -758,8 +882,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -773,8 +897,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -788,8 +912,8 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: s
     output: matrix
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -801,8 +925,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -814,8 +938,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -827,8 +951,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -840,8 +964,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -853,8 +977,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -866,8 +990,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -879,8 +1003,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -892,8 +1016,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -905,8 +1029,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -918,8 +1042,8 @@ pi:
       Values for both anteroposterior and mediolateral directions."
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -932,7 +1056,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -945,7 +1069,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -958,7 +1082,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -971,7 +1095,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -984,7 +1108,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -997,7 +1121,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -1010,7 +1134,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -1023,7 +1147,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -1036,7 +1160,7 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -1049,21 +1173,19 @@ pi:
     unit: "%"
     output: scalar
     intra_run_aggregation: na
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: undef
     visu: bar graph
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
       across subjects."
 
 pi_algo:
-  # todo: update the template, as it is still over detailed
   - name: bestable
     description: undef
     url_paper: undef
     url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
     docker_host: eurobenchtest/pi_bestable:v0.0.0
     docker_name: eurobenchtest/pi_bestable:v0.0.0
-    # todo the code generates something like 40 PI files. They are not all listed here.
     pi:
       - base_step_length_left
       - base_step_length_right
@@ -1128,11 +1250,10 @@ pi_algo:
       - pert_left_ow_success_rate
       - pert_right_ow_success_rate
     input_files: [platformData.csv, subject_condition.yaml, info.yaml]
-    # todo: check docker entry point
     input_command:
       - ./run_pi
       - platformData.csv
-      - condition.yaml
+      - subject_condition.yaml
       - subject_info.yaml
     language: octave
     implemented: true

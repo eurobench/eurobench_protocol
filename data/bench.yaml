@@ -1,4 +1,5 @@
 ---
+user_name: "bench"
 scenario:
   name: "Sit to stand"
   description: "Sit-to-stand (STS) is an important task for assessing dynamic
@@ -13,8 +14,9 @@ scenario:
   image: bench/img0.png
 
 protocol:
-  - name: "5 sit to stand"
-    name_readable: "5STS measures how long it takes to complete 5 full STS
+  - name: "5STS"
+    name_readable: "5 sit to stand"
+    definition: "5STS measures how long it takes to complete 5 full STS
       cycles, starting from a sat position and reaching again the initial
       position.
       The output of this protocol and the associated PIs have a documented
@@ -23,7 +25,7 @@ protocol:
     image: bench/img02.png
     keywords: [Sit to stand, biomechanics, neuromechanics]
     bipedal_system: [Prosthesis, orthosis, human, humanoid]
-    pi_algo:
+    pi_algo: calculate_5sts_metrics
     duration: 1 minute
     controlled_variables:
       - name: "seat_height"
@@ -38,7 +40,7 @@ protocol:
         unit: m
     testbed:
       - item: "instrumented chair"
-        type: custom
+        type: combined
         file_sheet: BENCH technical document
       - item: "imu sensors"
         type: sensor
@@ -54,7 +56,7 @@ protocol:
       - description: Place the IMU sensor onto the subject body segments
         detail: IMUs will be placed on the segments in an arbitrary positions
       - description: Adjust height of the chair and handrails
-        detail: either standardized or based on subjects' anthropometrics
+        detail: either standardized or based on subjects'' anthropometrics
       - description: Perform calibration according to the documentation
         detail: Calibration is needed for kinematics estimation
       - description: Place the subject at the starting point (i.e., sit)
@@ -69,8 +71,9 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-  - name: "30 seconds sit to stand"
-    name_readable: "30sSTS measures how many full STS cycles are completed
+  - name: "30sSTS"
+    name_readable: "30 seconds sit to stand"
+    definition: "30sSTS measures how many full STS cycles are completed
       within a 30s time frame, starting from a sat position.
       The output of this protocol and the associated PIs have a documented
       clinical relevance and are highly correlated with motor performance of
@@ -79,7 +82,7 @@ protocol:
     keywords: [Sit to stand, biomechanics, neuromechanics]
     # TODO: list differs with the previous protocol
     bipedal_system: [Prosthesis, orthosis, human, humanoid, exoskeleton]
-    pi_algo:
+    pi_algo: calculate_30sts_metrics
     duration: 1 minute
     controlled_variables:
       - name: "seat_height"
@@ -94,7 +97,7 @@ protocol:
         unit: m
     testbed:
       - item: "instrumented chair"
-        type: custom
+        type: combined
         file_sheet: BENCH technical document
       - item: "imu sensors"
         type: sensor
@@ -111,7 +114,7 @@ protocol:
       - description: Place the IMU sensor onto the subject body segments
         detail: IMUs will be placed on the segments in an arbitrary positions
       - description: Adjust height of the chair and handrails
-        detail: either standardized or based on subjects' anthropometrics
+        detail: either standardized or based on subjects'' anthropometrics
       - description: Perform calibration according to the documentation
         detail: Calibration is needed for kinematics estimation
       - description: Place the subject at the starting point (i.e., sit)
@@ -128,7 +131,7 @@ protocol:
     has_multiple_subject: true
 
 pi:
-  - name: 5sts_duration
+  - name: 5STS_duration
     name_readable: "5sts duration"
     description: "time to execute 5 times STS (only under 5 sit to stand
       protocol).
@@ -167,7 +170,7 @@ pi:
       total duration
     inter_cond_aggregation: na
     inter_subject_aggregation: [mean]
-  - name: sts_cop_stability
+  - name: CoP_stability
     name_readable: "STS stability"
     description: "Distance traveled by the CoP during the movement, averaged
       across cycles (smaller is better)"
@@ -211,9 +214,9 @@ pi:
     visu: bar plot
     inter_cond_aggregation: na
     inter_subject_aggregation: [mean]
-  - name: com_work
+  - name: CoM_work
     name_readable: "Total mechanical power"
-    desription: Total work done by the CoM during one STS repetition
+    description: Total work done by the CoM during one STS repetition
       (goodness TBD)
     unit: W
     output: scalar
@@ -227,13 +230,13 @@ pi_algo:
     description: Sit to stand analysis algorithm
     url_paper: na
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_bench:v0.0.0
+    docker_name: eurobenchtest/pi_bench:v0.0.0
     pi:
-      - 5sts_duration
-      - com_work
+      - 5STS_duration
+      - CoM_work
       - kinematic_repeatability
-      - sts_cop_stability
+      - CoP_stability
       - subphases_duration
       - ult_overshoot
       - ult_time
@@ -241,21 +244,22 @@ pi_algo:
       - platformData.csv
       - platformData_calib.csv
     input_command:
-      - ./run_bench_pi
+      - ./run_bench_5sts_pi
       - platformData.csv
       - platformData_calib.csv
     language: octave
+    implemented: true
   - name: calculate_30sts_metrics
     description: undef
     url_paper: "DOI: 10.1109/JSEN.2019.2957667"
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
-    docker_host: undef
-    docker_name: undef
+    docker_host: eurobenchtest/pi_bench:v0.0.0
+    docker_name: eurobenchtest/pi_bench:v0.0.0
     pi:
-      - 30sts_repetition
-      - com_work
+      - 30sSTS_repetitions
+      - CoM_work
       - kinematic_repeatability
-      - sts_cop_stability
+      - CoP_stability
       - subphases_duration
       - ult_overshoot
       - ult_time
@@ -263,7 +267,8 @@ pi_algo:
       - platformData.csv
       - platformData_calib.csv
     input_command:
-      - ./run_bench_pi
+      - ./run_bench_30sts_pi
       - platformData.csv
       - platformData_calib.csv
     language: octave
+    implemented: true

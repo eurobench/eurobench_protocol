@@ -1,4 +1,5 @@
 ---
+user_name: "bullet"
 scenario:
   name: "walking on straight lines"
   description: "Walking over an horizontal surface following a straight line
@@ -17,7 +18,7 @@ protocol:
       to be used when force platforms and mocap are not available."
     image: bullet/img01.png
     keywords: [Walking, instrumented crutches, gait analysis]
-    bipedal_system: [Prosthesis, exoskeleton, humans]
+    bipedal_system: [Prosthesis, exoskeleton, human]
     pi_algo: pi_bullet_walking
     duration: 2 min/run/subject
     controlled_variables:
@@ -39,8 +40,8 @@ protocol:
       - description: Subject is welcomed and instructed on the protocol
         detail: The current protocol should be described to the subject,
           without giving him/her any specific instruction on the crutches usage.
-      - description: Adjust crutches' height
-        detail: If the subject is an exoskeleton user adjust the crutches'
+      - description: Adjust crutches\' height
+        detail: If the subject is an exoskeleton user adjust the crutches\'
           height to match the height of the crutches currently used by
           the subject
       - description: Give crutches to the subject
@@ -73,7 +74,7 @@ protocol:
       - instrumented crutches
       - gait analysis
       - biomehanical model
-    bipedal_system: [Prosthesis, exoskeleton, humans]
+    bipedal_system: [Prosthesis, exoskeleton, human]
     pi_algo: pi_bullet_walking_complete
     duration: "volumetric scanning (5-10 mins), and 2 min/run/subject"
     controlled_variables:
@@ -100,7 +101,7 @@ protocol:
       The crutches height should be adjusted to the subject before the test.
       Motion capture should be available, as well as force platforms,
       along the path.
-      A preliminary assessment of the subject's anthropometric data is required.
+      A preliminary assessment of the subject''s anthropometric data is required.
       Data collection is started at the beginning of the walk and stopped
       after each walk."
     step_list:
@@ -114,8 +115,8 @@ protocol:
       - description: Subject is welcomed and instructed on the protocol
         detail: The current protocol should be described to the subject,
           without giving him/her any specific instruction on the crutches usage.
-      - description: Adjust crutches' height
-        detail: If the subject is an exoskeleton user adjust the crutches'
+      - description: Adjust crutches\' height
+        detail: If the subject is an exoskeleton user adjust the crutches\'
           height to match the height of the crutches currently used by the
           subject
       - description: Give crutches to the subject
@@ -202,7 +203,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: peak_load_shoulders_left
+  - name: peak_load_shoulder_left
     name_readable: "Left Peak load on shoulder"
     description: "Vector of 13 elements containing mean and standard deviation
       of the left shoulder force X, force Y, force Z, torque X, torque Y,
@@ -215,7 +216,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: peak_load_shoulders_right
+  - name: peak_load_shoulder_right
     name_readable: "Right Peak load on shoulder"
     description: "Vector of 13 elements containing mean and standard deviation
       of the right shoulder force X, force Y, force Z, torque X, torque Y,
@@ -228,7 +229,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: rms_load_shoulders_left
+  - name: rms_load_shoulder_left
     name_readable: "Left Root Mean Square load on shoulder"
     description: "Vector of 6 elements containing 3 force components (X, Y, Z)
       and 3 torque components (X,Y,Z) of left shoulder RMS load expressed
@@ -240,7 +241,7 @@ pi:
     visu: boxplot
     inter_cond_aggregation: undef
     inter_subject_aggregation: [mean, std_dev]
-  - name: rms_load_shoulders_right
+  - name: rms_load_shoulder_right
     name_readable: "Right Root Mean Square load on shoulder"
     description: "Vector of 6 elements containing 3 force components (X, Y, Z)
       and 3 torque components (X,Y,Z) of right shoulder RMS load expressed
@@ -277,6 +278,7 @@ pi_algo:
       - wrench_CrutchRight.csv
       - gaitEvents.yaml
     language: octave
+    implemented: true
   - name: pi_bullet_walking_complete
     description: Algorithm for analysis of gait performed with instrumented
       crutches using mocap system, force platform, volumetric scanner and
@@ -292,10 +294,10 @@ pi_algo:
       - rms_load_right
       - stance_time_left
       - stance_time_right
-      - peak_load_shoulders_left
-      - peak_load_shoulders_right
-      - rms_load_shoulders_left
-      - rms_load_shoulders_right
+      - peak_load_shoulder_left
+      - peak_load_shoulder_right
+      - rms_load_shoulder_left
+      - rms_load_shoulder_right
     # I suggest stating only wrench_CrutchLeft
     # Alfonso suggests crutchLeft_wrench
     input_files:
@@ -312,3 +314,4 @@ pi_algo:
       - wrench_ShoulderLeft.csv
       - wrench_ShoulderRight.csv
     language: octave
+    implemented: true
