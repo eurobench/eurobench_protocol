@@ -619,7 +619,7 @@ pi:
       task under investigation:
       1: Stoop lift, 2: Squat lift, 3: One hand lift, 4: Arm lift, 5. Stoop
       lower, 6. Squat lower, 7. Arm lower, 8. Walking, 9. Carrying, loads held
-      at arms length at sides (1 or 2 hands), 10. Carrying, loads held against
+      at arms length at sides (1 or 2 han ds), 10. Carrying, loads held against
       thighs or against waist, 11.Holding, at arms length, against thighs or at
       sides(2 hands), 12. Holding against waist, 13. Holding, at arms length in
       one hand, 14. Pushing/pulling, at bench height (0.8 meters), 15.
@@ -721,13 +721,73 @@ pi:
     inter_subject_aggregation: undef
 
 pi_algo:
-  - name: undef
+  - name: pi_hrmonitoring
     description: undef
     url_paper: undef
     url_code: https://github.com/jamatics/pi_ctag
-    docker_host: undef
-    docker_name: undef
-    pi: []
-    input_files: []
-    input_command: []
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [hrmonitoring]
+    input_files: [balance.csv, subject_info.yaml]
+    input_command: [./run_pi_balance, balance.csv, subject_info.yaml]
+    language: octave
+  - name: pi_metaboliccost
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [metaboliccost]
+    input_files: [chrono.csv, subject_info.yaml, condition.yaml, subject_choice_metabolicCost.yaml]
+    input_command: [./run_pi_metabolicCost, chrono.csv, subject_info.yaml, condition.yaml, subject_choice_metabolicCost.yaml]
+    language: octave
+  - name: pi_chrono
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [chrono]
+    input_files: [chrono.csv]
+    input_command: [./run_pi_chrono, chrono.csv]
+    language: octave
+  - name: pi_balance
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [balance]
+    input_files: [balance.csv, subject_info.yaml]
+    input_command: [./run_pi_balance, balance.csv, subject_info.yaml]
+    language: octave
+  - name: pi_rangeofmotion
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [rangeofmotion]
+    input_files: [jointAngles.csv]
+    input_command: [./run_pi_rangeofMotion, jointAngles.csv]
+    language: octave
+  - name: pi_questionnaire
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [questionnaire]
+    input_files: [questionnaire_medAssist.csv]
+    input_command: [./run_pi_questionnaire, questionnaire_medAssist.csv]
+    language: octave
+  - name: pi_borgscale10
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/jamatics/pi_ctag
+    docker_host: eurobenchtest/pi_ctag:v0.0.0
+    docker_name: eurobenchtest/pi_ctag:v0.0.0
+    pi: [borgscale10]
+    input_files: [questionnaire_borgScale10.csv]
+    input_command: [./run_pi_borgScale10, questionnaire_borgScale10.csv]
     language: octave
