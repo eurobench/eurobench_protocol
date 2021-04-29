@@ -2,7 +2,7 @@
 scenario:
   name: "Irregular terrain"
   description: "Walking through different configurable irregular terrains."
-  image: csic_irregular/img0.png
+  image: img/img1.png
 
 protocol:
   - name: "csic_irregular"
@@ -10,21 +10,21 @@ protocol:
     definition: "Passing through the specific testbed that can hold fourteen
       different irregular terrain conditions.
       The subject must perform four walks through each configuration."
-    image: csic_irregular/img1.png
+    image: img/img2.png
     keywords: [balance, stability]
     bipedal_system: [human, prosthesis, exoskeleton]
     pi_algo: [margin_stability, ratio_index, variability, walk_ratio]
     duration: "240min"
     controlled_variables:
-      - name: exoskeleton
-        definition: Robot used in the trial
-        type: undef
-        range: undef
-        unit: undef
-      - name: terrain_configuration
+      - name: robot_usage
+        definition: Whether a robot is used in the trial
+        type: bool
+        range: True / False
+        unit: bool
+      - name: terrain_type
         definition: Type of terrain the subject is facing
-        type: int
-        range: [0-13]
+        type: string
+        range: na
         unit: na
 
     testbed:
