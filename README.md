@@ -90,6 +90,31 @@ The hyperlinks refer to:
   * current state: waiting for PI output adjustment in code.
     * CI process failing due to csv linting issue
 
+* **tested**:
+  * [code](https://github.com/jamatics/pi_ctag),
+    [Eurobench code](https://github.com/eurobench/pi_ctag),
+    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_ctag),
+    [excel](data/tested/tested.xlsx),
+    [yaml](data/tested.yaml)
+  * current state:
+    * ready to be tested?
+
+* **benchbalance**:
+  * [code](https://github.com/FraCampus/PI_BenchBalance),
+    [template](data/benchbalance/benchbalance.xlsx)
+    [yaml](data/benchbalance.yaml)
+  * current state:
+    * **Matlab** code, not likely to be Octave-compatible
+    * would be in good shape
+
+* **experience**:
+  * [code](https://github.com/FraCampus/EXPERIENCE),
+    [template](data/experience/experience.xlsx),
+    [yaml](data/experience.yaml)
+  * current state:
+    * **Matlab**, with specific licences. Not likely to be Matlab compatible
+    * would be in good shape.
+
 ### Under progress
 
 * **beast**:
@@ -99,22 +124,6 @@ The hyperlinks refer to:
     [excel](data/beast/beast-v3.xlsx),
     [yaml](data/beast.yaml)
   * current state: waiting for reference data set
-
-* **tested**:
-  * [code](https://github.com/jamatics/pi_ctag),
-    [Eurobench code](https://github.com/eurobench/pi_ctag),
-    [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_ctag),
-    [excel](data/tested/tested.xlsx),
-    [yaml](data/tested.yaml)
-  * current state:
-    * Maybe still discussion on data format?
-    * Answer received the 20/11.
-      Answered back the 23/11
-    * PR on latest CI process
-    * Open discussion on PI Algo structure.
-    * Eurobench repo created, with access secret to docker hub.
-      Waiting for CI process PR merging
-    * waiting for some input file delivery
 
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
@@ -126,22 +135,6 @@ The hyperlinks refer to:
     * verify input data file
     * data collection check
     * excel sheet check
-
-* **benchbalance**:
-  * [code](https://github.com/FraCampus/PI_BenchBalance),
-    [template](data/benchbalance/benchbalance.xlsx)
-    [yaml](data/benchbalance.yaml)
-  * current state:
-    * Matlab code, not likely to be Octave-compatible
-    * code evolution proposed 13/01
-
-* **experience**:
-  * [code](https://github.com/FraCampus/EXPERIENCE),
-    [template](data/experience/experience.xlsx),
-    [yaml](data/experience.yaml)
-  * current state:
-    * Matlab, with specific licences. Not likely to be Matlab compatible
-    * should resume the analysis, even if the code is not launched yet.
 
 ### Very early stage
 
