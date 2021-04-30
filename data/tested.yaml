@@ -671,7 +671,7 @@ pi:
     visu: undef
     inter_cond_aggregation: undef
     inter_subject_aggregation: undef
-  - name: rangeomotion
+  - name: rangeofmotion
     name_readable: "Range of motion"
     description: "This metrics will provide the user to check if the applied
       joint angles are within the allowable permissible range established by
