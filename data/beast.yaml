@@ -9,11 +9,12 @@ scenario:
 protocol:
   - name: "beast"
     # todo: two variants: how to handle this?
-    name_readable: "BEAST: operating wheeled devices. This protocol has two
-      variants, employing two different active devices (trolley and walker)"
-    definition: "In its trolley version, the protocol evaluates the capability
-      of the robot to safely and accurately operate a self-supporting wheeled
-      transport device (the trolley) while performing navigation tasks.
+    name_readable: "BEAST: operating wheeled devices."
+    definition: "This protocol has two variants, employing two different active
+      devices (trolley and walker).
+      In its trolley version, the protocol evaluates the capability of the robot
+      to safely and accurately operate a self-supporting wheeled transport
+      device (the trolley) while performing navigation tasks.
       In its walker version, aimed at scenarios where the main difficulty lies
       in the walking process itself, the protocol evaluates the capability of
       the robot to minimise its reliance on an external stability-supporting
