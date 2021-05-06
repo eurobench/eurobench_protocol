@@ -1,9 +1,8 @@
 ---
 scenario:
   name: "Exoskeleton-assisted walking"
-  description: "Characterization of user experience during exoskeleton-assisted
-    walking"
-  image: experience/image/logo.png
+  description: "User experience during exoskeleton-assisted walking                        "
+  image: experience/img/logo.png
 
 protocol:
   - name: "experience"
@@ -14,15 +13,13 @@ protocol:
       The aim is the comprehensive and systematic assessment of user subjective
       experience during exoskeleton-assisted walking.
       This is achieved by administering a novel multi-factor questionnaire to
-      derives psychological indicators and by
-      measuring physiological information to compute psychophysiological
-      indicators."
+      derive psychological indicators and by measuring physiological information
+      to compute psychophysiological indicators."
     image: experience/image/experience.png
     keywords: [Exoskeleton, walking, user experience]
-    bipedal_system: [humanoid, prosthesis, exoskeleton, human]
+    bipedal_system: [prosthesis, exoskeleton, human]
     pi_algo: [pi_questionnaire, pi_psychophysiological]
     duration: "80 minutes per run, per subject"
-    # todo check the comments about the controlled variables
     controlled_variables:
       - name: time_rest_baseline
         definition: Time of recording of physiological data with the subject
@@ -43,21 +40,20 @@ protocol:
         range: [0, 1000]
         unit: sec
     testbed:
-      - item: "Galvanic skin resonse measurement"
+      - item: "Device for galvanic skin response measurement"
         type: sensor
         file_sheet: Shimmer3 GSR+ (Shimmer, Ireland)
           https://www.shimmersensing.com/images/uploads/docs/GSR_User_Guide_rev1.13.pdf
-      - item: "Physiological sensor for Heart Rate and Respiration Rate monitoring"
+      - item: "Device for heart rate and respiration rate measurement"
         type: sensor
         file_sheet: Bio-Harness (Zephyr™ Performance Systems, USA)
           https://www.zephyranywhere.com/media/download/bioharness3-user-manual.pdf
-    step_description: "Each subject is monitored during a first phase in seated
-      condition, then standing while wearing the exoskeleton and finally walking
-      with it.
-      At the end, a questionnaire is administered."
+    step_description: "The subject is monitored with physiological sensors
+      during a first phase at rest and then walking with an exoskeleton.
+      After walking, the EXPERIENCE questionnaire is administered."
     step_list:
       - description: Place the two physiological sensors onto the subject body.
-        detail: "Monitored quantities Heart Rate (HR), Heart Rate Variability
+        detail: "Monitored quantities: Heart Rate (HR), Heart Rate Variability
           (HRV), Respiration Rate (RR), Galvanic Skin Response (GSR).
           Mounting information are reported in the documentation."
       - description: Start data collection software and start recording of
@@ -67,28 +63,22 @@ protocol:
       - description: "Flag the start of the recording of the seated baseline on
           the data collection software and flag the stop when finished."
         detail: "Time duration of recording is 4 min and has to be measured by a
-          chronometer.
-          This information is also included in the controlled variable named
-          time_rest_baseline."
+          chronometer."
       - description: "Place the exoskeleton onto the subject body and let it
           relax."
       - description: "Flag the start of the recording of the standing baseline
           on the data collection software and flag the stop when finished."
         detail: "Time duration of recording is 4 min and has to be measured by a
-          chronometer.
-          This information is also included in the controlled variable named
-          time_stand_baseline."
+          chronometer."
       - description: "Start the robot-assisted walking session and wait until
           steady-state condition is reached."
-        detail: "Steady-state condition is reached when assistance parameters
+        detail: ""Steady-state condition is reached when assistance parameters
           are not changed anymore and the subject is walking comfortably without
           any major change."
       - description: "Flag the start of the recording of the walking condition
           on the data collection software and flag the stop when finished."
         detail: "Time duration of recording is 16 min and has to be measured by
-          a chronometer.
-          This information is also included in the controlled variable named
-          time_walking."
+          a chronometer."
       - description: Stop the walking session and stop data collection software.
       - description: Remove physiological sensors and exoskeleton.
       - description: Administer the EXPERIENCE questionnaire.
@@ -104,14 +94,13 @@ protocol:
       The aim is the comprehensive and systematic assessment of user subjective
       experience during exoskeleton-assisted walking.
       This is achieved by administering a novel multi-factor questionnaire to
-      derives psychological indicators and by measuring physiological
-      information to compute psychophysiological indicators."
-    image: experience/mage/experience_treadmill.png
+      derive psychological indicators and by measuring physiological information
+      to compute psychophysiological indicators."
+    image: experience/img/experience_treadmill.png
     keywords: [Exoskeleton, walking, user experience, treadmill]
-    bipedal_system: [humanoid, prosthesis, exoskeleton, human]
+    bipedal_system: [prosthesis, exoskeleton, human]
     pi_algo: [pi_questionnaire, pi_psychophysiological]
     duration: "80 minutes per run, per subject"
-    # todo check the comments about the controlled variables
     controlled_variables:
       - name: time_rest_baseline
         definition: Time of recording of physiological data with the subject
@@ -132,21 +121,20 @@ protocol:
         range: [0, 1000]
         unit: sec
     testbed:
-      - item: "Galvanic skin resonse measurement"
+      - item: "Device for galvanic skin response measurement"
         type: sensor
         file_sheet: Shimmer3 GSR+ (Shimmer, Ireland)
           https://www.shimmersensing.com/images/uploads/docs/GSR_User_Guide_rev1.13.pdf
-      - item: "Physiological sensor for Heart Rate and Respiration Rate monitoring"
+      - item: "Device for heart rate and respiration rate measurement."
         type: sensor
         file_sheet: Bio-Harness (Zephyr™ Performance Systems, USA)
           https://www.zephyranywhere.com/media/download/bioharness3-user-manual.pdf
-    step_description: "Each subject is monitored during a first phase in seated
-      condition, then standing while wearing the exoskeleton and finally walking
-      with it.
-      At the end, a questionnaire is administered."
+    step_description: "The subject is monitored with physiological sensors
+      during a first phase at rest and then walking with an exoskeleton.
+      After walking, the EXPERIENCE questionnaire is administered."
     step_list:
       - description: Place the two physiological sensors onto the subject body.
-        detail: "Monitored quantities Heart Rate (HR), Heart Rate Variability
+        detail: "Monitored quantities: Heart Rate (HR), Heart Rate Variability
           (HRV), Respiration Rate (RR), Galvanic Skin Response (GSR).
           Mounting information are reported in the documentation."
       - description: Start data collection software and start recording of
@@ -156,17 +144,13 @@ protocol:
       - description: "Flag the start of the recording of the seated baseline on
           the data collection software and flag the stop when finished."
         detail: "Time duration of recording is 4 min and has to be measured by a
-          chronometer.
-          This information is also included in the controlled variable named
-          time_rest_baseline."
+          chronometer."
       - description: "Place the exoskeleton onto the subject body and let it
           relax."
       - description: "Flag the start of the recording of the standing baseline
           on the data collection software and flag the stop when finished."
         detail: "Time duration of recording is 4 min and has to be measured by a
-          chronometer.
-          This information is also included in the controlled variable named
-          time_stand_baseline."
+          chronometer."
       - description: "Start the robot-assisted walking session and wait until
           steady-state condition is reached."
         detail: "Steady-state condition is reached when assistance parameters
@@ -175,9 +159,7 @@ protocol:
       - description: "Flag the start of the recording of the walking condition
           on the data collection software and flag the stop when finished."
         detail: "Time duration of recording is 16 min and has to be measured by
-          a chronometer.
-          This information is also included in the controlled variable named
-          time_walking."
+          a chronometer."
       - description: Stop the walking session and stop data collection software.
       - description: Remove physiological sensors and exoskeleton.
       - description: Administer the EXPERIENCE questionnaire.
