@@ -28,7 +28,7 @@ protocol:
       below: explanation, calibration, ..."
     step_list:
       - description: "Welcome and experiment explanation, ethics issues,…"
-        detail:	"General explanation 5 minutes"
+        detail: "General explanation 5 minutes"
       - description: "Place the mocap system (based on IMUs sensors) onto the
           subject body (lower limbs)"
         detail: "Approximately, one sensor should be placed in each of the
@@ -40,7 +40,7 @@ protocol:
       - description: "Mocap calibration"
         detail: "2 minutes"
       - description: "Detailed explanation of the experiment"
-        detail:	"Number of runs (up and down), which foot is the first,
+        detail: "Number of runs (up and down), which foot is the first,
           velocity, when is allowed to grab the handle (if handle is grabed,
           run should be repeated?) - 3 minutes"
       - description: "Place the subject at the starting point"
@@ -352,7 +352,3 @@ pi_algo:
       - platformData.csv
     language: python
     implemented: false
-
-
-
-
