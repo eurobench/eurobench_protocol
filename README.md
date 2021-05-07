@@ -167,9 +167,11 @@ The hyperlinks refer to:
     [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
     [second repo](https://github.com/STEPbySTEPproj/HF_metrics)
     [template](data/stepByStep/stepByStep.xlsx),
+    [yaml](data/stepByStep.yaml)
   * current state:
     * introduce docker and CI process
-    * code only covering one protocol.
+    * code only covering the ergonomic protocol.
+    * missing the others.
 
 * **csic manipulation**:
   * [code](https://github.com/AdrianaTorres/Manipulation),
