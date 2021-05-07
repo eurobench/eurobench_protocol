@@ -1,0 +1,358 @@
+---
+scenario:
+  name: "Walking on stair"
+  description: "Systematic Test of Exoskeleton Products by a Stairs-based
+    Testbed Evaluation Protocol"
+  image: na
+
+protocol:
+  - name: "sbs_ergonomic"
+    name_readable: "Walking on stair: biomechanical analysis"
+    definition: "Mocap adquisition in stair ascending and descending over the
+      testbed in order to characterize human movements.
+      Different parameters will be computed: simple metrics (total time
+      ascending and descending), complex metrics (subphases of stair
+      climbing/descend) and kinematics metrics (joint angles)"
+    image: sbs/img/sbs_ergonomics.jpg
+    keywords: [Lower-limb exoskeletons, stairs, stair ascending, stair descending, motion capture, motion reconstruction]
+    bipedal_system: [exoskeleton, human]
+    pi_algo: pi_sbs_ergonomics
+    duration: "15 minutes/subject (explanation+sensor placement+calibration)
+      + 7.5 minutes/subject (5 runs mocap adquisition) = 22.5 minutes/subject"
+    # controlled_variables:
+    testbed:
+      - item: Mocap sensor
+        type: sensor
+        file_sheet: https://neuronmocap.com/content/product/perception-neuron-pro
+    step_description: "We will tell the subject all the experiment described
+      below: explanation, calibration, ..."
+    step_list:
+      - description: "Welcome and experiment explanation, ethics issues,…"
+        detail:	"General explanation 5 minutes"
+      - description: "Place the mocap system (based on IMUs sensors) onto the
+          subject body (lower limbs)"
+        detail: "Approximately, one sensor should be placed in each of the
+          following locations (for right and left leg): (1) Thigh, lateral
+          aspect, mid point between the knee joint center and hip joint center;
+          (2) Shank, lateral aspect, mid point between the ankle joint center
+          and knee joint center; (3) Foot, instep center; (4) Pelvis, between
+          L5 and sacrum - 5 minutes"
+      - description: "Mocap calibration"
+        detail: "2 minutes"
+      - description: "Detailed explanation of the experiment"
+        detail:	"Number of runs (up and down), which foot is the first,
+          velocity, when is allowed to grab the handle (if handle is grabed,
+          run should be repeated?) - 3 minutes"
+      - description: "Place the subject at the starting point"
+      - description: "Launch the Data collection software"
+      - description: "Perform the experiment (go up and down the stairs)"
+        detail: "30 seconds"
+      - description: "Stop the data collection when the subject arrives at the
+          initial position"
+        detail: 1 minute
+      - description: "Repeat the procedure starting at step 5, to reach 5 runs."
+        detail: "Total (5 runs): 7,5 minutes"
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+
+pi:
+  - name: ascending_total_time
+    name_readable: "Ascending total time"
+    description: "Simple metric: Total time to ascend the stair"
+    unit: sec
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_total_time
+    name_readable: "Descending total time"
+    description: "Simple metric: Total time to descend the stair"
+    unit: sec
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_weight_acceptance
+    name_readable: "Ascending weight acceptance"
+    description: "Complex metric: Weight acceptance phase (Subphase of stair
+      climbing)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_weight_acceptance
+    name_readable: "Descending weight acceptance"
+    description: "Complex metric: Weight acceptance phase (Subphase of stair
+      descend)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_pull_up
+    name_readable: "Ascending pull up"
+    description: "Complex metric: Pull-up phase (Subphase of stair climbing)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_forward_continuance
+    name_readable: "Ascending forward continuance"
+    description: "Complex metric: Forward continuance phase (Subphase of
+      stair climbing )"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_forward_continuance
+    name_readable: "Descending forward continuance"
+    description: "Complex metric: Forward continuance phase (Subphase of
+      stair descend)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_push_up
+    name_readable: "Ascending push up"
+    description: "Complex metric: Push-up phase (Subphase of stair climbing)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_swing_foot_clearance
+    name_readable: "Ascending swing foot clearance"
+    description: "Complex metric: Swing-foot clearance phase (Subphase of stair climbing)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_swing_foot_placement
+    name_readable: "Ascending swing foot placement"
+    description: "Complex metric: Swing-foot placement phase (Subphase of stair climbing)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_controlled_lowering
+    name_readable: "Descending controlled lowering"
+    description: "Complex metric: Controlled lowering phase (Subphase of stair descend)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_swing_leg_pull_through
+    name_readable: "Descending swing leg pull through"
+    description: "Complex metric: Leg pull through phase (Subphase of stair descend)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_swing_foot_placement
+    name_readable: "Descending swing foot placement"
+    description: "Complex metric: Foot placement phase (Subphase of stair descend)"
+    unit: "% of gait cycle"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_hip_right_angle
+    name_readable: "Ascending hip right angle"
+    description: "Kinematic metric: Right angle of the hip (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_hip_left_angle
+    name_readable: "Ascending hip left angle"
+    description: "Kinematic metric: left angle of the hip (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_knee_right_angle
+    name_readable: "Ascending knee right angle"
+    description: "Kinematic metric: Right angle of the knee (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_knee_left_angle
+    name_readable: "Ascending knee left angle"
+    description: "Kinematic metric: left angle of the knee (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_ankle_right_angle
+    name_readable: "Ascending ankle right angle"
+    description: "Kinematic metric: Right angle of the ankle (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ascending_ankle_left_angle
+    name_readable: "Ascending ankle left angle"
+    description: "Kinematic metric: left angle of the ankle (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_hip_right_angle
+    name_readable: "descending hip right angle"
+    description: "Kinematic metric: Right angle of the hip (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_hip_left_angle
+    name_readable: "descending hip left angle"
+    description: "Kinematic metric: left angle of the hip (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_knee_right_angle
+    name_readable: "descending knee right angle"
+    description: "Kinematic metric: Right angle of the knee (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_knee_left_angle
+    name_readable: "descending knee left angle"
+    description: "Kinematic metric: left angle of the knee (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_ankle_right_angle
+    name_readable: "descending ankle right angle"
+    description: "Kinematic metric: Right angle of the ankle (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: descending_ankle_left_angle
+    name_readable: "descending ankle left angle"
+    description: "Kinematic metric: left angle of the ankle (flexion extension)"
+    unit: "degree"
+    output: vector
+    intra_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    inter_run_aggregation: [[0, min], [0, max], [0, mean], [0, std]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+pi_algo:
+  - name: pi_sbs_ergonomics
+    description: This app is based on Python and is only one executable script
+      containing all metrics computations
+    url_paper: undef
+    url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
+    docker_host: eurobenchtest/pi_sbs_ergonomics:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_ergonomics:v0.0.0
+    pi:
+      - ascending_total_time
+      - descending_total_time
+      - ascending_weight_acceptance
+      - descending_weight_acceptance
+      - ascending_pull_up
+      - ascending_forward_continuance
+      - descending_forward_continuance
+      - ascending_push_up
+      - ascending_swing_foot_clearance
+      - ascending_swing_foot_placement
+      - descending_controlled_lowering
+      - descending_swing_leg_pull_through
+      - descending_swing_foot_placement
+      - ascending_hip_right_angle
+      - ascending_hip_left_angle
+      - ascending_knee_right_angle
+      - ascending_knee_left_angle
+      - ascending_ankle_right_angle
+      - ascending_ankle_left_angle
+      - descending_hip_right_angle
+      - descending_hip_left_angle
+      - descending_knee_right_angle
+      - descending_knee_left_angle
+      - descending_ankle_right_angle
+      - descending_ankle_left_angle
+    input_files: [platformData.csv]
+    input_command:
+      - ./run_protocol_1
+      - platformData.csv
+    language: python
+    implemented: false
+
+
+
+
