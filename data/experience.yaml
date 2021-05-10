@@ -126,7 +126,7 @@ protocol:
         type: sensor
         file_sheet: Shimmer3 GSR+ (Shimmer, Ireland)
           https://www.shimmersensing.com/images/uploads/docs/GSR_User_Guide_rev1.13.pdf
-      - item: "Device for heart rate and respiration rate measurement."
+      - item: "Device for heart rate and respiration rate measurement"
         type: sensor
         file_sheet: Bio-Harness (Zephyr™ Performance Systems, USA)
           https://www.zephyranywhere.com/media/download/bioharness3-user-manual.pdf
