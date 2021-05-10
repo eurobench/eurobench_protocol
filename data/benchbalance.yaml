@@ -50,7 +50,7 @@ protocol:
           perturbation is applied by the experimenter by means of the
           perturbator.
         type: undef
-        range: undef
+        range: string
         unit: undef
       - name: exoskeleton
         definition: Indication if an exoskeleton was used or not.
@@ -63,10 +63,10 @@ protocol:
         file_sheet: undef
       - item: "Perturbator"
         type: sensor
-        file_sheet: undef
+        file_sheet: See TESTBED documentation folder.
       - item: "Smart garment"
         type: sensor
-        file_sheet: undef
+        file_sheet: See TESTBED documentation folder
     step_description: "The subject is standing wearing or not an exoskeleton.
       The pertrubed balance is assessed and in particular the capability of
       recovering from measured manually delivered pushes.
@@ -91,18 +91,24 @@ protocol:
         detail: Details on the calibration procedure are reported in the
           documentation
       - description: Put the subject in a standing position with feet at a fixed
-          confortable distance and start the perturbation protocol procedures by
-          choosing Full or Reduced protocol.
-        detail: "Details on the two procedures are provided in the documentation.
+          confortable distance and start the perturbation protocol procedures.
+        detail: "Details on the two procedures are provided in the
+          documentation.
           Based on the selected protocol, the experimenter will collect 5
           correct pushes per conditions.
           Perturbations will be classified based on push features: magnitude,
           duration, orientation, and location and the software automatically ask
           the experimenter for 5 good repetitions of the same push, based on a
-          set of desired pre-selected ranges."
+          set of desired pre-selected ranges.
+          Desired push features (magnitude, impulse, orientation, location) are
+          encoded in the controlled variables file: Moreover the desired value
+          are also indicated in the software acquisition interface so that the
+          experiementer can check if he delivered a right perturbator or not.
+          Finally, the software will automatically count the total amount of
+          good pushes."
       - description: Stop data collection software.
     has_multiple_run: true
-    has_multiple_condition: yes
+    has_multiple_condition: true
     has_multiple_subject: true
 pi:
   - name: body_sway

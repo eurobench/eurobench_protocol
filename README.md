@@ -79,6 +79,14 @@ The hyperlinks refer to:
     [yaml](data/pepato.yaml),
     [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw)
 
+* **experience**:
+  * [code](https://github.com/FraCampus/EXPERIENCE),
+    [template](data/experience/experience.xlsx),
+    [yaml](data/experience.yaml)
+  * current state:
+    * **Matlab**, with specific licences. Not likely to be Octave compatible
+    * Information about the protocols can be consulted but the algorithms are not callable at this moment.
+
 ### Ready to be tested for insertion in database
 
 * **beat**:
@@ -106,14 +114,6 @@ The hyperlinks refer to:
   * current state:
     * **Matlab** code, not likely to be Octave-compatible
     * would be in good shape
-
-* **experience**:
-  * [code](https://github.com/FraCampus/EXPERIENCE),
-    [template](data/experience/experience.xlsx),
-    [yaml](data/experience.yaml)
-  * current state:
-    * **Matlab**, with specific licences. Not likely to be Matlab compatible
-    * would be in good shape.
 
 ### Under progress
 
