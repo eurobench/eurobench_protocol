@@ -169,9 +169,9 @@ The hyperlinks refer to:
     [template](data/stepByStep/stepByStep.xlsx),
     [yaml](data/stepByStep.yaml)
   * current state:
-    * introduce docker and CI process
-    * code only covering the ergonomic protocol.
-    * missing the others.
+    * code only covering the biomechanics protocol.
+    * first version of HF metrics.
+    * Other are still missing
 
 * **csic manipulation**:
   * [code](https://github.com/AdrianaTorres/Manipulation),

@@ -6,17 +6,17 @@ scenario:
   image: na
 
 protocol:
-  - name: "sbs_ergonomic"
+  - name: "sbs_biomechanics"
     name_readable: "Walking on stair: biomechanical analysis"
     definition: "Mocap adquisition in stair ascending and descending over the
       testbed in order to characterize human movements.
       Different parameters will be computed: simple metrics (total time
       ascending and descending), complex metrics (subphases of stair
       climbing/descend) and kinematics metrics (joint angles)"
-    image: sbs/img/sbs_ergonomics.jpg
+    image: sbs/img/sbs_biomechanics.jpg
     keywords: [Lower-limb exoskeletons, stairs, stair ascending, stair descending, motion capture, motion reconstruction]
     bipedal_system: [exoskeleton, human]
-    pi_algo: pi_sbs_ergonomics
+    pi_algo: pi_sbs_biomechanics
     duration: "15 minutes/subject (explanation+sensor placement+calibration)
       + 7.5 minutes/subject (5 runs mocap adquisition) = 22.5 minutes/subject"
     # controlled_variables:
@@ -24,8 +24,8 @@ protocol:
       - item: Mocap sensor
         type: sensor
         file_sheet: https://neuronmocap.com/content/product/perception-neuron-pro
-    step_description: "We will tell the subject all the experiment described
-      below: explanation, calibration, ..."
+    step_description: "The human subject is instrumented and then instructed to
+      walk up and down several time from the stair"
     step_list:
       - description: "Welcome and experiment explanation, ethics issues,…"
         detail: "General explanation 5 minutes"
@@ -313,13 +313,13 @@ pi:
     inter_subject_aggregation: undef.
 
 pi_algo:
-  - name: pi_sbs_ergonomics
+  - name: pi_sbs_biomechanics
     description: This app is based on Python and is only one executable script
       containing all metrics computations
     url_paper: undef
     url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
-    docker_host: eurobenchtest/pi_sbs_ergonomics:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_ergonomics:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_biomechanics:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_biomechanics:v0.0.0
     pi:
       - ascending_total_time
       - descending_total_time
