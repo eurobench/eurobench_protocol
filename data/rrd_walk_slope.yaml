@@ -1,0 +1,92 @@
+---
+scenario:
+  name: "Kinematics of slope walking of non-impaired individuals"
+  description: "Slope walking influences the kinematics of the joints of the
+    lower extremities when compared to level ground walking.
+    Wearable robots should change their movement behavior once a subject is
+    walking on an inclined surface.
+    By benchmarking the joint kinematics of inclined walking of non-impaired
+    individuals we can set a baseline to which inclined walking with bipedal
+    robots can be compared."
+  image: rrd/img/testbed_slope.png
+
+protocol:
+  - name: "rrd_slope"
+    name_readable: "Kinematics of inclined walking of non-impared individuals"
+    definition: "Slope walking influences the kinematics of the joints of the
+      lower extremities when compared to level ground walking.
+      Wearable robots should change their movement behavior once a subject is
+      walking on an inclined surface.
+      By benchmarking the joint kinematics of inclined walking of non-impaired
+      individuals we can set a baseline to which inclined walking with bipedal
+      robots can be compared."
+    image: rrd/img/testbed_slope.png
+    keywords: [Walking, kinematics, non-impaired]
+    bipedal_system: [human, prosthesis, exoskeleton, humanoid]
+    pi_algo: [pi_walk_slope]
+    duration: "10min/subject"
+    controlled_variables:
+      - name: nb_stride
+        definition: Number of heel strikes of the ipsilateral leg
+        type: int
+        range: [2, 30]
+        unit: steps
+    testbed:
+      - item: "Motion Capture System"
+        type: sensor
+        file_sheet: Xsens
+      - item: "slope testbed"
+        type: equipment
+        file_sheet: "undefined"
+    step_description: ""
+    step_list:
+      - description: Perform body measurements.
+        detail: https://tutorial.xsens.com
+      - description: Attach the IMUs according to specifications
+      - description: Perform calibration procedure
+      - description: Check calibration quality
+      - description: Perform measurement
+      - description: Check measurement quality.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: joint_params
+    name_readable: tobedefined
+    description: tobedefined
+    unit: tobedefined
+    output: tobedefined
+    intra_run_aggregation: tobedefined
+    inter_run_aggregation: tobedefined
+    visu: tobedefined
+    inter_cond_aggregation: tobedefined
+    inter_subject_aggregation: tobedefined
+  - name: spatio_temporal
+    name_readable: tobedefined
+    description: tobedefined
+    unit: tobedefined
+    output: tobedefined
+    intra_run_aggregation: tobedefined
+    inter_run_aggregation: tobedefined
+    visu: tobedefined
+    inter_cond_aggregation: tobedefined
+    inter_subject_aggregation: tobedefined
+pi_algo:
+  - name: pi_walk_slope
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/eurobench/rrd_pi_slope
+    docker_host: eurobenchtest/pi_walk_slope:v0.0.0
+    docker_name: eurobenchtest/pi_walk_slope:v0.0.0
+    pi:
+      - joint_params
+      - spatiotemporal
+    input_files:
+      - gaitEvents.yaml
+      - jointAngles.csv
+    input_command:
+      - ./run_pi_walk_slope
+      - gaitEvents.yaml
+      - jointAngles.csv
+    language: octave
+    implemented: false
