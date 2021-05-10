@@ -317,7 +317,7 @@ pi_algo:
       - questionnaire_Experience_perceptibility.csv
       - questionnaire_Experience_functionality.csv
     language: matlab
-  - name: pi_physiopsychological
+  - name: pi_psychophysiological
     description: "Algorithm to extract indicators inferring the
       psychophysiological state of the user starting from physiological data."
     url_paper: undef
