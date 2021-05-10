@@ -1,4 +1,5 @@
 ---
+user_name: "experience"
 scenario:
   name: "Exoskeleton-assisted walking"
   description: "User experience during exoskeleton-assisted walking                        "
