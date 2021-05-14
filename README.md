@@ -35,6 +35,7 @@ The hyperlinks refer to:
     [excel](data/madrob/madrob-v4.0.xlsx),
     [yaml](data/madrob/madrob.yaml)
   * Missing: indication on data collected files.
+  * documentation: uploaded to the website, available from the github repo. 
 
 * **bestable**:
   * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -46,6 +47,7 @@ The hyperlinks refer to:
   * Missing:
     * official template file to be adjusted with the PI excel present in the code repo.
     * some words about the data collected file.
+  * documentation: 
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),
@@ -53,6 +55,7 @@ The hyperlinks refer to:
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
     [template](data/udbenchmarking/udbenchmarking.xlsx),
     [yaml](data/udbenchmark.yaml)
+  * documentation: 
 
 * **bullet**:
   * [Eurobench repo](https://github.com/eurobench/pi_bullet),
@@ -62,6 +65,7 @@ The hyperlinks refer to:
     * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
   * [yaml](data/bullet.yaml),
   * discussion opened on the inter-intra aggregation
+  * documentation: 
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
@@ -70,6 +74,7 @@ The hyperlinks refer to:
     [template](data/bench/bench.xlsx),
     [yaml](data/bench.yaml)
   * Discussion on the input data (calib file per user, not in the current options)
+  * documentation: 
 
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
@@ -78,6 +83,7 @@ The hyperlinks refer to:
     [template](data/pepato/pepato.xlsx),
     [yaml](data/pepato.yaml),
     [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw)
+  * documentation: to be asked.
 
 * **experience**:
   * [code](https://github.com/FraCampus/EXPERIENCE),
@@ -86,6 +92,7 @@ The hyperlinks refer to:
   * current state:
     * **Matlab**, with specific licences. Not likely to be Octave compatible
     * Information about the protocols can be consulted but the algorithms are not callable at this moment.
+  * documentation: provided by emails. To be uploaded.
 
 ### Ready to be tested for insertion in database
 
