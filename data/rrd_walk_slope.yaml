@@ -38,7 +38,17 @@ protocol:
       - item: "slope testbed"
         type: equipment
         file_sheet: "undefined"
-    step_description: ""
+    step_description: "SLOPE UP: Ask the participant to stand on level ground at
+      the bottom of the slope in such a way that the first step will be made on
+      the slope.
+      Start the measurement and ask the subject to walk up the slope and pause
+      when both feet are on level ground.
+      Stop the measurement once the subject reaches level ground with both feet.
+      SLOPE DOWN: Ask the participant to stand at the top of the slope in such
+      a way that the first step will be made on the slope.
+      Start the measurement and ask the subject to walk down the slope and pause
+      when the the subject is on level ground again.
+      Stop the measurement once the subject reaches level ground with both feet."
     step_list:
       - description: Perform body measurements.
         detail: https://tutorial.xsens.com
@@ -51,26 +61,54 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
 pi:
-  - name: joint_params
-    name_readable: tobedefined
-    description: tobedefined
-    unit: tobedefined
-    output: tobedefined
-    intra_run_aggregation: tobedefined
-    inter_run_aggregation: tobedefined
-    visu: tobedefined
-    inter_cond_aggregation: tobedefined
-    inter_subject_aggregation: tobedefined
-  - name: spatio_temporal
-    name_readable: tobedefined
-    description: tobedefined
-    unit: tobedefined
-    output: tobedefined
-    intra_run_aggregation: tobedefined
-    inter_run_aggregation: tobedefined
-    visu: tobedefined
-    inter_cond_aggregation: tobedefined
-    inter_subject_aggregation: tobedefined
+  - name: gait_phase_duration
+    name_readable: Gait phase duration
+    description: "Gait phase durations include the first double support phase,
+      single support phase, second double support phase, stance phase and swing
+      phase in terms of percentage of the gait cycle."
+    unit: "%"
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: "Together with single support phase duration, second double support
+      phase duration and the swing phase duration it can be plotted as a bar
+      graph."
+    inter_cond_aggregation: "na"
+    inter_subject_aggregation: "The scores per subject could be averaged to get
+      a global score.
+      Dependent on the size of the group, the mean in combination with the
+      standard deviation can be presented or the median with interquartile range
+      can be presented."
+  - name: cadence
+    name_readable: Cadence
+    description: "Cadwnce is defined as the steps per minute"
+    unit: "steps/min"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [0, mean]
+    visu: "na"
+    inter_cond_aggregation: "na"
+    inter_subject_aggregation: "The scores per subject could be averaged to get
+      a global score.
+      Dependent on the size of the group, the mean in combination with the
+      standard deviation can be presented or the median with interquartile range
+      can be presented."
+  - name: joint_kinematics
+    name_readable: Joint kinematics
+    description: "Ankle, knee and hip angle at initial contact; maximal ankle,
+      knee and hip angle during the stance phase; ankle, knee and hip angle at
+      toe-off; Maximal ankle, knee and hip angle during the swing phase."
+    unit: degrees
+    output: vector
+    intra_run_aggregation: "na"
+    inter_run_aggregation: "na"
+    visu: Line graph of the time-normalized ankle angle
+    inter_cond_aggregation: na
+    inter_subject_aggregation: "The scores per subject could be averaged to get
+      a global score.
+      Dependent on the size of the group, the mean in combination with the
+      standard deviation can be presented or the median with interquartile range
+      can be presented."
 pi_algo:
   - name: pi_walk_slope
     description: undef
@@ -79,13 +117,14 @@ pi_algo:
     docker_host: eurobenchtest/pi_walk_slope:v0.0.0
     docker_name: eurobenchtest/pi_walk_slope:v0.0.0
     pi:
-      - joint_params
-      - spatiotemporal
+      - gait_phase_duration
+      - cadence
+      - joint_kinematics
     input_files:
       - gaitEvents.yaml
       - jointAngles.csv
     input_command:
-      - ./run_pi_walk_slope
+      - run_pi_walk_slope
       - gaitEvents.yaml
       - jointAngles.csv
     language: octave
