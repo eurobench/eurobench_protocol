@@ -114,8 +114,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/eurobench/rrd_pi_slope
-    docker_host: eurobenchtest/pi_walk_slope:v0.0.0
-    docker_name: eurobenchtest/pi_walk_slope:v0.0.0
+    docker_host: eurobenchtest/rrd_pi_slope:v0.0.1
+    docker_name: eurobenchtest/rrd_pi_slope:v0.0.1
     pi:
       - gait_phase_duration
       - cadence
