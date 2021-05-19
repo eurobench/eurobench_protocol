@@ -93,6 +93,7 @@ The hyperlinks refer to:
     * **Matlab**, with specific licences. Not likely to be Octave compatible
     * Information about the protocols can be consulted but the algorithms are not callable at this moment.
   * documentation: provided by emails. To be uploaded.
+  * implemented field set to False
 
 ### Ready to be tested for insertion in database
 
