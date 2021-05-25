@@ -67,7 +67,10 @@ The hyperlinks refer to:
     * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
   * [yaml](data/bullet.yaml),
   * discussion opened on the inter-intra aggregation
-  * documentation: 
+  * Integrated:
+    * 5 protocols, no pdf available
+      * [Static Balance - uneven surface](http://15.237.22.1/protocols/info/23)
+      * [BULLET - subject body scanning](http://15.237.22.1/protocols/info/35)
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
