@@ -35,7 +35,8 @@ The hyperlinks refer to:
     [excel](data/madrob/madrob-v4.0.xlsx),
     [yaml](data/madrob/madrob.yaml)
   * Missing: indication on data collected files.
-  * documentation: uploaded to the website, available from the github repo. 
+  * A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
+  * documentation: NO pdf available. Available from the github repo. Image available 
 
 * **bestable**:
   * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -44,10 +45,8 @@ The hyperlinks refer to:
     [excel](data/bestable/bestable.xlsx),
     [yaml](data/bestable/bestable.yaml),
     [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master)
-  * Missing:
-    * official template file to be adjusted with the PI excel present in the code repo.
-    * some words about the data collected file.
-  * documentation: 
+  * integrated: 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](http://15.237.22.1/protocols/info/53). Manual uploaded.
+
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),
@@ -55,7 +54,10 @@ The hyperlinks refer to:
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
     [template](data/udbenchmarking/udbenchmarking.xlsx),
     [yaml](data/udbenchmark.yaml)
-  * documentation: 
+  * integrated: 2 protocols
+    * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
+    * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
+    * No manual uploaded. **File received, pending on insertion**.
 
 * **bullet**:
   * [Eurobench repo](https://github.com/eurobench/pi_bullet),
