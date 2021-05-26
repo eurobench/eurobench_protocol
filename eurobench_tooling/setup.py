@@ -20,7 +20,7 @@ setup(
     url='https://github.com/',
     license='Apache 2.0',
     packages=['eurobench_tooling'],
-    scripts=['script/check_template'],
+    scripts=['script/check_template', 'script/check_synchro'],
     include_package_data=True,
     classifiers=[
         'Development Status :: 5 - Production/Stable',

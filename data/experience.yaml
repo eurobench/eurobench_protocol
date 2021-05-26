@@ -1,0 +1,348 @@
+---
+user_name: "experience"
+scenario:
+  name: "Exoskeleton-assisted walking"
+  description: "User experience during exoskeleton-assisted walking                        "
+  image: experience/img/logo.png
+
+protocol:
+  - id: 43
+    name: "experience"
+    name_readable: "User-centered assessment of exoskeleton-assisted overground
+      walking"
+    definition: "The protocol analyzes overground walking supported by an
+      assistive lower limb exoskeleton.
+      The aim is the comprehensive and systematic assessment of user subjective
+      experience during exoskeleton-assisted walking.
+      This is achieved by administering a novel multi-factor questionnaire to
+      derive psychological indicators and by measuring physiological information
+      to compute psychophysiological indicators."
+    image: experience/image/experience.png
+    keywords: [Exoskeleton, walking, user experience]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: [pi_questionnaire, pi_psychophysiological]
+    duration: "80 minutes per run, per subject"
+    controlled_variables:
+      - name: time_rest_baseline
+        definition: Time of recording of physiological data with the subject
+          seated and eyes closed.
+        type: scalar
+        range: [0, 300]
+        unit: sec
+      - name: time_stand_baseline
+        definition: Time of recording of physiological data with the subject
+          standing and wearing the exoskeleton.
+        type: scalar
+        range: [0, 300]
+        unit: sec
+      - name: time_walking
+        definition: Time of recording of physiological data with the subject
+          walking wearing the exoskeleton.
+        type: scalar
+        range: [0, 1000]
+        unit: sec
+    testbed:
+      - item: "Device for galvanic skin response measurement"
+        type: sensor
+        file_sheet: Shimmer3 GSR+ (Shimmer, Ireland)
+          https://www.shimmersensing.com/images/uploads/docs/GSR_User_Guide_rev1.13.pdf
+      - item: "Device for heart rate and respiration rate measurement"
+        type: sensor
+        file_sheet: Bio-Harness (Zephyr™ Performance Systems, USA)
+          https://www.zephyranywhere.com/media/download/bioharness3-user-manual.pdf
+    step_description: "The subject is monitored with physiological sensors
+      during a first phase at rest and then walking with an exoskeleton.
+      After walking, the EXPERIENCE questionnaire is administered."
+    step_list:
+      - description: Place the two physiological sensors onto the subject body.
+        detail: "Monitored quantities: Heart Rate (HR), Heart Rate Variability
+          (HRV), Respiration Rate (RR), Galvanic Skin Response (GSR).
+          Mounting information are reported in the documentation."
+      - description: Start data collection software and start recording of
+          physiological data.
+        detail: "Details are reported in the documentation."
+      - description: Put the subject seated with eyes closed and let it relax.
+      - description: "Flag the start of the recording of the seated baseline on
+          the data collection software and flag the stop when finished."
+        detail: "Time duration of recording is 4 min and has to be measured by a
+          chronometer."
+      - description: "Place the exoskeleton onto the subject body and let it
+          relax."
+      - description: "Flag the start of the recording of the standing baseline
+          on the data collection software and flag the stop when finished."
+        detail: "Time duration of recording is 4 min and has to be measured by a
+          chronometer."
+      - description: "Start the robot-assisted walking session and wait until
+          steady-state condition is reached."
+        detail: "Steady-state condition is reached when assistance parameters
+          are not changed anymore and the subject is walking comfortably without
+          any major change."
+      - description: "Flag the start of the recording of the walking condition
+          on the data collection software and flag the stop when finished."
+        detail: "Time duration of recording is 16 min and has to be measured by
+          a chronometer."
+      - description: Stop the walking session and stop data collection software.
+      - description: Remove physiological sensors and exoskeleton.
+      - description: Administer the EXPERIENCE questionnaire.
+        detail: Details are reported in the documentation.
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: true
+  - id: 44
+    name: "experience_treadmill"
+    name_readable: "User-centered assessment of exoskeleton-assisted
+      treadmill-based walking"
+    definition: "The protocol analyzes treadmill-based walking supported by an
+      assistive lower limb exoskeleton.
+      The aim is the comprehensive and systematic assessment of user subjective
+      experience during exoskeleton-assisted walking.
+      This is achieved by administering a novel multi-factor questionnaire to
+      derive psychological indicators and by measuring physiological information
+      to compute psychophysiological indicators."
+    image: experience/img/experience_treadmill.png
+    keywords: [Exoskeleton, walking, user experience, treadmill]
+    bipedal_system: [prosthesis, exoskeleton, human]
+    pi_algo: [pi_questionnaire, pi_psychophysiological]
+    duration: "80 minutes per run, per subject"
+    controlled_variables:
+      - name: time_rest_baseline
+        definition: Time of recording of physiological data with the subject
+          seated and eyes closed.
+        type: scalar
+        range: [0, 300]
+        unit: sec
+      - name: time_stand_baseline
+        definition: Time of recording of physiological data with the subject
+          standing and wearing the exoskeleton.
+        type: scalar
+        range: [0, 300]
+        unit: sec
+      - name: time_walking
+        definition: Time of recording of physiological data with the subject
+          walking wearing the exoskeleton.
+        type: scalar
+        range: [0, 1000]
+        unit: sec
+    testbed:
+      - item: "Device for galvanic skin response measurement"
+        type: sensor
+        file_sheet: Shimmer3 GSR+ (Shimmer, Ireland)
+          https://www.shimmersensing.com/images/uploads/docs/GSR_User_Guide_rev1.13.pdf
+      - item: "Device for heart rate and respiration rate measurement"
+        type: sensor
+        file_sheet: Bio-Harness (Zephyr™ Performance Systems, USA)
+          https://www.zephyranywhere.com/media/download/bioharness3-user-manual.pdf
+    step_description: "The subject is monitored with physiological sensors
+      during a first phase at rest and then walking with an exoskeleton.
+      After walking, the EXPERIENCE questionnaire is administered."
+    step_list:
+      - description: Place the two physiological sensors onto the subject body.
+        detail: "Monitored quantities: Heart Rate (HR), Heart Rate Variability
+          (HRV), Respiration Rate (RR), Galvanic Skin Response (GSR).
+          Mounting information are reported in the documentation."
+      - description: Start data collection software and start recording of
+          physiological data.
+        detail: "Details are reported in the documentation."
+      - description: Put the subject seated with eyes closed and let it relax.
+      - description: "Flag the start of the recording of the seated baseline on
+          the data collection software and flag the stop when finished."
+        detail: "Time duration of recording is 4 min and has to be measured by a
+          chronometer."
+      - description: "Place the exoskeleton onto the subject body and let it
+          relax."
+      - description: "Flag the start of the recording of the standing baseline
+          on the data collection software and flag the stop when finished."
+        detail: "Time duration of recording is 4 min and has to be measured by a
+          chronometer."
+      - description: "Start the robot-assisted walking session and wait until
+          steady-state condition is reached."
+        detail: "Steady-state condition is reached when assistance parameters
+          are not changed anymore and the subject is walking comfortably without
+          any major change."
+      - description: "Flag the start of the recording of the walking condition
+          on the data collection software and flag the stop when finished."
+        detail: "Time duration of recording is 16 min and has to be measured by
+          a chronometer."
+      - description: Stop the walking session and stop data collection software.
+      - description: Remove physiological sensors and exoskeleton.
+      - description: Administer the EXPERIENCE questionnaire.
+        detail: Details are reported in the documentation.
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: true
+pi:
+  - name: usability
+    name_readable: "Usability"
+    description: "The extent to which the exoskeleton can be used by the users
+      to achieve specified goals with effectiveness, efficiency and satisfaction
+      in this specified context of use.
+      High value of this PI indicates that the robot is highly usable."
+    unit: undef
+    output: vector
+    intra_run_aggregation: use 4th column (usability)
+    inter_run_aggregation: unclear
+    visu: Bar plot, spider chart
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: acceptability
+    name_readable: "Acceptability"
+    description: "It relates to how the users perceive robots when interacting
+      directly with them and how much you would be willing to introduce it into
+      your everyday life.
+      High value of this PI indicates that the robot is highly acceptable."
+    unit: undef
+    output: vector
+    intra_run_aggregation: use 4th column (usability)
+    inter_run_aggregation: unclear
+    visu: Bar plot, spider chart
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: perceptibility
+    name_readable: "Perceptibility"
+    description: "It evaluates the effects and influences that walking with the
+      exoskeleton has on your emotions, perceptions and quality of life.
+      High value of this PI indicates that the robot positively influences
+      emotion, perception and quality of life."
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef #use the 5th value (perceptibility)
+    inter_run_aggregation: unclear
+    visu: Bar plot, spider chart
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: functionality
+    name_readable: "funtionality"
+    description: "It measures the perception of the characteristics of the
+      exoskeleton in terms of ease of learning, flexibility of interaction,
+      reliability and workload.
+      High value of this PI indicates positive features of the robot in terms
+      of analyzed aspects."
+    unit: undef
+    output: vector
+    intra_run_aggregation: use the 5th value (''functionality'')
+    inter_run_aggregation: unclear
+    visu: Bar plot, spider chart
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: experience
+    name_readable: "experience"
+    description: "It measures the global characteristics of the subject
+      experiencing the exoskeleton in terms of usability, acceptability,
+      perceptibility and functionality.
+      The consistency within this PI indicates the reliability of the subject
+      in providing similar scores to similar items within the questionnaire.
+      High value of this PI indicates positive features of the robot in terms of
+      analyzed aspects."
+    unit: undef
+    output: vector
+    intra_run_aggregation: "use the 1th value (''experience'')"
+    inter_run_aggregation: unclear
+    visu: Bar plot, spider chart
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: stress
+    name_readable: "stress"
+    description: "It is defined as a state of mental or emotional strain caused
+      by adverse circumstances.
+      High value of this PI indicates that the robot use is stressful."
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: unclear
+    visu: xy graph
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: fatigue
+    name_readable: "fatigue"
+    description: "It can be described as a type of distress generally
+      conditioned by the exhaustion of one’s muscles due to the execution of a
+      task.
+      High value of this PI indicates that the robot use induces fatigue."
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: unclear
+    visu: xy graph
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: energy
+    name_readable: "Energy expenditure"
+    description: "It is the amount of energy that is needed to carry out
+      physical functions.
+      High value of this PI indicates that the robot use requires high effort."
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: unclear
+    visu: xy graph
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: attention
+    name_readable: "Attention"
+    description: "It refers to the degree to which the user is consciously and
+      continuously involved in the task.
+      High value of this PI indicates that the robot use requires high
+      attention."
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: unclear
+    visu: xy graph
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+
+pi_algo:
+  - name: pi_questionnaire
+    description: "Algorithm to extract scores of questionnaire factors to
+      assess user experience from the subjective perspective."
+    url_paper: undef
+    url_code: https://git.code.tecnalia.com/eurobench/pi_questionnaire
+    docker_host: eurobenchtest/pi_experience:v0.0.0
+    docker_name: eurobenchtest/pi_experience:v0.0.0
+    pi:
+      - usability
+      - acceptability
+      - perceptibility
+      - functionality
+      - experience
+    input_files:
+      - questionnaire_Experience_usability.csv
+      - questionnaire_Experience_acceptability.csv
+      - questionnaire_Experience_perceptibility.csv
+      - questionnaire_Experience_functionality.csv
+      - questionnaire_Experience.csv
+    input_command:
+      - run_questionnaire
+      - questionnaire_Experience.csv
+      - questionnaire_Experience_usability.csv
+      - questionnaire_Experience_acceptability.csv
+      - questionnaire_Experience_perceptibility.csv
+      - questionnaire_Experience_functionality.csv
+    language: matlab
+  - name: pi_psychophysiological
+    description: "Algorithm to extract indicators inferring the
+      psychophysiological state of the user starting from physiological data."
+    url_paper: undef
+    url_code: https://git.code.tecnalia.com/eurobench/pi_psychophysiological
+    docker_host: eurobenchtest/pi_experience:v0.0.0
+    docker_name: eurobenchtest/pi_experience:v0.0.0
+    pi:
+      - stress
+      - fatigue
+      - energy
+      - attention
+    input_files:
+      - part_sit_physiological.csv
+      - part_stand_physiological.csv
+      - part_walk_physiological.csv
+      - part_sit_physiological_ecg.csv
+      - part_stand_physiological_ecg.csv
+      - part_walk_physiological_ecg.csv
+    input_command:
+      - run_physiopsychological
+      - part_sit_physiological.csv
+      - part_walk_physiological_ecg.csv
+      - part_walk_physiological.csv
+      - part_walk_physiological_ecg.csv
+    language: matlab
+
