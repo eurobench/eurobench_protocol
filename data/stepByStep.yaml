@@ -317,7 +317,7 @@ pi_algo:
     description: This app is based on Python and is only one executable script
       containing all metrics computations
     url_paper: undef
-    url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
+    url_code: https://github.com/STEPbySTEPproj/Protocol_biomechanics
     docker_host: eurobenchtest/pi_sbs_biomechanics:v0.0.0
     docker_name: eurobenchtest/pi_sbs_biomechanics:v0.0.0
     pi:
