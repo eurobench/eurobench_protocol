@@ -35,7 +35,8 @@ The hyperlinks refer to:
     [excel](data/madrob/madrob-v4.0.xlsx),
     [yaml](data/madrob/madrob.yaml)
   * Missing: indication on data collected files.
-  * documentation: uploaded to the website, available from the github repo. 
+  * A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
+  * documentation: NO pdf available. Available from the github repo. Image available 
 
 * **bestable**:
   * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -44,10 +45,8 @@ The hyperlinks refer to:
     [excel](data/bestable/bestable.xlsx),
     [yaml](data/bestable/bestable.yaml),
     [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master)
-  * Missing:
-    * official template file to be adjusted with the PI excel present in the code repo.
-    * some words about the data collected file.
-  * documentation: 
+  * integrated: 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](http://15.237.22.1/protocols/info/53). Manual uploaded.
+
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),
@@ -55,7 +54,10 @@ The hyperlinks refer to:
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
     [template](data/udbenchmarking/udbenchmarking.xlsx),
     [yaml](data/udbenchmark.yaml)
-  * documentation: 
+  * integrated: 2 protocols
+    * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
+    * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
+    * No manual uploaded. **File received, pending on insertion**.
 
 * **bullet**:
   * [Eurobench repo](https://github.com/eurobench/pi_bullet),
@@ -65,7 +67,13 @@ The hyperlinks refer to:
     * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
   * [yaml](data/bullet.yaml),
   * discussion opened on the inter-intra aggregation
-  * documentation: 
+  * Integrated:
+    * 5 protocols, no pdf available
+      * [BULLET - subject body scanning](http://15.237.22.1/protocols/info/35)
+      * [BULLET - Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/34)
+      * [BULLET - Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/36)
+      * [Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/55)
+      * [Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/56)
 
 * **bench**:
   * [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
@@ -74,7 +82,12 @@ The hyperlinks refer to:
     [template](data/bench/bench.xlsx),
     [yaml](data/bench.yaml)
   * Discussion on the input data (calib file per user, not in the current options)
-  * documentation: 
+  * Integrated 4 protocols, **NO pdf**:
+    * [BENCH-30 seconds sit to stand](http://15.237.22.1/protocols/info/31)
+    * [5 sit to stand](http://15.237.22.1/protocols/info/57)
+    * [BENCH-5 sit to stand](http://15.237.22.1/protocols/info/30)
+    * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
+   
 
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
@@ -83,7 +96,8 @@ The hyperlinks refer to:
     [template](data/pepato/pepato.xlsx),
     [yaml](data/pepato.yaml),
     [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw)
-  * documentation: to be asked.
+  * integrated: 1 protocol, no pdf
+    * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)  
 
 * **experience**:
   * [code](https://github.com/FraCampus/EXPERIENCE),
@@ -92,7 +106,10 @@ The hyperlinks refer to:
   * current state:
     * **Matlab**, with specific licences. Not likely to be Octave compatible
     * Information about the protocols can be consulted but the algorithms are not callable at this moment.
-  * documentation: provided by emails. To be uploaded.
+  * implemented field set to False
+  * integrated: 2 protocols, documentation uploaded
+    * [User-centered assessment of exoskeleton-assisted treadmill-based walking](http://15.237.22.1/protocols/info/44)
+    * [User-centered assessment of exoskeleton-assisted overground walking](http://15.237.22.1/protocols/info/43)
 
 ### Ready to be tested for insertion in database
 
@@ -103,7 +120,14 @@ The hyperlinks refer to:
     [excel](data/beat/beat-v4.3.xlsx)
     [yaml](data/beat.yaml),
   * current state: waiting for PI output adjustment in code.
-    * CI process failing due to csv linting issue
+  * integrated: 7 protocols, **NO PDF**
+    * [Static Balance - uneven surface](http://15.237.22.1/protocols/info/23)  
+    * [Step perturbation - uneven surface](http://15.237.22.1/protocols/info/25)  
+    * [Static Balance - even surface](http://15.237.22.1/protocols/info/22)  
+    * [Stepping on platform - uneven surface](http://15.237.22.1/protocols/info/20)  
+    * [Step perturbation - even surface](http://15.237.22.1/protocols/info/24)  
+    * [Stepping on place - even surface](http://15.237.22.1/protocols/info/18)  
+    * [Sinusoidal perturbation - even surface](http://15.237.22.1/protocols/info/29)  
 
 * **tested**:
   * [code](https://github.com/jamatics/pi_ctag),
@@ -113,6 +137,8 @@ The hyperlinks refer to:
     [yaml](data/tested.yaml)
   * current state:
     * ready to be tested?
+  * integrated: 1 protocol, **NO PDF**
+    * [TestEd - Industrial Use-Cases in Narrow Spaces](http://15.237.22.1/protocols/info/49)
 
 * **benchbalance**:
   * [code](https://github.com/FraCampus/PI_BenchBalance),
@@ -121,6 +147,8 @@ The hyperlinks refer to:
   * current state:
     * **Matlab** code, not likely to be Octave-compatible
     * would be in good shape
+  * integrated : 1 protocol, PDF inserted
+    * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
 
 ### Under progress
 
@@ -131,7 +159,9 @@ The hyperlinks refer to:
     [excel](data/beast/beast-v3.xlsx),
     [yaml](data/beast.yaml)
   * current state: waiting for reference data set
-
+  * integrated: 1 protocol. No pdf, but reference to repository
+    * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
+  
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
     [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
@@ -142,7 +172,8 @@ The hyperlinks refer to:
     * verify input data file
     * data collection check
     * excel sheet check
-
+  * integrated: **NO PROTOCOL**
+ 
 ### Very early stage
 
 * **dysturbance**
@@ -153,6 +184,11 @@ The hyperlinks refer to:
     * 09/12: opened a set of question to start the integration process
     * matlab code, far from the requested format.
     * 22/12: working on a code revision.
+  * Integrated: 4 protocols, **NO PDF**
+    * [Dysturbance -Reaction to Impulsive Disturbance](http://15.237.22.1/protocols/info/39)
+    * [Dysturbance - Reaction to Sinusoidal Force Disturbance](http://15.237.22.1/protocols/info/40)
+    * [Dysturbance - Reaction to Sinusoidal displacement Disturbance](http://15.237.22.1/protocols/info/41)
+    * [Dysturbance - Reaction to external Quasistatic Disturbance](http://15.237.22.1/protocols/info/40)
 
 * **forecast**:
   * [code](https://gitlab.com/altairLab/elasticteam/SESim)
@@ -161,6 +197,7 @@ The hyperlinks refer to:
   * current state:
     * Matlab code. Not likely to be Octave-compatible.
     * Not following the global spirit for metric computation.
+  * integrated: **NO PROTOCOL**
 
 * **comtest**:
   * [code](https://github.com/VittorioFreiburg/COMTEST),
@@ -168,6 +205,9 @@ The hyperlinks refer to:
   * octave code. Still requires significant afjustment.
   * current state:
     * ping 19/02
+  * integrated: 2 protocols (to be strongly revised), **NO PDF**
+    * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
+    * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
 
 * **stepByStep**
   * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
@@ -179,18 +219,22 @@ The hyperlinks refer to:
     * code only covering the biomechanics protocol.
     * first version of HF metrics.
     * Other are still missing
+  * integrated: **NO PROTOCOL** 
 
 * **csic manipulation**:
   * [code](https://github.com/AdrianaTorres/Manipulation),
     [template](data/csic-manipulation/csic-manipulation.xlsx)
   * current state:
     * 22/12: very early stage.
+  * integrated: **NO PROTOCOL** 
 
 * **uhei**:
   * [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
   * [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
   * no Excel sheet available
   * 25/03: repo changed, waiting for call example and input files.
+  * integrated: **NO PROTOCOL**
 
 * **rrd**:
   * [code](https://github.com/eurobench/rrd_pi_slope)
+  * integrated: **NO PROTOCOL**

@@ -6,7 +6,8 @@ scenario:
   image: experience/img/logo.png
 
 protocol:
-  - name: "experience"
+  - id: 43
+    name: "experience"
     name_readable: "User-centered assessment of exoskeleton-assisted overground
       walking"
     definition: "The protocol analyzes overground walking supported by an
@@ -87,7 +88,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: true
-  - name: "experience_treadmill"
+  - id: 44
+    name: "experience_treadmill"
     name_readable: "User-centered assessment of exoskeleton-assisted
       treadmill-based walking"
     definition: "The protocol analyzes treadmill-based walking supported by an
