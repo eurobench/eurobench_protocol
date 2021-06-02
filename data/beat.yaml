@@ -7,7 +7,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "beat_stepping_even"
+  - id: 18
+    name: "beat_stepping_even"
     name_readable: "Stepping on place - even surface"
     definition: "Subject performs stepping on place with the platform locked
       for 60 s.
@@ -64,7 +65,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # second protocol
-  - name: "beat_stepping_uneven"
+  - id: 20
+    name: "beat_stepping_uneven"
     name_readable: "Stepping on place - uneven surface"
     definition: "Subject performs stepping on place with the platform unlocked
       for 60 s.
@@ -145,7 +147,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # third protocol
-  - name: "beat_static_even"
+  - id: 22
+    name: "beat_static_even"
     name_readable: "Static Balance - even surface"
     definition: "Subject stands on the locked platform with open or closed eyes.
       This protocol allows researchers to quantify the effects induced by
@@ -200,7 +203,8 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
   # fourth protocol
-  - name: "beat_static_uneven"
+  - id: 23
+    name: "beat_static_uneven"
     name_readable: "Static Balance - uneven surface"
     definition: "Subject stands on the unlocked platform with open or closed
       eyes.
@@ -277,7 +281,8 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
   # fifth protocol
-  - name: "beat_step_even"
+  - id: 24
+    name: "beat_step_even"
     name_readable: "Step perturbation - even surface"
     definition: "Subjects stands on the platform and reacts to a step
       perturbation with platform set in position control.
@@ -361,7 +366,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # sixth protocol
-  - name: "beat_step_uneven"
+  - id: 25
+    name: "beat_step_uneven"
     name_readable: "Step perturbation - uneven surface"
     definition: "Subjects stands on the platform and reacts to a step
       perturbation with platform set in impedance control, it means that the
@@ -446,7 +452,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # seventh protocol
-  - name: "beat_sinusoidal_uneven"
+  - id: 29
+    name: "beat_sinusoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
     definition: "Subjects stands on platform and reacts to a sinusoidal
       perturbation with platform set in position mode.
