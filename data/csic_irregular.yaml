@@ -2,7 +2,7 @@
 scenario:
   name: "Irregular terrain"
   description: "Walking through different configurable irregular terrains."
-  image: csic_irregular/img0.png
+  image: img/img1.png
 
 protocol:
   - name: "csic_irregular"
@@ -10,40 +10,35 @@ protocol:
     definition: "Passing through the specific testbed that can hold fourteen
       different irregular terrain conditions.
       The subject must perform four walks through each configuration."
-    image: csic_irregular/img1.png
+    image: img/img2.png
     keywords: [balance, stability]
     bipedal_system: [human, prosthesis, exoskeleton]
     pi_algo: [margin_stability, ratio_index, variability, walk_ratio]
-    duration: "10 seconds per run"
+    duration: "240min"
     controlled_variables:
-      - name: exoskeleton
-        definition: Robot used in the trial
-        type: undef
-        range: undef
-        unit: undef
-      - name: terrain_configuration
+      - name: robot_usage
+        definition: Whether a robot is used in the trial
+        type: bool
+        range: True / False
+        unit: bool
+      - name: terrain_type
         definition: Type of terrain the subject is facing
-        type: int
-        range: [0-13]
+        type: string
+        range: na
         unit: na
 
     testbed:
       - item: "Optoelectronic motion capture system, or Vicon"
         type: sensor
         file_sheet: https://docs.vicon.com/display/Nexus210
-      - item: "EMG+IMU sensors"
-        type: sensor
-        file_sheet: "DELSYS (Trigno Avanti) https://delsys.com/trigno/research/#trigno-avanti-sensor"
-      - item: "Sensorized insoles"
-        type: sensor
-        file_sheet: "MOTICON https://www.moticon.de/insole3-specs/"
       - item: "Testbed"
         # TODO: how to name such part that is neither a sensor nor an actuator?
         type: equipment
-        file_sheet: "3x1m commercial platform (PARALELA PLUS from Chinesport)
-          with a fixed wooden board with holes into which anti-slip 50x50cm
-          wooden modules, terrasensa modules or mats can be fitted."
-    step_description: undef
+        file_sheet: "Commercial platform with a fixed wooden board with holes
+          into which anti-slip 50x50cm wooden modules, terrasensa modules or
+          mats can be fitted."
+    step_description: "The subject must walk through each terrain configuration
+      4 times with an without wearing an exoskeleton."
     step_list:
       - description: Place the optical markers and Delsys sensors onto the
           subject's body and take the required anthropometric measurements.
@@ -75,7 +70,7 @@ protocol:
       - description: Remove the exoskeleton and optical markers from the subject.
     has_multiple_run: true
     has_multiple_condition: true
-    has_multiple_subject: undef
+    has_multiple_subject: true
 pi:
   - name: margin_stability
     name_readable: "Margin of Stability (MoS)"
@@ -85,13 +80,14 @@ pi:
       The extrapolation to dynamic stability states that the position of the
       vertical projection of the CoM (PCoM) plus its velocity times a factor
       (extrapolated center of mass position (XCoM)) should be within the BoS."
-    unit: cm
+    unit: mm
     output: vector
     intra_run_aggregation: [[0, mean]]
     inter_run_aggregation: [[0, mean]]
     visu: undef
-    inter_cond_aggregation: undef
-    inter_subject_aggregation: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
   - name: gait_deviation_index
     name_readable: "Gait Deviation Index (GDI)"
     description: "Scaled distance between 15 gait feature scores for a subject
@@ -102,8 +98,9 @@ pi:
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean]]
     visu: undef
-    inter_cond_aggregation: undef
-    inter_subject_aggregation: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
   - name: walk_ratio
     name_readable: "Walk Ratio (WR)"
     description: "Division of step length by cadence.
@@ -113,8 +110,9 @@ pi:
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean]]
     visu: undef
-    inter_cond_aggregation: undef
-    inter_subject_aggregation: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
   - name: variability
     name_readable: "Gait Parameters Variability"
     description: "Difference between the value of a gait parameter when walking
@@ -125,8 +123,9 @@ pi:
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean]]
     visu: undef
-    inter_cond_aggregation: undef
-    inter_subject_aggregation: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
   - name: ratio_index
     name_readable: "Ratio Index (RI)"
     description: "Division of a gait parameter by the same gait parameter of the
@@ -137,8 +136,9 @@ pi:
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean]]
     visu: undef
-    inter_cond_aggregation: undef
-    inter_subject_aggregation: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject
 
 pi_algo:
   - name: margin_stability

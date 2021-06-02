@@ -235,13 +235,13 @@ pi_algo:
       - roughness_of_door_actuation
       - capability_level
     input_files:
-      - event.csv
+      - events.csv
       - wrench.csv
       - jointState.csv
       - condition.yaml
     input_command:
       - run_madrob
-      - event.csv
+      - events.csv
       - wrench.csv
       - jointState.csv
       - condition.yaml
