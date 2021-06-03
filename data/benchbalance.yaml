@@ -7,7 +7,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "benchbalance"
+  - id: 33
+    name: "benchbalance"
     name_readable: "Perturbated balance assessment"
     definition: "Standing wearing an exoskeleton and maintaining balance
       reacting to well-defined external perturbations manually provided by an
