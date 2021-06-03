@@ -34,10 +34,11 @@ The hyperlinks refer to:
     [Eurobench repo](https://github.com/eurobench/pi_madrob_beast),
     [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
     [excel](data/madrob/madrob-v4.0.xlsx),
-    [yaml](data/madrob/madrob.yaml)
+    [yaml](data/madrob/madrob.yaml),
+    [manual](data/madrob/manual/Detailed_Description_of_MADROB_Protocol_and_Performance_Indicators.pdf)
   * Missing: indication on data collected files.
   * A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
-  * documentation: NO pdf available. Available from the github repo. Image available 
+  * documentation: PDF available. Available from the github repo. Image available
 
 * **bestable**:
   * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -46,15 +47,18 @@ The hyperlinks refer to:
     [excel](data/bestable/bestable.xlsx),
     [yaml](data/bestable/bestable.yaml),
     [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master)
-  * integrated: 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](http://15.237.22.1/protocols/info/53). Manual uploaded.
-
+    [manual](data/bestable/doc/BeStable_Manual_V5.pdf)
+  * integrated:
+    * 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](http://15.237.22.1/protocols/info/53).
+    * Manual uploaded.
 
 * **udbenchmarking**:
   * [code](https://github.com/nickkluft/udbenchmark_PIs),
     [Eurobench repo](https://github.com/eurobench/pi_udbenchmark),
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
     [template](data/udbenchmarking/udbenchmarking.xlsx),
-    [yaml](data/udbenchmark.yaml)
+    [yaml](data/udbenchmark.yaml),
+    [manual](data/udbenchmarking/doc/1.Protocol.pdf)
   * integrated: 2 protocols
     * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
     * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
@@ -83,7 +87,7 @@ The hyperlinks refer to:
   * Integrated 4 protocols, **NO pdf**:
     * [5 sit to stand](http://15.237.22.1/protocols/info/57)
     * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
-   
+
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
     [Eurobench_repo](https://github.com/eurobench/pi_pepato),
@@ -97,7 +101,8 @@ The hyperlinks refer to:
 * **experience**:
   * [code](https://github.com/FraCampus/EXPERIENCE),
     [template](data/experience/experience.xlsx),
-    [yaml](data/experience.yaml)
+    [yaml](data/experience.yaml),
+    [manual](data/experience/doc/EXPERIENCE_documentation_v2_0.pdf)
   * current state:
     * **Matlab**, with specific licences. Not likely to be Octave compatible
     * Information about the protocols can be consulted but the algorithms are not callable at this moment.
@@ -139,6 +144,7 @@ The hyperlinks refer to:
   * [code](https://github.com/FraCampus/PI_BenchBalance),
     [template](data/benchbalance/benchbalance.xlsx)
     [yaml](data/benchbalance.yaml)
+    [manual](data/benchbalance/doc/BenchBalance_Protocol_PIs.pdf)
   * current state:
     * **Matlab** code, not likely to be Octave-compatible
     * would be in good shape
@@ -152,11 +158,13 @@ The hyperlinks refer to:
     [github repo](https://github.com/eurobench/pi_madrob_beast),
     [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
     [excel](data/beast/beast-v3.xlsx),
-    [yaml](data/beast.yaml)
+    [yaml](data/beast.yaml),
+    [manual](data/beast/manual//Detailed_Description_of_BEAST_Protocol_and_Performance_Indicators.pdf)
   * current state: waiting for reference data set
-  * integrated: 1 protocol. No pdf, but reference to repository
+  * integrated: 1 protocol.
     * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
-  
+    * pdf to be uploaded
+
 * **csic irregular terrain**:
   * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
     [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
@@ -168,7 +176,7 @@ The hyperlinks refer to:
     * data collection check
     * excel sheet check
   * integrated: **NO PROTOCOL**
- 
+
 ### Very early stage
 
 * **dysturbance**
@@ -214,7 +222,7 @@ The hyperlinks refer to:
     * code only covering the biomechanics protocol.
     * first version of HF metrics.
     * Other are still missing
-  * integrated: **NO PROTOCOL** 
+  * integrated: **NO PROTOCOL**
 
 * **csic manipulation**:
   * [code](https://github.com/AdrianaTorres/Manipulation),
