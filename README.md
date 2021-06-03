@@ -94,8 +94,9 @@ The hyperlinks refer to:
     [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_pepato),
     [template](data/pepato/pepato.xlsx),
     [yaml](data/pepato.yaml),
-    [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw)
-  * integrated: 1 protocol, no pdf
+    [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw),
+    [manual](data/pepato/manual/description_PEPATO.pdf)
+  * integrated: 1 protocol
     * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)  
 
 * **experience**:
