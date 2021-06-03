@@ -84,12 +84,9 @@ The hyperlinks refer to:
     [yaml](data/bench.yaml)
   * Discussion on the input data (calib file per user, not in the current options)
   * Integrated 4 protocols, **NO pdf**:
-    * [BENCH-30 seconds sit to stand](http://15.237.22.1/protocols/info/31)
     * [5 sit to stand](http://15.237.22.1/protocols/info/57)
-    * [BENCH-5 sit to stand](http://15.237.22.1/protocols/info/30)
     * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
    
-
 * **pepato**:
   * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
     [Eurobench_repo](https://github.com/eurobench/pi_pepato),
