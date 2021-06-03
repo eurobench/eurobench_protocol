@@ -12,6 +12,7 @@ Relevant links:
 * [eurobench documentation](https://github.com/aremazeilles/eurobench_documentation)
 * [github eurobench](https://github.com/orgs/eurobench)
 * [Generic template sheet](https://eurobench.github.io/sofware_documentation/latest/_attachments/protocol_template.xlsx)
+
 ## Scripting functionality
 
 Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
@@ -57,7 +58,7 @@ The hyperlinks refer to:
   * integrated: 2 protocols
     * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
     * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
-    * No manual uploaded. **File received, pending on insertion**.
+    * Manual uploaded.
 
 * **bullet**:
   * [Eurobench repo](https://github.com/eurobench/pi_bullet),
