@@ -69,10 +69,7 @@ The hyperlinks refer to:
   * [yaml](data/bullet.yaml),
   * discussion opened on the inter-intra aggregation
   * Integrated:
-    * 5 protocols, no pdf available
-      * [BULLET - subject body scanning](http://15.237.22.1/protocols/info/35)
-      * [BULLET - Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/34)
-      * [BULLET - Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/36)
+    * 2 protocols, **no pdf available**
       * [Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/55)
       * [Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/56)
 
