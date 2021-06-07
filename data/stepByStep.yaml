@@ -124,10 +124,10 @@ protocol:
           stairs, the participant will hear a sequence of 60 phonems
           (alphabetical letters), vocally administered one at a time through
           speakers.
-          The participant will be requested to respond "yes” if the administered
+          The participant will be requested to respond yes if the administered
           letter is a repetition of the immediately preceding administered
           letter (this occurrence will happen 12 times throughout the run), and
-          “no” if it is not (this occurrence will happen 48 time throughout the
+          no if it is not (this occurrence will happen 48 time throughout the
           run).
           The experimenter clicks on the right mouse button when the
           participant says no, and clicks on the left mouse button when the
@@ -140,10 +140,10 @@ protocol:
           The participant will be going up and down the stairs while wearing the
           LLE and hearing a sequence of 60 phonemes (alphabetical letters),
           vocally administered one at a time through speakers.
-          The participant will be requested to respond "yes” if the administered
+          The participant will be requested to respond yes if the administered
           letter is a repetition of the immediately preceding administered
           letter (this occurrence will happen 12 times throughout the run), and
-          “no” if it is not (this occurrence will happen 48 time throughout the
+          no if it is not (this occurrence will happen 48 time throughout the
           run).
           The experimenter clicks on the right mouse button when the participant
           says no, and clicks on the left mouse button when the participant says
