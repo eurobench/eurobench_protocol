@@ -115,6 +115,12 @@ The hyperlinks refer to:
     * **Matlab** code, not likely to be Octave-compatible
     * would be in good shape
 
+* **rrd**:
+  * [code](https://github.com/eurobench/rrd_pi_slope),
+    [template_slope](data/rrd/rrd_walk_slope.xlsx),
+    [template_stair](data/rrd/rrd_walk_stair.xlsx)
+    [docker image](https://hub.docker.com/repository/docker/eurobenchtest/rrd_pi_slope),
+  * integrated: **NO PROTOCOL**
 ### Under progress
 
 * **beast**:
@@ -185,5 +191,3 @@ The hyperlinks refer to:
   * no Excel sheet available
   * 25/03: repo changed, waiting for call example and input files.
 
-* **rrd**:
-  * [code](https://github.com/eurobench/rrd_pi_slope)
