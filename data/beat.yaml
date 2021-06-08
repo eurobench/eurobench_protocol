@@ -7,7 +7,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "beat_stepping_even"
+  - id: 18
+    name: "beat_stepping_even"
     name_readable: "Stepping on place - even surface"
     definition: "Subject performs stepping on place with the platform locked
       for 60 s.
@@ -64,7 +65,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # second protocol
-  - name: "beat_stepping_uneven"
+  - id: 20
+    name: "beat_stepping_uneven"
     name_readable: "Stepping on place - uneven surface"
     definition: "Subject performs stepping on place with the platform unlocked
       for 60 s.
@@ -145,7 +147,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # third protocol
-  - name: "beat_static_even"
+  - id: 22
+    name: "beat_static_even"
     name_readable: "Static Balance - even surface"
     definition: "Subject stands on the locked platform with open or closed eyes.
       This protocol allows researchers to quantify the effects induced by
@@ -200,7 +203,8 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
   # fourth protocol
-  - name: "beat_static_uneven"
+  - id: 23
+    name: "beat_static_uneven"
     name_readable: "Static Balance - uneven surface"
     definition: "Subject stands on the unlocked platform with open or closed
       eyes.
@@ -277,7 +281,8 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
   # fifth protocol
-  - name: "beat_step_even"
+  - id: 24
+    name: "beat_step_even"
     name_readable: "Step perturbation - even surface"
     definition: "Subjects stands on the platform and reacts to a step
       perturbation with platform set in position control.
@@ -361,7 +366,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # sixth protocol
-  - name: "beat_step_uneven"
+  - id: 25
+    name: "beat_step_uneven"
     name_readable: "Step perturbation - uneven surface"
     definition: "Subjects stands on the platform and reacts to a step
       perturbation with platform set in impedance control, it means that the
@@ -446,7 +452,8 @@ protocol:
     has_multiple_condition: false
     has_multiple_subject: true
   # seventh protocol
-  - name: "beat_sinusoidal_uneven"
+  - id: 29
+    name: "beat_sinusoidal_uneven"
     name_readable: "Sinusoidal perturbation - even surface"
     definition: "Subjects stands on platform and reacts to a sinusoidal
       perturbation with platform set in position mode.
@@ -561,7 +568,7 @@ pi:
     inter_cond_aggregation: undef
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: rom_p
+  - name: romp
     name_readable: "Range of Motion in different perturbation directions
       (ROM_p)"
     description: "ROM_p represents the range of motion of considered angles in
@@ -663,7 +670,7 @@ pi:
       the task with closed eyes."
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons"
-  - name: pl_p
+  - name: plp
     name_readable: "Path Length of the Centre of Pressure after perturbation
       (PL_p)"
     description: "It represents the distance covered by the centre of pressure
@@ -743,14 +750,14 @@ pi:
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons to
       compute per each direction."
-  - name: theta_f
-    name_readable: Final value of the platform angle (theta_f)
+  - name: thetaf
+    name_readable: Final value of the platform angle (thetaf)
     description: "It represents the final angle of the platform angle after
       subject's reaction under step perturbation computed as the mean value of
       the last 50 samples in all the imposed directions.
       The eight directions are: North (N), North-East (NE), East (E),
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
-      Value of theta_f close to zero indicates the perfect capability of the
+      Value of thetaf close to zero indicates the perfect capability of the
       subject to bring back the platform in the neutral position."
     unit: "º"
     # see description
@@ -762,14 +769,14 @@ pi:
     inter_subject_aggregation: "Mean value and standard deviation of the
       population with the same health status or patological conditons to
       compute per each direction."
-  - name: delta_theta
-    name_readable: Range of motion of the platform angle (delta_theta)
+  - name: deltatheta
+    name_readable: Range of motion of the platform angle (deltatheta)
     description: "It represents the range of motion of the platform angle after
       subject's reaction under step perturbation computed during the last 1.5 s
       of the task for all directions.
       The eight directions are: North (N), North-East (NE), East (E),
       South-East (SE), South (S), South-West (SW), West (W), NorthWest (NW).
-      Lower value of delta_theta indicates a greater stability after the
+      Lower value of deltatheta indicates a greater stability after the
       perturbation reaction."
     unit: "º"
     # see description
@@ -924,8 +931,8 @@ pi_algo:
     docker_host: eurobenchtest/pi_beat:v0.1.0
     docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
-      - rom_p
-      - pl_p
+      - romp
+      - plp
       - eap
     input_files:
       - jointAngles.csv
@@ -945,12 +952,12 @@ pi_algo:
     docker_host: eurobenchtest/pi_beat:v0.1.0
     docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
-      - rom_p
-      - pl_p
+      - romp
+      - plp
       - eap
       - os
-      - theta_f
-      - delta_theta
+      - thetaf
+      - deltatheta
     input_files:
       - jointAngles.csv
       - platformData.csv
@@ -969,7 +976,7 @@ pi_algo:
     docker_host: eurobenchtest/pi_beat:v0.1.0
     docker_name: eurobenchtest/pi_beat:v0.1.0
     pi:
-      - pl_p
+      - plp
       - eap
       - g
       - phi
