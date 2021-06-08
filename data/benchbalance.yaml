@@ -1,4 +1,5 @@
 ---
+user_name: "benchbalance"
 scenario:
   name: "Perturbated balance assessment"
   description: "Standing wearing an exoskeleton and maintaining balance reacting
@@ -7,7 +8,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "benchbalance"
+  - id: 33
+    name: "benchbalance"
     name_readable: "Perturbated balance assessment"
     definition: "Standing wearing an exoskeleton and maintaining balance
       reacting to well-defined external perturbations manually provided by an
@@ -46,7 +48,7 @@ protocol:
         range: undef
         unit: deg
       - name: perturbation_location
-        definition: The position on the subject's upper body where the
+        definition: The position on the subject''s upper body where the
           perturbation is applied by the experimenter by means of the
           perturbator.
         type: undef
@@ -81,7 +83,7 @@ protocol:
       - description: Turn on the Smart Garment
       - description: Turn on the Pusher
       - description: Connect the devices
-        detail: Details on the 'Devices connection' are provided in the
+        detail: Details on the ''Devices connection'' are provided in the
           documentation
       - description: Launch the BenchBalance data collection software
         detail: Details on the acquisition software are provided in the
