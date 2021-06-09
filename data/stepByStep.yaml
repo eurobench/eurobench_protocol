@@ -85,7 +85,20 @@ protocol:
       - item: pymedia
         type: software
         file_sheet: https://github.com/dschreij/opensesame_soundrecorder_plugins/tags
-    step_description: ""
+    step_description: "In this activity the subject will be asked first to
+      ascend and descend the stair-based testbed while wearing the LLE (motor
+      task).
+      Then, an auditory 1-back task (cognitive task) will be administered to the
+      subject.
+      During the auditory task the subject will be seated and will hear a
+      sequence of 60 alphabet letters, presented on at a time, and will be asked
+      to respond yes if the presented letter is a repetition of the immediately
+      preceding alphabet letter, or no if the presented letter is not a
+      repetition of the immediately preceding alphabet letter.
+      Lastly, the subject will be asked to complete the motor and cognitive task
+      simultaneously: he or she will ascend and descend the stairs while
+      answering yes or no after hearing the alphabet letter (cognitive-motor
+      task)."
     step_list:
       - description: "Participant and setting preparation"
         detail: "The participant wears the exoskeleton and positions him/herself
@@ -97,7 +110,7 @@ protocol:
           Activate the chronometer and stopping it when the participant has
           completed the task."
         detail: "Two values are measured: ascending time, descending time."
-      - description: "Participant and setting preparetion.
+      - description: "Participant and setting preparation.
           The participant removes the exoskeleton and sits next to the
           experimenter.
           The experimenter runs OpenSesame.
@@ -106,7 +119,7 @@ protocol:
         detail: "The setting should encompass a desk, two seats, a laptop and
           headphones."
       - description: "Single Task: Cognitive, Instructions.
-          The experiemnter reads the instructions provided by OpenSesame."
+          The experimenter reads the instructions provided by OpenSesame."
         detail: "The instructions will be: You will hear a sequence of sounds
           (phonemes) presented one at time.
           Your task is to respond after each letter: YES when the letter is a
@@ -115,7 +128,7 @@ protocol:
           Before the actual data collection, you will have the opportunity to
           learn about the task by trying it."
       - description: "Single Task: Practice.
-          The participant stars the pratice session."
+          The participant starts the pratice session."
         detail: "The practice session consists in 8 trials.
           At the end, a sheet will appear with the instruction: the Single Task:
           Cognitive data collection stars now"
@@ -181,10 +194,15 @@ protocol:
       - item: checklist
         type: other
         file_sheet: undef
-    step_description: ""
+    step_description: "An observational analysis will be performed by the
+      experimenter while video recording the motor tasks performed by the
+      end-user, i.e. stairs ascending and stairs descending while wearing the
+      LLE.
+      In this case the evaluation will be conducted by the experimenter and no
+      particular requests will be made to the subject."
     step_list:
-      - description: "Instruction. The experimenter provides instrutions to the
-          participant."
+      - description: "Instruction.
+          The experimenter provides instrutions to the participant."
         detail: "The instruction will be: We ask you to go up and down the
           stairs wearing the exoskeleton.
           While you perform the task a video camera will record the execution of
@@ -231,7 +249,10 @@ protocol:
       - item: questionnaire
         type: other
         file_sheet: undef
-    step_description: ""
+    step_description: "After the completion of the motor task, the experimenter
+      will administer the Local Perceived Pressure questionnaire to the subject.
+      The subject will then be asked to fill out the questionnaire to measure
+      the levels of comfort while wearing the exoskeleton."
     step_list:
       - description: "Mandatory condition. The LPP Protocol have to be used
           after the participant has had the opportunity to try/use the
@@ -292,7 +313,10 @@ protocol:
       - item: questionnaire
         type: other
         file_sheet: undef
-    step_description: ""
+    step_description: "This protocol describes the stair-based Human Factors
+      protocol in its whole, specifying which are the actions that the
+      experimenter has to carry out during the evaluation and the instructions
+      that has to provide to the subject."
     step_list:
       - description: "Instructions.
           The experimenter provides instrutions to the participant."
