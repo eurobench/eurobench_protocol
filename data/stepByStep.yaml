@@ -1,4 +1,5 @@
 ---
+user_name: "sbs"
 scenario:
   name: "Walking on stair"
   description: "Systematic Test of Exoskeleton Products by a Stairs-based
