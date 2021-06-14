@@ -1,0 +1,219 @@
+---
+user_name: "uhei"
+scenario:
+  name: "Sit to stand"
+  description: "Assessment of the motion capability of the robot in the lateral plane"
+  image: uhei/img/uhei_sts.png
+
+protocol:
+  - name: "uhei_sts_height"
+    name_readable: "Sit to stand: Decreasing chair height assessment"
+    definition: "Decreasing of the chair height of will put more stress on the
+      knee motors of the robot in order to push the CoM for a greater distance"
+    image: uhei/img/uhei_sts.png
+    keywords: [sit to stand, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: locomotion_bench
+    duration: "2 hours"
+    controlled_variables:
+      - name: chair_height
+        definition: Height of the contact point from floor.
+        type: float
+        range: [39, 60]
+        unit: cm
+      - name: foot_position
+        definition: Distance of ground projected contact point to ankle
+        type: float
+        range: [0, 1000]
+        unit: cm
+    testbed:
+      - item: Instrumendted chair for humanoids
+        type: combined
+        file_sheet: https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf
+      - item: IMU close to robotic free-flyer or internal IMU
+        type: sensor
+        file_sheet: na
+      - item: GRF sensors
+        type: sensor
+        file_sheet: Robot internal force torque sensors or force plate
+    step_description: "undef"
+    step_list:
+      - description: " Standardized foot position. Adjust the chair height
+          accordingly"
+        detail: "The standardized foot position is 25% of the knee height of the
+          robot as distance from ground projected contact point to ankle
+          position"
+      - description:  Set chair height. Adjust thefoot position accordingly
+        detail: "The initial chair height is 120% of the knee height as initial
+          chair height from the ground"
+      - description: "Put the robot on the contact point on the chair and start
+          the recording of data on the robot and the chair.
+          Record data to create data files of the walking motion according to
+          the EUROBENCH data format."
+        detail: "Desired files: joint angles, joint velocities, joint
+          accelerations, joint torques, ground reaction forces"
+
+      - description: "Initiate the sts sequence. The robot stands up from the
+          chair.
+          Continue to step 4 after successfull execution of the sts sequence."
+      - description: " Stop the recording of data"
+      - description: Put the robot back on the chair
+        detail: By means of a personal lifter or similar
+      - description: "Repeat steps 2 - 6 three times.
+          If the robot succeeds the set step length for the required amount of
+          repetitions go on to step 8.
+          If the robot can not execute the motion, the protocol is concluded."
+        detail: "the required amount of repetitions is 2 out of 3"
+      - description: "Lower the chair height about 5 % of the total knee height"
+
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+
+  - name: "uhei_sts_foot"
+    name_readable: "Sit to stand: Foot Placement Handicap"
+    definition: "The position of the feet is moved further away from the
+      seating contact putting more load on the chair by shifting the CoP away
+      from the CoM resulting in more stress to the hip motors of the robot"
+    image: uhei/img/uhei_sts.png
+    keywords: [sit to stand, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: locomotion_bench
+    duration: "2 hours"
+    controlled_variables:
+      - name: chair_height
+        definition: Height of the contact point from floor.
+        type: float
+        range: [39, 60]
+        unit: cm
+      - name: foot_position
+        definition: Distance of ground projected contact point to ankle
+        type: float
+        range: [0, 1000]
+        unit: cm
+    testbed:
+      - item: Instrumendted chair for humanoids
+        type: combined
+        file_sheet: https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf
+      - item: IMU close to robotic free-flyer or internal IMU
+        type: sensor
+        file_sheet: na
+      - item: GRF sensors
+        type: sensor
+        file_sheet: Robot internal force torque sensors or force plate
+    step_description: "unded"
+    step_list:
+      - description: " Standardized chair height.
+          Adjust the chair height accordingly"
+        detail: "120% of the knee height of the robot as standardized chair
+          height"
+      - description: "Set foot position. Adjust thefoot position accordingly"
+        detail: "The initial foot position is 25% of the knee height as distance
+          from ground projected contact point to ankle position"
+      - description: "Put the robot on the contact point on the chair and start
+          the recording of data on the robot and the chair.
+          Record data to create data files of the walking motion according to
+          the EUROBENCH data format."
+        detail: "Desired files: joint angles, joint velocities, joint
+          accelerations, joint torques, ground reaction forces"
+
+      - description: "Initiate the sts sequence. The robot stands up from the
+          chair.
+          Continue to step 4 after successfull execution of the sts sequence."
+      - description: " Stop the recording of data"
+      - description: Put the robot back on the chair
+        detail: By means of a personal lifter or similar
+      - description: "Repeat steps 2 - 6 three times.
+          If the robot succeeds the set step length for the required amount of
+          repetitions go on to step 8.
+          If the robot can not execute the motion, the protocol is concluded."
+        detail: "the required amount of repetitions is 2 out of 3"
+      - description: " Increase the foot distance about 5 % of the total knee
+      height"
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+
+
+pi:
+  - name: h_c
+    name_readable: "Angular Momentum about Center of Mass (CoM)"
+    description: "Angular Momentum about Center of Mass (CoM)"
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cop_bos
+    name_readable: "Distance of the center of pressure to base of support."
+    description: "Distance of the center of pressure to base of support."
+    unit: cm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cp_bos
+    name_readable: "Distance of the capture point to the base of support"
+    description: "Distance of the capture point to the base of support"
+    unit: cm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: fpe_bos
+    name_readable: "Distance of the foot placement estimator to the base of support"
+    description: "Distance of the foot placement estimator to the base of support"
+    unit: cm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: joint_torques
+    name_readable: "Torque over time acting in the lower body motors of the robot"
+    description: "Torque over time acting in the lower body motors of the robot"
+    unit: Nm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: chair_impact
+    name_readable: "Chair impact"
+    description: "Chair impact"
+    unit: Nm
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: bar plot
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+pi_algo:
+  - name: locomotion_bench
+    description: Benchmarking toolkit to calculate a variety of gait performance indicators
+
+    url_paper: undef
+    url_code: https://gitlab.com/orb-benchmarking/eb_hum_bench
+    docker_host: eurobenchtest/pi_uhei:v0.0.0
+    docker_name: eurobenchtest/pi_uhei:v0.0.0
+    pi:
+      - h_c
+      - cop_bos
+      - fpe_bos
+      - cp_bos
+      - joint_torques
+    input_files: [robot.yaml, experiment.yaml]
+    input_command:
+      - ./run_pi
+      - robot.yaml
+      - experiment.yaml
+    language: python
+    implemented: false
