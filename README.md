@@ -24,22 +24,22 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 | Name | Who | protocol uploaded  | PI uploaded |
 | ---- | --- | ------------------ | ----------- |
-| Walking/Standing on a moving surface | [beat](beat) | 7 | no |
-| Walking on treadmill	| [Bestable](bestable) and treadmill | 1 | yes |
-| Walking with crutches	 | [Bullet](bullet) | 2 (missing pdf) | yes |
-| Ascending/Descending slopes	| Eurobench UDBenchmark |
-| Characterization of the effects of the exoskeleton over muscle coordination	| Pepato |
-| Moving in narrow spaces	| TESTED |
-| Opening closing doors	| Eurobench-CSIC |
-| Overcoming obstacles | Eurobench-CSIC |
-| Straight walking | Eurobench-CSIC |
-| Ascending/Descending stairs	| stepByStep |
-| Sit-to-Stand, Stand-to-Sit | Bench |
-| Walking/Standing during pushes | benchbalance |
-| Standing during manipulation | Eurobench-CSIC |
-| Walking over irregular terrains | Eurobench-CSIC |
-| Characterization of user experience during exoskeleton-assisted walking |	Experience |
-| Robot Actuation characterization system	| Forecast |
+| Walking/Standing on a moving surface | [beat](#beat) | 7 | no |
+| Walking on treadmill	| [Bestable](#bestable) and treadmill | 1 | yes |
+| Walking with crutches	 | [Bullet](#bullet) | 2 (missing pdf) | yes |
+| Ascending/Descending slopes	| Eurobench [UDBenchmark](#udenchmarking) | 2 | yes |
+| Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1  (pdf?)| yes |
+| Moving in narrow spaces	| [tested](#tested) | 1 (no pdf) | no |
+| Opening closing doors	| Eurobench-CSIC | 0
+| Overcoming obstacles | Eurobench-CSIC | 0
+| Straight walking | Eurobench-CSIC | 0
+| Ascending/Descending stairs	| [stepByStep](#stepByStep) | 5 (under integration) | no |
+| Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
+| Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
+| Standing during manipulation | Eurobench-CSIC | 0 | no
+| Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (under progress) | no
+| Characterization of user experience during exoskeleton-assisted walking |	[Experience](#experience) | 2 | no
+| Robot Actuation characterization system	| Forecast | under progress | no
 
 ### Humanoid
 
@@ -115,7 +115,7 @@ The hyperlinks refer to:
   [template](data/bench/bench.xlsx),
   [yaml](data/bench.yaml)
 * Discussion on the input data (calib file per user, not in the current options)
-* Integrated 4 protocols, **NO pdf**:
+* Integrated 2 protocols, **NO pdf**:
   * [5 sit to stand](http://15.237.22.1/protocols/info/57)
   * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
 
@@ -203,7 +203,7 @@ The hyperlinks refer to:
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
   * pdf to be uploaded
 
-#### csic irregular terrain
+#### csic_irregular_terrain
 
 * [code](https://github.com/AdrianaTorres/Irregular_Terrains),
   [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
