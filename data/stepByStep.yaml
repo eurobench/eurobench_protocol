@@ -18,8 +18,7 @@ protocol:
     keywords: [Lower-limb exoskeletons, stairs, stair ascending, stair descending, motion capture, motion reconstruction]
     bipedal_system: [exoskeleton, human]
     pi_algo: pi_sbs_biomechanics
-    duration: "15 minutes/subject (explanation+sensor placement+calibration)
-      + 7.5 minutes/subject (5 runs mocap adquisition) = 22.5 minutes/subject"
+    duration: "15min/subj(explanation+sensor placement+calib)+7.5min/subj(5 runs mocap adquisition)=22.5min/subj"
     # controlled_variables:
     testbed:
       - item: Mocap sensor
@@ -441,9 +440,7 @@ protocol:
       stair descending, human-robot interaction, EMG activity]
     bipedal_system: [exoskeleton, human, prosthesis]
     pi_algo: pi_sbs_emg
-    duration: "1-2 min each run x 5 runs x 2 stair inclination [20 min] + 20 min
-      for subject preparation and setup proceure [total time  40 min].
-      It is advisable to have a 60 min slot."
+    duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
     controlled_variables:
       - name: step_height
         definition: ""
