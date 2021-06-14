@@ -1,4 +1,5 @@
 ---
+user_name: "uhei"
 scenario:
   name: "Flat Ground Walking"
   description: "The Flat Ground Walking scenario assesses the capability of the

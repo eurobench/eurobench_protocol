@@ -1,4 +1,5 @@
 ---
+user_name: "uhei"
 scenario:
   name: "Sit to stand"
   description: "Assessment of the motion capability of the robot in the lateral plane"
