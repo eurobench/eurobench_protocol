@@ -36,7 +36,7 @@ protocol:
       - item: GRF sensors
         type: sensor
         file_sheet: Robot internal force torque sensors or force plate
-    step_description: "unded"
+    step_description: "undef"
     step_list:
       - description: " Standardized foot position. Adjust the chair height
           accordingly"
