@@ -37,7 +37,7 @@ protocol:
         type: sensor
         file_sheet: Xsens
       - item: "stair testbed"
-        type: equipment
+        type: other
         file_sheet: "undefined"
     step_description: "STAIR UP: Ask the participant to stand at the bottom of
       the stair in such a way that the first step will be made on first step up

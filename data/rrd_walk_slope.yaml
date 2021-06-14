@@ -37,7 +37,7 @@ protocol:
         type: sensor
         file_sheet: Xsens
       - item: "slope testbed"
-        type: equipment
+        type: other
         file_sheet: "undefined"
     step_description: "SLOPE UP: Ask the participant to stand on level ground at
       the bottom of the slope in such a way that the first step will be made on
