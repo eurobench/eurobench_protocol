@@ -58,7 +58,7 @@ protocol:
     has_multiple_subject: true
   - name: "sbs_hf_dual_task"
     name_readable: "Walking on stairs: dual task protocol"
-    definition: "The Dual Task protocol is intended to measure the User's
+    definition: "The Dual Task protocol is intended to measure the User''s
       cognitive-motor interference while accomplishing a motor task with the
       exoskeleton and doing a cognitive task.
       Less interference corresponds to better interaction between user and
@@ -101,7 +101,7 @@ protocol:
           The participant removes the exoskeleton and sits next to the
           experimenter.
           The experimenter runs OpenSesame.
-          The participant wears the headphones (which records the participant's
+          The participant wears the headphones (which records the participant''s
           vocal answers)."
         detail: "The setting should encompass a desk, two seats, a laptop and
           headphones."
@@ -163,7 +163,7 @@ protocol:
       It describes the quality of the interaction occurring between the wearer
       and the lower-limb exoskeleton.
       The data collection is performed by experimenters based on a quantitative
-      checklist of both participant and exoskeleton's behaviour"
+      checklist of both participant and exoskeleton''s behaviour"
     image: sbs/img/sbs_hf_obs.png
     keywords: [Human factors; Human Robot Interaction; stairs]
     bipedal_system: [exoskeleton, human]
@@ -241,7 +241,7 @@ protocol:
           Please, could you judge the degree of discomfort you felt for each
           part?"
       - description: "Data collection.
-          The participant answers the questionnaire's items."
+          The participant answers the questionnaire''s items."
         detail: "LPP consists in 14 item and it is rated on a Likert-type scale
           ranging from 0 (no pressure at all/no discomfort at all) to 10
           (extremely strong pressure/extreme discomfort, almost maximum).
@@ -338,7 +338,7 @@ protocol:
           Please, could you judge the degree of discomfort you felt for each
           part?"
       - description: "Data collection, Local Perceived Pressure Questionnaire.
-          The participant answers the questionnaire's items."
+          The participant answers the questionnaire''s items."
         detail: "LPP consists in 14 item and it is rated on a Likert-type scale
           ranging from 0 (no pressure at all/no discomfort at all) to 10
           (extremely strong pressure/extreme discomfort, almost maximum).
@@ -349,7 +349,7 @@ protocol:
           Both round numbers and decimals can be used (up to experimenter)."
       - description: "Single Task: Cognitive, Setting preparetion.
           The experimenter runs OpenSesame.
-          The participant wears the headphones (which records the participant's
+          The participant wears the headphones (which records the participant''s
           vocal answers)."
         detail: "The setting should encompass a desk, two seats, a laptop and
           headphones."
@@ -407,7 +407,7 @@ protocol:
     has_multiple_subject: false
   - name: "sbs_emg"
     name_readable: "Walking on stairs: emg analysis"
-    definition: "The protocol aims at assessing the subject's motor control
+    definition: "The protocol aims at assessing the subject''s motor control
       ability in stair ascendig/descending through the analysis of the EMG
       activation pattern.
       The proposed metrics rely on the use of surface electromyography (sEMG),
@@ -503,7 +503,7 @@ protocol:
     has_multiple_subject: true
   - name: "sbs_weight_bearing"
     name_readable: "Walking on stairs: ground and handrail reaction forces"
-    definition: "The protocol aims at assessing the subject's motor control
+    definition: "The protocol aims at assessing the subject''s motor control
       ability in stair ascendig/descending through the analysis of weight
       bearing.
       The proposed metrics rely on the analysis of the ground reaction forces
@@ -513,11 +513,11 @@ protocol:
       Two kind of metrics are defined:
       1) PeakLoad_acceptance_left/right, PeakLoad_PushOff_left/right defined as
       the peak load in the specific phases (foot strike and push off).
-      Data are divided by the subject's (+ exoskeleton) weight to allow for
+      Data are divided by the subject''s (+ exoskeleton) weight to allow for
       inter and intra subject comparison.
       2) CoP_sagittal_left/right, CoP_lateral_left/right defined as the maximum
       (negative or positive) CoP progression in the given direction.
-      Data are divided by the subject's foot length to allow for inter and intra
+      Data are divided by the subject''s foot length to allow for inter and intra
       subject comparison.
       In addition, through the analysis of the video the gait phases will be
       defined both in time unit and step percentage: stance_time _right,
@@ -568,7 +568,7 @@ protocol:
           force plate"
         detail: "The acquisition is needed to weight the subject wearing the
           exoskeleton.
-          Subject's weight and foot measures are reference data used to make
+          Subject''s weight and foot measures are reference data used to make
           metrics comparable among subjects"
       - description: "Start acquisition.
           Launch the data collection software."
