@@ -35,7 +35,7 @@ protocol:
         unit: na
     testbed:
       - item: 4 meter on flat ground
-        type: equipment
+        type: other
         file_sheet: undef
       - item: IMU close to robotic free-flyer or internal IMU
         type: sensor
