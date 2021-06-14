@@ -1,4 +1,5 @@
 ---
+user_name: "rrd"
 scenario:
   name: "Kinematics of stair walking of non-impaired individuals"
   description: "Stair walking influences the kinematics of the joints of the
