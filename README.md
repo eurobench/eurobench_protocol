@@ -43,6 +43,26 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 ### Humanoid
 
+| Name | Who | protocol uploaded  | PI uploaded |
+| ---- | --- | ------------------ | ----------- |
+| Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | under progress |
+| Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
+| Walking on flat ground	|Eurobench-UHEI | under dev
+| Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | under dev
+| Ascending/Descending slopes	| Eurobench-UHEI | under dev
+| Ascending/Descending stairs	| Eurobench-Waterloo | under dev
+| Walking over irregular terrains	| Eurobench-PAL | under dev
+| Walking over soft terrains | discarded | under dev
+| Overcoming obstacles | Eurobench-PAL | under dev
+| Standing during manipulation | Eurobench-Waterloo | under dev
+| Picking and carrying objects | Eurobench-Waterloo | under dev
+| Walking on a treadmill | Eurobench-IIT and Treadmill | under dev
+| Walking on laterally inclined surfaces | Eurobench-IIT | under dev
+| Moving in narrow spaces	| discarded | under dev
+| Standing on a moving surface | [COMTEST](#comtest) | 0 | no |
+| Walking/Standing during pushes | [Dysturbance](#disturbance) | 4 | no |
+
+
 ## Code integration status
 
 The hyperlinks refer to:
