@@ -7,7 +7,8 @@ scenario:
   image: na
 
 protocol:
-  - name: "sbs_biomechanics"
+  - id: 60
+    name: "sbs_biomechanics"
     name_readable: "Walking on stair: biomechanical analysis"
     definition: "Mocap adquisition in stair ascending and descending over the
       testbed in order to characterize human movements.
@@ -55,7 +56,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-  - name: "sbs_hf_dual_task"
+  - id: 61
+    name: "sbs_hf_dual_task"
     name_readable: "Walking on stairs: dual task protocol"
     definition: "The Dual Task protocol is intended to measure the User''s
       cognitive-motor interference while accomplishing a motor task with the
@@ -155,7 +157,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-  - name: "sbs_hf_observation"
+  - id: 62
+    name: "sbs_hf_observation"
     name_readable: "Walking on stair: User Exoskeleton Interaction Observation"
     definition: "This protocol aims to measure some behavioural indicators of
       user-machine interaction.
@@ -214,7 +217,8 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - name: "sbs_hf_pressure"
+  - id: 63
+    name: "sbs_hf_pressure"
     name_readable: "Walking on stairs: Local Perceived Pressure Questionnaire"
     definition: "The questionnaire measures the subjective evaluation of
       musculoskeletal pressure applied by the exoskeleton to the user."
@@ -252,7 +256,8 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - name: "sbs_hf_combined"
+  - id: 64
+    name: "sbs_hf_combined"
     name_readable: "Walking on stairs: Local Perceived Pressure Questionnaire"
     definition: "The protocol combines the dual task protocol, the User
       Exoskeleton Interaction Observation and the Local Perceived Pressure
@@ -404,7 +409,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-  - name: "sbs_emg"
+  - id: 65
+    name: "sbs_emg"
     name_readable: "Walking on stairs: emg analysis"
     definition: "The protocol aims at assessing the subject''s motor control
       ability in stair ascendig/descending through the analysis of the EMG
@@ -498,7 +504,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-  - name: "sbs_weight_bearing"
+  - id: 66
+    name: "sbs_weight_bearing"
     name_readable: "Walking on stairs: ground and handrail reaction forces"
     definition: "The protocol aims at assessing the subject''s motor control
       ability in stair ascendig/descending through the analysis of weight
