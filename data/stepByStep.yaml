@@ -56,7 +56,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-
   - name: "sbs_hf_dual_task"
     name_readable: "Walking on stairs: dual task protocol"
     definition: "The Dual Task protocol is intended to measure the User's
@@ -157,7 +156,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-
   - name: "sbs_hf_observation"
     name_readable: "Walking on stair: User Exoskeleton Interaction Observation"
     definition: "This protocol aims to measure some behavioural indicators of
@@ -217,7 +215,6 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-
   - name: "sbs_hf_pressure"
     name_readable: "Walking on stairs: Local Perceived Pressure Questionnaire"
     definition: "The questionnaire measures the subjective evaluation of
