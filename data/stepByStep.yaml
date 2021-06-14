@@ -526,9 +526,7 @@ protocol:
       stair descending, human-robot interaction, EMG activity]
     bipedal_system: [exoskeleton, human, prosthesis]
     pi_algo: pi_sbs_wb
-    duration: "1-2 min each run x 5 runs x 2 stair inclination [20 min] + 20 min
-      for subject preparation and setup proceure [total time  40 min].
-      It is advisable to have a 60 min slot."
+    duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
     controlled_variables:
       - name: step_height
         definition: ""
