@@ -1,7 +1,7 @@
 ---
 user_name: "uhei"
 scenario:
-  name: "Sit to stand"
+  name: "Sit to stand (Humanoid)"
   description: "Assessment of the motion capability of the robot in the lateral plane"
   image: uhei/img/uhei_sts.png
 
