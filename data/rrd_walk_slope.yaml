@@ -12,7 +12,8 @@ scenario:
   image: rrd/img/testbed_slope.png
 
 protocol:
-  - name: "rrd_slope"
+  - id: 70
+    name: "rrd_slope"
     name_readable: "Kinematics of inclined walking of non-impared individuals"
     definition: "Slope walking influences the kinematics of the joints of the
       lower extremities when compared to level ground walking.

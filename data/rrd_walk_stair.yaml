@@ -12,7 +12,8 @@ scenario:
   image: rrd/img/testbed_slope.png
 
 protocol:
-  - name: "rrd_stair"
+  - id: 71
+    name: "rrd_stair"
     name_readable: "Kinematics of stair walking of non-impared individuals"
     definition: "Stair walking influences the kinematics of the joints of the
     lower extremities when compared to level ground walking.
