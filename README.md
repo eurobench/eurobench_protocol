@@ -27,8 +27,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking/Standing on a moving surface | [beat](#beat) | 7 | no |
 | Walking on treadmill	| [Bestable](#bestable) and treadmill | 1 | yes |
 | Walking with crutches	 | [Bullet](#bullet) | 2 (missing pdf) | yes |
-| Ascending/Descending slopes	| Eurobench [UDBenchmark](#udenchmarking) | 2 | yes |
-| Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1  (pdf?)| yes |
+| Ascending/Descending slopes	| Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
+| Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1 | yes |
 | Moving in narrow spaces	| [tested](#tested) | 1 (no pdf) | no |
 | Opening closing doors	| Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
@@ -75,17 +75,17 @@ The hyperlinks refer to:
 
 ### Embedded in database
 
-#### madrob
+#### bench
 
-* [code](https://github.com/madrob-beast/madrob_beast_pi),
-  [Eurobench repo](https://github.com/eurobench/pi_madrob_beast),
-  [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
-  [excel](data/madrob/madrob-v4.0.xlsx),
-  [yaml](data/madrob/madrob.yaml),
-  [manual](data/madrob/manual/Detailed_Description_of_MADROB_Protocol_and_Performance_Indicators.pdf)
-* Missing: indication on data collected files.
-* A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
-* documentation: PDF available. Available from the github repo. Image available
+* [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
+  [Eurobench_repo](https://github.com/eurobench/pi_bench),
+  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
+  [template](data/bench/bench.xlsx),
+  [yaml](data/bench.yaml)
+* Discussion on the input data (calib file per user, not in the current options)
+* Integrated 2 protocols, **NO pdf**:
+  * [5 sit to stand](http://15.237.22.1/protocols/info/57)
+  * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
 
 #### bestable
 
@@ -98,19 +98,6 @@ The hyperlinks refer to:
   [manual](data/bestable/doc/BeStable_Manual_V5.pdf)
 * integrated:
   * 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](http://15.237.22.1/protocols/info/53).
-  * Manual uploaded.
-
-#### udbenchmarking
-
-* [code](https://github.com/nickkluft/udbenchmark_PIs),
-  [Eurobench repo](https://github.com/eurobench/pi_udbenchmark),
-  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
-  [template](data/udbenchmarking/udbenchmarking.xlsx),
-  [yaml](data/udbenchmark.yaml),
-  [manual](data/udbenchmarking/doc/1.Protocol.pdf)
-* integrated: 2 protocols
-  * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
-  * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
   * Manual uploaded.
 
 #### bullet
@@ -127,17 +114,18 @@ The hyperlinks refer to:
     * [Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/55)
     * [Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/56)
 
-#### bench
+#### madrob
 
-* [code](https://bitbucket.org/sophiaanais/benchproject_code/src),
-  [Eurobench_repo](https://github.com/eurobench/pi_bench),
-  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
-  [template](data/bench/bench.xlsx),
-  [yaml](data/bench.yaml)
-* Discussion on the input data (calib file per user, not in the current options)
-* Integrated 2 protocols, **NO pdf**:
-  * [5 sit to stand](http://15.237.22.1/protocols/info/57)
-  * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
+* [code](https://github.com/madrob-beast/madrob_beast_pi),
+  [Eurobench repo](https://github.com/eurobench/pi_madrob_beast),
+  [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
+  [excel](data/madrob/madrob-v4.0.xlsx),
+  [yaml](data/madrob/madrob.yaml),
+  [manual](data/madrob/manual/Detailed_Description_of_MADROB_Protocol_and_Performance_Indicators.pdf)
+* Missing: indication on data collected files.
+* A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
+* documentation: PDF available. Available from the github repo. Image available
+
 
 #### pepato
 
@@ -150,6 +138,19 @@ The hyperlinks refer to:
   [manual](data/pepato/manual/description_PEPATO.pdf)
 * integrated: 1 protocol
   * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)  
+
+#### udbenchmarking
+
+* [code](https://github.com/nickkluft/udbenchmark_PIs),
+  [Eurobench repo](https://github.com/eurobench/pi_udbenchmark),
+  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_udbenchmark),
+  [template](data/udbenchmarking/udbenchmarking.xlsx),
+  [yaml](data/udbenchmark.yaml),
+  [manual](data/udbenchmarking/doc/1.Protocol.pdf)
+* integrated: 2 protocols
+  * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
+  * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
+  * Manual uploaded.
 
 #### experience
 
@@ -208,6 +209,15 @@ The hyperlinks refer to:
 * integrated : 1 protocol, PDF inserted
   * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
 
+#### rrd
+
+* [code](https://github.com/eurobench/rrd_pi_slope), 
+* current state: pending on validating the Docker images 
+* integrated protocol:
+  * [Kinematics of stair walking of non-impared individuals](https://15.237.22.1/protocols/info/71)
+  * [Kinematics of inclined walking of non-impared individuals](https://15.237.22.1/protocols/info/70)
+  * **NO PDF**
+
 ### Under progress
 
 #### beast
@@ -219,9 +229,8 @@ The hyperlinks refer to:
   [yaml](data/beast.yaml),
   [manual](data/beast/manual//Detailed_Description_of_BEAST_Protocol_and_Performance_Indicators.pdf)
 * current state: waiting for reference data set
-* integrated: 1 protocol.
+* integrated: 1 protocol, pdf uploaded
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
-  * pdf to be uploaded
 
 #### csic_irregular_terrain
 
@@ -302,8 +311,4 @@ The hyperlinks refer to:
 * no Excel sheet available
 * 25/03: repo changed, waiting for call example and input files.
 * integrated: **NO PROTOCOL**
-
-#### rrd
-
-* [code](https://github.com/eurobench/rrd_pi_slope)
-* integrated: **NO PROTOCOL**
+ 
