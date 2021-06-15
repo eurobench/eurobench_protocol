@@ -6,7 +6,8 @@ scenario:
   image: uhei/img/uhei_sts.png
 
 protocol:
-  - name: "uhei_sts_height"
+  - id: 68
+    name: "uhei_sts_height"
     name_readable: "Sit to stand: Decreasing chair height assessment"
     definition: "Decreasing of the chair height of will put more stress on the
       knee motors of the robot in order to push the CoM for a greater distance"
@@ -70,7 +71,8 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: false
 
-  - name: "uhei_sts_foot"
+  - id: 69
+    name: "uhei_sts_foot"
     name_readable: "Sit to stand: Foot Placement Handicap"
     definition: "The position of the feet is moved further away from the
       seating contact putting more load on the chair by shifting the CoP away
