@@ -28,12 +28,14 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking on treadmill	| [Bestable](#bestable) and treadmill | 1 | yes |
 | Walking with crutches	 | [Bullet](#bullet) | 2 (missing pdf) | yes |
 | Ascending/Descending slopes	| Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
+| Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | no |
 | Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1 | yes |
 | Moving in narrow spaces	| [tested](#tested) | 1 (no pdf) | no |
 | Opening closing doors	| Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
 | Ascending/Descending stairs	| [stepByStep](#stepByStep) | 5 (under integration) | no |
+| Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | no |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
 | Standing during manipulation | Eurobench-CSIC | 0 | no
