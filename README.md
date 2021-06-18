@@ -49,8 +49,8 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | ---- | --- | ------------------ | ----------- |
 | Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | under progress |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
-| Walking on flat ground	|Eurobench-UHEI | under dev
-| Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | under dev
+| Walking on flat ground	|Eurobench-UHEI | 1 | no |
+| Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
 | Ascending/Descending slopes	| Eurobench-UHEI | under dev
 | Ascending/Descending stairs	| Eurobench-Waterloo | under dev
 | Walking over irregular terrains	| Eurobench-PAL | under dev
