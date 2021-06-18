@@ -28,7 +28,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking on treadmill	| [Bestable](#bestable) and treadmill | 1 | yes |
 | Walking with crutches	 | [Bullet](#bullet) | 2 (missing pdf) | yes |
 | Ascending/Descending slopes	| Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
-| Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | no |
+| Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1 | yes |
 | Moving in narrow spaces	| [tested](#tested) | 1 (no pdf) | no |
 | Opening closing doors	| Eurobench-CSIC | 0
