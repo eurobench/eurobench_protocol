@@ -34,7 +34,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Opening closing doors	| Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
-| Ascending/Descending stairs	| [stepByStep](#stepByStep) | 5 (under integration) | no |
+| Ascending/Descending stairs	| [stepByStep](#stepByStep) | 7 (under integration) | no |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
@@ -141,6 +141,16 @@ The hyperlinks refer to:
 * integrated: 1 protocol
   * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)  
 
+#### rrd
+
+* [code](https://github.com/eurobench/rrd_pi_slope), 
+* current state: pending on validating the Docker images 
+* integrated protocol:
+  * [Kinematics of stair walking of non-impared individuals](https://15.237.22.1/protocols/info/71)
+  * [Kinematics of inclined walking of non-impared individuals](https://15.237.22.1/protocols/info/70)
+  * PDF uploaded.
+
+
 #### udbenchmarking
 
 * [code](https://github.com/nickkluft/udbenchmark_PIs),
@@ -211,15 +221,6 @@ The hyperlinks refer to:
 * integrated : 1 protocol, PDF inserted
   * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
 
-#### rrd
-
-* [code](https://github.com/eurobench/rrd_pi_slope), 
-* current state: pending on validating the Docker images 
-* integrated protocol:
-  * [Kinematics of stair walking of non-impared individuals](https://15.237.22.1/protocols/info/71)
-  * [Kinematics of inclined walking of non-impared individuals](https://15.237.22.1/protocols/info/70)
-  * **NO PDF**
-
 ### Under progress
 
 #### beast
@@ -247,6 +248,29 @@ The hyperlinks refer to:
   * excel sheet check
 * integrated: **NO PROTOCOL**
 
+#### stepByStep
+
+* [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
+  [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
+  [second repo](https://github.com/STEPbySTEPproj/HF_metrics)
+  [template](data/stepByStep/stepByStep.xlsx),
+  [yaml](data/stepByStep.yaml)
+* current state:
+  * code only covering the biomechanics protocol.
+  * first version of HF metrics.
+  * Other are still missing
+* Integrated: 7 protocols:
+  * [Walking on stair: biomechanical analysis](https://15.237.22.1/protocols/info/60)
+  * [Walking on stairs: dual task protocol](https://15.237.22.1/protocols/info/61)
+  * [Walking on stair: User Exoskeleton Interaction Observation](https://15.237.22.1/protocols/info/62)
+  * [Walking on stairs: Local Perceived Pressure Questionnaire](https://15.237.22.1/protocols/info/63)
+
+  * [Combined protocol](https://15.237.22.1/protocols/info/64)
+  * [Walking on stairs: emg analysis](https://15.237.22.1/protocols/info/65)
+  * [Walking on stairs: ground and handrail reaction forces](https://15.237.22.1/protocols/info/66)
+  * Only the biomechanical protocol has manual and code implemented.
+
+* integrated: **NO PROTOCOL**
 ### Very early stage
 
 #### dysturbance
@@ -285,18 +309,7 @@ The hyperlinks refer to:
   * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
 
-#### stepByStep
 
-* [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
-  [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
-  [second repo](https://github.com/STEPbySTEPproj/HF_metrics)
-  [template](data/stepByStep/stepByStep.xlsx),
-  [yaml](data/stepByStep.yaml)
-* current state:
-  * code only covering the biomechanics protocol.
-  * first version of HF metrics.
-  * Other are still missing
-* integrated: **NO PROTOCOL**
 
 #### csic manipulation
 
