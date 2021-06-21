@@ -27,7 +27,7 @@ protocol:
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
-      The user must know number of PI's, number of subjects, length and
+      The user must know number of PI''s, number of subjects, length and
       distance between the walls, number of runs and number of assiatnce levels
       of wearable robot before starting the test.
       Once the Testbed is configured to the desired scenario.
@@ -171,7 +171,7 @@ protocol:
           on the testbed.
           In addition, it will serve as a platform to collect the user
           feedback via questionnaires (digitally)."
-      - description: "Select the number of PI's, runs, subjects"
+      - description: "Select the number of PI''s, runs, subjects"
         detail: "To ensure the successfull testing this information is vital.
           The testing process can be flexible where a test manager can know
           number of PI’s evaluated during the TestEd test session.
@@ -213,7 +213,7 @@ protocol:
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
-      The user must know number of PI's, number of subjects, length and
+      The user must know number of PI''s, number of subjects, length and
       distance between the walls, number of runs and number of assiatnce levels
       of wearable robot before starting the test.
       Once the Testbed is configured to the desired scenario.
@@ -355,7 +355,7 @@ protocol:
           on the testbed.
           In addition, it will serve as a platform to collect the user
           feedback via questionnaires (digitally)."
-      - description: "Select the number of PI's, runs, subjects"
+      - description: "Select the number of PI''s, runs, subjects"
         detail: "To ensure the successfull testing this information is vital.
           The testing process can be flexible where a test manager can know
           number of PI’s evaluated during the TestEd test session.
@@ -397,7 +397,7 @@ protocol:
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
-      The user must know number of PI's, number of subjects, length and
+      The user must know number of PI''s, number of subjects, length and
       distance between the walls, number of runs and number of assiatnce levels
       of wearable robot before starting the test.
       Once the Testbed is configured to the desired scenario.
@@ -541,7 +541,7 @@ protocol:
           on the testbed.
           In addition, it will serve as a platform to collect the user
           feedback via questionnaires (digitally)."
-      - description: "Select the number of PI's, runs, subjects"
+      - description: "Select the number of PI''s, runs, subjects"
         detail: "To ensure the successfull testing this information is vital.
           The testing process can be flexible where a test manager can know
           number of PI’s evaluated during the TestEd test session.
