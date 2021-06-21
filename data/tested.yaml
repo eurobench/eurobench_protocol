@@ -64,6 +64,7 @@ protocol:
       - name: gender
         definition: Subject gender (1 male 0 female)
         type: Boolean
+        range: [0, 1]
         unit: na
       - name: assistance_level
         definition: Assistance device assistance (1, 2, 3, 4 - low, med, high ,
@@ -435,6 +436,7 @@ protocol:
       - name: gender
         definition: Subject gender (1 male 0 female)
         type: Boolean
+        range: [0, 1]
         unit: na
       - name: assistance_level
         definition: Assistance device assistance (1, 2, 3, 4 - low, med, high ,
