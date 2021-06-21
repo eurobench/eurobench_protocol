@@ -241,13 +241,14 @@ protocol:
         range: [0.6, 1.5]
         unit: m
       - name: subject_weight
-        definition: Subject weight
+        definition: "Subject weight"
         type: double
         range: [15, 150]
         unit: kg
       - name: gender
-        definition: Subject gender (1 male 0 female)
-        type: Boolean
+        definition: "Subject gender (1 male 0 female)"
+        type: boolean
+        range: [0, 1]
         unit: na
       - name: assistance_level
         definition: Assistance device assistance (1, 2, 3, 4 - low, med, high ,
