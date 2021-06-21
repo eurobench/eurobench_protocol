@@ -231,7 +231,7 @@ protocol:
       - standing
       - sitting
       - maintaining posture in industrial use-case
-    bipedal_system: [Prosthesis, exoskeleton, humans]
+    bipedal_system: [Prosthesis, exoskeleton, human]
     pi_algo:
     duration: 20-30s/run/subject
     controlled_variables:
@@ -417,7 +417,7 @@ protocol:
       - standing
       - sitting
       - maintaining posture in industrial use-case
-    bipedal_system: [Prosthesis, exoskeleton, humans]
+    bipedal_system: [Prosthesis, exoskeleton, human]
     pi_algo:
     duration: 20-30s/run/subject
     controlled_variables:
