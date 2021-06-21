@@ -1,11 +1,13 @@
 ---
+user_name: "csic"
 scenario:
   name: "Irregular terrain"
   description: "Walking through different configurable irregular terrains."
   image: img/img1.png
 
 protocol:
-  - name: "csic_irregular"
+  - id: 51
+    name: "csic_irregular"
     name_readable: "Walking over irregular terrains"
     definition: "Passing through the specific testbed that can hold fourteen
       different irregular terrain conditions.
@@ -161,7 +163,7 @@ pi_algo:
       - FeetTrajectories_plano01.csv
       - Anthropometry.yaml
     language: octave
-    implemented: false
+    implemented: true
   - name: walk_ratio
     description: Walking ratio algorithm
     url_paper: https://www.researchgate.net/publication/51180936_Walk_ratio_step_lengthcadence_as_a_summary_index_of_neuromotor_control_of_gait_Application_to_multiple_sclerosis
@@ -176,7 +178,7 @@ pi_algo:
       - ./run_pi_walk_ratio
       - GaitParameters_noExo.yaml
     language: octave
-    implemented: false
+    implemented: true
   - name: variability
     description: Gait parameters variability algorithm
     url_paper: undef
@@ -207,4 +209,4 @@ pi_algo:
       - ./run_pi_ratio_index
       - GaitParameters_noExo.yaml
     language: octave
-    implemented: false
+    implemented: true
