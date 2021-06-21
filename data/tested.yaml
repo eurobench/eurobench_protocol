@@ -22,7 +22,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "tested_narrow_auto"
+  - id: 49
+    name: "tested_narrow_auto"
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
@@ -392,7 +393,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
-
   - name: "tested_narrow_aero"
     name_readable: "Industrial Use-Cases in Narrow Spaces"
     definition: "This protocol helps to benchmark the new wearable technologies
