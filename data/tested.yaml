@@ -1,5 +1,5 @@
 ---
-user_nam3: "tested"
+user_name: "tested"
 scenario:
   name: "Industrial use cases"
   description: "TestEd is the testbed to simulate the industrial narrow space
