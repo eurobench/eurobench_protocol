@@ -116,6 +116,18 @@ The hyperlinks refer to:
     * [Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/55)
     * [Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/56)
 
+#### csic_irregular_terrain
+
+* [code](https://github.com/AdrianaTorres/Irregular_Terrains),
+  [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
+  [docker](https://hub.docker.com/r/eurobenchtest/pi_csic_irregular),
+  [template](data/csic-irregular/csic-irregular-terrain.xlsx),
+  [yaml](data/csic_irregular.yaml)
+* current state (26/01):
+  * various issue opened, but the docker image is uploaded
+* integrated: 1 protocol, **NO PDF**
+  * [Walking over irregular terrains](https://15.237.22.1/protocols/info/51)
+
 #### madrob
 
 * [code](https://github.com/madrob-beast/madrob_beast_pi),
@@ -235,18 +247,6 @@ The hyperlinks refer to:
 * integrated: 1 protocol, pdf uploaded
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
 
-#### csic_irregular_terrain
-
-* [code](https://github.com/AdrianaTorres/Irregular_Terrains),
-  [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
-  [docker](https://hub.docker.com/r/eurobenchtest/pi_csic_irregular),
-  [template](data/csic-irregular/csic-irregular-terrain.xlsx),
-  [yaml](data/csic_irregular.yaml)
-* current state (26/01):
-  * verify input data file
-  * data collection check
-  * excel sheet check
-* integrated: **NO PROTOCOL**
 
 #### stepByStep
 
