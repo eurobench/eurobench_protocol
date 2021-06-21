@@ -279,7 +279,7 @@ protocol:
     has_multiple_subject: false
   - id: 64
     name: "sbs_hf_combined"
-    name_readable: "Walking on stairs: Local Perceived Pressure Questionnaire"
+    name_readable: "Combined protocol"
     definition: "The protocol combines the dual task protocol, the User
       Exoskeleton Interaction Observation and the Local Perceived Pressure
       Questionnaire."
