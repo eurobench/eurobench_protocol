@@ -48,7 +48,7 @@ protocol:
       - sitting
       - maintaining posture in industrial use-case
     bipedal_system: [Prosthesis, exoskeleton, human]
-    pi_algo:
+    pi_algo: [pi_hrmonitoring, pi_metaboliccost, pi_chrono, pi_balance, pi_rangeofmotion, pi_questionnaire, pi_borgscale10]
     duration: 20-30s/run/subject
     controlled_variables:
       - name: distance_automotive
@@ -233,7 +233,7 @@ protocol:
       - sitting
       - maintaining posture in industrial use-case
     bipedal_system: [Prosthesis, exoskeleton, human]
-    pi_algo:
+    pi_algo: [pi_hrmonitoring, pi_metaboliccost, pi_chrono, pi_balance, pi_rangeofmotion, pi_questionnaire, pi_borgscale10]
     duration: 20-30s/run/subject
     controlled_variables:
       - name: distance_automotive
@@ -420,7 +420,7 @@ protocol:
       - sitting
       - maintaining posture in industrial use-case
     bipedal_system: [Prosthesis, exoskeleton, human]
-    pi_algo:
+    pi_algo: [pi_hrmonitoring, pi_metaboliccost, pi_chrono, pi_balance, pi_rangeofmotion, pi_questionnaire, pi_borgscale10]
     duration: 20-30s/run/subject
     controlled_variables:
       - name: distance_automotive
