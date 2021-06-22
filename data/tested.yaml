@@ -732,8 +732,8 @@ pi_algo:
     docker_host: eurobenchtest/pi_ctag:v0.0.0
     docker_name: eurobenchtest/pi_ctag:v0.0.0
     pi: [hrmonitoring]
-    input_files: [balance.csv, subject_info.yaml]
-    input_command: [./run_pi_balance, balance.csv, subject_info.yaml]
+    input_files: [hrv.csv]
+    input_command: [./run_pi_hrMonitoring, hrv.csv]
     language: octave
   - name: pi_metaboliccost
     description: undef
