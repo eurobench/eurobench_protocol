@@ -30,7 +30,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Ascending/Descending slopes	| Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
 | Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1 | yes |
-| Moving in narrow spaces	| [tested](#tested) | 1 (no pdf) | no |
+| Moving in narrow spaces	| [tested](#tested) | 3 (no pdf) | no |
 | Opening closing doors	| Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
