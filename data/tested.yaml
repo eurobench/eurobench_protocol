@@ -24,7 +24,7 @@ scenario:
 protocol:
   - id: 49
     name: "tested_narrow_auto"
-    name_readable: "Industrial Use-Cases in Narrow Spaces"
+    name_readable: "Industrial Use-Cases in Narrow Spaces (Auto)"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
       The user must know number of PI''s, number of subjects, length and
@@ -211,7 +211,7 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
   - name: "tested_narrow_cont"
-    name_readable: "Industrial Use-Cases in Narrow Spaces"
+    name_readable: "Industrial Use-Cases in Narrow Spaces (Cont)"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
       The user must know number of PI''s, number of subjects, length and
@@ -396,7 +396,7 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
   - name: "tested_narrow_aero"
-    name_readable: "Industrial Use-Cases in Narrow Spaces"
+    name_readable: "Industrial Use-Cases in Narrow Spaces (Aero)"
     definition: "This protocol helps to benchmark the new wearable technologies
       for narrow workspaces.
       The user must know number of PI''s, number of subjects, length and
