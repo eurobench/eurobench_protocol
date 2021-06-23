@@ -240,10 +240,7 @@ pi_algo:
       - mechanical_energy
       - cost_transport
       - human_likelyness
-    input_files: [robot.yaml, experiment.yaml]
-    input_command:
-      - ./run_pi
-      - robot.yaml
-      - experiment.yaml
+    input_files: []
+    input_command: []
     language: python
     implemented: false

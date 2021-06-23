@@ -53,7 +53,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
 | Ascending/Descending slopes	| Eurobench-UHEI | under dev
 | Ascending/Descending stairs	| [Eurobench-Waterloo](#waterloo) | 5 | under dev |
-| Walking over irregular terrains	| Eurobench-PAL | under dev
+| Walking over irregular terrains	| [Eurobench-PAL](#pal) | 3 | under dev |
 | Walking over soft terrains | discarded | under dev
 | Overcoming obstacles | Eurobench-PAL | under dev
 | Standing during manipulation | Eurobench-Waterloo | under dev
@@ -304,7 +304,6 @@ The hyperlinks refer to:
   * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
 
-
 #### csic manipulation
 
 * [code](https://github.com/AdrianaTorres/Manipulation),
@@ -312,6 +311,16 @@ The hyperlinks refer to:
 * current state:
   * 22/12: very early stage.
 * integrated: **NO PROTOCOL**
+
+#### pal
+
+Related to humanoid
+
+* Irregular scenario
+  * [yaml file](data/pal_irregular.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
 
 #### uhei
 
@@ -329,3 +338,4 @@ Related to humanoid
   * [yaml file](data/waterloo_stairs.yaml)
   * Contains 5 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
