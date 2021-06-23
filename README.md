@@ -17,7 +17,6 @@ Relevant links:
 
 Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
-
 ## General view on embedded protocols
 
 ### Wearable
@@ -25,23 +24,23 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Name | Who | protocol uploaded  | PI uploaded |
 | ---- | --- | ------------------ | ----------- |
 | Walking/Standing on a moving surface | [beat](#beat) | 7 | no |
-| Walking on treadmill	| [Bestable](#bestable) and treadmill | 1 | yes |
-| Walking with crutches	 | [Bullet](#bullet) | 2 (missing pdf) | yes |
-| Ascending/Descending slopes	| Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
+| Walking on treadmill | [Bestable](#bestable) and treadmill | 1 | yes |
+| Walking with crutches | [Bullet](#bullet) | 2 (missing pdf) | yes |
+| Ascending/Descending slopes | Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
 | Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
-| Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1 | yes |
-| Moving in narrow spaces	| [tested](#tested) | 3 (no pdf) | no |
-| Opening closing doors	| Eurobench-CSIC | 0
+| Characterization of the effects of the exoskeleton over muscle coordination | [Pepato](#pepato) | 1 | yes |
+| Moving in narrow spaces | [tested](#tested) | 3 (no pdf) | no |
+| Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
-| Ascending/Descending stairs	| [stepByStep](#stepByStep) | 7 (under integration) | no |
+| Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
 | Standing during manipulation | Eurobench-CSIC | 0 | no
 | Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (missing pdf) | yes
-| Characterization of user experience during exoskeleton-assisted walking |	[Experience](#experience) | 2 | no
-| Robot Actuation characterization system	| Forecast | under progress | no
+| Characterization of user experience during exoskeleton-assisted walking | [Experience](#experience) | 2 | no
+| Robot Actuation characterization system | Forecast | under progress | no
 
 ### Humanoid
 
@@ -49,13 +48,13 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | ---- | --- | ------------------ | ----------- |
 | Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | under progress |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
-| Walking on flat ground	|Eurobench-UHEI | 1 | no |
+| Walking on flat ground |Eurobench-UHEI | 1 | no |
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
-| Ascending/Descending slopes	| Eurobench-UHEI | under dev
-| Ascending/Descending stairs	| [Eurobench-Waterloo](#waterloo) | 5 | under dev |
-| Walking over irregular terrains	| [Eurobench-PAL](#pal) | 3 | under dev |
-| Walking over soft terrains | discarded | under dev
-| Overcoming obstacles | Eurobench-PAL | under dev
+| Ascending/Descending slopes | Eurobench-UHEI | under dev
+| Ascending/Descending stairs | [Eurobench-Waterloo](#waterloo) | 5 | under dev |
+| Walking over irregular terrains | [Eurobench-PAL](#pal) | 3 | under dev |
+| Walking over soft terrains | *discarded* |||
+| Overcoming obstacles | [Eurobench-PAL](#pal) | 3 |under dev
 | Standing during manipulation | Eurobench-Waterloo | under dev
 | Picking and carrying objects | Eurobench-Waterloo | under dev
 | Walking on a treadmill | Eurobench-IIT and Treadmill | under dev
@@ -318,6 +317,11 @@ Related to humanoid
 
 * Irregular scenario
   * [yaml file](data/pal_irregular.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Overcoming obstacle
+  * [yaml file](data/pal_obstacles.yaml)
   * Contains 3 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**

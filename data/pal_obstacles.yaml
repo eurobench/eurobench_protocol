@@ -1,64 +1,89 @@
 ---
 user_name: "PAL"
 scenario:
-  name: "Walking over irregular terrains with Humanoids"
-  description: "The robot must cross the platform from one side to the other while the robot is stepping over the different oriented
-platforms, while maintaining a safe walking trajectory."
+  name: "Overcoming obstacle with Humanoids"
+  description: ":The robot walks on flat ground stepping over a given set of
+    obstacles with different heights and widths."
   image:
 
 protocol:
   - id: undef
-    name: "pal_irregular_open"
-    name_readable: "Walking over irregular terrains, open trial"
-    definition: "The robot crosses the platform.
+    name: "pal_obstacles_standard"
+    name_readable: "Overcoming obstacles of standard shape"
+    definition: "The robot steps over one object of a certain height and width.
       Not yet implemented."
-    image: pal/img/pal_irregular.png
-    keywords: [irregular, humanoid robot]
+    image: pal/img/pal_obstacles.png
+    keywords: [obstacles, humanoid robot]
     bipedal_system: [humanoid]
-    pi_algo: pal_irregular
+    pi_algo: pal_obstacles
     duration: "undef"
     testbed:
-      - item: Irregular terrain
+      - item: Testbed consists of various objects of different width and height
+          which can be combined to different configurations
         type: undef
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
   - id: undef
-    name: "pal_irregular_fixed_vel"
-    name_readable: "Walking over irregular terrains, fixed velocity"
-    definition: "The robot crosses the platform at a certain velocity.
+    name: "pal_obstacles_various"
+    name_readable: "Overcoming obstacles of various shape"
+    definition: "The robot steps over a certain amount of objects with different
+      heights and widths.
       Not yet implemented."
-    image: pal/img/pal_irregular.png
-    keywords: [irregular, humanoid robot]
+    image: pal/img/pal_obstacles.png
+    keywords: [obstacles, humanoid robot]
     bipedal_system: [humanoid]
-    pi_algo: pal_irregular
+    pi_algo: pal_obstacles
     duration: "undef"
     testbed:
-      - item: Irregular terrain
+      - item: Testbed consists of various objects of different width and height
+          which can be combined to different configurations
         type: undef
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-- id: undef
-    name: "pal_irregular_endurance"
-    name_readable: "Walking over irregular terrains, endurance"
-    definition: "The robot crosses the platform for a certain amount of time.
+  - id: undef
+    name: "pal_obstacles_velocity"
+    name_readable: "Overcoming obstacles with desired velocity"
+    definition: "The robot steps over a certain amount of different objects
+    with different heights and widths at a certain velocity.
       Not yet implemented."
-    image: pal/img/pal_irregular.png
-    keywords: [irregular, humanoid robot]
+    image: pal/img/pal_obstacles.png
+    keywords: [obstacles, humanoid robot]
     bipedal_system: [humanoid]
-    pi_algo: pal_irregular
+    pi_algo: pal_obstacles
     duration: "undef"
     testbed:
-      - item: Irregular terrain
+      - item: Testbed consists of various objects of different width and height
+          which can be combined to different configurations
         type: undef
         file_sheet: na
-    has_multiple_run: true
+    has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
 pi:
+  - name: max_height
+    name_readable: "Maximum Height"
+    description: "maximum height of an obstacle the robot can walk over"
+    unit: m
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: max_width
+    name_readable: "Maximum width"
+    description: "maximum width of an obstacle the robot can walk over"
+    unit: m
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
   - name: execution_time
     name_readable: "Execution time"
     description: "Time it takes to execute the trajectory"
@@ -141,13 +166,15 @@ pi:
     inter_subject_aggregation: undef.
 
 pi_algo:
-  - name: pal_irregular
-    description: Benchmarking toolkit to benchmark irregular terrain walking by humanoids
+  - name: pal_obstacles
+    description: Benchmarking toolkit to benchmark overcoming obstacles by humanoids
     url_paper: undef
     url_code: undef
     docker_host: undef
     docker_name: undef
     pi:
+      - max_height
+      - max_width
       - execution_time
       - max_repet
       - success
