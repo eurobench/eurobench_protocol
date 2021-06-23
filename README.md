@@ -52,7 +52,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking on flat ground	|Eurobench-UHEI | 1 | no |
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
 | Ascending/Descending slopes	| Eurobench-UHEI | under dev
-| Ascending/Descending stairs	| Eurobench-Waterloo | under dev
+| Ascending/Descending stairs	| [Eurobench-Waterloo](#waterloo) | 5 | under dev |
 | Walking over irregular terrains	| Eurobench-PAL | under dev
 | Walking over soft terrains | discarded | under dev
 | Overcoming obstacles | Eurobench-PAL | under dev
@@ -63,7 +63,6 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Moving in narrow spaces	| discarded | under dev
 | Standing on a moving surface | [COMTEST](#comtest) | 0 | no |
 | Walking/Standing during pushes | [Dysturbance](#disturbance) | 4 | no |
-
 
 ## Code integration status
 
@@ -140,7 +139,6 @@ The hyperlinks refer to:
 * A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
 * documentation: PDF available. Available from the github repo. Image available
 
-
 #### pepato
 
 * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
@@ -151,17 +149,16 @@ The hyperlinks refer to:
   [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw),
   [manual](data/pepato/manual/description_PEPATO.pdf)
 * integrated: 1 protocol
-  * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)  
+  * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)
 
 #### rrd
 
-* [code](https://github.com/eurobench/rrd_pi_slope), 
-* current state: pending on validating the Docker images 
+* [code](https://github.com/eurobench/rrd_pi_slope),
+* current state: pending on validating the Docker images
 * integrated protocol:
   * [Kinematics of stair walking of non-impared individuals](https://15.237.22.1/protocols/info/71)
   * [Kinematics of inclined walking of non-impared individuals](https://15.237.22.1/protocols/info/70)
   * PDF uploaded.
-
 
 #### udbenchmarking
 
@@ -208,7 +205,6 @@ The hyperlinks refer to:
   * [Step perturbation - even surface](http://15.237.22.1/protocols/info/24)
   * [Stepping on place - even surface](http://15.237.22.1/protocols/info/18)
   * [Sinusoidal perturbation - even surface](http://15.237.22.1/protocols/info/29)
-
 #### tested
 
 * [code](https://github.com/jamatics/pi_ctag),
@@ -246,7 +242,6 @@ The hyperlinks refer to:
 * current state: waiting for reference data set
 * integrated: 1 protocol, pdf uploaded
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
-
 
 #### stepByStep
 
@@ -310,7 +305,6 @@ The hyperlinks refer to:
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
 
 
-
 #### csic manipulation
 
 * [code](https://github.com/AdrianaTorres/Manipulation),
@@ -326,4 +320,12 @@ The hyperlinks refer to:
 * no Excel sheet available
 * 25/03: repo changed, waiting for call example and input files.
 * integrated: **NO PROTOCOL**
- 
+
+#### waterloo
+
+Related to humanoid
+
+* Stair scenario
+  * [yaml file](data/waterloo_stairs.yaml)
+  * Contains 5 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
