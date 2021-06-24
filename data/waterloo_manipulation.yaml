@@ -1,0 +1,222 @@
+---
+user_name: "Waterloo"
+scenario:
+  name: "standing during manipulation"
+  description: "The robot must maintain balance while picking and placing
+    different objects.
+    All objects protocols will be tested with and withoutmarkers on the object
+    to better assess perception."
+  image:
+
+protocol:
+  - id: undef
+    name: "waterloo_manip_place_in_box"
+    name_readable: "Standing during manipulation: PLace in box"
+    definition: "The robot picks a certain amount of objects and places them in
+    a correct box according to the color or shape of the object.
+    The boxes are of different heights and widths.
+    The objects are of different heights and widths, with the same weight."
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: color coded shelves with coded targets
+        type: ns
+        file_sheet: na
+      - item: boxes with different weights and shapes
+        type: ns
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: undef
+    name: "waterloo_manip_place_on_shelf"
+    name_readable: "Standing during manipulation: Place on shelf"
+    definition: "The robot picks a certain amount of objects and places them on
+    the correct shelf.
+    Shelfs are at a different height.
+    The objects are of different heights and widths, with the same weight."
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: color coded shelves with coded targets
+        type: ns
+        file_sheet: na
+      - item: boxes with different weights and shapes
+        type: ns
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: undef
+    name: "waterloo_manip_max"
+    name_readable: "Standing during manipulation: Max weight and height"
+    definition: "The robot picks a certain amount of objects and places
+    them on a shelf at a height of 180cm.
+    The objects are of the same size but with increasing weights"
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: color coded shelves with coded targets
+        type: ns
+        file_sheet: na
+      - item: boxes with different weights and shapes
+        type: ns
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+pi:
+  - name: success
+    name_readable: "Success rate"
+    description: "Ratio of correctly placed objects (correct shelf)"
+    unit: undef
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: average_time
+    name_readable: "Average time"
+    description: "Average time until an object has been placed correctly"
+    unit: s
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: max_weight
+    name_readable: "Maximum weight"
+    description: "Maximum weight of an object the robot can pick and place
+      correctly"
+    unit: kg
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: max_height
+    name_readable: "Maximum height"
+    description: "Maximum height where object can be placed and recovered"
+    unit: m
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: min_height
+    name_readable: "Minimum height"
+    description: "Minimum height where object can be placed and recovered"
+    unit: m
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: object_shape
+    name_readable: "Object shape"
+    description: "Maximum height, width, depth of an object the robot can pick"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: precision_error
+    name_readable: "Precision error"
+    description: "Object placement error from the target placement location"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: average_placement_time
+    name_readable: "Average placement time"
+    description: "Average time until an object has been placed correctly"
+    unit: s
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: energy_consumption
+    name_readable: "Energy consumption"
+    description: "Total energy consumed during trial"
+    unit: J
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cost_operation
+    name_readable: "Cost of operation"
+    description: "Average energy consumed per object placement and weight of
+      object"
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: human_likeness
+    name_readable: "Human likelyness"
+    description: "Spatio-temporal comparison of kinematic indicators"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+pi_algo:
+  - name: waterloo_manip
+    description: Benchmarking toolkit to benchmark manipulation by humanoids
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - success
+      - average_time
+      - max_weight
+      - max_height
+      - min_height
+      - object_shape
+      - precision_error
+      - average_placement_time
+      - energy_consumption
+      - cost_operation
+      - human_likeness
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false

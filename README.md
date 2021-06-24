@@ -55,7 +55,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking over irregular terrains | [Eurobench-PAL](#pal) | 3 | under dev |
 | Walking over soft terrains | *discarded* |||
 | Overcoming obstacles | [Eurobench-PAL](#pal) | 3 |under dev
-| Standing during manipulation | Eurobench-Waterloo | under dev
+| Standing during manipulation | [Eurobench-Waterloo](#waterloo) | 3 | under dev |
 | Picking and carrying objects | Eurobench-Waterloo | under dev
 | Walking on a treadmill | Eurobench-IIT and Treadmill | under dev
 | Walking on laterally inclined surfaces | Eurobench-IIT | under dev
@@ -341,5 +341,10 @@ Related to humanoid
 * Stair scenario
   * [yaml file](data/waterloo_stairs.yaml)
   * Contains 5 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Manipulation scenario
+  * [yaml file](data/waterloo_manipulation.yaml)
+  * Contains 3 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**

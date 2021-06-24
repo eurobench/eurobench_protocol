@@ -41,7 +41,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-- id: undef
+  - id: undef
     name: "pal_irregular_endurance"
     name_readable: "Walking over irregular terrains, endurance"
     definition: "The robot crosses the platform for a certain amount of time.
