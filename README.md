@@ -56,7 +56,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking over soft terrains | *discarded* |||
 | Overcoming obstacles | [Eurobench-PAL](#pal) | 3 |under dev
 | Standing during manipulation | [Eurobench-Waterloo](#waterloo) | 3 | under dev |
-| Picking and carrying objects | Eurobench-Waterloo | under dev
+| Picking and carrying objects | [Eurobench-Waterloo](#waterloo) | 4 | under dev |
 | Walking on a treadmill | Eurobench-IIT and Treadmill | under dev
 | Walking on laterally inclined surfaces | Eurobench-IIT | under dev
 | Moving in narrow spaces	| discarded | under dev
@@ -334,6 +334,12 @@ Related to humanoid
 * 25/03: repo changed, waiting for call example and input files.
 * integrated: **NO PROTOCOL**
 
+* Walking on slope
+  * [yaml file](data/uhei_slope.yaml)
+  * Contains 5 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+
 #### waterloo
 
 Related to humanoid
@@ -346,5 +352,10 @@ Related to humanoid
 * Manipulation scenario
   * [yaml file](data/waterloo_manipulation.yaml)
   * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Pick and carrying scenario
+  * [yaml file](data/waterloo_pick.yaml)
+  * Contains 4 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**

@@ -1,0 +1,150 @@
+---
+user_name: "Waterloo"
+scenario:
+  name: "Picking and carrying objects"
+  description: "The robot maintains balance when picking up and carrying an
+  object at a certain distance.
+  The test is finished if the robot has carried all objects or can’t overcome
+  the weight of the current object.
+  The test is repeated with and without markers on the objects to better assess
+  the robot’s perception"
+  image:
+
+protocol:
+  - id: undef
+    name: "waterloo_pick_basic"
+    name_readable: "Picking and Carrying objects: basic carrying"
+    definition: "The robot picks up and carries a specific object of certain
+      weight at a certain distance.
+      The test is finished if the robot has carried the object or cannot
+      overcome the weight of the object"
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: Different objects of different color and weight
+        type: na
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: undef
+    name: "waterloo_pick_increase"
+    name_readable: "Picking and Carrying objects: increasing weight carrying"
+    definition: "The robot picks up and carries different objects of increasing
+      weights at a certain distance.
+      The test is finished if the robot has carried all objects or cannot
+      overcome the weight of the current object."
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: Different objects of different color and weight
+        type: na
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: undef
+    name: "waterloo_pick_increase_vel"
+    name_readable: "Picking and Carrying objects: increasing weight at given
+      velocity"
+    definition: "The robot picks up and carries different objects of increasing
+      weights at a certain distance at different (increasing) desired
+      velocities.
+      The test is finished if the robot has carried all objects or cannot
+      overcome the weight of the current object at the desired velocity"
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: Different objects of different color and weight
+        type: na
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: undef
+    name: "waterloo_pick_endurance"
+    name_readable: "Picking and Carrying objects: endurance carrying"
+    definition: "The robot picks up and carries a specific object of a certain
+    weight at a desired velocity for a certain amount of minutes.
+    The test is finished if the robot cannot walk any further or the time has
+    passed."
+    image: waterloo/img/waterloo_manip.png
+    keywords: [stair, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_manip
+    duration: "undef"
+    testbed:
+      - item: Ikea with shelves at different heights and positions
+        type: na
+        file_sheet: na
+      - item: Different objects of different color and weight
+        type: na
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+pi:
+  - name: max_weight
+    name_readable: "Maximum weight"
+    description: "Weight of the object which can be picked up and carried"
+    unit: kg
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: picking_time
+    name_readable: "Picking time"
+    description: "Time until an object has been picked up"
+    unit: s
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: walking_with_weight
+    name_readable: "walking with weight"
+    description: "Walking speed while carrying an object"
+    unit: ms
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+pi_algo:
+  - name: waterloo_pick
+    description: Benchmarking toolkit to benchmark object picking by humanoids
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - max_weight
+      - picking_time
+      - walking_with_weight
+      - 
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false
