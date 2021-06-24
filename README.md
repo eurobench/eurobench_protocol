@@ -57,9 +57,9 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Overcoming obstacles | [Eurobench-PAL](#pal) | 3 |under dev
 | Standing during manipulation | [Eurobench-Waterloo](#waterloo) | 3 | under dev |
 | Picking and carrying objects | [Eurobench-Waterloo](#waterloo) | 4 | under dev |
-| Walking on a treadmill | Eurobench-IIT and Treadmill | under dev
-| Walking on laterally inclined surfaces | Eurobench-IIT | under dev
-| Moving in narrow spaces	| discarded | under dev
+| Walking on a treadmill | [Eurobench-IIT and Treadmill](#iit) | 3 | under dev
+| Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | under dev
+| Moving in narrow spaces	| discarded
 | Standing on a moving surface | [COMTEST](#comtest) | 0 | no |
 | Walking/Standing during pushes | [Dysturbance](#disturbance) | 4 | no |
 
@@ -267,6 +267,25 @@ The hyperlinks refer to:
 * integrated: **NO PROTOCOL**
 ### Very early stage
 
+#### csic manipulation
+
+* [code](https://github.com/AdrianaTorres/Manipulation),
+  [template](data/csic-manipulation/csic-manipulation.xlsx)
+* current state:
+  * 22/12: very early stage.
+* integrated: **NO PROTOCOL**
+
+##### comtest
+
+* [code](https://github.com/VittorioFreiburg/COMTEST),
+  [template](data/comtest/comtest_v5.xlsx)
+* octave code. Still requires significant afjustment.
+* current state:
+  * ping 19/02
+* integrated: 2 protocols (to be strongly revised), **NO PDF**
+  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
+  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
+
 #### dysturbance
 
 * [code](https://github.com/CentroEPiaggio/dysturbance),
@@ -292,24 +311,20 @@ The hyperlinks refer to:
   * Not following the global spirit for metric computation.
 * integrated: **NO PROTOCOL**
 
-##### comtest
+#### iit
 
-* [code](https://github.com/VittorioFreiburg/COMTEST),
-  [template](data/comtest/comtest_v5.xlsx)
-* octave code. Still requires significant afjustment.
-* current state:
-  * ping 19/02
-* integrated: 2 protocols (to be strongly revised), **NO PDF**
-  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
-  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
+Related to humanoid
 
-#### csic manipulation
-
-* [code](https://github.com/AdrianaTorres/Manipulation),
-  [template](data/csic-manipulation/csic-manipulation.xlsx)
-* current state:
-  * 22/12: very early stage.
-* integrated: **NO PROTOCOL**
+* Walking on a treadmill
+  * [yaml file](data/iit_treadmill.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Walking on laterally inclined surface
+  * [yaml file](data/iit_inclined.yaml)
+  * Contains 1 protocol
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
 
 #### pal
 
