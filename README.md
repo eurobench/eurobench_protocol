@@ -37,7 +37,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
-| Standing during manipulation | Eurobench-CSIC | 0 | no
+| Standing during manipulation | [Eurobench-CSIC](#csic_manipulation) | 2 | under dev |
 | Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (missing pdf) | yes
 | Characterization of user experience during exoskeleton-assisted walking | [Experience](#experience) | 2 | no
 | Robot Actuation characterization system | Forecast | under progress | no
@@ -267,13 +267,17 @@ The hyperlinks refer to:
 * integrated: **NO PROTOCOL**
 ### Very early stage
 
-#### csic manipulation
+#### csic_manipulation
 
 * [code](https://github.com/AdrianaTorres/Manipulation),
   [template](data/csic-manipulation/csic-manipulation.xlsx)
+  [yaml](data/csic_manipulation.yaml)
 * current state:
   * 22/12: very early stage.
-* integrated: **NO PROTOCOL**
+  * 25/06: update to revise
+* Contains 2 protocol
+* Status:
+  * under revision.
 
 ##### comtest
 
