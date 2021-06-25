@@ -13,7 +13,7 @@ protocol:
     definition: "The robot performs one run for a standardized step height.
       Not yet implemented."
     image: waterloo/img/waterloo_stairs.png
-    keywords: [stair, humanoid robot]
+    keywords: [stair, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_stairs
     duration: "undef"
@@ -35,7 +35,7 @@ protocol:
       and a standardized step height.
       Not yet implemented."
     image: waterloo/img/waterloo_stairs.png
-    keywords: [stair, humanoid robot]
+    keywords: [stair, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_stairs
     duration: "undef"
@@ -59,7 +59,7 @@ protocol:
       if the maximum available step height is reached.
       Not yet implemented."
     image: waterloo/img/waterloo_stairs.png
-    keywords: [stair, humanoid robot]
+    keywords: [stair, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_stairs
     duration: "undef"
@@ -83,7 +83,7 @@ protocol:
       cannot walk at the current step height at a certain velocity.
       Not yet implemented."
     image: waterloo/img/waterloo_stairs.png
-    keywords: [stair, humanoid robot]
+    keywords: [stair, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_stairs
     duration: "undef"
@@ -105,7 +105,7 @@ protocol:
       different heights.
       Not yet implemented."
     image: waterloo/img/waterloo_stairs.png
-    keywords: [stair, humanoid robot]
+    keywords: [stair, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_stairs
     duration: "undef"

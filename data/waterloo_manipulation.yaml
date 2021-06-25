@@ -17,7 +17,7 @@ protocol:
     The boxes are of different heights and widths.
     The objects are of different heights and widths, with the same weight."
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"
@@ -42,7 +42,7 @@ protocol:
     Shelfs are at a different height.
     The objects are of different heights and widths, with the same weight."
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"
@@ -66,7 +66,7 @@ protocol:
     them on a shelf at a height of 180cm.
     The objects are of the same size but with increasing weights"
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"

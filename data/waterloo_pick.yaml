@@ -19,7 +19,7 @@ protocol:
       The test is finished if the robot has carried the object or cannot
       overcome the weight of the object"
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"
@@ -41,7 +41,7 @@ protocol:
       The test is finished if the robot has carried all objects or cannot
       overcome the weight of the current object."
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"
@@ -65,7 +65,7 @@ protocol:
       The test is finished if the robot has carried all objects or cannot
       overcome the weight of the current object at the desired velocity"
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"
@@ -87,7 +87,7 @@ protocol:
     The test is finished if the robot cannot walk any further or the time has
     passed."
     image: waterloo/img/waterloo_manip.png
-    keywords: [stair, humanoid robot]
+    keywords: [manipulation, humanoid]
     bipedal_system: [humanoid]
     pi_algo: waterloo_manip
     duration: "undef"
