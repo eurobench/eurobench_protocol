@@ -143,7 +143,6 @@ pi_algo:
       - max_weight
       - picking_time
       - walking_with_weight
-      - 
     input_files: []
     input_command: []
     language: python
