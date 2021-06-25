@@ -1,0 +1,370 @@
+---
+user_name: "csic"
+scenario:
+  name: "Standing during manipulation"
+  description: "Standing while reaching, grasping and manipulating objects with
+    the upper limbs."
+  image: csic-manipulation/img/csic_manipulation.jpg
+
+protocol:
+  - id: undef
+    name: "csic_manip_lower"
+    name_readable: "Standing during manipulation: lower-lifting sagittal plane"
+    definition: "Lifting a box, which could be empty or loaded with the 10% of
+      the subject’s weight, its placement on a horizontal support assembly at
+      different heights, and the final lowering phase in order to bring the box
+      back to its initial position.
+      The subject must have performed 3 lifts with an empty box as well as 3
+      lifts with a loaded one.
+      This experiment is performed in the sagittal frame and between sagittal
+      and frontal planes.
+      The testbed is a non-reflectant modular structure consisting of a fixed
+      frame and mobile bars, in order to be easily adjusted to the height of
+      the knee and of the shoulder of each subject.
+      On one hand, the fixed body is formed by 3 vertical bars, 2 of them are
+      1.75 metres-long and the third one is 2 metres-long; connected to 4
+      horizontal 1 metre-long bars at their ends.
+      Moreover, 2 more 1 metre-long bars are used to close the square at
+      floor-level in order to give more consistency to the structure.
+      On the other hand, the mobile part is made up of four 1 metre-long bars
+      fit in the fixed frame (2 bars per wall of the structure).
+      These bars are mobile thanks to its design: a guiding system which allows
+      moving the horizontal bar along the vertical ones with ease and 2 toggles
+      on each bar to avoid time-consuming screwing tasks.
+      On top of each mobile bar and at the middle region of it, there is a
+      30x50 cm wooden shelf screwed to the bar, where the box should be placed
+      during the lifting and the lowering phases."
+    image: csic-manipulation/img/csic_manip_lower.jpg
+    keywords: [manipulation, balance, stability]
+    bipedal_system: [human, prosthesis, exoskeleton]
+    pi_algo: [csic_manip]
+    duration: "2min per run"
+    controlled_variables:
+      - name: box_load
+        definition: The box can be loaded (10% of subjects weight) or not
+        type: bool
+        range: True / False
+        unit: bool
+      - name: lift_height
+        definition: Floor-to-knee, floor-to-shoulder and knee-to-shoulder
+        type: vector
+        range: na
+        unit: m
+    testbed:
+      - item: "Testbed: non-reflectant modular structure"
+        type: other
+        file_sheet: undef
+      - item: "Optoelectronic motion capture system"
+        type: sensor
+        file_sheet: "https://docs.vicon.com/display/Nexus210"
+      - item: "Loads.
+          The loaded configuration corresponds to the 10% of the body weight of
+          the subject.
+          Adjustable weights for wrist and ankle of different weight (i.e.
+          0.5 kg, 1 kg and 2 kg) are combined to get the corresponding load mass
+          that should be put inside the box."
+        type: other
+        file_sheet: "https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-0-5kg-domyos/_/R-p-152954?mc=8358970&c=AZUL_AZUL%20TURQUESA  https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-1kg-domyos/_/R-p-152952?mc=8358972&c=AMARILLO  https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-2kg-domyos/_/R-p-152955"
+
+    step_description: "No definition"
+    step_list:
+      - description: Place the optical markers onto the subject's body and take
+          the required anthropometric measurements.
+        detail: Following the VICON's "Full Body Plug in Gait" marker set
+          specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
+          and  adding 8 clusters (thighs, tibias, feet, pelvis, chest).
+      - description: Place the subject at the starting point.
+      - description: Take a static capture of the subject.
+        detail: Subject adopts the motor bike position (upright posture, both
+          arms at shoulder's height with upper arm and forearm at 90 degrees)
+          facing the modular structure.
+      - description: State the subject to grasp the box put it on a specific
+          height and bring it back to its original position for three times.
+        detail: Subjects hold the box with both hands by the handles located at
+          its sides, lift it and place it at the appropriate position, according
+          to the Lift Type variable.
+          Each time the subject leaves the box in any shelf, he/she must return
+          to the anatomic position and rest for 3 seconds.
+      - description: Randomly change the load condition of the box and decide
+          the next height to be performed.
+        detail: Researcher should follow a previously prepared order to do the
+          tests.
+          However, this order has to be different for every subject to ensure
+          the overall protocol presents the different experiemental conditions
+          at randomized order for each subject.
+      - description: Repeat the procedure starting at step 5, until completing
+          the 3 heights with and without load.
+        detail: Between different experimental conditions, ask the subject how
+          is he/she feeling.
+          The subject has 30 seconds of recovery, if needed.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+
+  - id: undef
+    name: "csic_manip_load"
+    name_readable: "Standing during manipulation: lateral load transfer"
+    definition: "Lifting a box, which could be empty or loaded with the 10% of
+      the subject’s weight, its placement on a horizontal support assembly at
+      different heights involving sagittal rotation, and the final lowering
+      phase in order to bring the box back to its initial position.
+      The subject must have performed 3 lifts with an empty box as well as
+      3 lifts with a loaded one.
+      The testbed is a non-reflectant modular structure consisting of a fixed
+      frame and mobile bars, in order to be easily adjusted to the height of
+      the knee and of the shoulder of each subject.
+      On one hand, the fixed body is formed by 3 vertical bars, 2 of them are
+      1.75 metres-long and the third one is 2 metres-long; connected to 4
+      horizontal 1 metre-long bars at their ends.
+      Moreover, 2 more 1 metre-long bars are used to close the square at
+      floor-level in order to give more consistency to the structure.
+      On the other hand, the mobile part is made up of four 1 metre-long bars
+      fit in the fixed frame (2 bars per wall of the structure).
+      These bars are mobile thanks to its design: a guiding system which allows
+      moving the horizontal bar along the vertical ones with ease and 2 toggles
+      on each bar to avoid time-consuming screwing tasks.
+      On top of each mobile bar and at the middle region of it, there is a
+      30x50 cm wooden shelf screwed to the bar, where the box should be placed
+      during the lifting and the lowering phases."
+    image: csic-manipulation/img/csic_manip_load.jpg
+    keywords: [manipulation, balance, stability]
+    bipedal_system: [human, prosthesis, exoskeleton]
+    pi_algo: [csic_manip]
+    duration: "2min per run"
+    controlled_variables:
+      - name: box_load
+        definition: The box can be loaded (10% of subjects weight) or not
+        type: bool
+        range: True / False
+        unit: bool
+      - name: lift_height
+        definition: Floor-to-knee, floor-to-shoulder and knee-to-shoulder
+        type: vector
+        range: na
+        unit: m
+    testbed:
+      - item: "Testbed: non-reflectant modular structure"
+        type: other
+        file_sheet: undef
+      - item: "Optoelectronic motion capture system"
+        type: sensor
+        file_sheet: "https://docs.vicon.com/display/Nexus210"
+      - item: "Loads.
+          The loaded configuration corresponds to the 10% of the body weight of
+          the subject.
+          Adjustable weights for wrist and ankle of different weight (i.e.
+          0.5 kg, 1 kg and 2 kg) are combined to get the corresponding load mass
+          that should be put inside the box."
+        type: other
+        file_sheet: "https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-0-5kg-domyos/_/R-p-152954?mc=8358970&c=AZUL_AZUL%20TURQUESA  https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-1kg-domyos/_/R-p-152952?mc=8358972&c=AMARILLO  https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-2kg-domyos/_/R-p-152955"
+    step_description: "No definition"
+    step_list:
+      - description: Place the optical markers onto the subject's body and take
+          the required anthropometric measurements.
+        detail: Following the VICON's "Full Body Plug in Gait" marker set
+          specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
+          and  adding 8 clusters (thighs, tibias, feet, pelvis, chest).
+      - description: Place the subject at the starting point.
+      - description: Launch the Data collection software.
+      - description: Take a static capture of the subject.
+        detail: Subject adopts the motor bike position (upright posture, both
+          arms at shoulder's height with upper arm and forearm at 90 degrees)
+          facing the modular structure.
+      - description: State the subject to grasp the box put it on a specific
+          height involving sagittal torsion and bring it back to its original
+          position three times.
+        detail: Subjects transfer the box to the shelf located at same height in
+          the perpendicular wall of the structure; in other words, they carry
+          the box from the sagittal to the frontal plane.
+          After placing it, subjects return to the anatomic position and rest
+          for 3 seconds.
+      - description: Stop the data collection when all the repetitions are done
+          and the subject is vertical.
+      - description: Randomly change the load condition of the box and decide
+          the next height to be performed.
+        detail: Researcher should follow a previously prepared order to do the
+          tests.
+          However, this order has to be different for every subject to ensure
+          the overall protocol presents the different experiemental conditions
+          at randomized  order for each subject.
+      - description: Repeat the procedure starting at step 5, until completed
+          the 2 heights with and without load.
+        detail: Between different experimental conditions, ask the subject how
+          is he/she feeling. The subject has 30 seconds of recovery, if needed.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: spine_rom
+    name_readable: "Spine Range of Motion (RoM)"
+    description: "Ratio of joint angles calculated as the exoskeleton condition
+      relative to the free condition, with load and lift type factors constant
+      within a particular ratio."
+    unit: degree
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: hip_rom
+    name_readable: "Hip Range of Motion (RoM)"
+    description: "Ratio of joint angles calculated as the exoskeleton condition
+      relative to the free condition, with load and lift type factors constant
+      within a particular ratio."
+    unit: degree
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: knee_rom
+    name_readable: "Knee Range of Motion (RoM)"
+    description: "Ratio of joint angles calculated as the exoskeleton condition
+      relative to the free condition, with load and lift type factors constant
+      within a particular ratio."
+    unit: degree
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: ankle_rom
+    name_readable: "Ankle Range of Motion (RoM)"
+    description: "Ratio of joint angles calculated as the exoskeleton condition
+      relative to the free condition, with load and lift type factors constant
+      within a particular ratio."
+    unit: degree
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: shoulder_rom
+    name_readable: "Shoulder Range of Motion (RoM)"
+    description: "Ratio of joint angles calculated as the exoskeleton condition
+      relative to the free condition, with load and lift type factors constant
+      within a particular ratio."
+    unit: degree
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: elbow_rom
+    name_readable: "Elbow Range of Motion (RoM)"
+    description: "Ratio of joint angles calculated as the exoskeleton condition
+      relative to the free condition, with load and lift type factors constant
+      within a particular ratio."
+    unit: degree
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: antepos_stability
+    name_readable: "Anteroposterior Postural Stability"
+    description: "CoM or CoP position and its displacement within the base of
+      support in the anterioposterior direction."
+    unit: "%"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: medio_stability
+    name_readable: "Mediolateral Postural Stability"
+    description: "CoM or CoP position and its displacement within the base of
+      support in the mediolateral direction."
+    unit: "%"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: performance_time
+    name_readable: "Performance_time"
+    description: "Time needed to complete the task (number of frames divided by
+      the sampling frequency) and time spent in each of the phases."
+    unit: "sec"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: spinal_load
+    name_readable: "Spinal load estimation"
+    description: "L4-L5 and L5-S1 shear and compression forces."
+    unit: "%"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: np
+    name_readable: "Number of Velocity Peaks (NP)"
+    description: "Number of peaks in the speed profile.
+      The speed profile of smooth movements are single peaked, while unsmooth
+      movements have higher number of speed peaks."
+    unit: na
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: ldlj
+    name_readable: "Log Dimensionless Jerk (LDLJ)"
+    description: "Logarithm naturalis of the dimensionless jerk."
+    unit: na
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: sparc
+    name_readable: "Spectral Arc Length (SPARC)"
+    description: "Arc length of the Fourier magnitude spectrum within the
+      frequency range 0 to 20 Hz of a given speed profile."
+    unit: na
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+pi_algo:
+  - name: csic_manip
+    description: Manipulation benchmarking algorithms
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - spine_rom
+      - hip_rom
+      - knee_rom
+      - ankle_rom
+      - shoulder_rom
+      - elbow_rom
+      - antepos_stability
+      - medio_stability
+      - performance_time
+      - spinal_load
+      - np
+      - ldlj
+      - sparc
+    input_files: []
+    input_command: []
+    language: octave
+    implemented: false
