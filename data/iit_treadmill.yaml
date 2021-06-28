@@ -1,5 +1,5 @@
 ---
-user_name: "IIT"
+user_name: "iit"
 scenario:
   name: "Walking on a treadmill"
   description: "Treadmill is for the locomotion and balancing trials as well the execution of long time endurance tests under variable
@@ -20,7 +20,7 @@ protocol:
     duration: "10 min"
     testbed:
       - item: Treadmill
-        type: na
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -38,7 +38,7 @@ protocol:
     duration: "10 min"
     testbed:
       - item: Treadmill
-        type: na
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -56,7 +56,7 @@ protocol:
     duration: "10 min"
     testbed:
       - item: Treadmill
-        type: na
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false

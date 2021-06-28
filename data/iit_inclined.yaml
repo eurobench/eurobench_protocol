@@ -1,5 +1,5 @@
 ---
-user_name: "IIT"
+user_name: "iit"
 scenario:
   name: "Walking on laterally inclined surfaces"
   description: "Testbed for walking through the laterally inclined terrains."
@@ -20,7 +20,7 @@ protocol:
     testbed:
       - item: "reconfigurable blocks that can set flat or inclined terrains for
           flexible walking test scenarios."
-        type: na
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
