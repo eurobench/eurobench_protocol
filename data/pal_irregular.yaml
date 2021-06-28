@@ -19,7 +19,7 @@ protocol:
     duration: "undef"
     testbed:
       - item: Irregular terrain
-        type: undef
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -36,7 +36,7 @@ protocol:
     duration: "undef"
     testbed:
       - item: Irregular terrain
-        type: undef
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -53,7 +53,7 @@ protocol:
     duration: "undef"
     testbed:
       - item: Irregular terrain
-        type: undef
+        type: other
         file_sheet: na
     has_multiple_run: true
     has_multiple_condition: false

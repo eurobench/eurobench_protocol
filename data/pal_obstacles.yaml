@@ -20,7 +20,7 @@ protocol:
     testbed:
       - item: Testbed consists of various objects of different width and height
           which can be combined to different configurations
-        type: undef
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -39,7 +39,7 @@ protocol:
     testbed:
       - item: Testbed consists of various objects of different width and height
           which can be combined to different configurations
-        type: undef
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -58,7 +58,7 @@ protocol:
     testbed:
       - item: Testbed consists of various objects of different width and height
           which can be combined to different configurations
-        type: undef
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
