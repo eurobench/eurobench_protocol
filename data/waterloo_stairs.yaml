@@ -1,7 +1,7 @@
 ---
 user_name: "Waterloo"
 scenario:
-  name: "Ascending / Descending stairs with Humanoids"
+  name: "Ascending // Descending stairs with Humanoids"
   description: "Walking across a given amount of consecutive ascending and
     descending steps with different step heights."
   image:

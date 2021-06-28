@@ -23,13 +23,13 @@ protocol:
     duration: "undef"
     testbed:
       - item: Ikea with shelves at different heights and positions
-        type: na
+        type: other
         file_sheet: na
       - item: color coded shelves with coded targets
-        type: ns
+        type: other
         file_sheet: na
       - item: boxes with different weights and shapes
-        type: ns
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -48,13 +48,13 @@ protocol:
     duration: "undef"
     testbed:
       - item: Ikea with shelves at different heights and positions
-        type: na
+        type: other
         file_sheet: na
       - item: color coded shelves with coded targets
-        type: ns
+        type: other
         file_sheet: na
       - item: boxes with different weights and shapes
-        type: ns
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
@@ -72,13 +72,13 @@ protocol:
     duration: "undef"
     testbed:
       - item: Ikea with shelves at different heights and positions
-        type: na
+        type: other
         file_sheet: na
       - item: color coded shelves with coded targets
-        type: ns
+        type: other
         file_sheet: na
       - item: boxes with different weights and shapes
-        type: ns
+        type: other
         file_sheet: na
     has_multiple_run: false
     has_multiple_condition: false
