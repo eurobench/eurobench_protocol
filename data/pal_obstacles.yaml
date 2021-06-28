@@ -1,5 +1,5 @@
 ---
-user_name: "PAL"
+user_name: "pal"
 scenario:
   name: "Overcoming obstacle with Humanoids"
   description: ":The robot walks on flat ground stepping over a given set of

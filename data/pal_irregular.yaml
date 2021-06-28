@@ -1,5 +1,5 @@
 ---
-user_name: "PAL"
+user_name: "pal"
 scenario:
   name: "Walking over irregular terrains with Humanoids"
   description: "The robot must cross the platform from one side to the other while the robot is stepping over the different oriented
