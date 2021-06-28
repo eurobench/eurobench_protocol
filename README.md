@@ -17,7 +17,6 @@ Relevant links:
 
 Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
-
 ## General view on embedded protocols
 
 ### Wearable
@@ -25,23 +24,23 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Name | Who | protocol uploaded  | PI uploaded |
 | ---- | --- | ------------------ | ----------- |
 | Walking/Standing on a moving surface | [beat](#beat) | 7 | no |
-| Walking on treadmill	| [Bestable](#bestable) and treadmill | 1 | yes |
-| Walking with crutches	 | [Bullet](#bullet) | 2 (missing pdf) | yes |
-| Ascending/Descending slopes	| Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
+| Walking on treadmill | [Bestable](#bestable) and treadmill | 1 | yes |
+| Walking with crutches | [Bullet](#bullet) | 2 (missing pdf) | yes |
+| Ascending/Descending slopes | Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
 | Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
-| Characterization of the effects of the exoskeleton over muscle coordination	| [Pepato](#pepato) | 1 | yes |
-| Moving in narrow spaces	| [tested](#tested) | 3 (no pdf) | no |
-| Opening closing doors	| Eurobench-CSIC | 0
+| Characterization of the effects of the exoskeleton over muscle coordination | [Pepato](#pepato) | 1 | yes |
+| Moving in narrow spaces | [tested](#tested) | 3 (no pdf) | no |
+| Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
-| Ascending/Descending stairs	| [stepByStep](#stepByStep) | 7 (under integration) | no |
+| Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
-| Standing during manipulation | Eurobench-CSIC | 0 | no
+| Standing during manipulation | [Eurobench-CSIC](#csic_manipulation) | 2 | under dev |
 | Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (missing pdf) | yes
-| Characterization of user experience during exoskeleton-assisted walking |	[Experience](#experience) | 2 | no
-| Robot Actuation characterization system	| Forecast | under progress | no
+| Characterization of user experience during exoskeleton-assisted walking | [Experience](#experience) | 2 | no
+| Robot Actuation characterization system | Forecast | under progress | no
 
 ### Humanoid
 
@@ -49,21 +48,20 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | ---- | --- | ------------------ | ----------- |
 | Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | under progress |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
-| Walking on flat ground	|Eurobench-UHEI | 1 | no |
+| Walking on flat ground |Eurobench-UHEI | 1 | no |
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
-| Ascending/Descending slopes	| Eurobench-UHEI | under dev
-| Ascending/Descending stairs	| Eurobench-Waterloo | under dev
-| Walking over irregular terrains	| Eurobench-PAL | under dev
-| Walking over soft terrains | discarded | under dev
-| Overcoming obstacles | Eurobench-PAL | under dev
-| Standing during manipulation | Eurobench-Waterloo | under dev
-| Picking and carrying objects | Eurobench-Waterloo | under dev
-| Walking on a treadmill | Eurobench-IIT and Treadmill | under dev
-| Walking on laterally inclined surfaces | Eurobench-IIT | under dev
-| Moving in narrow spaces	| discarded | under dev
+| Ascending/Descending slopes | Eurobench-UHEI | under dev
+| Ascending/Descending stairs | [Eurobench-Waterloo](#waterloo) | 5 | under dev |
+| Walking over irregular terrains | [Eurobench-PAL](#pal) | 3 | under dev |
+| Walking over soft terrains | *discarded* |||
+| Overcoming obstacles | [Eurobench-PAL](#pal) | 3 |under dev
+| Standing during manipulation | [Eurobench-Waterloo](#waterloo) | 3 | under dev |
+| Picking and carrying objects | [Eurobench-Waterloo](#waterloo) | 4 | under dev |
+| Walking on a treadmill | [Eurobench-IIT and Treadmill](#iit) | 3 | under dev
+| Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | under dev
+| Moving in narrow spaces	| discarded
 | Standing on a moving surface | [COMTEST](#comtest) | 0 | no |
 | Walking/Standing during pushes | [Dysturbance](#disturbance) | 4 | no |
-
 
 ## Code integration status
 
@@ -140,7 +138,6 @@ The hyperlinks refer to:
 * A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
 * documentation: PDF available. Available from the github repo. Image available
 
-
 #### pepato
 
 * [code](https://github.com/dzhvansky/pepato/tree/octave_version),
@@ -151,17 +148,16 @@ The hyperlinks refer to:
   [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw),
   [manual](data/pepato/manual/description_PEPATO.pdf)
 * integrated: 1 protocol
-  * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)  
+  * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)
 
 #### rrd
 
-* [code](https://github.com/eurobench/rrd_pi_slope), 
-* current state: pending on validating the Docker images 
+* [code](https://github.com/eurobench/rrd_pi_slope),
+* current state: pending on validating the Docker images
 * integrated protocol:
   * [Kinematics of stair walking of non-impared individuals](https://15.237.22.1/protocols/info/71)
   * [Kinematics of inclined walking of non-impared individuals](https://15.237.22.1/protocols/info/70)
   * PDF uploaded.
-
 
 #### udbenchmarking
 
@@ -208,7 +204,6 @@ The hyperlinks refer to:
   * [Step perturbation - even surface](http://15.237.22.1/protocols/info/24)
   * [Stepping on place - even surface](http://15.237.22.1/protocols/info/18)
   * [Sinusoidal perturbation - even surface](http://15.237.22.1/protocols/info/29)
-
 #### tested
 
 * [code](https://github.com/jamatics/pi_ctag),
@@ -247,7 +242,6 @@ The hyperlinks refer to:
 * integrated: 1 protocol, pdf uploaded
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
 
-
 #### stepByStep
 
 * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
@@ -272,6 +266,29 @@ The hyperlinks refer to:
 
 * integrated: **NO PROTOCOL**
 ### Very early stage
+
+#### csic_manipulation
+
+* [code](https://github.com/AdrianaTorres/Manipulation),
+  [template](data/csic-manipulation/csic-manipulation.xlsx)
+  [yaml](data/csic_manipulation.yaml)
+* current state:
+  * 22/12: very early stage.
+  * 25/06: update to revise
+* Contains 2 protocol
+* Status:
+  * under revision.
+
+##### comtest
+
+* [code](https://github.com/VittorioFreiburg/COMTEST),
+  [template](data/comtest/comtest_v5.xlsx)
+* octave code. Still requires significant afjustment.
+* current state:
+  * ping 19/02
+* integrated: 2 protocols (to be strongly revised), **NO PDF**
+  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
+  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
 
 #### dysturbance
 
@@ -298,26 +315,35 @@ The hyperlinks refer to:
   * Not following the global spirit for metric computation.
 * integrated: **NO PROTOCOL**
 
-##### comtest
+#### iit
 
-* [code](https://github.com/VittorioFreiburg/COMTEST),
-  [template](data/comtest/comtest_v5.xlsx)
-* octave code. Still requires significant afjustment.
-* current state:
-  * ping 19/02
-* integrated: 2 protocols (to be strongly revised), **NO PDF**
-  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
-  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
+Related to humanoid
 
+* Walking on a treadmill
+  * [yaml file](data/iit_treadmill.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Walking on laterally inclined surface
+  * [yaml file](data/iit_inclined.yaml)
+  * Contains 1 protocol
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
 
+#### pal
 
-#### csic manipulation
+Related to humanoid
 
-* [code](https://github.com/AdrianaTorres/Manipulation),
-  [template](data/csic-manipulation/csic-manipulation.xlsx)
-* current state:
-  * 22/12: very early stage.
-* integrated: **NO PROTOCOL**
+* Irregular scenario
+  * [yaml file](data/pal_irregular.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Overcoming obstacle
+  * [yaml file](data/pal_obstacles.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
 
 #### uhei
 
@@ -326,4 +352,29 @@ The hyperlinks refer to:
 * no Excel sheet available
 * 25/03: repo changed, waiting for call example and input files.
 * integrated: **NO PROTOCOL**
- 
+
+* Walking on slope
+  * [yaml file](data/uhei_slope.yaml)
+  * Contains 5 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+
+#### waterloo
+
+Related to humanoid
+
+* Stair scenario
+  * [yaml file](data/waterloo_stairs.yaml)
+  * Contains 5 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Manipulation scenario
+  * [yaml file](data/waterloo_manipulation.yaml)
+  * Contains 3 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+* Pick and carrying scenario
+  * [yaml file](data/waterloo_pick.yaml)
+  * Contains 4 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**

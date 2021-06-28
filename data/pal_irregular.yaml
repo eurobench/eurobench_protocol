@@ -1,0 +1,162 @@
+---
+user_name: "pal"
+scenario:
+  name: "Walking over irregular terrains with Humanoids"
+  description: "The robot must cross the platform from one side to the other while the robot is stepping over the different oriented
+platforms, while maintaining a safe walking trajectory."
+  image:
+
+protocol:
+  - id: 86
+    name: "pal_irregular_open"
+    name_readable: "Walking over irregular terrains, open trial"
+    definition: "The robot crosses the platform.
+      Not yet implemented."
+    image: pal/img/pal_irregular.png
+    keywords: [irregular, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: pal_irregular
+    duration: "undef"
+    testbed:
+      - item: Irregular terrain
+        type: other
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 87
+    name: "pal_irregular_fixed_vel"
+    name_readable: "Walking over irregular terrains, fixed velocity"
+    definition: "The robot crosses the platform at a certain velocity.
+      Not yet implemented."
+    image: pal/img/pal_irregular.png
+    keywords: [irregular, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: pal_irregular
+    duration: "undef"
+    testbed:
+      - item: Irregular terrain
+        type: other
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 88
+    name: "pal_irregular_endurance"
+    name_readable: "Walking over irregular terrains, endurance"
+    definition: "The robot crosses the platform for a certain amount of time.
+      Not yet implemented."
+    image: pal/img/pal_irregular.png
+    keywords: [irregular, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: pal_irregular
+    duration: "undef"
+    testbed:
+      - item: Irregular terrain
+        type: other
+        file_sheet: na
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: false
+pi:
+  - name: execution_time
+    name_readable: "Execution time"
+    description: "Time it takes to execute the trajectory"
+    unit: s
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: max_repet
+    name_readable: "Maximum repetition"
+    description: "Maximum amount of successive crossings"
+    unit: undef
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: success
+    name_readable: "Success rate"
+    description: "Amount of successful repetitions per protocol"
+    unit: undef
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: tracking_error
+    name_readable: "Trackign error"
+    description: "Tracking error from the planned trajectory"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: robot_dynamics
+    name_readable: "Robot Dynamics"
+    description: "Forces acting on the robot mechanism especially the knee joint"
+    unit: N
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: mechanical_energy
+    name_readable: "Mechanical energy"
+    description: "Energy consumed normalized over trajectory and execution time"
+    unit: J
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cost_transport
+    name_readable: "Cost of transport"
+    description: "Mechanical cost of transport "
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: human_likelyness
+    name_readable: "Human likelyness"
+    description: "Spatio-temporal comparison of kinematic indicators"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+pi_algo:
+  - name: pal_irregular
+    description: Benchmarking toolkit to benchmark irregular terrain walking by humanoids
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - execution_time
+      - max_repet
+      - success
+      - tracking_error
+      - robot_dynamics
+      - mechanical_energy
+      - cost_transport
+      - human_likelyness
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false

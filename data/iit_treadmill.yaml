@@ -1,0 +1,128 @@
+---
+user_name: "iit"
+scenario:
+  name: "Walking on a treadmill"
+  description: "Treadmill is for the locomotion and balancing trials as well the execution of long time endurance tests under variable
+speed and inclination settings"
+  image: iit/img/iit_treadmill.png
+
+protocol:
+  - id: 98
+    name: "iit_treadmill_ground"
+    name_readable: "Long time walking on level ground"
+    definition: "Walking on the treadmill with zero slopes.
+      Walking speed is predetermined before the test execution and it is
+      constant during the test."
+    image: iit/img/iit_treadmill.png
+    keywords: [treadmill, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: iit_treadmill
+    duration: "10 min"
+    testbed:
+      - item: Treadmill
+        type: other
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 99
+    name: "iit_treadmill_pitch"
+    name_readable: "Long time walking on a slope with pitch angle"
+    definition: "Walking on the treadmill with a slope (pitch angle 10 deg).
+      Walking speed is predetermined before the test execution and it is
+      constant during the test."
+    image: iit/img/iit_treadmill.png
+    keywords: [treadmill, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: iit_treadmill
+    duration: "10 min"
+    testbed:
+      - item: Treadmill
+        type: other
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 100
+    name: "iit_treadmill_roll"
+    name_readable: "Long time walking on a slope with roll angle"
+    definition: "Walking on the treadmill with a slope (roll angle 5 deg).
+      Walking speed is predetermined before the test execution and it is
+      constant during the test."
+    image: iit/img/iit_treadmill.png
+    keywords: [treadmill, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: iit_treadmill
+    duration: "10 min"
+    testbed:
+      - item: Treadmill
+        type: other
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+
+pi:
+  - name: speed
+    name_readable: "Normalized walking speed"
+    description: "Walking speed normalized by leg length of the robot.
+      It describes how fast steady-state walking can be operated."
+    unit: undef
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: distance
+    name_readable: "Normalized total walking distance"
+    description: "Total walking distance normalized by leg length of the robot.
+      It describes how far the steady-state walking can be operated."
+    unit: m
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: energy
+    name_readable: "Normalized energy efficiency"
+    description: "Consumed energy per normalized distance.
+      In addition, it is normalized by the weight of the robot.
+      This represents the energy efficiency of the robot walking."
+    unit: J
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: efficiency
+    name_readable: "Walking control system efficiency"
+    description: "Consumed energy per normalized distance of the robot hardware
+      and control system.
+      It represents the energy efficiency of the robot hardware and the
+      controller."
+    unit: J
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+pi_algo:
+  - name: iit_treadmill
+    description: Undef
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - speed
+      - distance
+      - energy
+      - efficiency
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false

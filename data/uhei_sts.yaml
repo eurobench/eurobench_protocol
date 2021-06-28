@@ -44,7 +44,7 @@ protocol:
         detail: "The standardized foot position is 25% of the knee height of the
           robot as distance from ground projected contact point to ankle
           position"
-      - description:  Set chair height. Adjust thefoot position accordingly
+      - description: Set chair height. Adjust thefoot position accordingly
         detail: "The initial chair height is 120% of the knee height as initial
           chair height from the ground"
       - description: "Put the robot on the contact point on the chair and start
@@ -66,11 +66,9 @@ protocol:
           If the robot can not execute the motion, the protocol is concluded."
         detail: "the required amount of repetitions is 2 out of 3"
       - description: "Lower the chair height about 5 % of the total knee height"
-
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-
   - id: 69
     name: "uhei_sts_foot"
     name_readable: "Sit to stand: Foot Placement Handicap"
@@ -135,8 +133,6 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-
-
 pi:
   - name: h_c
     name_readable: "Angular Momentum about Center of Mass (CoM)"

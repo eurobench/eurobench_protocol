@@ -1,0 +1,246 @@
+---
+user_name: "waterloo"
+scenario:
+  name: "Ascending // Descending stairs with Humanoids"
+  description: "Walking across a given amount of consecutive ascending and
+    descending steps with different step heights."
+  image:
+
+protocol:
+  - id: 81
+    name: "waterloo_stairs_standard"
+    name_readable: "Ascending / Descending stairs: standardized steps"
+    definition: "The robot performs one run for a standardized step height.
+      Not yet implemented."
+    image: waterloo/img/waterloo_stairs.png
+    keywords: [stair, humanoid]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_stairs
+    duration: "undef"
+    testbed:
+      - item: Height varying stair testbed with four steps and bottom and
+          top platform attached to a lifting table
+        type: combined
+        file_sheet: na
+      - item: Force plate
+        type: sensor
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 82
+    name: "waterloo_stairs_endurance"
+    name_readable: "Ascending / Descending stairs: endurance steps"
+    definition: "The robot performs several runs for a certain amount of time
+      and a standardized step height.
+      Not yet implemented."
+    image: waterloo/img/waterloo_stairs.png
+    keywords: [stair, humanoid]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_stairs
+    duration: "undef"
+    testbed:
+      - item: Height varying stair testbed with four steps and bottom and
+          top platform attached to a lifting table
+        type: combined
+        file_sheet: na
+      - item: Force plate
+        type: sensor
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 83
+    name: "waterloo_stairs_max"
+    name_readable: "Ascending / Descending stairs: maximum step"
+    definition: "The robot performs several runs.
+      The step height is changed between the runs.
+      The test is finished if the robot cannot climb the current step height or
+      if the maximum available step height is reached.
+      Not yet implemented."
+    image: waterloo/img/waterloo_stairs.png
+    keywords: [stair, humanoid]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_stairs
+    duration: "undef"
+    testbed:
+      - item: Height varying stair testbed with four steps and bottom and
+          top platform attached to a lifting table
+        type: combined
+        file_sheet: na
+      - item: Force plate
+        type: sensor
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 84
+    name: "waterloo_stairs_fast"
+    name_readable: "Ascending / Descending stairs: fast steps"
+    definition: "The robot performs several runs at a desired velocity.
+      The step height is changed between the runs.
+      The test is finished if the maximum step height is reached or the robot
+      cannot walk at the current step height at a certain velocity.
+      Not yet implemented."
+    image: waterloo/img/waterloo_stairs.png
+    keywords: [stair, humanoid]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_stairs
+    duration: "undef"
+    testbed:
+      - item: Height varying stair testbed with four steps and bottom and
+          top platform attached to a lifting table
+        type: combined
+        file_sheet: na
+      - item: Force plate
+        type: sensor
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 85
+    name: "waterloo_stairs_varying"
+    name_readable: "Ascending / Descending stairs: varying steps up"
+    definition: "The robot performs one run on a stair composed of steps with
+      different heights.
+      Not yet implemented."
+    image: waterloo/img/waterloo_stairs.png
+    keywords: [stair, humanoid]
+    bipedal_system: [humanoid]
+    pi_algo: waterloo_stairs
+    duration: "undef"
+    testbed:
+      - item: Height varying stair testbed with four steps and bottom and
+          top platform attached to a lifting table
+        type: combined
+        file_sheet: na
+      - item: Force plate
+        type: sensor
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+pi:
+  - name: height
+    name_readable: "Height up / down"
+    description: "Step height that the robot can walk up/down"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: variation
+    name_readable: "Variation up / down"
+    description: "Variation in step height between two sequential steps that the robot can walk up"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: endurance
+    name_readable: "Endurance up / down"
+    description: "Maximum amount of successive stairs the robot can walk up"
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: success
+    name_readable: "Success rate"
+    description: "Amount of successful repetitions per protocol"
+    unit: undef
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: execution_time
+    name_readable: "Execution time"
+    description: "Time it takes to execute the trajectory"
+    unit: s
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: tracking_error
+    name_readable: "Trackign error"
+    description: "Tracking error from the planned trajectory"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: robot_dynamics
+    name_readable: "Robot Dynamics"
+    description: "Forces acting on the robot mechanism especially the knee joint"
+    unit: N
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: mechanical_energy
+    name_readable: "Mechanical energy"
+    description: "Energy consumed normalized over trajectory and execution time"
+    unit: J
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cost_transport
+    name_readable: "Cost of transport"
+    description: "Mechanical cost of transport "
+    unit: undef
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: human_likelyness
+    name_readable: "Human likelyness"
+    description: "Spatio-temporal comparison of kinematic indicators"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+pi_algo:
+  - name: waterloo_stairs
+    description: Benchmarking toolkit to benchmark stair walking by humanoids
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - height
+      - variation
+      - endurance
+      - success
+      - execution_time
+      - tracking_error
+      - robot_dynamics
+      - mechanical_energy
+      - cost_transport
+      - human_likelyness
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false
