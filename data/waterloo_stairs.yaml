@@ -7,7 +7,7 @@ scenario:
   image:
 
 protocol:
-  - id: undef
+  - id: 81
     name: "waterloo_stairs_standard"
     name_readable: "Ascending / Descending stairs: standardized steps"
     definition: "The robot performs one run for a standardized step height.
@@ -28,7 +28,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 82
     name: "waterloo_stairs_endurance"
     name_readable: "Ascending / Descending stairs: endurance steps"
     definition: "The robot performs several runs for a certain amount of time
@@ -50,7 +50,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 83
     name: "waterloo_stairs_max"
     name_readable: "Ascending / Descending stairs: maximum step"
     definition: "The robot performs several runs.
@@ -74,7 +74,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 84
     name: "waterloo_stairs_fast"
     name_readable: "Ascending / Descending stairs: fast steps"
     definition: "The robot performs several runs at a desired velocity.
@@ -98,7 +98,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 85
     name: "waterloo_stairs_varying"
     name_readable: "Ascending / Descending stairs: varying steps up"
     definition: "The robot performs one run on a stair composed of steps with

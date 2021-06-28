@@ -7,7 +7,7 @@ scenario:
   image: csic-manipulation/img/csic.jpg
 
 protocol:
-  - id: undef
+  - id: 95
     name: "csic_manip_lower"
     name_readable: "Standing during manipulation: lower-lifting sagittal plane"
     definition: "Lifting a box, which could be empty or loaded with the 10% of
@@ -101,7 +101,7 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
 
-  - id: undef
+  - id: 96
     name: "csic_manip_load"
     name_readable: "Standing during manipulation: lateral load transfer"
     definition: "Lifting a box, which could be empty or loaded with the 10% of

@@ -6,7 +6,7 @@ scenario:
   image: iit/img/iit_inclined.png
 
 protocol:
-  - id: undef
+  - id: 97
     name: "iit_inclined"
     name_readable: "Walking on inclined terrain"
     definition: "Walking on three different sets of terrains with laterally

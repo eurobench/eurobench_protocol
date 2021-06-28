@@ -7,7 +7,7 @@ speed and inclination settings"
   image: iit/img/iit_treadmill.png
 
 protocol:
-  - id: undef
+  - id: 98
     name: "iit_treadmill_ground"
     name_readable: "Long time walking on level ground"
     definition: "Walking on the treadmill with zero slopes.
@@ -25,7 +25,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 99
     name: "iit_treadmill_pitch"
     name_readable: "Long time walking on a slope with pitch angle"
     definition: "Walking on the treadmill with a slope (pitch angle 10 deg).
@@ -43,7 +43,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 100
     name: "iit_treadmill_roll"
     name_readable: "Long time walking on a slope with roll angle"
     definition: "Walking on the treadmill with a slope (roll angle 5 deg).

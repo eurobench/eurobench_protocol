@@ -11,7 +11,7 @@ scenario:
   image:
 
 protocol:
-  - id: undef
+  - id: 77
     name: "waterloo_pick_basic"
     name_readable: "Picking and Carrying objects: basic carrying"
     definition: "The robot picks up and carries a specific object of certain
@@ -33,7 +33,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 78
     name: "waterloo_pick_increase"
     name_readable: "Picking and Carrying objects: increasing weight carrying"
     definition: "The robot picks up and carries different objects of increasing
@@ -55,7 +55,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 79
     name: "waterloo_pick_increase_vel"
     name_readable: "Picking and Carrying objects: increasing weight at given
       velocity"
@@ -79,7 +79,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 80
     name: "waterloo_pick_endurance"
     name_readable: "Picking and Carrying objects: endurance carrying"
     definition: "The robot picks up and carries a specific object of a certain

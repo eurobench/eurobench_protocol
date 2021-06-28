@@ -7,7 +7,7 @@ scenario:
   image:
 
 protocol:
-  - id: undef
+  - id: 89
     name: "pal_obstacles_standard"
     name_readable: "Overcoming obstacles of standard shape"
     definition: "The robot steps over one object of a certain height and width.
@@ -25,7 +25,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 90
     name: "pal_obstacles_various"
     name_readable: "Overcoming obstacles of various shape"
     definition: "The robot steps over a certain amount of objects with different
@@ -44,7 +44,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 91
     name: "pal_obstacles_velocity"
     name_readable: "Overcoming obstacles with desired velocity"
     definition: "The robot steps over a certain amount of different objects

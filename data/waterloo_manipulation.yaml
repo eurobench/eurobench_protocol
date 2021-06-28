@@ -9,7 +9,7 @@ scenario:
   image:
 
 protocol:
-  - id: undef
+  - id: 74
     name: "waterloo_manip_place_in_box"
     name_readable: "Standing during manipulation: PLace in box"
     definition: "The robot picks a certain amount of objects and places them in
@@ -34,7 +34,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 75
     name: "waterloo_manip_place_on_shelf"
     name_readable: "Standing during manipulation: Place on shelf"
     definition: "The robot picks a certain amount of objects and places them on
@@ -59,7 +59,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 76
     name: "waterloo_manip_max"
     name_readable: "Standing during manipulation: Max weight and height"
     definition: "The robot picks a certain amount of objects and places

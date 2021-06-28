@@ -7,7 +7,7 @@ platforms, while maintaining a safe walking trajectory."
   image:
 
 protocol:
-  - id: undef
+  - id: 86
     name: "pal_irregular_open"
     name_readable: "Walking over irregular terrains, open trial"
     definition: "The robot crosses the platform.
@@ -24,7 +24,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 87
     name: "pal_irregular_fixed_vel"
     name_readable: "Walking over irregular terrains, fixed velocity"
     definition: "The robot crosses the platform at a certain velocity.
@@ -41,7 +41,7 @@ protocol:
     has_multiple_run: false
     has_multiple_condition: false
     has_multiple_subject: false
-  - id: undef
+  - id: 88
     name: "pal_irregular_endurance"
     name_readable: "Walking over irregular terrains, endurance"
     definition: "The robot crosses the platform for a certain amount of time.
