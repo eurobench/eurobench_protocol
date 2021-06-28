@@ -4,7 +4,7 @@ scenario:
   name: "Standing during manipulation"
   description: "Standing while reaching, grasping and manipulating objects with
     the upper limbs."
-  image: csic-manipulation/img/csic_manipulation.jpg
+  image: csic-manipulation/img/csic.jpg
 
 protocol:
   - id: undef
@@ -68,15 +68,15 @@ protocol:
 
     step_description: "No definition"
     step_list:
-      - description: Place the optical markers onto the subject's body and take
+      - description: Place the optical markers onto the subject''s body and take
           the required anthropometric measurements.
-        detail: Following the VICON's "Full Body Plug in Gait" marker set
+        detail: Following the VICON''s "Full Body Plug in Gait" marker set
           specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
           and  adding 8 clusters (thighs, tibias, feet, pelvis, chest).
       - description: Place the subject at the starting point.
       - description: Take a static capture of the subject.
         detail: Subject adopts the motor bike position (upright posture, both
-          arms at shoulder's height with upper arm and forearm at 90 degrees)
+          arms at shoulder''s height with upper arm and forearm at 90 degrees)
           facing the modular structure.
       - description: State the subject to grasp the box put it on a specific
           height and bring it back to its original position for three times.
@@ -159,16 +159,16 @@ protocol:
         file_sheet: "https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-0-5kg-domyos/_/R-p-152954?mc=8358970&c=AZUL_AZUL%20TURQUESA  https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-1kg-domyos/_/R-p-152952?mc=8358972&c=AMARILLO  https://www.decathlon.es/es/p/lastres-pesas-tobillos-munecas-2-x-2kg-domyos/_/R-p-152955"
     step_description: "No definition"
     step_list:
-      - description: Place the optical markers onto the subject's body and take
+      - description: Place the optical markers onto the subject''s body and take
           the required anthropometric measurements.
-        detail: Following the VICON's "Full Body Plug in Gait" marker set
+        detail: Following the VICON''s "Full Body Plug in Gait" marker set
           specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
           and  adding 8 clusters (thighs, tibias, feet, pelvis, chest).
       - description: Place the subject at the starting point.
       - description: Launch the Data collection software.
       - description: Take a static capture of the subject.
         detail: Subject adopts the motor bike position (upright posture, both
-          arms at shoulder's height with upper arm and forearm at 90 degrees)
+          arms at shoulder''s height with upper arm and forearm at 90 degrees)
           facing the modular structure.
       - description: State the subject to grasp the box put it on a specific
           height involving sagittal torsion and bring it back to its original
