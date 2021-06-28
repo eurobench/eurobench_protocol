@@ -1,5 +1,5 @@
 ---
-user_name: "Waterloo"
+user_name: "waterloo"
 scenario:
   name: "standing during manipulation"
   description: "The robot must maintain balance while picking and placing

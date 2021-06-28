@@ -1,5 +1,5 @@
 ---
-user_name: "Waterloo"
+user_name: "waterloo"
 scenario:
   name: "Ascending // Descending stairs with Humanoids"
   description: "Walking across a given amount of consecutive ascending and

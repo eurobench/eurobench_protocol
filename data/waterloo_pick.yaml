@@ -1,5 +1,5 @@
 ---
-user_name: "Waterloo"
+user_name: "waterloo"
 scenario:
   name: "Picking and carrying objects"
   description: "The robot maintains balance when picking up and carrying an
