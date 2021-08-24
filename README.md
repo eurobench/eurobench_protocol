@@ -195,7 +195,7 @@ The hyperlinks refer to:
   [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_beat),
   [excel](data/beat/beat-v4.3.xlsx)
   [yaml](data/beat.yaml),
-* current state: waiting for PI output adjustment in code.
+* current state: waiting for PI output adjustment in code. Pending Merge Request.
 * integrated: 7 protocols, **NO PDF**
   * [Static Balance - uneven surface](http://15.237.22.1/protocols/info/23)
   * [Step perturbation - uneven surface](http://15.237.22.1/protocols/info/25)
