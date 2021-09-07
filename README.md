@@ -285,7 +285,7 @@ The hyperlinks refer to:
   [template](data/comtest/comtest_v5.xlsx)
 * octave code. Still requires significant afjustment.
 * current state:
-  * ping 19/02
+  * PR opened the 29/03, pending on answer.
 * integrated: 2 protocols (to be strongly revised), **NO PDF**
   * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
@@ -295,10 +295,7 @@ The hyperlinks refer to:
 * [code](https://github.com/CentroEPiaggio/dysturbance),
   [template](data/dysturbance/dysturbance.xlsx)
 * current state:
-  * 01/12: PI code provided
-  * 09/12: opened a set of question to start the integration process
-  * matlab code, far from the requested format.
-  * 22/12: working on a code revision.
+  * 10/06 issue raised, waiting for answer.
 * Integrated: 4 protocols, **NO PDF**
   * [Dysturbance -Reaction to Impulsive Disturbance](http://15.237.22.1/protocols/info/39)
   * [Dysturbance - Reaction to Sinusoidal Force Disturbance](http://15.237.22.1/protocols/info/40)
