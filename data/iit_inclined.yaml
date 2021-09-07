@@ -1,0 +1,79 @@
+---
+user_name: "iit"
+scenario:
+  name: "Walking on laterally inclined surfaces"
+  description: "Testbed for walking through the laterally inclined terrains."
+  image: iit/img/iit_inclined.png
+
+protocol:
+  - id: 97
+    name: "iit_inclined"
+    name_readable: "Walking on inclined terrain"
+    definition: "Walking on three different sets of terrains with laterally
+      inclined surfaces.
+      Each terrain set has a different angle"
+    image: iit/img/iit_inclined.png
+    keywords: [inclined, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: iit_inclined
+    duration: "15 min"
+    testbed:
+      - item: "reconfigurable blocks that can set flat or inclined terrains for
+          flexible walking test scenarios."
+        type: other
+        file_sheet: na
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+
+pi:
+  - name: speed
+    name_readable: "Normalized walking speed"
+    description: "The average walking speed calculated by dividing the
+      normalized walking distance by the execution time for the test."
+    unit: undef
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: distance
+    name_readable: "Normalized walking distance"
+    description: "The total walking distance the robot successfully walks.
+      It is normalized by the leg length of the robot."
+    unit: m
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: difficulty
+    name_readable: "Difficulty level"
+    description: "The difficulty level of the terrains where the robot
+      successfully walks.
+      It is calculated by the ratio between the angle of the slope and the leg
+      length of the robot."
+    unit: na
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+pi_algo:
+  - name: iit_inclined
+    description: Undef
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - speed
+      - distance
+      - difficulty
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false

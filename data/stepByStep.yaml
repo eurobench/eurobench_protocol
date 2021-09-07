@@ -1,4 +1,5 @@
 ---
+user_name: "sbs"
 scenario:
   name: "Walking on stair"
   description: "Systematic Test of Exoskeleton Products by a Stairs-based
@@ -6,7 +7,8 @@ scenario:
   image: na
 
 protocol:
-  - name: "sbs_biomechanics"
+  - id: 60
+    name: "sbs_biomechanics"
     name_readable: "Walking on stair: biomechanical analysis"
     definition: "Mocap adquisition in stair ascending and descending over the
       testbed in order to characterize human movements.
@@ -17,8 +19,7 @@ protocol:
     keywords: [Lower-limb exoskeletons, stairs, stair ascending, stair descending, motion capture, motion reconstruction]
     bipedal_system: [exoskeleton, human]
     pi_algo: pi_sbs_biomechanics
-    duration: "15 minutes/subject (explanation+sensor placement+calibration)
-      + 7.5 minutes/subject (5 runs mocap adquisition) = 22.5 minutes/subject"
+    duration: "15min/subj(explanation+sensor placement+calib)+7.5min/subj(5 runs mocap adquisition)=22.5min/subj"
     # controlled_variables:
     testbed:
       - item: Mocap sensor
@@ -52,6 +53,571 @@ protocol:
         detail: 1 minute
       - description: "Repeat the procedure starting at step 5, to reach 5 runs."
         detail: "Total (5 runs): 7,5 minutes"
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+  - id: 61
+    name: "sbs_hf_dual_task"
+    name_readable: "Walking on stairs: dual task protocol"
+    definition: "The Dual Task protocol is intended to measure the User''s
+      cognitive-motor interference while accomplishing a motor task with the
+      exoskeleton and doing a cognitive task.
+      Less interference corresponds to better interaction between user and
+      machine"
+    image: sbs/img/sbs_human_factor.png
+    keywords: [Human factors; Human Robot Interaction; Motor performance; Cognitive performance; stairs]
+    bipedal_system: [exoskeleton, human]
+    pi_algo: pi_sbs_hf_dualtask
+    duration: "15 minutes"
+    # controlled_variables:
+    testbed:
+      - item: Chronometer
+        type: other
+        file_sheet: undef
+      - item: Speaker and headphone
+        type: other
+        file_sheet: undef
+      - item: openSesame
+        type: software
+        file_sheet: https://osdoc.cogsci.nl
+      - item: instrumented stair
+        type: combined
+        file_sheet: undef
+      - item: pymedia
+        type: software
+        file_sheet: https://github.com/dschreij/opensesame_soundrecorder_plugins/tags
+    step_description: "In this activity the subject will be asked first to
+      ascend and descend the stair-based testbed while wearing the LLE (motor
+      task).
+      Then, an auditory 1-back task (cognitive task) will be administered to the
+      subject.
+      During the auditory task the subject will be seated and will hear a
+      sequence of 60 alphabet letters, presented on at a time, and will be asked
+      to respond yes if the presented letter is a repetition of the immediately
+      preceding alphabet letter, or no if the presented letter is not a
+      repetition of the immediately preceding alphabet letter.
+      Lastly, the subject will be asked to complete the motor and cognitive task
+      simultaneously: he or she will ascend and descend the stairs while
+      answering yes or no after hearing the alphabet letter (cognitive-motor
+      task)."
+    step_list:
+      - description: "Participant and setting preparation"
+        detail: "The participant wears the exoskeleton and positions him/herself
+          in front of the stairs.
+          Prepare the chronometer."
+      - description: "Single Task: Motor.
+          We will ask the participant to go up and down the stairs while
+          wearing the exoskeleton.
+          Activate the chronometer and stopping it when the participant has
+          completed the task."
+        detail: "Two values are measured: ascending time, descending time."
+      - description: "Participant and setting preparation.
+          The participant removes the exoskeleton and sits next to the
+          experimenter.
+          The experimenter runs OpenSesame.
+          The participant wears the headphones (which records the participant''s
+          vocal answers)."
+        detail: "The setting should encompass a desk, two seats, a laptop and
+          headphones."
+      - description: "Single Task: Cognitive, Instructions.
+          The experimenter reads the instructions provided by OpenSesame."
+        detail: "The instructions will be: You will hear a sequence of sounds
+          (phonemes) presented one at time.
+          Your task is to respond after each letter: YES when the letter is a
+          repeat of the immediately preceding letter; NO when the letter is
+          different from the previous one.
+          Before the actual data collection, you will have the opportunity to
+          learn about the task by trying it."
+      - description: "Single Task: Practice.
+          The participant starts the pratice session."
+        detail: "The practice session consists in 8 trials.
+          At the end, a sheet will appear with the instruction: the Single Task:
+          Cognitive data collection stars now"
+      - description: "Single Task: Cognitive
+          While not wearing the exoskelton nor going up and down the
+          stairs, the participant will hear a sequence of 60 phonems
+          (alphabetical letters), vocally administered one at a time through
+          speakers.
+          The participant will be requested to respond yes if the administered
+          letter is a repetition of the immediately preceding administered
+          letter (this occurrence will happen 12 times throughout the run), and
+          no if it is not (this occurrence will happen 48 time throughout the
+          run).
+          The experimenter clicks on the right mouse button when the
+          participant says no, and clicks on the left mouse button when the
+          participant says yes."
+        detail: "Two values are measured: reaction time and number of errors."
+      - description: "Participant Preparation.
+          The participant wears the exoskeleton, does not remove the headphones
+          and positions him/herself in front of the stairs."
+      - description: "Dual Task: Cognitive-Motor.
+          The participant will be going up and down the stairs while wearing the
+          LLE and hearing a sequence of 60 phonemes (alphabetical letters),
+          vocally administered one at a time through speakers.
+          The participant will be requested to respond yes if the administered
+          letter is a repetition of the immediately preceding administered
+          letter (this occurrence will happen 12 times throughout the run), and
+          no if it is not (this occurrence will happen 48 time throughout the
+          run).
+          The experimenter clicks on the right mouse button when the participant
+          says no, and clicks on the left mouse button when the participant says
+          yes.
+          Activate the chronometer and stopping it when the participant has
+          completed the task."
+        detail: "Four values are measured: ascending time, descending time,
+          reaction time and number of errors."
+      - description: "The data collection ends. The partcipant removes the exoskeleton and headphones."
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+  - id: 62
+    name: "sbs_hf_observation"
+    name_readable: "Walking on stair: User Exoskeleton Interaction Observation"
+    definition: "This protocol aims to measure some behavioural indicators of
+      user-machine interaction.
+      It describes the quality of the interaction occurring between the wearer
+      and the lower-limb exoskeleton.
+      The data collection is performed by experimenters based on a quantitative
+      checklist of both participant and exoskeleton''s behaviour"
+    image: sbs/img/sbs_hf_obs.png
+    keywords: [Human factors; Human Robot Interaction; stairs]
+    bipedal_system: [exoskeleton, human]
+    pi_algo: pi_sbs_human_factor
+    duration: "10 minutes"
+    # controlled_variables:
+    testbed:
+      - item: videocamera
+        type: other
+        file_sheet: undef
+      - item: instrumented stair
+        type: combined
+        file_sheet: undef
+      - item: checklist
+        type: other
+        file_sheet: undef
+    step_description: "An observational analysis will be performed by the
+      experimenter while video recording the motor tasks performed by the
+      end-user, i.e. stairs ascending and stairs descending while wearing the
+      LLE.
+      In this case the evaluation will be conducted by the experimenter and no
+      particular requests will be made to the subject."
+    step_list:
+      - description: "Instruction.
+          The experimenter provides instrutions to the participant."
+        detail: "The instruction will be: We ask you to go up and down the
+          stairs wearing the exoskeleton.
+          While you perform the task a video camera will record the execution of
+          the task."
+      - description: "Activate video recording. Start camera recording"
+      - description: "Start data collection.
+          The experimenter answers the checklist items."
+        detail: "The checklist encompasses the following item: Time required to
+          donning and doffing the exoskeleton; Number of steps climbed and down;
+          Number of times the user stumble when ascending or descending the
+          stairs; Is the crutch used during the test; Is the torso bent forward
+          (provoke high load of upper limbs when crutches are used) to avoid
+          falling backward; During the Anterolateral shifting of body centre of
+          gravity, is the swing leg adequately relieved to correctly initiate
+          the stride; Number of error messages by the HMI (Human
+          Machine-Interface); Number of times the safe mode was been activated
+          (the system switched off) when the situation requires it and did not
+          require it."
+      - description: "Participant starts the task.
+          The participant wears the exoskeleton and positions him/herself in
+          front of the stairs."
+      - description: "Participant preparation.
+          The participant revouves the exoskeleton."
+      - description: "Stop camera recording."
+      - description: "Check for data missing.
+          The experimenter watchs the video recorded, fulfilling the checklist
+          if data was missing or the observation was not appropriated.
+          Delete the video recorded at the end."
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 63
+    name: "sbs_hf_pressure"
+    name_readable: "Walking on stairs: Local Perceived Pressure Questionnaire"
+    definition: "The questionnaire measures the subjective evaluation of
+      musculoskeletal pressure applied by the exoskeleton to the user."
+    image: sbs/img/sbs_hf_obs.png
+    keywords: [Human factors; Comfort; Body pressure; stairs]
+    bipedal_system: [exoskeleton, human]
+    pi_algo: pi_sbs_human_factor
+    duration: "5 minutes"
+    # controlled_variables:
+    testbed:
+      - item: questionnaire
+        type: other
+        file_sheet: undef
+    step_description: "After the completion of the motor task, the experimenter
+      will administer the Local Perceived Pressure questionnaire to the subject.
+      The subject will then be asked to fill out the questionnaire to measure
+      the levels of comfort while wearing the exoskeleton."
+    step_list:
+      - description: "Mandatory condition. The LPP Protocol have to be used
+          after the participant has had the opportunity to try/use the
+          exoskeleton."
+      - description: "Instruction.
+          The experimenter provides instrutions to the participant."
+        detail: "The instruction will be: We show you a picture that reports a
+          human body divided into nine parts.
+          Please, could you judge the degree of discomfort you felt for each
+          part?"
+      - description: "Data collection.
+          The participant answers the questionnaire''s items."
+        detail: "LPP consists in 14 item and it is rated on a Likert-type scale
+          ranging from 0 (no pressure at all/no discomfort at all) to 10
+          (extremely strong pressure/extreme discomfort, almost maximum).
+          A discomfort level of little discomfort is defined as the cut-off
+          point for the peak discomfort measure.
+          Mean ratings of perceived pressure are computed for each target body
+          area and/or across body areas.
+          Both round numbers and decimals can be used (up to experimenter)."
+    has_multiple_run: false
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 64
+    name: "sbs_hf_combined"
+    name_readable: "Combined protocol"
+    definition: "The protocol combines the dual task protocol, the User
+      Exoskeleton Interaction Observation and the Local Perceived Pressure
+      Questionnaire."
+    image: sbs/img/sbs_hf_combined.png
+    keywords: [Human factors; Human Robot Interaction; Motor performance;
+      Cognitive perfromance; Comfort; Body pressure; stairs]
+    bipedal_system: [exoskeleton, human]
+    pi_algo: pi_sbs_human_factor
+    duration: "30 minutes"
+    # controlled_variables:
+    testbed:
+      - item: Chronometer
+        type: other
+        file_sheet: undef
+      - item: Speaker and headphone
+        type: other
+        file_sheet: undef
+      - item: openSesame
+        type: software
+        file_sheet: https://osdoc.cogsci.nl
+      - item: instrumented stair
+        type: combined
+        file_sheet: undef
+      - item: pymedia
+        type: software
+        file_sheet: https://github.com/dschreij/opensesame_soundrecorder_plugins/tags
+      - item: videocamera
+        type: other
+        file_sheet: undef
+      - item: checklist
+        type: other
+        file_sheet: undef
+      - item: questionnaire
+        type: other
+        file_sheet: undef
+    step_description: "This protocol describes the stair-based Human Factors
+      protocol in its whole, specifying which are the actions that the
+      experimenter has to carry out during the evaluation and the instructions
+      that has to provide to the subject."
+    step_list:
+      - description: "Instructions.
+          The experimenter provides instrutions to the participant."
+        detail: "The instruction will be: We ask you to go up and down the
+          stairs wearing the exoskeleton.
+          While you perform the task a video camera will record the execution of
+          the task."
+      - description: "Setting preparation.
+          Prepare the chronometer.
+          Activate the videocamera."
+        detail: "Start camera recording"
+      - description: "Participant preparation.
+          The participant wears the exoskeleton and positions him/herself in
+          front of the stairs."
+        detail: "Mesure the time requested to donning the exoskeleton."
+      - description: "Single Task: Motor & User-Exoskeleton Interaction
+          Observation.
+          The participant goes up and down the stairs wearing the exoskeleton.
+          The experimenter answers the checklist items."
+        detail: "The following values are measured: ascending time, descending
+          time, number of steps climbed and down; Number of times the user
+          stumble when ascending or descending the stairs; Is the crutch used
+          during the test; Is the torso bent forward (provoke high load of upper
+          limbs when crutches are used) to avoid falling backward; During the
+          Anterolateral shifting of body centre of gravity, is the swing leg
+          adequately relieved to correctly initiate the stride; Number of error
+          messages by the HMI (Human Machin-Interface); Number of times the safe
+          mode was been activated (the system switched off) when the situation
+          requires it and did not require it."
+      - description: "Participant preparation.
+          The participant removes the exoskeleton."
+        detail: "Mesure the time requested to doffing the exoskeleton."
+      - description: "Stop camera recording."
+      - description: "Check for data missing.
+          The experimenter watchs the video recorded, fulfilling the checklist
+          if data was missing or the observation was not appropriated.
+          Delete the video recorded at the end."
+      - description: "Setting preparation.
+          The participant sits next to the experimenter."
+        detail: "The setting should encompass a desk, two seats, a laptop."
+      - description: "Instructions.
+          The experimenter provides instructions to the participant."
+        detail: "The instructions will be: We show you a picture that reports a
+          human body divided into nine parts.
+          Please, could you judge the degree of discomfort you felt for each
+          part?"
+      - description: "Data collection, Local Perceived Pressure Questionnaire.
+          The participant answers the questionnaire''s items."
+        detail: "LPP consists in 14 item and it is rated on a Likert-type scale
+          ranging from 0 (no pressure at all/no discomfort at all) to 10
+          (extremely strong pressure/extreme discomfort, almost maximum).
+          A discomfort level of little discomfort is defined as the cut-off
+          point for the peak discomfort measure. Mean ratings of perceived
+          pressure are computed for each target body area and/or across body
+          areas.
+          Both round numbers and decimals can be used (up to experimenter)."
+      - description: "Single Task: Cognitive, Setting preparetion.
+          The experimenter runs OpenSesame.
+          The participant wears the headphones (which records the participant''s
+          vocal answers)."
+        detail: "The setting should encompass a desk, two seats, a laptop and
+          headphones."
+      - description: "Single Task: Cognitive, Instructions.
+          The experimenter reads the instructions provided by OpenSesame."
+        detail: "The instructions will be: You will hear a sequence of sounds
+          (phonemes) presented one at time.
+          Your task is to respond after each letter: YES when the letter is a
+          repeat of the immediately preceding letter; NO when the letter is
+          different from the previous one.
+          Before the actual data collection, you will have the opportunity to
+          learn about the task by trying it.”"
+      - description: "Single Task: Practice.
+          While not wearing the exoskelton nor going up and down the stairs,
+          the participant starts the pratice session."
+        detail: "The practice session consists in 8 trials.
+          At the end, a sheet will appear with the instruction: the Single Task:
+          Cognitive data collection stars now."
+      - description: "Single Task: Cognitive.
+          While not wearing the exoskelton nor going up and down the stairs, the
+          participant will hear a sequence of 60 phonems (alphabetical letters),
+          vocally administered one at a time through speakers.
+          The participant will be requested to respond yes if the administered
+          letter is a repetition of the immediately preceding administered
+          letter (this occurrence will happen 12 times throughout the run),
+          and no if it is not (this occurrence will happen 48 time throughout
+          the run).
+          The experimenter clicks on the right mouse button when the participant
+          says no, and clicks on the left mouse button when the participant says
+          yes."
+        detail: "Two values are measured: reaction time and number of errors."
+      - description: "Participant Preparation.
+          The participant wears the exoskeleton, does not remove the headphones
+          and positions him/herself in front of the stairs."
+      - description: "Dual Task: Cognitive-Motor.
+          The participant will be going up and down the stairs while wearing the
+          LLE and hearing a sequence of 60 phonemes (alphabetical letters),
+          vocally administered one at a time through speakers.
+          The participant will be requested to respond yes if the administered
+          letter is a repetition of the immediately preceding administered
+          letter (this occurrence will happen 12 times throughout the run), and
+          no if it is not (this occurrence will happen 48 time throughout the
+          run).
+          The experimenter clicks on the right mouse button when the participant
+          says no, and clicks on the left mouse button when the participant says
+          yes.
+          Activate the cronometer and stopping it when the participant has
+          completed the task."
+        detail: "Four values are measured: ascending time, descending time,
+          reaction time and number of errors."
+      - description: "The data collection ends.
+          The partcipant remouves the exoskeleton and headphones."
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - id: 65
+    name: "sbs_emg"
+    name_readable: "Walking on stairs: emg analysis"
+    definition: "The protocol aims at assessing the subject''s motor control
+      ability in stair ascendig/descending through the analysis of the EMG
+      activation pattern.
+      The proposed metrics rely on the use of surface electromyography (sEMG),
+      a technique to record the electrical activity produced by muscles during
+      contraction; the stronger is the contraction, the higher is the electrical
+      activity.
+      The sEMG of Tibialis Anterior (TA), soleus (SOL), rectus femoris (RF),
+      and hamstring muscles (HAM) will be collected bilaterally.
+      The activity of these muscles demonstrated to be suitable and sufficient
+      to fine-tuning the gait cycle kinematic parameters of the Ekso exoskeleton
+      in a previous study (Molteni et al. 2017).
+      The selection of these muscles is a good compromise between the setup time
+      and the quantity of information extractable from the data but more muscles
+      may be selected for other kinds of analyses (e.g. muscle synergies).
+      Two kind of metrics will be presented: 1) an index quantifying the amount
+      of activity of each muscles in each phase, e.g. TA_activity_stance_left,
+      TA_activity_swing_left (same for SOL, RF, and HAM, and right leg) (Data
+      are divided for a reference value, namely the activity of a MVC of 1
+      second, to allow for comparison)
+      2) an index quantifying cocontractions between agonist and antagonist
+      muscles in swing and stance (TA-SOL_coco_stance_left,
+      TA-SOL_coco_swing_left, RF-HAM_coco_stance _left, RF-HAM_coco_swing _left
+      and same for right leg.
+      In addition, through the analysis of the video the gait phases will be
+      defined both in time unit and step percentage: stance_time _right,
+      swing_time_right, stride_time_right, stance_time _left, swing_time_left,
+      stride_time_left; stance_perc _right, swing_perc_right, stride_perc_right,
+      stance_perc _left, swing_perc_left, stride_perc_left."
+    image: undef
+    keywords: [Lower-limb exoskeletons (LLEs), stairs, stair ascending,
+      stair descending, human-robot interaction, EMG activity]
+    bipedal_system: [exoskeleton, human, prosthesis]
+    pi_algo: pi_sbs_emg
+    duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
+    controlled_variables:
+      - name: step_height
+        definition: ""
+        type: float
+        range: undef
+        unit: cm
+      - name: step_depth
+        definition: ""
+        type: float
+        range: undef
+        unit: cm
+    testbed:
+      - item: 1 Instrumented platform elevator
+        type: other
+        file_sheet: Jungheinrich 170216-JAA Ameise 1000 (actuator)
+      - item: 8ch EMG wireless acq. system
+        type: sensor
+        file_sheet: undef
+      - item: webcam
+        type: sensor
+        file_sheet: undef
+    step_description: ""
+    step_list:
+      - description: "Subject preparation.
+          1) EMG-electrodes placement; [5 min]
+          2) Donning of the exoskeleton; (in case of the Rewalk Exo) [10 min]"
+        detail: "Time defined based on our experience"
+      - description: "Resting and standing acquisition.
+          1) resting acquisition with the subject sitting on a chair
+          2)  MVC of muscles"
+        detail: "These 2 acquisitions are needed to define EMG values at rest
+            and each muscle MVC values"
+      - description: "Start acquisition.
+          Launch the data collection software."
+        detail: "The subject stands in front  of the stairs"
+      - description: "Ascending stairs.
+          At the Go command the subject begins ascending the stairs till
+          reaching the upper platform."
+        detail: "Usually subjects use the support of a crutch and the handrail"
+      - description: "Turning.
+          The subject turns and prepares for descending the stairs"
+      - description: "Descending stairs.
+          The subject descends the stairs"
+        detail: "Usually subjects use one crutch and the handrail"
+      - description: "Stop acquisition.
+          The acquisition is stopped once the subject stands with both feet on
+          the ground"
+      - description: "Trials repeations.
+          Steps 3 to 6 are repeated (4 other trials)"
+      - description: "Change the staircase inclination.
+          The operator changes the staircase inclination using the platform
+          elevator"
+      - description: "Second set of trials.
+          Steps 3 to 6 are repeated (5 trials)"
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+  - id: 66
+    name: "sbs_weight_bearing"
+    name_readable: "Walking on stairs: ground and handrail reaction forces"
+    definition: "The protocol aims at assessing the subject''s motor control
+      ability in stair ascendig/descending through the analysis of weight
+      bearing.
+      The proposed metrics rely on the analysis of the ground reaction forces
+      and the progression of the Center of Pressure (CoP).
+      The aim is to assess the subjects capability of weight bearing by
+      assessing both load and balance.
+      Two kind of metrics are defined:
+      1) PeakLoad_acceptance_left/right, PeakLoad_PushOff_left/right defined as
+      the peak load in the specific phases (foot strike and push off).
+      Data are divided by the subject''s (+ exoskeleton) weight to allow for
+      inter and intra subject comparison.
+      2) CoP_sagittal_left/right, CoP_lateral_left/right defined as the maximum
+      (negative or positive) CoP progression in the given direction.
+      Data are divided by the subject''s foot length to allow for inter and intra
+      subject comparison.
+      In addition, through the analysis of the video the gait phases will be
+      defined both in time unit and step percentage: stance_time _right,
+      swing_time_right, stride_time_right, stance_time _left, swing_time_left,
+      stride_time_left; stance_perc _right, swing_perc_right, stride_perc_right,
+      stance_perc _left, swing_perc_left, stride_perc_left."
+    image: undef
+    keywords: [Lower-limb exoskeletons (LLEs), stairs, stair ascending,
+      stair descending, human-robot interaction, EMG activity]
+    bipedal_system: [exoskeleton, human, prosthesis]
+    pi_algo: pi_sbs_wb
+    duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
+    controlled_variables:
+      - name: step_height
+        definition: ""
+        type: float
+        range: undef
+        unit: cm
+      - name: step_depth
+        definition: ""
+        type: float
+        range: undef
+        unit: cm
+    testbed:
+      - item: 1 Instrumented platform elevator
+        type: other
+        file_sheet: Jungheinrich 170216-JAA Ameise 1000 (actuator)
+      - item: 2 force plates
+        type: sensor
+        file_sheet: P6000 BTS-bioengineering
+      - item: 4 load cells
+        type: sensor
+        file_sheet: F3G-500Ns Forsentek
+      - item: webcam
+        type: sensor
+        file_sheet: undef
+    step_description: ""
+    step_list:
+      - description: "Subject preparation.
+          1) EMG-electrodes placement; [5 min]
+          2) Donning of the exoskeleton; (in case of the Rewalk Exo) [10 min]"
+        detail: "Time defined based on our experience"
+      - description: "Resting and standing acquisition.
+          1) take foot length and width measure
+          2) standing acquisition with the subject standing with both feet on a
+          force plate"
+        detail: "The acquisition is needed to weight the subject wearing the
+          exoskeleton.
+          Subject''s weight and foot measures are reference data used to make
+          metrics comparable among subjects"
+      - description: "Start acquisition.
+          Launch the data collection software."
+        detail: "The subject stands in front of the stairs"
+      - description: "Ascending stairs.
+          At the Go command the subject begins ascending the stairs till
+          reaching the upper platform."
+        detail: "Usually subjects use the support of a crutch and the handrail"
+      - description: "Turning.
+          The subject turns and prepares for descending the stairs"
+      - description: "Descending stairs.
+          The subject descends the stairs"
+        detail: "Usually subjects use one crutch and the handrail"
+      - description: "Stop acquisition.
+          The acquisition is stopped once the subject stands with both feet on
+          the ground"
+      - description: "Trials repeations.
+          Steps 3 to 6 are repeated (4 other trials)"
+      - description: "Change the staircase inclination.
+          The operator changes the staircase inclination using the platform
+          elevator"
+      - description: "Second set of trials.
+          Steps 3 to 6 are repeated (5 trials)"
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
@@ -317,7 +883,7 @@ pi_algo:
     description: This app is based on Python and is only one executable script
       containing all metrics computations
     url_paper: undef
-    url_code: https://gitlab.com/matjazzadravec/bestable-platform-codes
+    url_code: https://github.com/STEPbySTEPproj/Protocol_biomechanics
     docker_host: eurobenchtest/pi_sbs_biomechanics:v0.0.0
     docker_name: eurobenchtest/pi_sbs_biomechanics:v0.0.0
     pi:
@@ -348,7 +914,7 @@ pi_algo:
       - descending_ankle_left_angle
     input_files: [platformData.csv]
     input_command:
-      - ./run_protocol_1
+      - run_protocol_1
       - platformData.csv
     language: python
-    implemented: false
+    implemented: true

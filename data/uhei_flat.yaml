@@ -1,0 +1,171 @@
+---
+user_name: "uhei"
+scenario:
+  name: "Flat Ground Walking"
+  description: "The Flat Ground Walking scenario assesses the capability of the
+    robotic system to move forward without any form of additional external
+    disturbances."
+  image: uhei/img/uhei_flat.png
+
+protocol:
+  - id: 67
+    name: "uhei_flat_walking"
+    name_readable: "Flat Ground wlking: I3SA - Increased Step Size Stability Assessment"
+    definition: Assess the balance and various other aspects of walking during a
+      4 meter walking trial"
+    image: uhei/img/uhei_flat.png
+    keywords: [flat ground, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: locomotion_bench
+    duration: "2 hours"
+    controlled_variables:
+      - name: step_length
+        definition: step length of the robot (20% to 100% of leg length)
+        type: float
+        range: undef
+        unit: m
+      - name: step_duration
+        definition: step duration for each step
+        type: float
+        range: undef
+        unit: sec
+      - name: step_amount
+        definition: amount of steps to span 4 meters
+        type: float
+        range: undef
+        unit: na
+    testbed:
+      - item: 4 meter on flat ground
+        type: other
+        file_sheet: undef
+      - item: IMU close to robotic free-flyer or internal IMU
+        type: sensor
+        file_sheet: na
+      - item: GRF sensors
+        type: sensor
+        file_sheet: Robot internal force torque sensors or force plate
+    step_description: "undef"
+    step_list:
+      - description: "Initial Step Length.
+          Measure the total leg length of the robot and start with 20% of the
+          total leg length as initial step length"
+      - description: "Put the robot at the starting position and start recording
+          of the data on the robot.
+          Record data to create data files of the walking motion according to
+          the EUROBENCH data format."
+        detail: "Desired files: joint angles, joint velocities, joint
+          accelerations, joint torques, ground reaction forces"
+      - description: "Initiate the walking sequence.
+          The robot walks for four meters.
+          Continue to step 4 after successfull execution of the walking
+          sequence."
+      - description: "Stop the recording of data"
+      - description:  Put the robot back to start
+        detail: By means of a personal lifter or similar
+      - description: "Repeat steps 2 - 5 three times.
+          If the robot succeeds the set step length for the required amount of
+          repetitions go on to step 6.
+          If the robot falls, the protocol is concluded and the robot scores an
+          I3SA Score of <percentage-step length>"
+        detail: "The required amount of successfull repetitions is set to 3"
+      - description: " Increase the step size about 5%. Repeat steps 2 - 6"
+
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+
+pi:
+  - name: h_c
+    name_readable: "Angular Momentum about Center of Mass (CoM)"
+    description: "Angular Momentum about Center of Mass (CoM)"
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cop_bos
+    name_readable: "Distance of the center of pressure to base of support."
+    description: "Distance of the center of pressure to base of support."
+    unit: cm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: cp_bos
+    name_readable: "Distance of the capture point to the base of support"
+    description: "Distance of the capture point to the base of support"
+    unit: cm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: fpe_bos
+    name_readable: "Distance of the foot placement estimator to the base of support"
+    description: "Distance of the foot placement estimator to the base of support"
+    unit: cm
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: base_ori
+    name_readable: "Orientation of the base_link of the robot during walking"
+    description: "Orientation of the base_link of the robot during walking"
+    unit: degree
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: impact
+    name_readable: "Maximum impact during walking cycle"
+    description: "Maximum impact during walking cycle"
+    unit: Nm
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: bar_plot
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: fc_vel
+    name_readable: "Linear and angular velocity of the foot contact point"
+    description: "Linear and angular velocity of the foot contact point"
+    unit: degree/s
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+pi_algo:
+  - name: locomotion_bench
+    description: Benchmarking toolkit to calculate a variety of gait performance indicators
+
+    url_paper: undef
+    url_code: https://gitlab.com/orb-benchmarking/eb_hum_bench
+    docker_host: eurobenchtest/pi_uhei:v0.0.0
+    docker_name: eurobenchtest/pi_uhei:v0.0.0
+    pi:
+      - h_c
+      - cop_bos
+      - fpe_bos
+      - cp_bos
+      - base_ori
+      - impact
+      - fc_vel
+
+    input_files: [robot.yaml, experiment.yaml]
+    input_command:
+      - ./run_pi
+      - robot.yaml
+      - experiment.yaml
+    language: python
+    implemented: false

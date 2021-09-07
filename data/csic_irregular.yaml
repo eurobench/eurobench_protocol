@@ -1,11 +1,13 @@
 ---
+user_name: "csic"
 scenario:
   name: "Irregular terrain"
   description: "Walking through different configurable irregular terrains."
   image: img/img1.png
 
 protocol:
-  - name: "csic_irregular"
+  - id: 51
+    name: "csic_irregular"
     name_readable: "Walking over irregular terrains"
     definition: "Passing through the specific testbed that can hold fourteen
       different irregular terrain conditions.
@@ -33,7 +35,7 @@ protocol:
         file_sheet: https://docs.vicon.com/display/Nexus210
       - item: "Testbed"
         # TODO: how to name such part that is neither a sensor nor an actuator?
-        type: equipment
+        type: other
         file_sheet: "Commercial platform with a fixed wooden board with holes
           into which anti-slip 50x50cm wooden modules, terrasensa modules or
           mats can be fitted."
@@ -41,16 +43,16 @@ protocol:
       4 times with an without wearing an exoskeleton."
     step_list:
       - description: Place the optical markers and Delsys sensors onto the
-          subject's body and take the required anthropometric measurements.
-          Place the sensorized insoles in the subjects' shoes.
-        detail: Following the VICON's "Full Body Plug in Gait" marker set
+          subject''s body and take the required anthropometric measurements.
+          Place the sensorized insoles in the subjects'' shoes.
+        detail: Following the VICON''s "Full Body Plug in Gait" marker set
           specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
           and adding 8 clusters (thighs, tibias, feet, pelvis, chest).
       - description: Place the subject in the middle of the recording area.
       - description: Launch the Data collection software.
       - description: Take a static capture of the subject.
         detail: The subject must be standing in motorbike position (upright
-          posture, both arms at shoulder's height with upper arm and forearm at
+          posture, both arms at shoulder''s height with upper arm and forearm at
           90 degrees).
       - description: Place the subject at the starting point.
       - description: Ask the subject to walk through the testbed at a
@@ -161,7 +163,7 @@ pi_algo:
       - FeetTrajectories_plano01.csv
       - Anthropometry.yaml
     language: octave
-    implemented: false
+    implemented: true
   - name: walk_ratio
     description: Walking ratio algorithm
     url_paper: https://www.researchgate.net/publication/51180936_Walk_ratio_step_lengthcadence_as_a_summary_index_of_neuromotor_control_of_gait_Application_to_multiple_sclerosis
@@ -176,7 +178,7 @@ pi_algo:
       - ./run_pi_walk_ratio
       - GaitParameters_noExo.yaml
     language: octave
-    implemented: false
+    implemented: true
   - name: variability
     description: Gait parameters variability algorithm
     url_paper: undef
@@ -192,7 +194,7 @@ pi_algo:
       - GaitParameters_exo.yaml
       - GaitParameters_noExo.yaml
     language: octave
-    implemented: false
+    implemented: true
   - name: ratio_index
     description: Ratio index algorithm
     url_paper: https://www.sciencedirect.com/science/article/abs/pii/S1746809418300193
@@ -207,4 +209,4 @@ pi_algo:
       - ./run_pi_ratio_index
       - GaitParameters_noExo.yaml
     language: octave
-    implemented: false
+    implemented: true

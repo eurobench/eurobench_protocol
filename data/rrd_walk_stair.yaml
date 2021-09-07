@@ -1,0 +1,135 @@
+---
+user_name: "rrd"
+scenario:
+  name: "Kinematics of stair walking of non-impaired individuals"
+  description: "Stair walking influences the kinematics of the joints of the
+    lower extremities when compared to level ground walking.
+    Wearable robots should change their movement behavior once a subject is
+    walking on a stair.
+    By benchmarking the joint kinematics of stair walking of non-impaired
+    individuals we can set a baseline to which stair walking with bipedal robots
+    can be compared."
+  image: rrd/img/testbed_slope.png
+
+protocol:
+  - id: 71
+    name: "rrd_stair"
+    name_readable: "Kinematics of stair walking of non-impared individuals"
+    definition: "Stair walking influences the kinematics of the joints of the
+    lower extremities when compared to level ground walking.
+    Wearable robots should change their movement behavior once a subject is
+    walking on a stair.
+    By benchmarking the joint kinematics of stair walking of non-impaired
+    individuals we can set a baseline to which stair walking with bipedal robots
+    can be compared."
+    image: rrd/img/testbed_slope.png
+    keywords: [Walking, kinematics, non-impaired]
+    bipedal_system: [human, prosthesis, exoskeleton, humanoid]
+    pi_algo: [pi_walk_slope]
+    duration: "10min/subject"
+    controlled_variables:
+      - name: nb_stride
+        definition: Number of heel strikes of the ipsilateral leg
+        type: int
+        range: [2, 30]
+        unit: steps
+    testbed:
+      - item: "Motion Capture System"
+        type: sensor
+        file_sheet: Xsens
+      - item: "stair testbed"
+        type: other
+        file_sheet: "undefined"
+    step_description: "STAIR UP: Ask the participant to stand at the bottom of
+      the stair in such a way that the first step will be made on first step up
+      the stairs.
+      Start the measurement and ask the subject to walk up the stair and pause
+      when both feet are on level ground again.
+      Stop the measurement once the subject reaches level ground.
+      STAIR DOWN: Ask the participant to stand at the top of the stair in such a
+      way that the first step will be made on first step down the stair.
+      Start the measurement and ask the subject to down the stair and pause when
+      both feet are on level ground.
+      Stop the measurement once the subject reaches level ground."
+    step_list:
+      - description: Perform body measurements.
+        detail: https://tutorial.xsens.com
+      - description: Attach the IMUs according to specifications
+      - description: Perform calibration procedure
+      - description: Check calibration quality
+      - description: Perform measurement
+      - description: Check measurement quality.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: gait_phase_duration
+    name_readable: Gait phase duration
+    description: "Gait phase durations include the first double support phase,
+      single support phase, second double support phase, stance phase and swing
+      phase in terms of percentage of the gait cycle."
+    unit: "%"
+    output: vector
+    intra_run_aggregation: [0, mean]
+    inter_run_aggregation: [0, mean]
+    visu: "Together with single support phase duration, second double support
+      phase duration and the swing phase duration it can be plotted as a bar
+      graph."
+    inter_cond_aggregation: "na"
+    inter_subject_aggregation: "The scores per subject could be averaged to get
+      a global score.
+      Dependent on the size of the group, the mean in combination with the
+      standard deviation can be presented or the median with interquartile range
+      can be presented."
+  - name: cadence
+    name_readable: Cadence
+    description: "Cadwnce is defined as the steps per minute"
+    unit: "steps/min"
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [0, mean]
+    visu: "na"
+    inter_cond_aggregation: "na"
+    inter_subject_aggregation: "The scores per subject could be averaged to get
+      a global score.
+      Dependent on the size of the group, the mean in combination with the
+      standard deviation can be presented or the median with interquartile range
+      can be presented."
+  - name: joint_kinematics
+    name_readable: Joint kinematics
+    description: "Ankle, knee and hip angle at initial contact; maximal ankle,
+      knee and hip angle during the stance phase; ankle, knee and hip angle at
+      toe-off; Maximal ankle, knee and hip angle during the swing phase."
+    unit: degrees
+    output: vector
+    intra_run_aggregation: "na"
+    inter_run_aggregation: "na"
+    visu: Line graph of the time-normalized ankle angle
+    inter_cond_aggregation: na
+    inter_subject_aggregation: "The scores per subject could be averaged to get
+      a global score.
+      Dependent on the size of the group, the mean in combination with the
+      standard deviation can be presented or the median with interquartile range
+      can be presented."
+pi_algo:
+  - name: pi_walk_slope
+    description: undef
+    url_paper: undef
+    url_code: https://github.com/eurobench/rrd_pi_slope
+    docker_host: eurobenchtest/rrd_pi_slope:v1.0.0
+    docker_name: eurobenchtest/rrd_pi_slope:v1.0.0
+    pi:
+      - gait_phase_duration
+      - cadence
+      - joint_kinematics
+    input_files:
+      - gaitEvents.yaml
+      - jointAngles.csv
+      - emg.csv
+    input_command:
+      - run_pi_walk_slope
+      - gaitEvents.yaml
+      - jointAngles.csv
+      - emg.csv
+    language: python
+    implemented: true

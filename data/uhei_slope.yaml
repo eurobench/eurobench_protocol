@@ -1,0 +1,179 @@
+---
+user_name: "uhei"
+scenario:
+  name: "Ascending/Descending slope"
+  description: "Walking on surfaces that are inclined (uphill and downhill)
+    along the gait direction."
+  image: uhei/img/uhei_slope.png
+
+protocol:
+  - id: undef
+    name: "uhei_slope_basic"
+    name_readable: "Ascending / descending slope: basic slope walking"
+    definition: "The robot performs one run for a certain standardized slope
+      angle."
+    image: uhei/img/uhei_slope.png
+    keywords: [slope, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: uhei_slope
+    testbed:
+      - item: "Utilizing the Roll-a-Ramp and a lifting table several slope
+          angles can be created"
+        type: other
+        file_sheet: undef
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - id: undef
+    name: "uhei_slope_max_angle"
+    name_readable: "Ascending / descending slope: maximum angle"
+    definition: "The robot performs several runs for a given amount of
+      different slope angles until the maximum slope angle is reached or the
+      robot cannot walk at the current angle."
+    image: uhei/img/uhei_slope.png
+    keywords: [slope, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: uhei_slope
+    testbed:
+      - item: "Utilizing the Roll-a-Ramp and a lifting table several slope
+          angles can be created"
+        type: other
+        file_sheet: undef
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - id: undef
+    name: "uhei_slope_max_vel"
+    name_readable: "Ascending / descending slope: maximum velocity"
+    definition: "TThe robot performs several runs for a given amount of
+      different slope angles at different (increasing) desired velocities until
+      the maximum slope angle is reached or the robot cannot walk at the current
+      angle at a certain velocity."
+    image: uhei/img/uhei_slope.png
+    keywords: [slope, walking, humanoid robot]
+    bipedal_system: [humanoid]
+    pi_algo: uhei_slope
+    testbed:
+      - item: "Utilizing the Roll-a-Ramp and a lifting table several slope
+          angles can be created"
+        type: other
+        file_sheet: undef
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+
+pi:
+  - name: max_angle
+    name_readable: "Maximum angle up/down"
+    description: "Step height that the robot can walk up/down"
+    unit: angle
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: max_vel
+    name_readable: "Maximum velocity up/down"
+    description: "Maximum velocity the robot can walk up/down at a given slope
+      inclination"
+    unit: ms
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: execution_time
+    name_readable: "Execution time"
+    description: "Time it takes to execute the trajectory"
+    unit: s
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: max_repetition
+    name_readable: "Maximum repetition"
+    description: "Maximum amount of successful successive crossings"
+    unit: na
+    output: scalar
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: success
+    name_readable: "Success rate"
+    description: "Amount of successful repetitions per protocol"
+    unit: na
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: tracking_error
+    name_readable: "tracking error"
+    description: "tracking error from the planned trajectory"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: human_likeness
+    name_readable: "Human likeness"
+    description: "Spatio-temporal comparison of kinematic indicator"
+    unit: m
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: robot_dynamics
+    name_readable: "Robot dynamics"
+    description: "Forces acting on the robot mechanism"
+    unit: N
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: mechanical_energy
+    name_readable: "Mechanical energy"
+    description: "Energy consumed normalized over trajectory and execution time"
+    unit: J
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+pi_algo:
+  - name: uhei_slope
+    description: undef
+    url_paper: undef
+    url_code: undef
+    docker_host: undef
+    docker_name: undef
+    pi:
+      - max_angle
+      - max_vel
+      - execution_time
+      - max_repetition
+      - success
+      - tracking_error
+      - human_likeness
+      - robot_dynamics
+      - mechanical_energy
+
+    input_files: []
+    input_command: []
+    language: python
+    implemented: false
