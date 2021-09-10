@@ -1,7 +1,7 @@
 ---
 user_name: "udbenchmarking"
 scenario:
-  name: Walking on Slopes"
+  name: Walking on Slopes
   description: "The stability of bipedal locomotion is challenged when walking
     on an inclined surface.
     Changes of surface orientation asks for adequate adaption to the new
