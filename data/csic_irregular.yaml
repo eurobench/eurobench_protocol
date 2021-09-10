@@ -18,15 +18,21 @@ protocol:
     pi_algo: [margin_stability, ratio_index, variability, walk_ratio]
     duration: "240min"
     controlled_variables:
-      - name: robot_usage
+      - name: wearable device
         definition: Whether a robot is used in the trial
         type: bool
         range: True / False
         unit: bool
-      - name: terrain_type
+      - name: terrain_configuration
         definition: Type of terrain the subject is facing
-        type: string
-        range: na
+        type: int
+        range: [0, 13]
+        unit: na
+      - name: speed_condition
+        definition: "Self-selected normal speed (0), self-selected low speed (1),
+          self-selected high speed (2)"
+        type: int
+        range: [0, 2]
         unit: na
 
     testbed:
@@ -42,34 +48,20 @@ protocol:
     step_description: "The subject must walk through each terrain configuration
       4 times with an without wearing an exoskeleton."
     step_list:
-      - description: Place the optical markers and Delsys sensors onto the
-          subject''s body and take the required anthropometric measurements.
-          Place the sensorized insoles in the subjects'' shoes.
-        detail: Following the VICON''s "Full Body Plug in Gait" marker set
-          specifications (https://docs.vicon.com/display/Nexus26/Full+body+modeling+with+Plug-in+Gait)
-          and adding 8 clusters (thighs, tibias, feet, pelvis, chest).
-      - description: Place the subject in the middle of the recording area.
-      - description: Launch the Data collection software.
-      - description: Take a static capture of the subject.
-        detail: The subject must be standing in motorbike position (upright
-          posture, both arms at shoulder''s height with upper arm and forearm at
-          90 degrees).
-      - description: Place the subject at the starting point.
-      - description: Ask the subject to walk through the testbed at a
-          comfortable speed four times.
-        detail: A capture per walk should be recorded.
-      - description: Change the irregular terrain configuration of the testbed.
-        detail: The order must be randomized.
-      - description: Repeat the procedure starting at step 5 until completing
-          all the terrain conditions.
-      - description: Remove from the subject the optical markers from the
-          pelvis, thighs, knees, tibias and ankles and put him/her the
-          exoskeleton.
-      - description: Let the subject walk with the exoskeleton over flat floor
-          for 10 minutes so that he/she gets familiarized with it.
-      - description: Repeat steps 5 to 8 until completing again four walks per
-          terrain condition.
-      - description: Remove the exoskeleton and optical markers from the subject.
+      - description: Let the subject familiarize with the testbed and the wearable device.
+      - description: Instrument the subject.
+      - description: Ask the subject to perform a trial on ground level walking at self-selected normal speed (SNS) without the wearable device.
+        detail: For a trial to be valid, it must contain at least 10 strides.
+      - description: Set up an uneven terrain configuration.
+      - description: Ask the subject to perform a trial over the uneven terrain at self-selected normal speed (SNS) without the wearable device.
+      - description: Repeat step 5 at at self-selected low speed (SLS) and self-selected high speed (SHS).
+        detail: This step is optional. In case of executing it, it is recommended to randomize the speed conditions by alternating SNS, SLS and SHS to avoid bias.
+      - description: Let the subject rest for 5 minutes.
+      - description: Repeat steps 4 to 8 until all the desired terrain configurations are tested.
+      - description: Put the wearable device on the subject.
+      - description: Repeat steps 2 to 8.
+      - description: Remove the wearable device from the subject.
+      - description: Take the data and analyze it.
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true

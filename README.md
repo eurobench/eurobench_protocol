@@ -120,10 +120,11 @@ The hyperlinks refer to:
   [Eurobench fork](https://github.com/eurobench/pi_csic_irregular),
   [docker](https://hub.docker.com/r/eurobenchtest/pi_csic_irregular),
   [template](data/csic-irregular/csic-irregular-terrains.xlsx),
-  [yaml](data/csic_irregular.yaml)
+  [yaml](data/csic_irregular.yaml),
+  [manual](data/csic-irregular/manual)
 * current state (26/01):
   * various issue opened, but the docker image is uploaded
-* integrated: 1 protocol, **NO PDF**
+* integrated: 1 protocol, **no pdf uploaded**.
   * [Walking over irregular terrains](https://15.237.22.1/protocols/info/51)
 
 #### madrob
