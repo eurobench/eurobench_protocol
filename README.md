@@ -23,7 +23,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 | Name | Who | protocol uploaded  | PI uploaded |
 | ---- | --- | ------------------ | ----------- |
-| Walking/Standing on a moving surface | [beat](#beat) | 7 | no |
+| Walking/Standing on a moving surface | [beat](#beat) | 7 | yes |
 | Walking on treadmill | [Bestable](#bestable) and treadmill | 1 | yes |
 | Walking with crutches | [Bullet](#bullet) | 2 (missing pdf) | yes |
 | Ascending/Descending slopes | Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
@@ -186,8 +186,6 @@ The hyperlinks refer to:
   * [User-centered assessment of exoskeleton-assisted treadmill-based walking](http://15.237.22.1/protocols/info/44)
   * [User-centered assessment of exoskeleton-assisted overground walking](http://15.237.22.1/protocols/info/43)
 
-### Ready to be tested for insertion in database
-
 #### beat
 
 * [code](https://github.com/aremazeilles/beat_routine),
@@ -204,6 +202,9 @@ The hyperlinks refer to:
   * [Step perturbation - even surface](http://15.237.22.1/protocols/info/24)
   * [Stepping on place - even surface](http://15.237.22.1/protocols/info/18)
   * [Sinusoidal perturbation - even surface](http://15.237.22.1/protocols/info/29)
+
+### Ready to be tested for insertion in database
+
 #### tested
 
 * [code](https://github.com/jamatics/pi_ctag),
