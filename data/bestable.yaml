@@ -235,7 +235,7 @@ pi:
     strike and COP position of the right heel strike, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -250,7 +250,7 @@ pi:
     strike and COP position of the right heel strike, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -266,7 +266,7 @@ pi:
       stance, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -282,7 +282,7 @@ pi:
       stance, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -296,7 +296,7 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -310,7 +310,7 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -326,7 +326,7 @@ pi:
       versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -342,7 +342,7 @@ pi:
       versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -358,7 +358,7 @@ pi:
       stance, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -374,7 +374,7 @@ pi:
       stance, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -388,7 +388,7 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
@@ -402,7 +402,7 @@ pi:
       heel strike to right heel strike, and vice versa)"
     unit: m
     output: vector
-    intra_run_aggregation: [[0, mean], [0, std]]
+    intra_run_aggregation: ["mean;:", "std;:"]
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
