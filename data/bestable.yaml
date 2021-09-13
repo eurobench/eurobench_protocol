@@ -236,7 +236,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -251,7 +251,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -267,7 +267,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -283,7 +283,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -297,7 +297,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -311,7 +311,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -327,7 +327,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -343,7 +343,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -359,7 +359,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -375,7 +375,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -389,7 +389,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
@@ -403,7 +403,7 @@ pi:
     unit: m
     output: vector
     intra_run_aggregation: ["mean;:", "std;:"]
-    inter_run_aggregation: [[0, mean], [0, std]]
+    inter_run_aggregation: ["mean;:;:;1;1", "std;:;:;1;1"]
     visu: box plot
     inter_cond_aggregation: "median (preferred) or mean score"
     inter_subject_aggregation: "Benchmarking data will consist of boxplots
