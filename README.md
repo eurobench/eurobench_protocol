@@ -230,19 +230,17 @@ The hyperlinks refer to:
 * integrated : 1 protocol, PDF inserted
   * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
 
-### Under progress
-
 #### beast
 
 * [code](https://github.com/madrob-beast/madrob_beast_pi),
   [github repo](https://github.com/eurobench/pi_madrob_beast),
   [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
   [excel](data/beast/beast-v3.xlsx),
-  [yaml](data/beast.yaml),
-  [manual](data/beast/manual//Detailed_Description_of_BEAST_Protocol_and_Performance_Indicators.pdf)
-* current state: waiting for reference data set
-* integrated: 1 protocol, pdf uploaded
+  [yaml](data/beast.yaml)
+* integrated: 1 protocol. No pdf, but reference to repository
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
+
+### Under progress
 
 #### stepByStep
 
@@ -267,6 +265,7 @@ The hyperlinks refer to:
   * Only the biomechanical protocol has manual and code implemented.
 
 * integrated: **NO PROTOCOL**
+
 ### Very early stage
 
 #### csic_manipulation
