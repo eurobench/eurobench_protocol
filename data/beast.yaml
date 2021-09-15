@@ -52,7 +52,7 @@ protocol:
         unit: none
     testbed:
       - item: "test environment"
-        type: passive testbed element (structural)
+        type: other
         file_sheet: undef
       - item: "instrumented shopping trolley"
         type: combined
@@ -263,3 +263,4 @@ pi_algo:
       - wrench.csv
       - condition.yaml
     language: python
+    implemented: true
