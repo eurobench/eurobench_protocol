@@ -46,7 +46,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 
 | Name | Who | protocol uploaded  | PI uploaded |
 | ---- | --- | ------------------ | ----------- |
-| Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | under progress |
+| Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | yes |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
 | Walking on flat ground |Eurobench-UHEI | 1 | no |
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
@@ -204,6 +204,16 @@ The hyperlinks refer to:
   * [Stepping on place - even surface](http://15.237.22.1/protocols/info/18)
   * [Sinusoidal perturbation - even surface](http://15.237.22.1/protocols/info/29)
 
+#### beast
+
+* [code](https://github.com/madrob-beast/madrob_beast_pi),
+  [github repo](https://github.com/eurobench/pi_madrob_beast),
+  [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
+  [excel](data/beast/beast-v3.xlsx),
+  [yaml](data/beast.yaml)
+* integrated: 1 protocol. No pdf, but reference to repository
+  * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
+
 ### Ready to be tested for insertion in database
 
 #### tested
@@ -229,16 +239,6 @@ The hyperlinks refer to:
   * would be in good shape
 * integrated : 1 protocol, PDF inserted
   * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
-
-#### beast
-
-* [code](https://github.com/madrob-beast/madrob_beast_pi),
-  [github repo](https://github.com/eurobench/pi_madrob_beast),
-  [docker image](https://hub.docker.com/repository/docker/eurobenchtest/pi_madrob_beast),
-  [excel](data/beast/beast-v3.xlsx),
-  [yaml](data/beast.yaml)
-* integrated: 1 protocol. No pdf, but reference to repository
-  * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
 
 ### Under progress
 
