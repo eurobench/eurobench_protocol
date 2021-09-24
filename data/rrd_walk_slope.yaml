@@ -14,7 +14,7 @@ scenario:
 protocol:
   - id: 70
     name: "rrd_slope"
-    name_readable: "Kinematics of inclined walking of non-impared individuals"
+    name_readable: "Walking on slopes"
     definition: "Slope walking influences the kinematics of the joints of the
       lower extremities when compared to level ground walking.
       Wearable robots should change their movement behavior once a subject is
@@ -36,7 +36,7 @@ protocol:
     testbed:
       - item: "Motion Capture System"
         type: sensor
-        file_sheet: Xsens
+        file_sheet: "IMUs or optoelectronic system (for example: XSens)"
       - item: "slope testbed"
         type: other
         file_sheet: "undefined"

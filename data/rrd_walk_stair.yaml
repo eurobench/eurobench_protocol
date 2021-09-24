@@ -36,7 +36,7 @@ protocol:
     testbed:
       - item: "Motion Capture System"
         type: sensor
-        file_sheet: Xsens
+        file_sheet: "IMUs or optoelectronic system (for example: XSens)"
       - item: "stair testbed"
         type: other
         file_sheet: "undefined"

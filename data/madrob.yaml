@@ -7,7 +7,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "madrob"
+  - id: 52
+    name: "madrob"
     name_readable: "MADROB: using a door"
     definition: "The benchmark evaluates the capability of the robot to
       correctly operate standard (hinged) doors for human use.
