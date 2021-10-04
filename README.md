@@ -36,7 +36,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
-| Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | no |
+| Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | yes |
 | Standing during manipulation | [Eurobench-CSIC](#csic_manipulation) | 2 | under dev |
 | Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (missing pdf) | yes
 | Characterization of user experience during exoskeleton-assisted walking | [Experience](#experience) | 2 | no
@@ -214,6 +214,18 @@ The hyperlinks refer to:
 * integrated: 1 protocol. No pdf, but reference to repository
   * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
 
+#### benchbalance
+
+* [code](https://github.com/FraCampus/PI_BenchBalance),
+  [template](data/benchbalance/benchbalance.xlsx)
+  [yaml](data/benchbalance.yaml)
+  [manual](data/benchbalance/doc/BenchBalance_Protocol_PIs.pdf)
+* current state:
+  * **Matlab** code, not likely to be Octave-compatible
+  * would be in good shape
+* integrated : 1 protocol, PDF inserted
+  * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
+
 ### Ready to be tested for insertion in database
 
 #### tested
@@ -227,18 +239,6 @@ The hyperlinks refer to:
   * ready to be tested?
 * integrated: 1 protocol, **NO PDF**
   * [TestEd - Industrial Use-Cases in Narrow Spaces](http://15.237.22.1/protocols/info/49)
-
-#### benchbalance
-
-* [code](https://github.com/FraCampus/PI_BenchBalance),
-  [template](data/benchbalance/benchbalance.xlsx)
-  [yaml](data/benchbalance.yaml)
-  [manual](data/benchbalance/doc/BenchBalance_Protocol_PIs.pdf)
-* current state:
-  * **Matlab** code, not likely to be Octave-compatible
-  * would be in good shape
-* integrated : 1 protocol, PDF inserted
-  * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
 
 ### Under progress
 
