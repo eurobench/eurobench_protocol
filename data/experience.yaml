@@ -297,8 +297,8 @@ pi_algo:
       assess user experience from the subjective perspective."
     url_paper: undef
     url_code: https://git.code.tecnalia.com/eurobench/pi_questionnaire
-    docker_host: eurobenchtest/pi_experience:v0.0.0
-    docker_name: eurobenchtest/pi_experience:v0.0.0
+    docker_host: eurobenchtest/pi_experience_questionnaire:v0.0.0
+    docker_name: eurobenchtest/pi_experience_questionnaire:v0.0.0
     pi:
       - usability
       - acceptability
@@ -312,20 +312,21 @@ pi_algo:
       - questionnaire_Experience_functionality.csv
       - questionnaire_Experience.csv
     input_command:
-      - run_questionnaire
+      - ''
       - questionnaire_Experience.csv
       - questionnaire_Experience_usability.csv
       - questionnaire_Experience_acceptability.csv
       - questionnaire_Experience_perceptibility.csv
       - questionnaire_Experience_functionality.csv
     language: matlab
+    implemented: true
   - name: pi_psychophysiological
     description: "Algorithm to extract indicators inferring the
       psychophysiological state of the user starting from physiological data."
     url_paper: undef
     url_code: https://git.code.tecnalia.com/eurobench/pi_psychophysiological
-    docker_host: eurobenchtest/pi_experience:v0.0.0
-    docker_name: eurobenchtest/pi_experience:v0.0.0
+    docker_host: eurobenchtest/pi_experience_psycho:v0.0.0
+    docker_name: eurobenchtest/pi_experience_psycho:v0.0.0
     pi:
       - stress
       - fatigue
@@ -339,10 +340,11 @@ pi_algo:
       - part_stand_physiological_ecg.csv
       - part_walk_physiological_ecg.csv
     input_command:
-      - run_physiopsychological
+      - ''
       - part_sit_physiological.csv
       - part_walk_physiological_ecg.csv
       - part_walk_physiological.csv
       - part_walk_physiological_ecg.csv
     language: matlab
+    implemented: true
 
