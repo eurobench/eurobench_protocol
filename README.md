@@ -35,7 +35,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Straight walking | Eurobench-CSIC | 0
 | Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
-| Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
+| Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | yes |
 | Standing during manipulation | [Eurobench-CSIC](#csic_manipulation) | 2 | under dev |
 | Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (missing pdf) | yes
@@ -81,12 +81,13 @@ The hyperlinks refer to:
   [Eurobench_repo](https://github.com/eurobench/pi_bench),
   [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bench),
   [template](data/bench/bench.xlsx),
-  [yaml](data/bench.yaml)
+  [yaml](data/bench.yaml),
+  [manual](data/bench/manual)
 * Discussion on the input data (calib file per user, not in the current options)
-* Integrated 2 protocols, **NO pdf**:
+* Integrated 2 protocols:
   * [5 sit to stand](http://15.237.22.1/protocols/info/57)
   * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
-
+  * manual uploaded
 #### bestable
 
 * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
