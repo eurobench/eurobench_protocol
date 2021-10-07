@@ -10,7 +10,7 @@ scenario:
 protocol:
   - id: 67
     name: "uhei_flat_walking"
-    name_readable: "Flat Ground wlking: I3SA - Increased Step Size Stability Assessment"
+    name_readable: "Flat Ground walking: I3SA - Increased Step Size Stability Assessment"
     definition: Assess the balance and various other aspects of walking during a
       4 meter walking trial"
     image: uhei/img/uhei_flat.png
