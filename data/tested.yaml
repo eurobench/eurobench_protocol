@@ -735,6 +735,7 @@ pi_algo:
     input_files: [hrv.csv]
     input_command: [./run_pi_hrMonitoring, hrv.csv]
     language: octave
+    implemented: true
   - name: pi_metaboliccost
     description: undef
     url_paper: undef
@@ -745,6 +746,7 @@ pi_algo:
     input_files: [chrono.csv, subject_info.yaml, condition.yaml, subject_condition_choice_metabolicCost.yaml]
     input_command: [./run_pi_metabolicCost, chrono.csv, subject_info.yaml, condition.yaml, subject_condition_choice_metabolicCost.yaml]
     language: octave
+    implemented: true
   - name: pi_chrono
     description: undef
     url_paper: undef
@@ -755,6 +757,7 @@ pi_algo:
     input_files: [chrono.csv]
     input_command: [./run_pi_chrono, chrono.csv]
     language: octave
+    implemented: true
   - name: pi_balance
     description: undef
     url_paper: undef
@@ -765,6 +768,7 @@ pi_algo:
     input_files: [balance.csv, subject_info.yaml]
     input_command: [./run_pi_balance, balance.csv, subject_info.yaml]
     language: octave
+    implemented: true
   - name: pi_rangeofmotion
     description: undef
     url_paper: undef
@@ -775,6 +779,7 @@ pi_algo:
     input_files: [jointAngles.csv]
     input_command: [./run_pi_rangeofMotion, jointAngles.csv]
     language: octave
+    implemented: true
   - name: pi_questionnaire
     description: undef
     url_paper: undef
@@ -785,6 +790,7 @@ pi_algo:
     input_files: [questionnaire_medAssist.csv]
     input_command: [./run_pi_questionnaire, questionnaire_medAssist.csv]
     language: octave
+    implemented: true
   - name: pi_borgscale10
     description: undef
     url_paper: undef
@@ -795,3 +801,4 @@ pi_algo:
     input_files: [questionnaire_borgScale10.csv]
     input_command: [./run_pi_borgScale10, questionnaire_borgScale10.csv]
     language: octave
+    implemented: true
