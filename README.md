@@ -32,7 +32,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Moving in narrow spaces | [tested](#tested) | 3 (no pdf) | no |
 | Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
-| Straight walking | Eurobench-CSIC | 0
+| Straight walking | [Eurobench-CSIC](#csic_straight_walking) | 0
 | Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 (no pdf) | yes |
@@ -280,7 +280,14 @@ The hyperlinks refer to:
 * Status:
   * under revision.
 
-##### comtest
+#### csic_straight_walking
+
+* code would be [irregular](https://github.com/AdrianaTorres/Irregular_Terrains),
+  [yaml](data/csic_straight.yaml)
+* current state (07/10):
+  * preparing  1st protocol description
+
+#### comtest
 
 * [code](https://github.com/VittorioFreiburg/COMTEST),
   [template](data/comtest/comtest_v5.xlsx)

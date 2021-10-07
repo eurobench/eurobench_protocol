@@ -1,0 +1,190 @@
+---
+user_name: "csic"
+scenario:
+  name: "Straigth walking"
+  description: "Straight walking"
+  # would you have an image to share
+  image:
+
+protocol:
+  - id: tobedefined
+    name: "csic_straight"
+    name_readable: "Straight Walking on regular terrain"
+    # more item to mention?
+    definition: "The subject must perform four walks onto a regular and planar environment."
+    image:
+    keywords: [balance, stability, straight]
+    bipedal_system: [human, prosthesis, exoskeleton]
+    pi_algo: [margin_stability, ratio_index, variability, walk_ratio]
+    duration: "240min"
+    controlled_variables:
+      - name: wearable device
+        definition: Whether a robot is used in the trial
+        type: bool
+        range: True / False
+        unit: bool
+      # is this variable maintained?
+      - name: speed_condition
+        definition: "Self-selected normal speed (0), self-selected low speed (1),
+          self-selected high speed (2)"
+        type: int
+        range: [0, 2]
+        unit: na
+
+    testbed:
+      - item: "Optoelectronic motion capture system, or Vicon"
+        type: sensor
+        file_sheet: https://docs.vicon.com/display/Nexus210
+    step_description: "The subject must walk 4 times with an without wearing an exoskeleton."
+    step_list:
+      - description: Let the subject familiarize with the testbed and the wearable device.
+      - description: Instrument the subject.
+      - description: Ask the subject to perform a trial on ground level walking at self-selected normal speed (SNS) without the wearable device.
+        detail: For a trial to be valid, it must contain at least 10 strides.
+      - description: Repeat step 3 at at self-selected low speed (SLS) and self-selected high speed (SHS).
+        detail: This step is optional. In case of executing it, it is recommended to randomize the speed conditions by alternating SNS, SLS and SHS to avoid bias.
+      - description: Let the subject rest for 5 minutes.
+      - description: Put the wearable device on the subject.
+      - description: Repeat steps 2 to 6.
+      - description: Remove the wearable device from the subject.
+      - description: Take the data and analyze it.
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: true
+pi:
+  - name: margin_stability
+    name_readable: "Margin of Stability (MoS)"
+    description: "Analogous parameter to the condition of standing stability
+      which states that the center of mass (CoM) should be within the base of
+      support (BoS).
+      The extrapolation to dynamic stability states that the position of the
+      vertical projection of the CoM (PCoM) plus its velocity times a factor
+      (extrapolated center of mass position (XCoM)) should be within the BoS."
+    unit: mm
+    output: vector
+    intra_run_aggregation: [[0, mean]]
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: gait_deviation_index
+    name_readable: "Gait Deviation Index (GDI)"
+    description: "Scaled distance between 15 gait feature scores for a subject
+      and the average of the same 15 gait feature scores for a control group of
+      typically developing (TD) children."
+    unit: na
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: walk_ratio
+    name_readable: "Walk Ratio (WR)"
+    description: "Division of step length by cadence.
+      It is used to measure overall gait control."
+    unit: mm/(step/min)
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: variability
+    name_readable: "Gait Parameters Variability"
+    description: "Difference between the value of a gait parameter when walking
+      without the exoskeleton and the value of the same gait parameter obtained
+      when walking wearing the exoskeleton."
+    unit: Unit of the gait parameter
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject.
+  - name: ratio_index
+    name_readable: "Ratio Index (RI)"
+    description: "Division of a gait parameter by the same gait parameter of the
+      contralateral limb.
+      It is used for quantifying gait symmetry."
+    unit: Unit of the gait parameter
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: The score is calculated per condition, but it is not
+      combined with the score of other conditions.
+    inter_subject_aggregation: One score per human subject
+
+pi_algo:
+  - name: margin_stability
+    description: Margin of stability algorithm
+    url_paper: https://pubmed.ncbi.nlm.nih.gov/15519333/
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - margin_stability
+    input_files:
+      - COM_plano01.csv
+      - gaitEvents_plano01.csv
+      - FeetTrajectories_plano01.csv
+      - Anthropometry.yaml
+    input_command:
+      - ./run_pi_margin_stability
+      - COM_plano01.csv
+      - gaitEvents_plano01.csv
+      - FeetTrajectories_plano01.csv
+      - Anthropometry.yaml
+    language: octave
+    implemented: true
+  - name: walk_ratio
+    description: Walking ratio algorithm
+    url_paper: https://www.researchgate.net/publication/51180936_Walk_ratio_step_lengthcadence_as_a_summary_index_of_neuromotor_control_of_gait_Application_to_multiple_sclerosis
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - walk_ratio
+    input_files:
+      - gaitParameters.yaml
+    input_command:
+      - ./run_pi_walk_ratio
+      - GaitParameters_noExo.yaml
+    language: octave
+    implemented: true
+  - name: variability
+    description: Gait parameters variability algorithm
+    url_paper: undef
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - variability
+    input_files:
+      - gaitParameters.yaml
+    input_command:
+      - ./run_pi_variability
+      - GaitParameters_exo.yaml
+      - GaitParameters_noExo.yaml
+    language: octave
+    implemented: true
+  - name: ratio_index
+    description: Ratio index algorithm
+    url_paper: https://www.sciencedirect.com/science/article/abs/pii/S1746809418300193
+    url_code: https://github.com/AdrianaTorres/Irregular_Terrains/
+    docker_host: eurobenchtest/pi_csic_irregular:v0.0.0
+    docker_name: eurobenchtest/pi_csic_irregular:v0.0.0
+    pi:
+      - ratio_index
+    input_files:
+      - gaitParameters.yaml
+    input_command:
+      - ./run_pi_ratio_index
+      - GaitParameters_noExo.yaml
+    language: octave
+    implemented: true
