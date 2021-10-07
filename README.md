@@ -29,7 +29,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Ascending/Descending slopes | Eurobench [UDBenchmark](#udbenchmarking) | 2 | yes |
 | Kinematics of inclined walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Characterization of the effects of the exoskeleton over muscle coordination | [Pepato](#pepato) | 1 | yes |
-| Moving in narrow spaces | [tested](#tested) | 3 (no pdf) | no |
+| Moving in narrow spaces | [tested](#tested) | 3 (no pdf) | yes |
 | Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
@@ -226,8 +226,6 @@ The hyperlinks refer to:
 * integrated : 1 protocol, PDF inserted
   * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
 
-### Ready to be tested for insertion in database
-
 #### tested
 
 * [code](https://github.com/jamatics/pi_ctag),
@@ -239,6 +237,8 @@ The hyperlinks refer to:
   * ready to be tested?
 * integrated: 1 protocol, **NO PDF**
   * [TestEd - Industrial Use-Cases in Narrow Spaces](http://15.237.22.1/protocols/info/49)
+
+### Ready to be tested for insertion in database
 
 ### Under progress
 
