@@ -38,7 +38,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | yes |
 | Standing during manipulation | [Eurobench-CSIC](#csic_manipulation) | 2 | under dev |
-| Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 (missing pdf) | yes
+| Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 | yes
 | Characterization of user experience during exoskeleton-assisted walking | [Experience](#experience) | 2 | no
 | Robot Actuation characterization system | Forecast | under progress | no
 
@@ -125,8 +125,9 @@ The hyperlinks refer to:
   [manual](data/csic-irregular/manual)
 * current state (26/01):
   * various issue opened, but the docker image is uploaded
-* integrated: 1 protocol, **no pdf uploaded**.
+* integrated: 1 protocol.
   * [Walking over irregular terrains](https://15.237.22.1/protocols/info/51)
+  * manual uploaded.
 
 #### madrob
 
