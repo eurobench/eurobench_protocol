@@ -178,6 +178,7 @@ The hyperlinks refer to:
 #### experience
 
 * [code](https://github.com/FraCampus/EXPERIENCE),
+  [active fork](https://github.com/aremazeilles/EXPERIENCE),
   [template](data/experience/experience.xlsx),
   [yaml](data/experience.yaml),
   [manual](data/experience/doc/EXPERIENCE_documentation_v2_0.pdf)
@@ -219,6 +220,7 @@ The hyperlinks refer to:
 #### benchbalance
 
 * [code](https://github.com/FraCampus/PI_BenchBalance),
+  [active fork](https://github.com/aremazeilles/PI_BenchBalance)
   [template](data/benchbalance/benchbalance.xlsx)
   [yaml](data/benchbalance.yaml)
   [manual](data/benchbalance/doc/BenchBalance_Protocol_PIs.pdf)
@@ -247,8 +249,9 @@ The hyperlinks refer to:
 #### stepByStep
 
 * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
-  [code](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
-  [second repo](https://github.com/STEPbySTEPproj/HF_metrics)
+  [biomechanics PI](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
+  [HF PI](https://github.com/STEPbySTEPproj/HF_metrics),
+  [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg),
   [template](data/stepByStep/stepByStep.xlsx),
   [yaml](data/stepByStep.yaml)
 * current state:
