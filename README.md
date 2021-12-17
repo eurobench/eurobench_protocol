@@ -271,6 +271,36 @@ The hyperlinks refer to:
 
 * integrated: **NO PROTOCOL**
 
+##### comtest
+
+* [code](https://github.com/VittorioFreiburg/COMTEST),
+  [template](data/comtest/comtest_v5.xlsx)
+* octave code. Still requires  adjustment.
+* current state:
+  * PI check requested 16.12.2021, pending on answer.
+  * docker mechanism ready
+  * Waiting for pi check, and then to adjust protocol description
+* integrated: 2 protocols (to be strongly revised), **NO PDF**
+  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
+  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
+
+#### uhei
+
+* [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
+* [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
+* [github version](https://github.com/eurobench/eb_hum_bench)
+* no Excel sheet available
+* 16.12.2021: proposed changes to get eurobench compatible entry point.
+  * issue for optional parameters.
+* docker mechanism inserted
+* integrated: **NO PROTOCOL**
+
+* Walking on slope
+  * [yaml file](data/uhei_slope.yaml)
+  * Contains 5 protocols
+  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+  * **NO PROTOCOL, NO CODE**
+
 ### Very early stage
 
 #### csic_manipulation
@@ -285,23 +315,12 @@ The hyperlinks refer to:
 * Status:
   * under revision.
 
-##### comtest
-
-* [code](https://github.com/VittorioFreiburg/COMTEST),
-  [template](data/comtest/comtest_v5.xlsx)
-* octave code. Still requires significant afjustment.
-* current state:
-  * PR opened the 29/03, pending on answer.
-* integrated: 2 protocols (to be strongly revised), **NO PDF**
-  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
-  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
-
 #### dysturbance
 
 * [code](https://github.com/CentroEPiaggio/dysturbance),
   [template](data/dysturbance/dysturbance.xlsx)
 * current state:
-  * 10/06 issue raised, waiting for answer.
+  * 16.12.2021 waiting for answer.
 * Integrated: 4 protocols, **NO PDF**
   * [Dysturbance -Reaction to Impulsive Disturbance](http://15.237.22.1/protocols/info/39)
   * [Dysturbance - Reaction to Sinusoidal Force Disturbance](http://15.237.22.1/protocols/info/40)
@@ -348,19 +367,6 @@ Related to humanoid
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
 
-#### uhei
-
-* [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
-* [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
-* no Excel sheet available
-* 25/03: repo changed, waiting for call example and input files.
-* integrated: **NO PROTOCOL**
-
-* Walking on slope
-  * [yaml file](data/uhei_slope.yaml)
-  * Contains 5 protocols
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
 
 #### waterloo
 
