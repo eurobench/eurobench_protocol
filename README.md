@@ -85,9 +85,10 @@ The hyperlinks refer to:
   [manual](data/bench/manual)
 * Discussion on the input data (calib file per user, not in the current options)
 * Integrated 2 protocols:
-  * [5 sit to stand](http://15.237.22.1/protocols/info/57)
-  * [30 seconds sit to stand](http://15.237.22.1/protocols/info/58)
+  * [5 sit to stand](https://platform.eurobench2020.eu/protocols/info/57)
+  * [30 seconds sit to stand](https://platform.eurobench2020.eu/protocols/info/58)
   * manual uploaded
+  
 #### bestable
 
 * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -98,7 +99,7 @@ The hyperlinks refer to:
   [data_set](https://gitlab.com/matjazzadravec/bestable-platform-manual/-/tree/master)
   [manual](data/bestable/doc/BeStable_Manual_V5.pdf)
 * integrated:
-  * 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](http://15.237.22.1/protocols/info/53).
+  * 1 protocol: [Bestable: Visually-cued stepping perturbations on a treadmill](https://platform.eurobench2020.eu/protocols/info/53).
   * Manual uploaded.
 
 #### bullet
@@ -112,8 +113,8 @@ The hyperlinks refer to:
 * discussion opened on the inter-intra aggregation
 * Integrated:
   * 2 protocols, **no pdf available**
-    * [Walking on straight lines with instrumented crutches](http://15.237.22.1/protocols/info/55)
-    * [Walking on straight lines with instrumented crutches, mocap and force platforms](http://15.237.22.1/protocols/info/56)
+    * [Walking on straight lines with instrumented crutches](https://platform.eurobench2020.eu/protocols/info/55)
+    * [Walking on straight lines with instrumented crutches, mocap and force platforms](https://platform.eurobench2020.eu/protocols/info/56)
 
 #### csic_irregular_terrain
 
@@ -138,7 +139,7 @@ The hyperlinks refer to:
   [yaml](data/madrob/madrob.yaml),
   [manual](data/madrob/manual/Detailed_Description_of_MADROB_Protocol_and_Performance_Indicators.pdf)
 * Missing: indication on data collected files.
-* A protocol: [Madrob: using a door](http://15.237.22.1/protocols/info/52)
+* A protocol: [Madrob: using a door](https://platform.eurobench2020.eu/protocols/info/52)
 * documentation: PDF available. Available from the github repo. Image available
 
 #### pepato
@@ -151,7 +152,7 @@ The hyperlinks refer to:
   [dataset](https://yadi.sk/d/QMXiTgsKDC8-Zw),
   [manual](data/pepato/manual/description_PEPATO.pdf)
 * integrated: 1 protocol
-  * [Walking on a treadmill at 3 speeds](http://15.237.22.1/protocols/info/59)
+  * [Walking on a treadmill at 3 speeds](https://platform.eurobench2020.eu/protocols/info/59)
 
 #### rrd
 
@@ -171,8 +172,8 @@ The hyperlinks refer to:
   [yaml](data/udbenchmark.yaml),
   [manual](data/udbenchmarking/doc/1.Protocol.pdf)
 * integrated: 2 protocols
-  * [UDBenchmarking - "Walking on Slopes"](http://15.237.22.1/protocols/info/50)
-  * [Walking on an inclined treadmill](http://15.237.22.1/protocols/info/54)
+  * [UDBenchmarking - "Walking on Slopes"](https://platform.eurobench2020.eu/protocols/info/50)
+  * [Walking on an inclined treadmill](https://platform.eurobench2020.eu/protocols/info/54)
   * Manual uploaded.
 
 #### experience
@@ -187,8 +188,8 @@ The hyperlinks refer to:
   * Information about the protocols can be consulted but the algorithms are not callable at this moment.
 * implemented field set to False
 * integrated: 2 protocols, documentation uploaded
-  * [User-centered assessment of exoskeleton-assisted treadmill-based walking](http://15.237.22.1/protocols/info/44)
-  * [User-centered assessment of exoskeleton-assisted overground walking](http://15.237.22.1/protocols/info/43)
+  * [User-centered assessment of exoskeleton-assisted treadmill-based walking](https://platform.eurobench2020.eu/protocols/info/44)
+  * [User-centered assessment of exoskeleton-assisted overground walking](https://platform.eurobench2020.eu/protocols/info/43)
 
 #### beat
 
@@ -199,13 +200,13 @@ The hyperlinks refer to:
   [yaml](data/beat.yaml),
 * current state: waiting for PI output adjustment in code. Pending Merge Request.
 * integrated: 7 protocols, **NO PDF**
-  * [Static Balance - uneven surface](http://15.237.22.1/protocols/info/23)
-  * [Step perturbation - uneven surface](http://15.237.22.1/protocols/info/25)
-  * [Static Balance - even surface](http://15.237.22.1/protocols/info/22)
-  * [Stepping on platform - uneven surface](http://15.237.22.1/protocols/info/20)
-  * [Step perturbation - even surface](http://15.237.22.1/protocols/info/24)
-  * [Stepping on place - even surface](http://15.237.22.1/protocols/info/18)
-  * [Sinusoidal perturbation - even surface](http://15.237.22.1/protocols/info/29)
+  * [Static Balance - uneven surface](https://platform.eurobench2020.eu/protocols/info/23)
+  * [Step perturbation - uneven surface](https://platform.eurobench2020.eu/protocols/info/25)
+  * [Static Balance - even surface](https://platform.eurobench2020.eu/protocols/info/22)
+  * [Stepping on platform - uneven surface](https://platform.eurobench2020.eu/protocols/info/20)
+  * [Step perturbation - even surface](https://platform.eurobench2020.eu/protocols/info/24)
+  * [Stepping on place - even surface](https://platform.eurobench2020.eu/protocols/info/18)
+  * [Sinusoidal perturbation - even surface](https://platform.eurobench2020.eu/protocols/info/29)
 
 #### beast
 
@@ -215,7 +216,7 @@ The hyperlinks refer to:
   [excel](data/beast/beast-v3.xlsx),
   [yaml](data/beast.yaml)
 * integrated: 1 protocol. No pdf, but reference to repository
-  * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](http://15.237.22.1/protocols/info/21)
+  * [BEAST: operating wheeled devices. This protocol has two variants, employing two different active devices (trolley and walker)](https://platform.eurobench2020.eu/protocols/info/21)
 
 #### benchbalance
 
@@ -228,7 +229,7 @@ The hyperlinks refer to:
   * **Matlab** code, not likely to be Octave-compatible
   * would be in good shape
 * integrated : 1 protocol, PDF inserted
-  * [BenchBalance -Perturbated balance assessment](http://15.237.22.1/protocols/info/33)
+  * [BenchBalance -Perturbated balance assessment](https://platform.eurobench2020.eu/protocols/info/33)
 
 #### tested
 
@@ -240,7 +241,7 @@ The hyperlinks refer to:
 * current state:
   * ready to be tested?
 * integrated: 1 protocol, **NO PDF**
-  * [TestEd - Industrial Use-Cases in Narrow Spaces](http://15.237.22.1/protocols/info/49)
+  * [TestEd - Industrial Use-Cases in Narrow Spaces](https://platform.eurobench2020.eu/protocols/info/49)
 
 ### Ready to be tested for insertion in database
 
@@ -281,8 +282,8 @@ The hyperlinks refer to:
   * docker mechanism ready
   * Waiting for pi check, and then to adjust protocol description
 * integrated: 2 protocols (to be strongly revised), **NO PDF**
-  * [COMTEST - Step 1: Transient Test](http://15.237.22.1/protocols/info/37)
-  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](http://15.237.22.1/protocols/info/38)
+  * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
+  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
 
 #### uhei
 
@@ -322,10 +323,10 @@ The hyperlinks refer to:
 * current state:
   * 16.12.2021 waiting for answer.
 * Integrated: 4 protocols, **NO PDF**
-  * [Dysturbance -Reaction to Impulsive Disturbance](http://15.237.22.1/protocols/info/39)
-  * [Dysturbance - Reaction to Sinusoidal Force Disturbance](http://15.237.22.1/protocols/info/40)
-  * [Dysturbance - Reaction to Sinusoidal displacement Disturbance](http://15.237.22.1/protocols/info/41)
-  * [Dysturbance - Reaction to external Quasistatic Disturbance](http://15.237.22.1/protocols/info/40)
+  * [Dysturbance -Reaction to Impulsive Disturbance](https://platform.eurobench2020.eu/protocols/info/39)
+  * [Dysturbance - Reaction to Sinusoidal Force Disturbance](https://platform.eurobench2020.eu/protocols/info/40)
+  * [Dysturbance - Reaction to Sinusoidal displacement Disturbance](https://platform.eurobench2020.eu/protocols/info/41)
+  * [Dysturbance - Reaction to external Quasistatic Disturbance](https://platform.eurobench2020.eu/protocols/info/40)
 
 ##### forecast
 
