@@ -58,13 +58,13 @@ protocol:
     has_multiple_subject: true
   - id: 61
     name: "sbs_hf_dual_task"
-    name_readable: "Walking on stairs: dual task protocol"
-    definition: "The Dual Task protocol is intended to measure the User''s
-      cognitive-motor interference while accomplishing a motor task with the
-      exoskeleton and doing a cognitive task.
+    name_readable: "Dual task protocol"
+    definition: "The Dual Task protocol is intended to measure the
+      cognitive-motor interference of the user while accomplishing a motor task
+      with the exoskeleton and doing a cognitive task.
       Less interference corresponds to better interaction between user and
       machine"
-    image: sbs/img/sbs_human_factor.png
+    image: sbs/img/sbs_hf_dualtask.png
     keywords: [Human factors; Human Robot Interaction; Motor performance; Cognitive performance; stairs]
     bipedal_system: [exoskeleton, human]
     pi_algo: pi_sbs_hf_dualtask
@@ -166,7 +166,8 @@ protocol:
           completed the task."
         detail: "Four values are measured: ascending time, descending time,
           reaction time and number of errors."
-      - description: "The data collection ends. The participant removes the exoskeleton and headphones."
+      - description: "The data collection ends.
+        The participant removes the exoskeleton and headphones."
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
@@ -977,5 +978,22 @@ pi_algo:
     input_command:
       - run_uei
       - questionnaire_uei_input.csv
+    language: python
+    implemented: false
+  - name: pi_sbs_hf_dualtask
+    description: This app is based on Python and is only one executable script
+      containing all metrics computations
+    url_paper: undef
+    url_code: https://github.com/STEPbySTEPproj/HF_metrics
+    docker_host: eurobenchtest/pi_sbs_hf:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_hf:v0.0.0
+    pi:
+      - to be defined
+    input_files: [platformData_exo.csv, platformData_noexo.csv, condition.yaml]
+    input_command:
+      - run_hf
+      - platformData_exo.csv
+      - platformData_noexo.csv
+      - condition.yaml
     language: python
     implemented: false
