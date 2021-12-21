@@ -252,7 +252,7 @@ The hyperlinks refer to:
 * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
   [biomechanics PI](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
   [HF PI](https://github.com/STEPbySTEPproj/HF_metrics),
-  [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg),
+  [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg), also [there](https://github.com/marcokai/Protocol_EMG)
   [template](data/stepByStep/stepByStep.xlsx),
   [yaml](data/stepByStep.yaml)
 * current state:
