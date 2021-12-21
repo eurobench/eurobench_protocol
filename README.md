@@ -291,7 +291,7 @@ The hyperlinks refer to:
 * [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
 * [github version](https://github.com/eurobench/eb_hum_bench)
 * no Excel sheet available
-* 16.12.2021: proposed changes to get eurobench compatible entry point.
+* 20.12.2021: pending on clarifying optional cases.
   * issue for optional parameters.
 * docker mechanism inserted
 * integrated: **NO PROTOCOL**
