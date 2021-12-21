@@ -180,9 +180,9 @@ protocol:
       The data collection is performed by experimenters based on a quantitative
       checklist of both participant and exoskeleton''s behavior"
     image: sbs/img/sbs_hf_obs.png
-    keywords: [Human factors; Human Robot Interaction; stairs]
+    keywords: [Human factors; Human Robot Interaction; stairs; interaction]
     bipedal_system: [exoskeleton, human]
-    pi_algo: pi_sbs_human_factor
+    pi_algo: pi_sbs_uei
     duration: "10 minutes"
     # controlled_variables:
     testbed:
@@ -194,7 +194,7 @@ protocol:
         file_sheet: undef
       - item: checklist
         type: other
-        file_sheet: undef
+        file_sheet: See attached files
     step_description: "An observational analysis will be performed by the
       experimenter while video recording the motor tasks performed by the
       end-user, i.e. stairs ascending and stairs descending while wearing the
@@ -226,10 +226,10 @@ protocol:
           The participant wears the exoskeleton and positions him/herself in
           front of the stairs."
       - description: "Participant preparation.
-          The participant revouves the exoskeleton."
+          The participant completes ascending and descending the stairs."
       - description: "Stop camera recording."
       - description: "Check for data missing.
-          The experimenter watches the video recorded, fulfilling the checklist
+          The experimenter watches the recorded video, adjusting the checklist
           if data was missing or the observation was not appropriated.
           Delete the video recorded at the end."
     has_multiple_run: false
@@ -897,6 +897,18 @@ pi:
     visu: undef
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
+  - name: uei_pi
+    name_readable: "User-Exoskeleton Interaction (UEI)"
+    description: "The observational analysis is performed by means of a
+      quantitative checklist, which items reflect the quality of the interaction
+      occurring between the wearer and the LLE (lower-limb exoskeleton)."
+    unit: "integer"
+    output: scalar
+    intra_run_aggregation: [[0, mean]]
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
 pi_algo:
   - name: pi_sbs_biomechanics
     description: This app is based on Python and is only one executable script
@@ -937,7 +949,6 @@ pi_algo:
       - platformData.csv
     language: python
     implemented: true
-
   - name: pi_sbs_lpp
     description: This app is based on Python and is only one executable script
       containing all metrics computations
@@ -951,5 +962,20 @@ pi_algo:
     input_command:
       - run_lpp
       - questionnaire_lpp_input.csv
+    language: python
+    implemented: false
+  - name: pi_sbs_uei
+    description: This app is based on Python and is only one executable script
+      containing all metrics computations
+    url_paper: undef
+    url_code: https://github.com/STEPbySTEPproj/HF_metrics
+    docker_host: eurobenchtest/pi_sbs_hf:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_hf:v0.0.0
+    pi:
+      - uei_pi
+    input_files: [questionnaire_uei_input.csv]
+    input_command:
+      - run_uei
+      - questionnaire_uei_input.csv
     language: python
     implemented: false
