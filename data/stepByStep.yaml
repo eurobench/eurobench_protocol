@@ -471,7 +471,7 @@ protocol:
       stance_perc _left, swing_perc_left, stride_perc_left."
     image: undef
     keywords: [Lower-limb exoskeletons (LLEs), stairs, stair ascending,
-      stair descending, human-robot interaction, EMG activity]
+               stair descending, human-robot interaction, EMG activity]
     bipedal_system: [exoskeleton, human, prosthesis]
     pi_algo: pi_sbs_emg
     duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
@@ -558,7 +558,7 @@ protocol:
       stance_perc _left, swing_perc_left, stride_perc_left."
     image: undef
     keywords: [Lower-limb exoskeletons (LLEs), stairs, stair ascending,
-      stair descending, human-robot interaction, EMG activity]
+               stair descending, human-robot interaction, EMG activity]
     bipedal_system: [exoskeleton, human, prosthesis]
     pi_algo: pi_sbs_wb
     duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
