@@ -955,8 +955,8 @@ pi_algo:
       containing all metrics computations
     url_paper: undef
     url_code: https://github.com/STEPbySTEPproj/HF_metrics
-    docker_host: eurobenchtest/pi_sbs_hf:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_hf:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_human_factor:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v0.0.0
     pi:
       - lpp_pi
     input_files: [questionnaire_lpp_input.csv]
@@ -970,8 +970,8 @@ pi_algo:
       containing all metrics computations
     url_paper: undef
     url_code: https://github.com/STEPbySTEPproj/HF_metrics
-    docker_host: eurobenchtest/pi_sbs_hf:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_hf:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_human_factor:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v0.0.0
     pi:
       - uei_pi
     input_files: [questionnaire_uei_input.csv]
@@ -985,8 +985,8 @@ pi_algo:
       containing all metrics computations
     url_paper: undef
     url_code: https://github.com/STEPbySTEPproj/HF_metrics
-    docker_host: eurobenchtest/pi_sbs_hf:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_hf:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_human_factor:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v0.0.0
     pi:
       - to be defined
     input_files: [platformData_exo.csv, platformData_noexo.csv, condition.yaml]
