@@ -95,6 +95,72 @@ class SynchronizedRepository(object):
     self.is_configured = True
     return True
 
+  def check_synchro(self):
+    if not self.is_configured:
+      logger.error('item not configured')
+      return False
+
+    logger.debug(f'Acceding to the dev repository: {self.dev_url}')
+    process = subprocess.Popen(["git", "ls-remote", self.dev_url],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                universal_newlines=True)
+    stdout, stderr = process.communicate()
+    # sha_dev = re.split(r'\t+', stdout.decode('ascii'))[0]
+    sha_dev = re.split(r'\t+', stdout)[0]
+
+    if process.returncode != 0:
+      logger.error(f'Access to dev repository error({self.dev_url})')
+      logger.error(f'{stderr}')
+      return False
+    # logger.error(f'return code: {process.returncode}')
+
+    # logger.info(stdout)
+    # logger.info(stderr)
+
+    logger.debug(f'Acceding to the the Eurobench repo: {self.eurobench_url}')
+    process = subprocess.Popen(["git", "ls-remote", self.eurobench_url],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                universal_newlines=True)
+    stdout, stderr = process.communicate()
+
+    if process.returncode != 0:
+      logger.error(f'Access to dev repository error({self.eurobench_url})')
+      logger.error(f'{stderr}')
+      return False
+
+    sha_eurob = re.split(r'\t+', stdout)[0]
+
+    # logger.info(stdout)
+    # logger.info(stderr)
+
+    if sha_dev == sha_eurob:
+      logger.info("Repo are synch")
+    else:
+      logger.info("Repo are not synch")
+      return False
+
+    logger.debug('Checking the latest tag hash')
+    process = subprocess.Popen(["git", "ls-remote", "--tags",
+                                self.eurobench_url], stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE, universal_newlines=True)
+    stdout, stderr = process.communicate()
+
+    if process.returncode != 0:
+      logger.error(f'Access to dev repository error({self.eurobench_url})')
+      logger.error(f'{stderr}')
+      return False
+
+    tags = stdout.splitlines()
+
+    last_tag_hash, last_tag = tags[-1].split('\t')
+    logger.debug(f"result:{last_tag}: {last_tag_hash}")
+    if last_tag_hash == sha_eurob:
+      logger.info ("Last commit is tagged version")
+    else:
+      logger.info (f"Last commit {sha_eurob[0:7]} differs from tagged version {last_tag}: {last_tag_hash[0:7]}")
+      return False
+    return True
+
 def main():
 
   parser = argparse.ArgumentParser(description='Process a YAML Use case')
@@ -131,7 +197,7 @@ def main():
   for one_spec in spec['algorithms']:
     one_synch = SynchronizedRepository()
     if one_synch.init(one_spec):
-      logger.info(f'Adding synch {one_synch.name}')
+      logger.debug(f'Adding synch {one_synch.name}')
       l_synch.append(one_synch)
     else:
       logger.warn(f'could not load {one_spec}')
@@ -139,34 +205,10 @@ def main():
   logger.debug(f'{len(l_synch)} items loaded')
 
 
-  sys.exit()
-  repo_dev_url = 'git@github.com:madrob-beast/madrob_beast_pi.git'
-  repo_eurob_url = 'git@github.com:eurobench/pi_madrob_beast.git'
-  print('Acceding to the the dev repository')
-  process = subprocess.Popen(["git", "ls-remote", repo_dev_url], stdout=subprocess.PIPE)
-  stdout, stderr = process.communicate()
-  sha_dev = re.split(r'\t+', stdout.decode('ascii'))[0]
+  for idx, item in enumerate(l_synch):
+    logger.info(f'Processing item {idx}: {item.name}')
+    item.check_synchro()
+    if idx > 0:
+      break
 
-  print('Acceding to the the Eurobench repo')
-  process = subprocess.Popen(["git", "ls-remote", repo_eurob_url], stdout=subprocess.PIPE)
-  stdout, stderr = process.communicate()
-  sha_eurob = re.split(r'\t+', stdout.decode('ascii'))[0]
-
-  if sha_dev == sha_eurob:
-    print("Repo are synch")
-  else:
-    print("Repo are not synch")
-
-  print('Checking the latest tag hash')
-  process = subprocess.Popen(["git", "ls-remote", "--tags", repo_eurob_url], stdout=subprocess.PIPE)
-  stdout, stderr = process.communicate()
-
-  stdout = stdout.decode('ascii')
-  tags = stdout.splitlines()
-
-  last_tag_hash, last_tag = tags[-1].split('\t')
-  print(f"result:{last_tag}: {last_tag_hash}")
-  if last_tag_hash == sha_eurob:
-    print ("Last commit is tagged version")
-  else:
-    print (f"Last commit {sha_eurob[0:7]} differs from tagged version {last_tag}: {last_tag_hash[0:7]}")
+  logger.info('All done')
