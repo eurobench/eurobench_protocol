@@ -1,5 +1,11 @@
 ---
 algorithms:
+  - name: beat
+    dev_url: https://github.com/aremazeilles/beat_routine
+    eurobench_url: https://github.com/eurobench/pi_beat
+  - name: benchbalance
+    dev_url: https://github.com/FraCampus/PI_BenchBalance
+    eurobench_url: https://github.com/aremazeilles/PI_BenchBalance
   - name: bench
     dev_url: https://bitbucket.org/sophiaanais/benchproject_code/src
     eurobench_url: https://github.com/eurobench/pi_bench
@@ -9,9 +15,21 @@ algorithms:
   - name: bullet
     dev_url: https://github.com/eurobench/pi_bullet
     eurobench_url: https://github.com/eurobench/pi_bullet
+  - name: comtest
+    dev_url: https://github.com/VittorioFreiburg/COMTEST
+    eurobench_url:
   - name: csic_irregular
     dev_url: https://github.com/AdrianaTorres/Irregular_Terrains
     eurobench_url: https://github.com/eurobench/pi_csic_irregular
+  - name: dysturbance
+    dev_url: https://github.com/CentroEPiaggio/dysturbance
+    eurobench_url:
+  - name: experience
+    dev_url: https://github.com/FraCampus/EXPERIENCE
+    eurobench_url: https://github.com/aremazeilles/EXPERIENCE
+  - name: forecast
+    dev_url: https://gitlab.com/altairLab/elasticteam/SESim
+    eurobench_url:
   - name: madrob-beast
     dev_url: git@github.com:madrob-beast/madrob_beast_pi.git
     eurobench_url: git@github.com:eurobench/pi_madrob_beast.git
@@ -21,6 +39,24 @@ algorithms:
   - name: rrd
     dev_url: https://github.com/eurobench/rrd_pi_slope
     eurobench_url: https://github.com/eurobench/rrd_pi_slope
-  - name: udebenchmarking
+  - name: sbs_ergo
+    dev_url: https://github.com/STEPbySTEPproj/Protocol_biomechanics
+    eurobench_url:
+  - name: sbs_emg
+    dev_url:
+    eurobench_url:
+  - name: sbs_hf
+    dev_url: https://github.com/STEPbySTEPproj/HF_metrics
+    eurobench_url:
+  - name: uhei
+    dev_url: https://gitlab.com/orb-benchmarking/eb_hum_bench
+    eurobench_url: https://github.com/eurobench/eb_hum_bench
+  - name: tested
+    dev_url: https://github.com/jamatics/pi_ctag
+    eurobench_url: https://github.com/eurobench/pi_ctag
+  - name: udbenchmarking
     dev_url: https://github.com/nickkluft/udbenchmark_PIs
     eurobench_url: https://github.com/eurobench/pi_udbenchmark
+  - name: uhei
+    dev_url: https://gitlab.com/orb-benchmarking/eb_hum_bench
+    eurobench_url: https://github.com/eurobench/eb_hum_bench

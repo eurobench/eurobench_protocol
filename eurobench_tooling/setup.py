@@ -22,6 +22,7 @@ setup(
     packages=['eurobench_tooling'],
     scripts=['script/check_template', 'script/check_synchro'],
     include_package_data=True,
+    package_data={'eurobench_tooling': 'eurobench_tooling/config_repo.yaml'},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Science/Research',
