@@ -1,0 +1,26 @@
+---
+algorithms:
+  - name: bench
+    dev_url: https://bitbucket.org/sophiaanais/benchproject_code/src
+    eurobench_url: https://github.com/eurobench/pi_bench
+  - name: bestable
+    dev_url: https://gitlab.com/matjazzadravec/bestable-platform-codes
+    eurobench_url: https://github.com/eurobench/pi_bestable
+  - name: bullet
+    dev_url: https://github.com/eurobench/pi_bullet
+    eurobench_url: https://github.com/eurobench/pi_bullet
+  - name: csic_irregular
+    dev_url: https://github.com/AdrianaTorres/Irregular_Terrains
+    eurobench_url: https://github.com/eurobench/pi_csic_irregular
+  - name: madrob-beast
+    dev_url: git@github.com:madrob-beast/madrob_beast_pi.git
+    eurobench_url: git@github.com:eurobench/pi_madrob_beast.git
+  - name: pepato
+    dev_url: https://github.com/dzhvansky/pepato/tree/octave_version
+    eurobench_url: https://github.com/eurobench/pi_pepato
+  - name: rrd
+    dev_url: https://github.com/eurobench/rrd_pi_slope
+    eurobench_url: https://github.com/eurobench/rrd_pi_slope
+  - name: udebenchmarking
+    dev_url: https://github.com/nickkluft/udbenchmark_PIs
+    eurobench_url: https://github.com/eurobench/pi_udbenchmark
