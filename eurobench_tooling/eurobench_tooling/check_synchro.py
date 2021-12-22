@@ -105,7 +105,7 @@ class SynchronizedRepository(object):
       logger.error('item not configured')
       return False
 
-    logger.debug(f'Acceding to the dev repository: {self.dev_url}')
+    logger.debug(f'Accessing to the dev repository: {self.dev_url}')
     process = subprocess.Popen(["git", "ls-remote", self.dev_url],
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                 universal_newlines=True)
@@ -122,7 +122,7 @@ class SynchronizedRepository(object):
     # logger.info(stdout)
     # logger.info(stderr)
 
-    logger.debug(f'Acceding to the the Eurobench repo: {self.eurobench_url}')
+    logger.debug(f'Accessing to the the Eurobench repo: {self.eurobench_url}')
     process = subprocess.Popen(["git", "ls-remote", self.eurobench_url],
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                 universal_newlines=True)
@@ -141,7 +141,7 @@ class SynchronizedRepository(object):
     if sha_dev == sha_eurob:
       logger.info("Repo are synch")
     else:
-      logger.info("Repo are not synch")
+      logger.error("Repo are not synch")
       return False
 
     logger.debug('Checking the latest tag hash')
@@ -163,9 +163,9 @@ class SynchronizedRepository(object):
     last_tag_hash, last_tag = tags[-1].split('\t')
     logger.debug(f"result:{last_tag}: {last_tag_hash}")
     if last_tag_hash == sha_eurob:
-      logger.info ("Last commit is tagged version")
+      logger.info("Last commit is tagged version")
     else:
-      logger.info (f"Last commit {sha_eurob[0:7]} differs from tagged version {last_tag}: {last_tag_hash[0:7]}")
+      logger.error(f"Last commit {sha_eurob[0:7]} differs from tagged version {last_tag}: {last_tag_hash[0:7]}")
       return False
     return True
 
