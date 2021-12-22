@@ -93,6 +93,11 @@ class SynchronizedRepository(object):
     self.dev_url = dictionary['dev_url']
     self.eurobench_url = dictionary['eurobench_url']
     self.is_configured = True
+
+    if self.name is None or self.dev_url is None or self.eurobench_url is None:
+      logger.error('undefined entry: ')
+      logger.error(self.__dict__)
+      return False
     return True
 
   def check_synchro(self):
@@ -152,6 +157,9 @@ class SynchronizedRepository(object):
 
     tags = stdout.splitlines()
 
+    if not tags:
+      logger.error('no Tags defined')
+      return False
     last_tag_hash, last_tag = tags[-1].split('\t')
     logger.debug(f"result:{last_tag}: {last_tag_hash}")
     if last_tag_hash == sha_eurob:
@@ -193,6 +201,7 @@ def main():
   nb_algo = len(spec['algorithms'])
   logger.info(f'Loading {nb_algo} items')
 
+  l_revise = list()
   l_synch = list()
   for one_spec in spec['algorithms']:
     one_synch = SynchronizedRepository()
@@ -201,14 +210,20 @@ def main():
       l_synch.append(one_synch)
     else:
       logger.warn(f'could not load {one_spec}')
+      l_revise.append(one_spec)
 
   logger.debug(f'{len(l_synch)} items loaded')
 
-
+  l_issue = list()
   for idx, item in enumerate(l_synch):
     logger.info(f'Processing item {idx}: {item.name}')
-    item.check_synchro()
-    if idx > 0:
-      break
+    if not item.check_synchro():
+      l_issue.append(item.name)
+
+  logger.error('item not loaded')
+  logger.error(l_revise)
+
+  logger.error('item to revise')
+  logger.error(l_issue)
 
   logger.info('All done')
