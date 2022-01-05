@@ -27,3 +27,11 @@ jobs:
             success=$((res+success))
           done
           exit $success
+  markdown-linting:
+    name: Lint Markdown files
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Lint markdown files
+      uses: docker://avtodev/markdown-lint:v1
