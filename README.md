@@ -91,7 +91,7 @@ The hyperlinks refer to:
   * [5 sit to stand](https://platform.eurobench2020.eu/protocols/info/57)
   * [30 seconds sit to stand](https://platform.eurobench2020.eu/protocols/info/58)
   * manual uploaded
-  
+
 #### bestable
 
 * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -108,11 +108,11 @@ The hyperlinks refer to:
 #### bullet
 
 * [Eurobench repo](https://github.com/eurobench/pi_bullet),
-  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
+  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet),
+  [yaml](data/bullet.yaml),
 * excels:
   * [walking](data/bullet/bullet_walking.xlsx)
   * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
-* [yaml](data/bullet.yaml),
 * discussion opened on the inter-intra aggregation
 * Integrated:
   * 2 protocols, **no pdf available**
@@ -279,21 +279,20 @@ The hyperlinks refer to:
 ##### comtest
 
 * [code](https://github.com/VittorioFreiburg/COMTEST),
+  [eurobench repo](https://github.com/eurobench/pi_comtest),
   [template](data/comtest/comtest_v5.xlsx)
-* octave code. Still requires  adjustment.
 * current state:
-  * PI check requested 16.12.2021, pending on answer.
-  * docker mechanism ready
-  * Waiting for pi check, and then to adjust protocol description
+  * docker mechanism ready. Image available at https://hub.docker.com/r/eurobenchtest/pi_comtest
+  * **Require protocol description**
 * integrated: 2 protocols (to be strongly revised), **NO PDF**
   * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
 
 #### uhei
 
-* [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
-* [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
-* [github version](https://github.com/eurobench/eb_hum_bench)
+* [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi),
+  [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench),
+  [github version](https://github.com/eurobench/eb_hum_bench)
 * no Excel sheet available
 * 20.12.2021: pending on clarifying optional cases.
   * issue for optional parameters.
@@ -392,7 +391,6 @@ Related to humanoid
   * Contains 4 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
-
 
 ## Acknowledgements
 
