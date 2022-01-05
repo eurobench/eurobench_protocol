@@ -91,7 +91,7 @@ The hyperlinks refer to:
   * [5 sit to stand](https://platform.eurobench2020.eu/protocols/info/57)
   * [30 seconds sit to stand](https://platform.eurobench2020.eu/protocols/info/58)
   * manual uploaded
-  
+
 #### bestable
 
 * [code](https://gitlab.com/matjazzadravec/bestable-platform-codes),
@@ -372,7 +372,6 @@ Related to humanoid
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
 
-
 #### waterloo
 
 Related to humanoid
@@ -392,7 +391,6 @@ Related to humanoid
   * Contains 4 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
-
 
 ## Acknowledgements
 
