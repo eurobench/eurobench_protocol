@@ -1,0 +1,62 @@
+---
+algorithms:
+  - name: beat
+    dev_url: https://github.com/aremazeilles/beat_routine
+    eurobench_url: https://github.com/eurobench/pi_beat
+  - name: benchbalance
+    dev_url: git@github.com:fraBent/PI_BenchBalance.git
+    eurobench_url: git@github.com:aremazeilles/PI_BenchBalance.git
+  - name: bench
+    dev_url: https://bitbucket.org/sophiaanais/benchproject_code/src
+    eurobench_url: https://github.com/eurobench/pi_bench
+  - name: bestable
+    dev_url: git@gitlab.com:matjazzadravec/bestable-platform-codes.git
+    eurobench_url: https://github.com/eurobench/pi_bestable
+  - name: bullet
+    dev_url: https://github.com/eurobench/pi_bullet
+    eurobench_url: https://github.com/eurobench/pi_bullet
+  - name: comtest
+    dev_url: https://github.com/VittorioFreiburg/COMTEST
+    eurobench_url: git@github.com:eurobench/pi_comtest.git
+  - name: csic_irregular
+    dev_url: https://github.com/AdrianaTorres/Irregular_Terrains
+    eurobench_url: https://github.com/eurobench/pi_csic_irregular
+  - name: csic_manipulation
+    dev_url: https://github.com/AdrianaTorres/Manipulation
+    eurobench_url:
+  - name: dysturbance
+    dev_url: https://github.com/CentroEPiaggio/dysturbance
+    eurobench_url:
+  - name: experience
+    dev_url: git@github.com:fraBent/EXPERIENCE.git
+    eurobench_url: git@github.com:aremazeilles/EXPERIENCE.git
+  - name: forecast
+    dev_url: https://gitlab.com/altairLab/elasticteam/SESim
+    eurobench_url:
+  - name: madrob-beast
+    dev_url: git@github.com:madrob-beast/madrob_beast_pi.git
+    eurobench_url: git@github.com:eurobench/pi_madrob_beast.git
+  - name: pepato
+    dev_url: git@github.com:dzhvansky/pepato.git
+    eurobench_url: https://github.com/eurobench/pi_pepato
+  - name: rrd
+    dev_url: https://github.com/eurobench/rrd_pi_slope
+    eurobench_url: https://github.com/eurobench/rrd_pi_slope
+  - name: sbs_ergo
+    dev_url: https://github.com/STEPbySTEPproj/Protocol_biomechanics
+    eurobench_url: git@github.com:eurobench/pi_sbs_biomechanics.git
+  - name: sbs_emg
+    dev_url:
+    eurobench_url:
+  - name: sbs_hf
+    dev_url: https://github.com/STEPbySTEPproj/HF_metrics
+    eurobench_url:
+  - name: tested
+    dev_url: https://github.com/jamatics/pi_ctag
+    eurobench_url: https://github.com/eurobench/pi_ctag
+  - name: udbenchmarking
+    dev_url: https://github.com/nickkluft/udbenchmark_PIs
+    eurobench_url: https://github.com/eurobench/pi_udbenchmark
+  - name: uhei
+    dev_url: git@gitlab.com:orb-benchmarking/eb_hum_bench.git
+    eurobench_url: https://github.com/eurobench/eb_hum_bench

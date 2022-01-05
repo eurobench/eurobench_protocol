@@ -11,6 +11,9 @@ else:
     with open(os.path.join(_here, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
 
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
+
 setup(
     name='eurobench_tooling',
     description=('Tool for checking a yaml template spec.'),
@@ -20,8 +23,13 @@ setup(
     url='https://github.com/',
     license='Apache 2.0',
     packages=['eurobench_tooling'],
-    scripts=['script/check_template', 'script/check_synchro'],
+    install_requires=required,
     include_package_data=True,
+    package_data={'eurobench_tooling': 'eurobench_tooling/config_repo.yaml'},
+    entry_points ={
+        "console_scripts": ['check_template = eurobench_tooling.content_checker:main',
+                            'check_synchro = eurobench_tooling.check_synchro:main']
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Science/Research',

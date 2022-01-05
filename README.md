@@ -16,6 +16,9 @@ Relevant links:
 ## Scripting functionality
 
 Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
+2 scripts are implemented.
+`check_template` makes a sanity check on the yaml information.
+`check_synchro` compares commits in the dev and eurobench fork of all PI repositories.
 
 ## General view on embedded protocols
 
@@ -253,6 +256,7 @@ The hyperlinks refer to:
   [biomechanics PI](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
   [HF PI](https://github.com/STEPbySTEPproj/HF_metrics),
   [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg),
+  [second emg protocol](https://github.com/marcokai/Protocol_EMG)
   [template](data/stepByStep/stepByStep.xlsx),
   [yaml](data/stepByStep.yaml)
 * current state:
@@ -388,3 +392,28 @@ Related to humanoid
   * Contains 4 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
+
+
+## Acknowledgements
+
+<a href="http://eurobench2020.eu">
+  <img src="http://eurobench2020.eu/wp-content/uploads/2018/06/cropped-logoweb.png"
+       alt="rosin_logo" height="60" >
+</a>
+
+Supported by Eurobench - the European robotic platform for bipedal locomotion benchmarking.
+More information: [Eurobench website][eurobench_website]
+
+<img src="http://eurobench2020.eu/wp-content/uploads/2018/02/euflag.png"
+     alt="eu_flag" width="100" align="left" >
+
+This project has received funding from the European Union’s Horizon 2020
+research and innovation programme under grant agreement no. 779963.
+
+The opinions and arguments expressed reflect only the author‘s view and
+reflect in no way the European Commission‘s opinions.
+The European Commission is not responsible for any use that may be made
+of the information it contains.
+
+[eurobench_logo]: http://eurobench2020.eu/wp-content/uploads/2018/06/cropped-logoweb.png
+[eurobench_website]: http://eurobench2020.eu "Go to website"
