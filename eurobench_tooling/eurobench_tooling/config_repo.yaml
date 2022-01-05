@@ -17,7 +17,7 @@ algorithms:
     eurobench_url: https://github.com/eurobench/pi_bullet
   - name: comtest
     dev_url: https://github.com/VittorioFreiburg/COMTEST
-    eurobench_url:
+    eurobench_url: git@github.com:eurobench/pi_comtest.git
   - name: csic_irregular
     dev_url: https://github.com/AdrianaTorres/Irregular_Terrains
     eurobench_url: https://github.com/eurobench/pi_csic_irregular
@@ -44,7 +44,7 @@ algorithms:
     eurobench_url: https://github.com/eurobench/rrd_pi_slope
   - name: sbs_ergo
     dev_url: https://github.com/STEPbySTEPproj/Protocol_biomechanics
-    eurobench_url:
+    eurobench_url: git@github.com:eurobench/pi_sbs_biomechanics.git
   - name: sbs_emg
     dev_url:
     eurobench_url:

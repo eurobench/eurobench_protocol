@@ -13,8 +13,6 @@ Distributed under the Apache 2.0 license.
 import subprocess
 import re
 import argparse
-import sys
-# from setuptools.dist import DistDeprecationWarning
 import yaml
 import logging
 
@@ -23,7 +21,7 @@ DEFAULT_CONFIG = resource_filename(Requirement.parse('eurobench_tooling'),'eurob
 
 
 # TODO check https://stackoverflow.com/questions/384076/how-can-i-color-python-logging-output
-# package mentioned for color use 
+# package mentioned for color use
 class CustomFormatter(logging.Formatter):
     """Logging colored formatter, adapted from https://stackoverflow.com/a/56944256/3638629"""
 
