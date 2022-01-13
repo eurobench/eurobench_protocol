@@ -1,0 +1,235 @@
+---
+user_name: 'comtest'
+scenario:
+  name: "Posture control and balance under perturbed conditions"
+  description: 'The humanoid is standing on a moving platform and instructed to
+    stand upright.
+    The platform moves and provides a stimulus.
+    The body sway is recorded and analyzed.​'
+
+protocol:
+  - name: "comtest_rc"
+    name_readable: 'Transient Test of Standing Balance with Moving Support
+      Surface'
+    definition: 'The humanoid is standing on a moving platform and commanded to
+      stand upright.
+      The platform moves with a raised cosine profile.
+      The body sway is recorded and analyzed in the way that is similar to the
+      transient analysis performed with a step function as input profile.'
+    image: comtest/comtest.png
+    keywords: [Standing, transient , balance, disturbance]
+    bipedal_system: [humanoid]
+    pi_algo: pi_comtest_rc
+    duration: 15min
+    controlled_variables:
+      - name: 'Stimulus amplitude'
+        definition: 'the peak-to-peak amplitude of the stimulus profile'
+        type: value
+        range: [0, 16]
+        unit: degree
+    testbed:
+      - item: 'imu'
+        type: 'sensor'
+        filesheet: https://www.xsens.com/products/mtw-awinda
+      - item: 'moving support surface'
+        type: 'actuator'
+        filesheet: 'https://motionsystems.eu/wp/wp-content/uploads/2020/03/PS-6TM-150_R6.1_gDim.pdf'
+    step_description: 'The humanoid is standing on a moving platform and
+      instructed to stand upright.
+      The platform moves and provides a stimulus'
+    step_list:
+      - description: Place the IMU sensor onto the robot body segments
+      - description: 'Place the robot on the moving platform (platform in park
+          position)'
+      - description: 'Launch the experiment controller.
+          Define the type of stimulus (raised cosine) and the amplitude'
+      - description: Select the stimulus and run it, select the amplitude
+      - description: Data collection stops when specified by the stimulus file
+      - description: 'Repeat the procedure for all the needed tests (e.g.
+          comparing different amplitudes for the same signal)'
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - name: "comtest_prts"
+    name_readable: 'Body Sway Response characterization with frequency response
+      functions (FRFs) to Support Surface moving with Pseudorandom (PRTS)
+      profile'
+    definition: 'The humanoid is standing on a moving platform and commanded to
+      stand upright.
+      The platform moves with a raised cosine profile.
+      The body sway is recorded and analyzed in the way that is similar to the
+      transient analysis performed with a step function as input profile.'
+    image: comtest/comtest.png
+    keywords: [Standing, steady state , balance, disturbance]
+    bipedal_system: [humanoid]
+    pi_algo: pi_comtest_prts
+    duration: 15min
+    controlled_variables:
+      - name: 'Stimulus amplitude'
+        definition: 'the peak-to-peak amplitude of the stimulus profile'
+        type: value
+        range: [0.5, 16]
+        unit: degree
+    testbed:
+      - item: 'imu'
+        type: 'sensor'
+        filesheet: https://www.xsens.com/products/mtw-awinda
+      - item: 'moving support surface'
+        type: 'actuator'
+        filesheet: 'https://motionsystems.eu/wp/wp-content/uploads/2020/03/PS-6TM-150_R6.1_gDim.pdf'
+    step_description: 'The humanoid is standing on a moving platform and
+      instructed to stand upright.
+      The platform moves and provides a stimulus'
+    step_list:
+      - description: Place the IMU sensor onto the robot body segments
+      - description: 'Place the robot on the moving platform (platform in park
+          position)'
+      - description: 'Launch the experiment controller.
+          Define the type of stimulus (prts) and the amplitude'
+      - description: Select the stimulus and run it, select the amplitude
+      - description: Data collection stops when specified by the stimulus file
+      - description: 'Repeat the procedure for all the needed tests (e.g.
+          comparing different amplitudes for the same signal)'
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - name: "comtest_sin"
+    name_readable: 'Test of Standing Balance with Moving Support Surface with
+      Sinusoidal profile'
+    definition: 'The humanoid is standing on a moving platform and commanded to
+      stand upright.
+      The platform moves with a raised cosine profile.
+      The body sway is recorded and analyzed in the way that is similar to the
+      transient analysis performed with a step function as input profile.'
+    image: comtest/comtest.png
+    keywords: [Standing, steady state , balance, disturbance]
+    bipedal_system: [humanoid]
+    pi_algo: pi_comtest_sin
+    duration: 15min
+    controlled_variables:
+      - name: 'Stimulus amplitude'
+        definition: 'the peak-to-peak amplitude of the stimulus profile'
+        type: value
+        range: [0.5, 16]
+        unit: degree
+    testbed:
+      - item: 'imu'
+        type: 'sensor'
+        filesheet: https://www.xsens.com/products/mtw-awinda
+      - item: 'moving support surface'
+        type: 'actuator'
+        filesheet: 'https://motionsystems.eu/wp/wp-content/uploads/2020/03/PS-6TM-150_R6.1_gDim.pdf'
+    step_description: 'The humanoid is standing on a moving platform and
+      instructed to stand upright.
+      The platform moves and provides a stimulus'
+    step_list:
+      - description: Place the IMU sensor onto the robot body segments
+      - description: 'Place the robot on the moving platform (platform in park
+          position)'
+      - description: 'Launch the experiment controller.
+          Define the type of stimulus (prts) and the amplitude'
+      - description: Select the stimulus and run it, select the amplitude
+      - description: Data collection stops when specified by the stimulus file
+      - description: 'Repeat the procedure for all the needed tests (e.g.
+          comparing different amplitudes for the same signal)'
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+pi:
+  - name: pi_prts_frf
+    name_readable: undef
+    description: undef
+    unit:
+    output:
+    intra_run_aggregation:
+    inter_run_aggregation:
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+
+  - name: pi_prts_sway
+    name_readable: Human_likeliness
+    description: 'A measure of distance from a human reference, larger numbers
+      are less human-like.
+      A dataset of results from human experiments is provided as a reference for
+      the benchmarking.
+      The set includes healthy subjects and subjects with specific health
+      conditions affecting sensorimotor control such as spasticity or vestibular
+      loss.
+      The experiments consisted in providing the subject with a stimulus
+      consisting of a tilt or a translation of the support surface in the
+      sagittal plane, while the recoded output was the body sway'
+    unit: none
+    output: scalar
+    intra_run_aggregation: na
+    inter_run_aggregation: [mean, std]
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: pi_rcsway
+    name_readable: undef
+    description: undef
+    unit: none
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+  - name: pi_sinsway
+    name_readable: undef
+    description: undef
+    unit: none
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: undef
+pi_algo:
+  - name: pi_comtest_rc
+    description: Algorithm for comtest rc
+    url_paper: none
+    url_code: https://github.com/eurobench/pi_comtest
+    docker_host: eurobenchtest/pi_comtest:v0.0.0
+    docker_name: eurobenchtest/pi_comtest:v0.0.0
+    pi:
+      - pi_rcsway
+    input_files:
+      - com_RCsway.csv
+    input_command:
+      - ./run_pi_RC
+      - com_RCsway.csv
+    language: octave
+    implemented: true
+  - name: pi_comtest_prts
+    description: Algorithm for comtest PRTS
+    url_paper: none
+    url_code: https://github.com/eurobench/pi_comtest
+    docker_host: eurobenchtest/pi_comtest:v0.0.0
+    docker_name: eurobenchtest/pi_comtest:v0.0.0
+    pi:
+      - pi_prts_frf
+      - pi_prts_sway
+    input_files:
+      - com_PRTS.csv
+    input_command:
+      - ./run_pi_PRTS
+      - com_PRTS.csv
+    language: octave
+    implemented: true
+  - name: pi_comtest_sin
+    description: Algorithm for comtest SIN
+    url_paper: none
+    url_code: https://github.com/eurobench/pi_comtest
+    docker_host: eurobenchtest/pi_comtest:v0.0.0
+    docker_name: eurobenchtest/pi_comtest:v0.0.0
+    pi:
+      - pi_sinsway
+    input_files:
+      - com_SIN.csv
+    input_command:
+      - ./run_pi_SIN
+      - com_SIN.csv
+    language: octave
+    implemented: true
