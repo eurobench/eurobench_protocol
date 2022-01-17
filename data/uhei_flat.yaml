@@ -989,7 +989,6 @@ pi:
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
 
-
 pi_algo:
   - name: locomotion_bench
     description: Benchmarking toolkit to calculate a variety of gait performance indicators
@@ -1096,13 +1095,26 @@ pi_algo:
       - foot_contact_velocity_aggregated_linear_velocity_fr_double
       - foot_contact_velocity_aggregated_linear_velocity_fr_single
 
-
-
-
-    input_files: [robot.yaml, experiment.yaml]
-    input_command:
-      - ./run_pi
+    input_files:
       - robot.yaml
-      - experiment.yaml
+      - robot_model.lua
+      - pos.csv
+      - vel.csv
+      - acc.csv
+      - trq.csv
+      - ftl.csv
+      - ftr.csv
+      - gaitEvents.yaml
+    input_command:
+      - run_i3sa
+      - robot.yaml
+      - robot_model.lua
+      - pos.csv
+      - vel.csv
+      - acc.csv
+      - trq.csv
+      - ftl.csv
+      - ftr.csv
+      - gaitEvents.yaml
     language: python
     implemented: false
