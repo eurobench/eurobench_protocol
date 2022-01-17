@@ -280,7 +280,7 @@ The hyperlinks refer to:
 
 * [code](https://github.com/VittorioFreiburg/COMTEST),
   [eurobench repo](https://github.com/eurobench/pi_comtest),
-  [template](data/comtest/comtest_v5.xlsx),
+  [template](data/comtest/comtest.xlsx),
   [yaml](data/comtest.yaml),
   [docker](https://hub.docker.com/r/eurobenchtest/pi_comtest)
 * current state:
@@ -288,6 +288,10 @@ The hyperlinks refer to:
 * integrated: 2 protocols (to be strongly revised), **NO PDF**
   * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
+  * TODO: 3 protocols are now defined:
+    * Transient Test of Standing Balance with Moving Support Surface
+    * Body Sway Response characterization with frequency response functions (FRFs) to Support Surface moving with Pseudorandom (PRTS) profile
+    * Test of Standing Balance with Moving Support Surface with Sinusoidal profile
 
 #### uhei
 
