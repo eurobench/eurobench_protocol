@@ -995,8 +995,8 @@ pi_algo:
 
     url_paper: undef
     url_code: https://gitlab.com/orb-benchmarking/eb_hum_bench
-    docker_host: eurobenchtest/pi_uhei:v0.0.0
-    docker_name: eurobenchtest/pi_uhei:v0.0.0
+    docker_host: eurobenchtest/eb_hum_bench:v0.0.0
+    docker_name: eurobenchtest/eb_hum_bench:v0.0.0
     pi:
       - center_of_mass_avg_velocity
       - center_of_mass_avg_acceleration
