@@ -64,14 +64,18 @@ class SynchronizedRepository(object):
   def __init__(self):
     self.is_configured = False
     self.name = None
-    self.repo_dev = None
-    self.repo_eurobench = None
+    self.dev_url = None
+    self.dev_branch = None
+    self.eurobench_url = None
+    self.eurobench_branch = None
 
   def reset(self):
     self.is_configured = False
     self.name = None
     self.dev_url = None
+    self.dev_branch = None
     self.eurobench_url = None
+    self.eurobench_branch = None
 
   def init(self, dictionary):
     # checking required entry
@@ -92,11 +96,17 @@ class SynchronizedRepository(object):
     self.eurobench_url = dictionary['eurobench_url']
     self.is_configured = True
 
+    if 'dev_branch' in dictionary:
+      self.dev_branch = dictionary['dev_branch']
+    if 'eurobench_branch' in dictionary:
+      self.eurobench_branch = dictionary['eurobench_branch']
+
     if self.name is None or self.dev_url is None or self.eurobench_url is None:
       logger.error('undefined entry: ')
       logger.error(self.__dict__)
       return False
     return True
+
 
   def check_synchro(self):
     if not self.is_configured:
@@ -109,7 +119,16 @@ class SynchronizedRepository(object):
                                 universal_newlines=True)
     stdout, stderr = process.communicate()
     # sha_dev = re.split(r'\t+', stdout.decode('ascii'))[0]
-    sha_dev = re.split(r'\t+', stdout)[0]
+    out_command = re.split(r'\t+|\n+', stdout)
+
+    dict_branch = {}
+    for hash, name in zip(out_command[0::2], out_command[1::2]):
+      dict_branch[name] = hash
+
+    if self.dev_branch is None:
+      sha_dev = dict_branch['HEAD']
+    else:
+      sha_dev = dict_branch[f'refs/heads/{self.dev_branch}']
 
     if process.returncode != 0:
       logger.error(f'Access to dev repository error({self.dev_url})')
@@ -131,7 +150,17 @@ class SynchronizedRepository(object):
       logger.error(f'{stderr}')
       return False
 
-    sha_eurob = re.split(r'\t+', stdout)[0]
+    out_command = re.split(r'\t+|\n+', stdout)
+    dict_branch = {}
+    for hash, name in zip(out_command[0::2], out_command[1::2]):
+      dict_branch[name] = hash
+
+    if self.eurobench_branch is None:
+      sha_eurob = dict_branch['HEAD']
+    else:
+      sha_eurob = dict_branch[f'refs/heads/{self.eurobench_branch}']
+
+    # sha_eurob = re.split(r'\t+', stdout)[0]
 
     # logger.info(stdout)
     # logger.info(stderr)
