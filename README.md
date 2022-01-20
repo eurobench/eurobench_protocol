@@ -282,10 +282,11 @@ The hyperlinks refer to:
   [eurobench repo](https://github.com/eurobench/pi_comtest),
   [template](data/comtest/comtest.xlsx),
   [yaml](data/comtest.yaml),
-  [docker](https://hub.docker.com/r/eurobenchtest/pi_comtest)
+  [docker](https://hub.docker.com/r/eurobenchtest/pi_comtest),
+  [documentation](data/comtest/comtest-manual.pdf)
 * current state:
-  * docker mechanism ready. Image available.
-* integrated: 2 protocols (to be strongly revised), **NO PDF**
+  * docker mechanism ready, image available.
+* integrated: 2 protocols (to be strongly revised),
   * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
   * TODO: 3 protocols are now defined:
