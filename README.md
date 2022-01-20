@@ -16,6 +16,9 @@ Relevant links:
 ## Scripting functionality
 
 Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
+2 scripts are implemented.
+`check_template` makes a sanity check on the yaml information.
+`check_synchro` compares commits in the dev and eurobench fork of all PI repositories.
 
 ## General view on embedded protocols
 
@@ -105,11 +108,11 @@ The hyperlinks refer to:
 #### bullet
 
 * [Eurobench repo](https://github.com/eurobench/pi_bullet),
-  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet)
+  [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_bullet),
+  [yaml](data/bullet.yaml),
 * excels:
   * [walking](data/bullet/bullet_walking.xlsx)
   * [walking_complete](data/bullet/bullet_walkingComplete.xlsx)
-* [yaml](data/bullet.yaml),
 * discussion opened on the inter-intra aggregation
 * Integrated:
   * 2 protocols, **no pdf available**
@@ -252,7 +255,8 @@ The hyperlinks refer to:
 * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
   [biomechanics PI](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
   [HF PI](https://github.com/STEPbySTEPproj/HF_metrics),
-  [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg), also [there](https://github.com/marcokai/Protocol_EMG)
+  [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg),
+  [second emg protocol](https://github.com/marcokai/Protocol_EMG)
   [template](data/stepByStep/stepByStep.xlsx),
   [yaml](data/stepByStep.yaml)
 * current state:
@@ -275,21 +279,20 @@ The hyperlinks refer to:
 ##### comtest
 
 * [code](https://github.com/VittorioFreiburg/COMTEST),
+  [eurobench repo](https://github.com/eurobench/pi_comtest),
   [template](data/comtest/comtest_v5.xlsx)
-* octave code. Still requires  adjustment.
 * current state:
-  * PI check requested 16.12.2021, pending on answer.
-  * docker mechanism ready
-  * Waiting for pi check, and then to adjust protocol description
+  * docker mechanism ready. Image available at https://hub.docker.com/r/eurobenchtest/pi_comtest
+  * **Require protocol description**
 * integrated: 2 protocols (to be strongly revised), **NO PDF**
   * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
   * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
 
 #### uhei
 
-* [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi)
-* [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench)
-* [github version](https://github.com/eurobench/eb_hum_bench)
+* [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi),
+  [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench),
+  [github version](https://github.com/eurobench/eb_hum_bench)
 * no Excel sheet available
 * 20.12.2021: pending on clarifying optional cases.
   * issue for optional parameters.
@@ -388,3 +391,27 @@ Related to humanoid
   * Contains 4 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
+
+## Acknowledgements
+
+<a href="http://eurobench2020.eu">
+  <img src="http://eurobench2020.eu/wp-content/uploads/2018/06/cropped-logoweb.png"
+       alt="rosin_logo" height="60" >
+</a>
+
+Supported by Eurobench - the European robotic platform for bipedal locomotion benchmarking.
+More information: [Eurobench website][eurobench_website]
+
+<img src="http://eurobench2020.eu/wp-content/uploads/2018/02/euflag.png"
+     alt="eu_flag" width="100" align="left" >
+
+This project has received funding from the European Union’s Horizon 2020
+research and innovation programme under grant agreement no. 779963.
+
+The opinions and arguments expressed reflect only the author‘s view and
+reflect in no way the European Commission‘s opinions.
+The European Commission is not responsible for any use that may be made
+of the information it contains.
+
+[eurobench_logo]: http://eurobench2020.eu/wp-content/uploads/2018/06/cropped-logoweb.png
+[eurobench_website]: http://eurobench2020.eu "Go to website"
