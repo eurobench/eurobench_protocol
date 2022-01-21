@@ -75,9 +75,10 @@ protocol:
     has_multiple_subject: false
 
 pi:
-  - name: h_c
-    name_readable: "Angular Momentum about Center of Mass (CoM)"
-    description: "Angular Momentum about Center of Mass (CoM)"
+
+  - name: center_of_mass_avg_velocity
+    name_readable: "Center of Mass (CoM) average velocity"
+    description: ""
     unit: 1/sec
     output: vector
     intra_run_aggregation: undef
@@ -85,87 +86,1035 @@ pi:
     visu: line chart
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: cop_bos
-    name_readable: "Distance of the center of pressure to base of support."
-    description: "Distance of the center of pressure to base of support."
-    unit: cm
+  - name: center_of_mass_avg_acceleration
+    name_readable: "Center of Mass (CoM) average acceleration"
+    description: ""
+    unit: 1/sec
     output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: undef
     visu: line chart
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: cp_bos
-    name_readable: "Distance of the capture point to the base of support"
-    description: "Distance of the capture point to the base of support"
-    unit: cm
+
+  - name: center_of_mass_average_normalized_ang_mom_all
+    name_readable: "Normalized angular momentum at COM - Average absolute angular momentum about all axis - complete dataset"
+    description: ""
+    unit: 1/sec
     output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: undef
     visu: line chart
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: fpe_bos
-    name_readable: "Distance of the foot placement estimator to the base of support"
-    description: "Distance of the foot placement estimator to the base of support"
-    unit: cm
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: line chart
-    inter_cond_aggregation: undef
-    inter_subject_aggregation: undef
-  - name: base_ori
-    name_readable: "Orientation of the base_link of the robot during walking"
-    description: "Orientation of the base_link of the robot during walking"
-    unit: degree
+  - name: center_of_mass_average_normalized_ang_mom_fl_double
+    name_readable: "Normalized angular momentum at COM - Average absolute angular momentum about all axis - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
     output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: undef
     visu: line chart
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: impact
-    name_readable: "Maximum impact during walking cycle"
-    description: "Maximum impact during walking cycle"
-    unit: Nm
-    output: scalar
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: bar_plot
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: fc_vel
-    name_readable: "Linear and angular velocity of the foot contact point"
-    description: "Linear and angular velocity of the foot contact point"
-    unit: degree/s
+  - name: center_of_mass_average_normalized_ang_mom_fl_single
+    name_readable: "Normalized angular momentum at COM - Average absolute angular momentum about all axis - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
     output: vector
     intra_run_aggregation: undef
     inter_run_aggregation: undef
     visu: line chart
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
+  - name: center_of_mass_average_normalized_ang_mom_fr_double
+    name_readable: "Normalized angular momentum at COM - Average absolute angular momentum about all axis - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_mass_average_normalized_ang_mom_fr_single
+    name_readable: "Normalized angular momentum at COM - Average absolute angular momentum about all axis - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: center_of_mass_integrate_normalized_ang_mom_all
+    name_readable: "Normalized angular momentum at COM - Integrated absolute angular momentum about all axes - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_mass_integrate_normalized_ang_mom_fl_double
+    name_readable: "Normalized angular momentum at COM - Integrated absolute angular momentum about all axes - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_mass_integrate_normalized_ang_mom_fl_single
+    name_readable: "Normalized angular momentum at COM - Integrated absolute angular momentum about all axes - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_mass_integrate_normalized_ang_mom_fr_double
+    name_readable: "Normalized angular momentum at COM - Integrated absolute angular momentum about all axes - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_mass_integrate_normalized_ang_mom_fr_single
+    name_readable: "Normalized angular momentum at COM - Integrated absolute angular momentum about all axes - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: zero_moment_point_average_bos_dist_all
+    name_readable: "Zero Moment Point - Average distance to Base of Support - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_average_bos_dist_fl_double
+    name_readable: "Zero Moment Point - Average distance to Base of Support - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_average_bos_dist_fl_single
+    name_readable: "Zero Moment Point - Average distance to Base of Support - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_average_bos_dist_fr_double
+    name_readable: "Zero Moment Point - Average distance to Base of Support - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_average_bos_dist_fr_single
+    name_readable: "Zero Moment Point - Average distance to Base of Support - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: zero_moment_point_integrate_bos_dist_all
+    name_readable: "Zero Moment Point - Integrated distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_integrate_bos_dist_fl_double
+    name_readable: "Zero Moment Point - Integrated distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_integrate_bos_dist_fl_single
+    name_readable: "Zero Moment Point - Integrated distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_integrate_bos_dist_fr_double
+    name_readable: "Zero Moment Point - Integrated distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_integrate_bos_dist_fr_single
+    name_readable: "Zero Moment Point - Integrated distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: zero_moment_point_min_max_bos_dist_all
+    name_readable: "Zero Moment Point - Min-max distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_min_max_bos_dist_fl_double
+    name_readable: "Zero Moment Point - Min-max distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_min_max_bos_dist_fl_single
+    name_readable: "Zero Moment Point - Min-max distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_min_max_bos_dist_fr_double
+    name_readable: "Zero Moment Point - Min-max distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: zero_moment_point_min_max_bos_dist_fr_single
+    name_readable: "Zero Moment Point - Min-max distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+# 4. cop
+
+  - name: center_of_pressure_average_bos_dist_all
+    name_readable: "Center of Pressure - average distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_average_bos_dist_fl_double
+    name_readable: "Center of Pressure - average distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_average_bos_dist_fl_single
+    name_readable: "Center of Pressure - average distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_average_bos_dist_fr_double
+    name_readable: "Center of Pressure - average distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_average_bos_dist_fr_single
+    name_readable: "Center of Pressure - average distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: center_of_pressure_integrate_bos_dist_all
+    name_readable: "Center of Pressure - Integrated distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_integrate_bos_dist_fl_double
+    name_readable: "Center of Pressure - Integrated distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_integrate_bos_dist_fl_single
+    name_readable: "Center of Pressure - Integrated distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_integrate_bos_dist_fr_double
+    name_readable: "Center of Pressure - Integrated distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_integrate_bos_dist_fr_single
+    name_readable: "Center of Pressure - Integrated distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: center_of_pressure_min_max_bos_dist_all
+    name_readable: "Center of Pressure - min-max distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_min_max_bos_dist_fl_double
+    name_readable: "Center of Pressure - min-max distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_min_max_bos_dist_fl_single
+    name_readable: "Center of Pressure - min-max distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_min_max_bos_dist_fr_double
+    name_readable: "Center of Pressure - min-max distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: center_of_pressure_min_max_bos_dist_fr_single
+    name_readable: "Center of Pressure - min-max distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+# 5. cap
+  - name: capture_point_average_bos_dist_fl_double
+    name_readable: "Capture Point (CAP) - average distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_average_bos_dist_fl_single
+    name_readable: "Capture Point (CAP) - average distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_average_bos_dist_fr_double
+    name_readable: "Capture Point (CAP) - average distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_average_bos_dist_fr_single
+    name_readable: "Capture Point (CAP) - average distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: capture_point_integrate_bos_dist_fl_double
+    name_readable: "Capture Point (CAP) - integrated distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_integrate_bos_dist_fl_single
+    name_readable: "Capture Point (CAP) - integrated distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_integrate_bos_dist_fr_double
+    name_readable: "Capture Point (CAP) - integrated distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_integrate_bos_dist_fr_single
+    name_readable: "Capture Point (CAP) - integrated distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: capture_point_min_max_bos_dist_fl_double
+    name_readable: "Capture Point (CAP) - min-max distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_min_max_bos_dist_fl_single
+    name_readable: "Capture Point (CAP) - min-max distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_min_max_bos_dist_fr_double
+    name_readable: "Capture Point (CAP) - min-max distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: capture_point_min_max_bos_dist_fr_single
+    name_readable: "Capture Point (CAP) - min-max distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+# 6. fpe
+
+  - name: foot_placement_estimator_average_bos_dist_all
+    name_readable: "Foot Placement Estimator (FPE) average distance to BOS - - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_average_bos_dist_fl_double
+    name_readable: "Foot Placement Estimator (FPE) - average distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_average_bos_dist_fl_single
+    name_readable: "Foot Placement Estimator (FPE) - average distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_average_bos_dist_fr_double
+    name_readable: "Foot Placement Estimator (FPE) - average distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_average_bos_dist_fr_single
+    name_readable: "Foot Placement Estimator (FPE) - average distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: foot_placement_estimator_integrate_bos_dist_all
+    name_readable: "Foot Placement Estimator (FPE) - integrated distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_integrate_bos_dist_fl_double
+    name_readable: "Foot Placement Estimator (FPE) - integrated distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_integrate_bos_dist_fl_single
+    name_readable: "Foot Placement Estimator (FPE) - integrated distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_integrate_bos_dist_fr_double
+    name_readable: "Foot Placement Estimator (FPE) - integrated distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_integrate_bos_dist_fr_single
+    name_readable: "Foot Placement Estimator (FPE) - integrated distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: foot_placement_estimator_min_max_bos_dist_all
+    name_readable: "Foot Placement Estimator (FPE) - min-max distance to BOS - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_min_max_bos_dist_fl_double
+    name_readable: "Foot Placement Estimator (FPE) - min-max distance to BOS - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_min_max_bos_dist_fl_single
+    name_readable: "Foot Placement Estimator (FPE) - min-max distance to BOS - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_min_max_bos_dist_fr_double
+    name_readable: "Foot Placement Estimator (FPE) - min-max distance to BOS - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_placement_estimator_min_max_bos_dist_fr_single
+    name_readable: "Foot Placement Estimator (FPE) - min-max distance to BOS - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+# 7. boe
+
+  - name: base_orientation_error_l2_dist_all
+    name_readable: "Base orientation error of the pelvis - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: base_orientation_error_l2_dist_fl_double
+    name_readable: "Base orientation error of thedouble support, with left foot as stance foot in previous single support phase (dfl) pelvis - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: base_orientation_error_l2_dist_fl_single
+    name_readable: "Base orientation error of thesingle support, left foot is stance foot pelvis - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: base_orientation_error_l2_dist_fr_double
+    name_readable: "Base orientation error of thedouble support, with right foot as stance foot in previous single support phase (dfl) pelvis r "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: base_orientation_error_l2_dist_fr_single
+    name_readable: "Base orientation error of thesingle support and right foot is the stance foot pelvis - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+#8. td
+
+  - name: distance_travelled
+    name_readable: "Travelled distance"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+#9 grf
+
+  - name: ground_reaction_forces_aggregated_all
+    name_readable: "Ground reaction force (GRF) impact - complete dataset"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ground_reaction_forces_aggregated_fl_double
+    name_readable: "Ground reaction force (GRF) impadouble support, with left foot as stance foot in previous single support phase (dfl)ct - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ground_reaction_forces_aggregated_fl_single
+    name_readable: "Ground reaction force (GRF) impasingle support, left foot is stance footct - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ground_reaction_forces_aggregated_fr_double
+    name_readable: "Ground reaction force (GRF) impadouble support, with right foot as stance foot in previous single support phase (dfl)ct r "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: ground_reaction_forces_aggregated_fr_single
+    name_readable: "Ground reaction force (GRF) impasingle support and right foot is the stance footct - "
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+# 10. Lavf
+
+  - name: foot_contact_velocity_aggregated_angular_velocity_fl_double
+    name_readable: "Angular velocity of the feet - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_contact_velocity_aggregated_angular_velocity_fl_single
+    name_readable: "Angular velocity of the feet - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_contact_velocity_aggregated_angular_velocity_fr_double
+    name_readable: "Angular velocity of the feet - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_contact_velocity_aggregated_angular_velocity_fr_single
+    name_readable: "Angular velocity of the feet - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
+  - name: foot_contact_velocity_aggregated_linear_velocity_fl_double
+    name_readable: "Linear velocity of the feet - double support, with left foot as stance foot in previous single support phase (dfl)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_contact_velocity_aggregated_linear_velocity_fl_single
+    name_readable: "Linear velocity of the feet - single support, left foot is stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_contact_velocity_aggregated_linear_velocity_fr_double
+    name_readable: "Linear velocity of the feet - double support, with right foot as stance foot in previous single support phase (dfr)"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: foot_contact_velocity_aggregated_linear_velocity_fr_single
+    name_readable: "Linear velocity of the feet - single support and right foot is the stance foot"
+    description: ""
+    unit: 1/sec
+    output: vector
+    intra_run_aggregation: undef
+    inter_run_aggregation: undef
+    visu: line chart
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+
 pi_algo:
   - name: locomotion_bench
     description: Benchmarking toolkit to calculate a variety of gait performance indicators
 
     url_paper: undef
     url_code: https://gitlab.com/orb-benchmarking/eb_hum_bench
-    docker_host: eurobenchtest/pi_uhei:v0.0.0
-    docker_name: eurobenchtest/pi_uhei:v0.0.0
+    docker_host: eurobenchtest/eb_hum_bench:v0.0.0
+    docker_name: eurobenchtest/eb_hum_bench:v0.0.0
     pi:
-      - h_c
-      - cop_bos
-      - fpe_bos
-      - cp_bos
-      - base_ori
-      - impact
-      - fc_vel
+      - center_of_mass_avg_velocity
+      - center_of_mass_avg_acceleration
+      - center_of_mass_average_normalized_ang_mom_all
+      - center_of_mass_average_normalized_ang_mom_fl_double
+      - center_of_mass_average_normalized_ang_mom_fl_single
+      - center_of_mass_average_normalized_ang_mom_fr_double
+      - center_of_mass_average_normalized_ang_mom_fr_single
+      - center_of_mass_integrate_normalized_ang_mom_all
+      - center_of_mass_integrate_normalized_ang_mom_fl_double
+      - center_of_mass_integrate_normalized_ang_mom_fl_single
+      - center_of_mass_integrate_normalized_ang_mom_fr_double
+      - center_of_mass_integrate_normalized_ang_mom_fr_single
 
-    input_files: [robot.yaml, experiment.yaml]
-    input_command:
-      - ./run_pi
+      - zero_moment_point_average_bos_dist_all
+      - zero_moment_point_average_bos_dist_fl_double
+      - zero_moment_point_average_bos_dist_fl_single
+      - zero_moment_point_average_bos_dist_fr_double
+      - zero_moment_point_average_bos_dist_fr_single
+      - zero_moment_point_integrate_bos_dist_all
+      - zero_moment_point_integrate_bos_dist_fl_double
+      - zero_moment_point_integrate_bos_dist_fl_single
+      - zero_moment_point_integrate_bos_dist_fr_double
+      - zero_moment_point_integrate_bos_dist_fr_single
+      - zero_moment_point_min_max_bos_dist_all
+      - zero_moment_point_min_max_bos_dist_fl_double
+      - zero_moment_point_min_max_bos_dist_fl_single
+      - zero_moment_point_min_max_bos_dist_fr_double
+      - zero_moment_point_min_max_bos_dist_fr_single
+
+      - center_of_pressure_average_bos_dist_fl_double
+      - center_of_pressure_average_bos_dist_fl_single
+      - center_of_pressure_average_bos_dist_all
+      - center_of_pressure_average_bos_dist_fr_double
+      - center_of_pressure_average_bos_dist_fr_single
+      - center_of_pressure_integrate_bos_dist_all
+      - center_of_pressure_integrate_bos_dist_fl_double
+      - center_of_pressure_integrate_bos_dist_fl_single
+      - center_of_pressure_integrate_bos_dist_fr_double
+      - center_of_pressure_integrate_bos_dist_fr_single
+      - center_of_pressure_min_max_bos_dist_all
+      - center_of_pressure_min_max_bos_dist_fl_double
+      - center_of_pressure_min_max_bos_dist_fl_single
+      - center_of_pressure_min_max_bos_dist_fr_double
+      - center_of_pressure_min_max_bos_dist_fr_single
+
+      - capture_point_average_bos_dist_fl_double
+      - capture_point_average_bos_dist_fl_single
+      - capture_point_average_bos_dist_fr_double
+      - capture_point_average_bos_dist_fr_single
+      - capture_point_integrate_bos_dist_fl_double
+      - capture_point_integrate_bos_dist_fl_single
+      - capture_point_integrate_bos_dist_fr_double
+      - capture_point_integrate_bos_dist_fr_single
+      - capture_point_min_max_bos_dist_fl_double
+      - capture_point_min_max_bos_dist_fl_single
+      - capture_point_min_max_bos_dist_fr_double
+      - capture_point_min_max_bos_dist_fr_single
+
+      - foot_placement_estimator_average_bos_dist_all
+      - foot_placement_estimator_average_bos_dist_fl_double
+      - foot_placement_estimator_average_bos_dist_fl_single
+      - foot_placement_estimator_average_bos_dist_fr_double
+      - foot_placement_estimator_average_bos_dist_fr_single
+      - foot_placement_estimator_integrate_bos_dist_all
+      - foot_placement_estimator_integrate_bos_dist_fl_double
+      - foot_placement_estimator_integrate_bos_dist_fl_single
+      - foot_placement_estimator_integrate_bos_dist_fr_double
+      - foot_placement_estimator_integrate_bos_dist_fr_single
+      - foot_placement_estimator_min_max_bos_dist_all
+      - foot_placement_estimator_min_max_bos_dist_fl_double
+      - foot_placement_estimator_min_max_bos_dist_fl_single
+      - foot_placement_estimator_min_max_bos_dist_fr_double
+      - foot_placement_estimator_min_max_bos_dist_fr_single
+
+      - base_orientation_error_l2_dist_all
+      - base_orientation_error_l2_dist_fl_double
+      - base_orientation_error_l2_dist_fl_single
+      - base_orientation_error_l2_dist_fr_double
+      - base_orientation_error_l2_dist_fr_single
+
+      - distance_travelled
+
+      - ground_reaction_forces_aggregated_all
+      - ground_reaction_forces_aggregated_fl_double
+      - ground_reaction_forces_aggregated_fl_single
+      - ground_reaction_forces_aggregated_fr_double
+      - ground_reaction_forces_aggregated_fr_single
+
+      - foot_contact_velocity_aggregated_angular_velocity_fl_double
+      - foot_contact_velocity_aggregated_angular_velocity_fl_single
+      - foot_contact_velocity_aggregated_angular_velocity_fr_double
+      - foot_contact_velocity_aggregated_angular_velocity_fr_single
+      - foot_contact_velocity_aggregated_linear_velocity_fl_double
+      - foot_contact_velocity_aggregated_linear_velocity_fl_single
+      - foot_contact_velocity_aggregated_linear_velocity_fr_double
+      - foot_contact_velocity_aggregated_linear_velocity_fr_single
+
+    input_files:
       - robot.yaml
-      - experiment.yaml
+      - robot_model.lua
+      - pos.csv
+      - vel.csv
+      - acc.csv
+      - trq.csv
+      - ftl.csv
+      - ftr.csv
+      - gaitEvents.yaml
+    input_command:
+      - run_i3sa
+      - robot.yaml
+      - robot_model.lua
+      - pos.csv
+      - vel.csv
+      - acc.csv
+      - trq.csv
+      - ftl.csv
+      - ftr.csv
+      - gaitEvents.yaml
     language: python
     implemented: false
