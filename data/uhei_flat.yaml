@@ -76,7 +76,7 @@ protocol:
 
 pi:
 
-  - name: center_of_mass_avg_velocity
+  - name: center_of_mass_avg_velocity_
     name_readable: "Center of Mass (CoM) average velocity"
     description: ""
     unit: 1/sec
@@ -86,7 +86,7 @@ pi:
     visu: line chart
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: center_of_mass_avg_acceleration
+  - name: center_of_mass_avg_acceleration_
     name_readable: "Center of Mass (CoM) average acceleration"
     description: ""
     unit: 1/sec
@@ -841,7 +841,7 @@ pi:
 
 #8. td
 
-  - name: distance_travelled
+  - name: distance_travelled_
     name_readable: "Travelled distance"
     description: ""
     unit: 1/sec
@@ -998,8 +998,8 @@ pi_algo:
     docker_host: eurobenchtest/eb_hum_bench:v0.0.0
     docker_name: eurobenchtest/eb_hum_bench:v0.0.0
     pi:
-      - center_of_mass_avg_velocity
-      - center_of_mass_avg_acceleration
+      - center_of_mass_avg_velocity_
+      - center_of_mass_avg_acceleration_
       - center_of_mass_average_normalized_ang_mom_all
       - center_of_mass_average_normalized_ang_mom_fl_double
       - center_of_mass_average_normalized_ang_mom_fl_single
@@ -1078,7 +1078,7 @@ pi_algo:
       - base_orientation_error_l2_dist_fr_double
       - base_orientation_error_l2_dist_fr_single
 
-      - distance_travelled
+      - distance_travelled_
 
       - ground_reaction_forces_aggregated_all
       - ground_reaction_forces_aggregated_fl_double
