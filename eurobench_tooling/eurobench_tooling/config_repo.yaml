@@ -40,7 +40,9 @@ algorithms:
     eurobench_url: git@github.com:eurobench/pi_madrob_beast.git
   - name: pepato
     dev_url: git@github.com:dzhvansky/pepato.git
+    dev_branch: octave_version
     eurobench_url: https://github.com/eurobench/pi_pepato
+    eurobench_branch: octave_version
   - name: rrd
     dev_url: https://github.com/eurobench/rrd_pi_slope
     eurobench_url: https://github.com/eurobench/rrd_pi_slope
