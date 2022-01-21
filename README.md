@@ -51,7 +51,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | ---- | --- | ------------------ | ----------- |
 | Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | yes |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
-| Walking on flat ground |Eurobench-UHEI | 1 | no |
+| Walking on flat ground |[Eurobench-UHEI](#uhei) | 1 | no |
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
 | Ascending/Descending slopes | Eurobench-UHEI | under dev
 | Ascending/Descending stairs | [Eurobench-Waterloo](#waterloo) | 5 | under dev |
@@ -303,7 +303,7 @@ The hyperlinks refer to:
   * [yaml file](data/uhei_slope.yaml)
   * Contains 5 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
+  * **NO PROTOCOL details**
 
 ### Very early stage
 
