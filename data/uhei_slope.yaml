@@ -7,7 +7,7 @@ scenario:
   image: uhei/img/uhei_slope.png
 
 protocol:
-  - id: undef
+  - id: 92
     name: "uhei_slope_basic"
     name_readable: "Ascending / descending slope: basic slope walking"
     definition: "The robot performs one run for a certain standardized slope
