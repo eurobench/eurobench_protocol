@@ -7,8 +7,10 @@ algorithms:
     dev_url: git@github.com:fraBent/PI_BenchBalance.git
     eurobench_url: git@github.com:aremazeilles/PI_BenchBalance.git
   - name: bench
-    dev_url: https://bitbucket.org/sophiaanais/benchproject_code/src
+    dev_url: https://bitbucket.org/sophiaanais/benchproject_code/
+    dev_branch: Cri_Dev
     eurobench_url: https://github.com/eurobench/pi_bench
+    eurobench_branch: Cri_Dev
   - name: bestable
     dev_url: git@gitlab.com:matjazzadravec/bestable-platform-codes.git
     eurobench_url: https://github.com/eurobench/pi_bestable
@@ -46,11 +48,11 @@ algorithms:
     dev_url: https://github.com/STEPbySTEPproj/Protocol_biomechanics
     eurobench_url: git@github.com:eurobench/pi_sbs_biomechanics.git
   - name: sbs_emg
-    dev_url:
-    eurobench_url:
+    dev_url: git@github.com:STEPbySTEPproj/protocol_emg.git
+    eurobench_url: git@github.com:eurobench/sbs_emg.git
   - name: sbs_hf
-    dev_url: https://github.com/STEPbySTEPproj/HF_metrics
-    eurobench_url:
+    dev_url: git@github.com:STEPbySTEPproj/HF_metrics.git
+    eurobench_url: git@github.com:eurobench/pi_sbs_human_factor.git
   - name: tested
     dev_url: https://github.com/jamatics/pi_ctag
     eurobench_url: https://github.com/eurobench/pi_ctag
