@@ -248,7 +248,6 @@ The hyperlinks refer to:
 
 ### Ready to be tested for insertion in database
 
-### Under progress
 
 #### stepByStep
 
@@ -256,13 +255,13 @@ The hyperlinks refer to:
   [biomechanics PI](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
   [HF PI](https://github.com/STEPbySTEPproj/HF_metrics),
   [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg),
-  [second emg protocol](https://github.com/marcokai/Protocol_EMG)
+  [second emg protocol](https://github.com/marcokai/Protocol_EMG),
   [template](data/stepByStep/stepByStep.xlsx),
   [yaml](data/stepByStep.yaml)
+  [manuals](data/stepByStep/doc/)
 * current state:
   * code only covering the biomechanics protocol.
-  * first version of HF metrics.
-  * Other are still missing
+  * HF metrics implemented (dual task, lpp, uei).
 * Integrated: 7 protocols:
   * [Walking on stair: biomechanical analysis](https://15.237.22.1/protocols/info/60)
   * [Walking on stairs: dual task protocol](https://15.237.22.1/protocols/info/61)
@@ -270,11 +269,16 @@ The hyperlinks refer to:
   * [Walking on stairs: Local Perceived Pressure Questionnaire](https://15.237.22.1/protocols/info/63)
 
   * [Combined protocol](https://15.237.22.1/protocols/info/64)
+    * **This one may not be yet functional**
   * [Walking on stairs: emg analysis](https://15.237.22.1/protocols/info/65)
   * [Walking on stairs: ground and handrail reaction forces](https://15.237.22.1/protocols/info/66)
-  * Only the biomechanical protocol has manual and code implemented.
+    * **No information on this one**
+  * Biomechanical protocol (60) has manual and code implemented.
+  * Human factors protocols (61, 62, 63) have manual
 
 * integrated: **NO PROTOCOL**
+
+### Under progress
 
 ##### comtest
 

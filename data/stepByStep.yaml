@@ -910,6 +910,36 @@ pi:
     visu: undef
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
+  - name: execution_time
+    name_readable: "Execution time difference"
+    description: "Comparison of the execution time with and without the exoskeleton"
+    unit: "na"
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: response_time
+    name_readable: "Response time difference"
+    description: "Comparison of the response time to question, with and without the exoskeleton"
+    unit: "na"
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: total_error
+    name_readable: "Response time difference"
+    description: "Comparison of the number of wrong answers, with and without the exoskeleton"
+    unit: "na"
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
 pi_algo:
   - name: pi_sbs_biomechanics
     description: This app is based on Python and is only one executable script
@@ -955,8 +985,8 @@ pi_algo:
       containing all metrics computations
     url_paper: undef
     url_code: https://github.com/STEPbySTEPproj/HF_metrics
-    docker_host: eurobenchtest/pi_sbs_human_factor:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_human_factor:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
     pi:
       - lpp_pi
     input_files: [questionnaire_lpp_input.csv]
@@ -970,8 +1000,8 @@ pi_algo:
       containing all metrics computations
     url_paper: undef
     url_code: https://github.com/STEPbySTEPproj/HF_metrics
-    docker_host: eurobenchtest/pi_sbs_human_factor:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_human_factor:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
     pi:
       - uei_pi
     input_files: [questionnaire_uei_input.csv]
@@ -985,13 +1015,15 @@ pi_algo:
       containing all metrics computations
     url_paper: undef
     url_code: https://github.com/STEPbySTEPproj/HF_metrics
-    docker_host: eurobenchtest/pi_sbs_human_factor:v0.0.0
-    docker_name: eurobenchtest/pi_sbs_human_factor:v0.0.0
+    docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
     pi:
-      - to be defined
+      - execution_time
+      - response_time
+      - total_error
     input_files: [platformData_exo.csv, platformData_noexo.csv, condition.yaml]
     input_command:
-      - run_hf
+      - run_dualtask
       - platformData_exo.csv
       - platformData_noexo.csv
       - condition.yaml
