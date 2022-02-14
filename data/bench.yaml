@@ -175,7 +175,7 @@ pi:
     description: "Distance traveled by the CoP during the movement, averaged
       across cycles (smaller is better)"
     unit: meter
-    output: scalar
+    output: vector
     intra_run_aggregation: na
     inter_run_aggregation: [[0, mean], [0, std]]
     visu: bar plot
@@ -230,8 +230,8 @@ pi_algo:
     description: Sit to stand analysis algorithm
     url_paper: na
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
-    docker_host: eurobenchtest/pi_bench:v0.0.0
-    docker_name: eurobenchtest/pi_bench:v0.0.0
+    docker_host: eurobenchtest/pi_bench:v0.1.0
+    docker_name: eurobenchtest/pi_bench:v0.1.0
     pi:
       - 5STS_duration
       - CoM_work
@@ -253,8 +253,8 @@ pi_algo:
     description: undef
     url_paper: "DOI: 10.1109/JSEN.2019.2957667"
     url_code: https://bitbucket.org/sophiaanais/benchproject_code/src?at=Cri_Dev
-    docker_host: eurobenchtest/pi_bench:v0.0.0
-    docker_name: eurobenchtest/pi_bench:v0.0.0
+    docker_host: eurobenchtest/pi_bench:v0.1.0
+    docker_name: eurobenchtest/pi_bench:v0.1.0
     pi:
       - 30sSTS_repetitions
       - CoM_work
