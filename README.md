@@ -51,7 +51,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | ---- | --- | ------------------ | ----------- |
 | Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | yes |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
-| Walking on flat ground |Eurobench-UHEI | 1 | no |
+| Walking on flat ground |[Eurobench-UHEI](#uhei) | 1 | no |
 | Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
 | Ascending/Descending slopes | Eurobench-UHEI | under dev
 | Ascending/Descending stairs | [Eurobench-Waterloo](#waterloo) | 5 | under dev |
@@ -63,7 +63,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking on a treadmill | [Eurobench-IIT and Treadmill](#iit) | 3 | under dev
 | Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | under dev
 | Moving in narrow spaces	| discarded
-| Standing on a moving surface | [COMTEST](#comtest) | 0 | no |
+| Standing on a moving surface | [COMTEST](#comtest) | 3 | yes |
 | Walking/Standing during pushes | [Dysturbance](#dysturbance) | 4 | no |
 
 ## Code integration status
@@ -246,8 +246,27 @@ The hyperlinks refer to:
 * integrated: 1 protocol, **NO PDF**
   * [TestEd - Industrial Use-Cases in Narrow Spaces](https://platform.eurobench2020.eu/protocols/info/49)
 
+##### comtest
+
+* [code](https://github.com/VittorioFreiburg/COMTEST),
+  [eurobench repo](https://github.com/eurobench/pi_comtest),
+  [template](data/comtest/comtest.xlsx),
+  [yaml](data/comtest.yaml),
+  [docker](https://hub.docker.com/r/eurobenchtest/pi_comtest),
+  [documentation](data/comtest/comtest-manual.pdf)
+* current state:
+  * docker mechanism ready, image available.
+* integrated: 2 protocols (to be strongly revised),
+  * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
+  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
+  * TODO: 3 protocols are now defined:
+    * Transient Test of Standing Balance with Moving Support Surface
+    * Body Sway Response characterization with frequency response functions (FRFs) to Support Surface moving with Pseudorandom (PRTS) profile
+    * Test of Standing Balance with Moving Support Surface with Sinusoidal profile
+
 ### Ready to be tested for insertion in database
 
+### Under progress
 
 #### stepByStep
 
@@ -278,20 +297,6 @@ The hyperlinks refer to:
 
 * integrated: **NO PROTOCOL**
 
-### Under progress
-
-##### comtest
-
-* [code](https://github.com/VittorioFreiburg/COMTEST),
-  [eurobench repo](https://github.com/eurobench/pi_comtest),
-  [template](data/comtest/comtest_v5.xlsx)
-* current state:
-  * docker mechanism ready. Image available at https://hub.docker.com/r/eurobenchtest/pi_comtest
-  * **Require protocol description**
-* integrated: 2 protocols (to be strongly revised), **NO PDF**
-  * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
-  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
-
 #### uhei
 
 * [old code](https://gitlab.com/orb-benchmarking/eb_walkingpi),
@@ -307,7 +312,7 @@ The hyperlinks refer to:
   * [yaml file](data/uhei_slope.yaml)
   * Contains 5 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
+  * **NO PROTOCOL details**
 
 ### Very early stage
 

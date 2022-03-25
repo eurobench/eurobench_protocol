@@ -234,8 +234,18 @@ def main():
         logger.fatal('Missing algorithms key in spec file')
         return
 
-    nb_algo = len(spec['algorithms'])
-    logger.info('Loading %s items', nb_algo)
+
+    logger.info('%s items available', len(spec['algorithms']))
+
+    if args.focus is not None:
+        valid_spec = [f for f in spec['algorithms'] if 'name' in f]
+        reduced_set = [f for f in valid_spec if f['name'] == args.focus]
+        if len(reduced_set) != 1:
+            logger.error('requested entry %s should be present once', args.focus)
+            logerr.error('getting: \n%s', reduced_set)
+            return
+        logger.info('Focusin on %s', args.focus)
+        spec['algorithms'] = reduced_set
 
     l_revise = []
     l_synch = []
