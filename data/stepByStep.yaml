@@ -994,7 +994,7 @@ pi_algo:
       - run_lpp
       - questionnaire_lpp_input.csv
     language: python
-    implemented: false
+    implemented: true
   - name: pi_sbs_uei
     description: This app is based on Python and is only one executable script
       containing all metrics computations
@@ -1009,7 +1009,7 @@ pi_algo:
       - run_uei
       - questionnaire_uei_input.csv
     language: python
-    implemented: false
+    implemented: true
   - name: pi_sbs_hf_dualtask
     description: This app is based on Python and is only one executable script
       containing all metrics computations
