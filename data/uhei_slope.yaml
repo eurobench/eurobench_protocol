@@ -7,7 +7,7 @@ scenario:
   image: uhei/img/uhei_slope.png
 
 protocol:
-  - id: undef
+  - id: 92
     name: "uhei_slope_basic"
     name_readable: "Ascending / descending slope: basic slope walking"
     definition: "The robot performs one run for a certain standardized slope
@@ -24,7 +24,7 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-  - id: undef
+  - id: 93
     name: "uhei_slope_max_angle"
     name_readable: "Ascending / descending slope: maximum angle"
     definition: "The robot performs several runs for a given amount of
@@ -42,7 +42,7 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-  - id: undef
+  - id: 94
     name: "uhei_slope_max_vel"
     name_readable: "Ascending / descending slope: maximum velocity"
     definition: "TThe robot performs several runs for a given amount of
