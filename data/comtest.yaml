@@ -7,7 +7,8 @@ scenario:
     The platform moves and provides a stimulus.
     The body sway is recorded and analyzed.​'
 protocol:
-  - name: "comtest_rc"
+  - id: 102
+    name: "comtest_rc"
     name_readable: 'Transient Test of Standing Balance with Moving Support
       Surface'
     definition: 'The humanoid is standing on a moving platform and commanded to
@@ -49,7 +50,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-  - name: "comtest_prts"
+  - id: 103
+    name: "comtest_prts"
     name_readable: 'Body Sway Response characterization with frequency response
       functions (FRFs) to Support Surface moving with Pseudorandom (PRTS)
       profile'
@@ -92,7 +94,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-  - name: "comtest_sin"
+  - id: 104
+    name: "comtest_sin"
     name_readable: 'Test of Standing Balance with Moving Support Surface with
       Sinusoidal profile'
     definition: 'The humanoid is standing on a moving platform and commanded to
