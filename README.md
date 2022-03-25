@@ -36,7 +36,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
-| Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
+| Ascending/Descending stairs | [stepByStep](#stepByStep) |  5 of 7 | yes |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | yes |
@@ -264,10 +264,6 @@ The hyperlinks refer to:
     * Body Sway Response characterization with frequency response functions (FRFs) to Support Surface moving with Pseudorandom (PRTS) profile
     * Test of Standing Balance with Moving Support Surface with Sinusoidal profile
 
-### Ready to be tested for insertion in database
-
-### Under progress
-
 #### stepByStep
 
 * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
@@ -296,6 +292,10 @@ The hyperlinks refer to:
   * Human factors protocols (61, 62, 63) have manual
 
 * integrated: **NO PROTOCOL**
+
+### Ready to be tested for insertion in database
+
+### Under progress
 
 #### uhei
 
