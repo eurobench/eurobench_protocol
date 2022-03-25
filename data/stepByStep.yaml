@@ -988,7 +988,7 @@ pi_algo:
     docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
     docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
     pi:
-      - lpp_pi
+      - lpp
     input_files: [questionnaire_lpp_input.csv]
     input_command:
       - run_lpp
@@ -1003,7 +1003,7 @@ pi_algo:
     docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
     docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
     pi:
-      - uei_pi
+      - uei
     input_files: [questionnaire_uei_input.csv]
     input_command:
       - run_uei
