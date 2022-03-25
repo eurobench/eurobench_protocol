@@ -25,7 +25,7 @@ setup(
     packages=['eurobench_tooling'],
     install_requires=required,
     include_package_data=True,
-    package_data={'eurobench_tooling': 'eurobench_tooling/config_repo.yaml'},
+    package_data={'eurobench_tooling': ['eurobench_tooling/config_repo.yaml']},
     entry_points ={
         "console_scripts": ['check_template = eurobench_tooling.content_checker:main',
                             'check_synchro = eurobench_tooling.check_synchro:main']
