@@ -881,7 +881,7 @@ pi:
     visu: undef
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: lpp_pi
+  - name: lpp
     name_readable: "Local Perceived Pressure metric"
     description: "LPP (Local Perceived Pressure, also known as the Localized
       Musculoskeletal Discomfort, LMD) is rated on a scale from 0 (no pressure
@@ -898,7 +898,7 @@ pi:
     visu: undef
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-  - name: uei_pi
+  - name: uei
     name_readable: "User-Exoskeleton Interaction (UEI)"
     description: "The observational analysis is performed by means of a
       quantitative checklist, which items reflect the quality of the interaction
