@@ -36,7 +36,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
-| Ascending/Descending stairs | [stepByStep](#stepByStep) | 7 (under integration) | no |
+| Ascending/Descending stairs | [stepByStep](#stepByStep) |  5 of 7 | yes |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | yes |
@@ -264,23 +264,19 @@ The hyperlinks refer to:
     * Body Sway Response characterization with frequency response functions (FRFs) to Support Surface moving with Pseudorandom (PRTS) profile
     * Test of Standing Balance with Moving Support Surface with Sinusoidal profile
 
-### Ready to be tested for insertion in database
-
-### Under progress
-
 #### stepByStep
 
 * [old code](https://github.com/Nic31894/EUROBENCH_STEPbySTEP_repo),
   [biomechanics PI](https://github.com/STEPbySTEPproj/Protocol_biomechanics),
   [HF PI](https://github.com/STEPbySTEPproj/HF_metrics),
   [emg protocol](https://github.com/STEPbySTEPproj/protocol_emg),
-  [second emg protocol](https://github.com/marcokai/Protocol_EMG)
+  [second emg protocol](https://github.com/marcokai/Protocol_EMG),
   [template](data/stepByStep/stepByStep.xlsx),
   [yaml](data/stepByStep.yaml)
+  [manuals](data/stepByStep/doc/)
 * current state:
   * code only covering the biomechanics protocol.
-  * first version of HF metrics.
-  * Other are still missing
+  * HF metrics implemented (dual task, lpp, uei).
 * Integrated: 7 protocols:
   * [Walking on stair: biomechanical analysis](https://15.237.22.1/protocols/info/60)
   * [Walking on stairs: dual task protocol](https://15.237.22.1/protocols/info/61)
@@ -288,11 +284,18 @@ The hyperlinks refer to:
   * [Walking on stairs: Local Perceived Pressure Questionnaire](https://15.237.22.1/protocols/info/63)
 
   * [Combined protocol](https://15.237.22.1/protocols/info/64)
+    * **This one may not be yet functional**
   * [Walking on stairs: emg analysis](https://15.237.22.1/protocols/info/65)
   * [Walking on stairs: ground and handrail reaction forces](https://15.237.22.1/protocols/info/66)
-  * Only the biomechanical protocol has manual and code implemented.
+    * **No information on this one**
+  * Biomechanical protocol (60) has manual and code implemented.
+  * Human factors protocols (61, 62, 63) have manual
 
 * integrated: **NO PROTOCOL**
+
+### Ready to be tested for insertion in database
+
+### Under progress
 
 #### uhei
 

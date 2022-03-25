@@ -10,10 +10,10 @@ protocol:
   - id: 60
     name: "sbs_biomechanics"
     name_readable: "Walking on stair: biomechanical analysis"
-    definition: "Mocap adquisition in stair ascending and descending over the
+    definition: "Mocap acquisition in stair ascending and descending over the
       testbed in order to characterize human movements.
       Different parameters will be computed: simple metrics (total time
-      ascending and descending), complex metrics (subphases of stair
+      ascending and descending), complex metrics (sub-phases of stair
       climbing/descend) and kinematics metrics (joint angles)"
     image: sbs/img/sbs_biomechanics.jpg
     keywords: [Lower-limb exoskeletons, stairs, stair ascending, stair descending, motion capture, motion reconstruction]
@@ -42,7 +42,7 @@ protocol:
         detail: "2 minutes"
       - description: "Detailed explanation of the experiment"
         detail: "Number of runs (up and down), which foot is the first,
-          velocity, when is allowed to grab the handle (if handle is grabed,
+          velocity, when is allowed to grab the handle (if handle is grabbed,
           run should be repeated?) - 3 minutes"
       - description: "Place the subject at the starting point"
       - description: "Launch the Data collection software"
@@ -58,13 +58,13 @@ protocol:
     has_multiple_subject: true
   - id: 61
     name: "sbs_hf_dual_task"
-    name_readable: "Walking on stairs: dual task protocol"
-    definition: "The Dual Task protocol is intended to measure the User''s
-      cognitive-motor interference while accomplishing a motor task with the
-      exoskeleton and doing a cognitive task.
+    name_readable: "Dual task protocol"
+    definition: "The Dual Task protocol is intended to measure the
+      cognitive-motor interference of the user while accomplishing a motor task
+      with the exoskeleton and doing a cognitive task.
       Less interference corresponds to better interaction between user and
       machine"
-    image: sbs/img/sbs_human_factor.png
+    image: sbs/img/sbs_hf_dualtask.png
     keywords: [Human factors; Human Robot Interaction; Motor performance; Cognitive performance; stairs]
     bipedal_system: [exoskeleton, human]
     pi_algo: pi_sbs_hf_dualtask
@@ -129,13 +129,13 @@ protocol:
           Before the actual data collection, you will have the opportunity to
           learn about the task by trying it."
       - description: "Single Task: Practice.
-          The participant starts the pratice session."
+          The participant starts the practice session."
         detail: "The practice session consists in 8 trials.
           At the end, a sheet will appear with the instruction: the Single Task:
           Cognitive data collection stars now"
       - description: "Single Task: Cognitive
-          While not wearing the exoskelton nor going up and down the
-          stairs, the participant will hear a sequence of 60 phonems
+          While not wearing the exoskeleton nor going up and down the
+          stairs, the participant will hear a sequence of 60 phonemes
           (alphabetical letters), vocally administered one at a time through
           speakers.
           The participant will be requested to respond yes if the administered
@@ -166,23 +166,24 @@ protocol:
           completed the task."
         detail: "Four values are measured: ascending time, descending time,
           reaction time and number of errors."
-      - description: "The data collection ends. The partcipant removes the exoskeleton and headphones."
+      - description: "The data collection ends.
+        The participant removes the exoskeleton and headphones."
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true
   - id: 62
     name: "sbs_hf_observation"
     name_readable: "Walking on stair: User Exoskeleton Interaction Observation"
-    definition: "This protocol aims to measure some behavioural indicators of
+    definition: "This protocol aims to measure some behavioral indicators of
       user-machine interaction.
       It describes the quality of the interaction occurring between the wearer
       and the lower-limb exoskeleton.
       The data collection is performed by experimenters based on a quantitative
-      checklist of both participant and exoskeleton''s behaviour"
+      checklist of both participant and exoskeleton''s behavior"
     image: sbs/img/sbs_hf_obs.png
-    keywords: [Human factors; Human Robot Interaction; stairs]
+    keywords: [Human factors; Human Robot Interaction; stairs; interaction]
     bipedal_system: [exoskeleton, human]
-    pi_algo: pi_sbs_human_factor
+    pi_algo: pi_sbs_uei
     duration: "10 minutes"
     # controlled_variables:
     testbed:
@@ -194,7 +195,7 @@ protocol:
         file_sheet: undef
       - item: checklist
         type: other
-        file_sheet: undef
+        file_sheet: See attached files
     step_description: "An observational analysis will be performed by the
       experimenter while video recording the motor tasks performed by the
       end-user, i.e. stairs ascending and stairs descending while wearing the
@@ -203,7 +204,7 @@ protocol:
       particular requests will be made to the subject."
     step_list:
       - description: "Instruction.
-          The experimenter provides instrutions to the participant."
+          The experimenter provides instructions to the participant."
         detail: "The instruction will be: We ask you to go up and down the
           stairs wearing the exoskeleton.
           While you perform the task a video camera will record the execution of
@@ -226,10 +227,10 @@ protocol:
           The participant wears the exoskeleton and positions him/herself in
           front of the stairs."
       - description: "Participant preparation.
-          The participant revouves the exoskeleton."
+          The participant completes ascending and descending the stairs."
       - description: "Stop camera recording."
       - description: "Check for data missing.
-          The experimenter watchs the video recorded, fulfilling the checklist
+          The experimenter watches the recorded video, adjusting the checklist
           if data was missing or the observation was not appropriated.
           Delete the video recorded at the end."
     has_multiple_run: false
@@ -237,19 +238,22 @@ protocol:
     has_multiple_subject: false
   - id: 63
     name: "sbs_hf_pressure"
-    name_readable: "Walking on stairs: Local Perceived Pressure Questionnaire"
+    name_readable: "Local Perceived Pressure Questionnaire"
     definition: "The questionnaire measures the subjective evaluation of
-      musculoskeletal pressure applied by the exoskeleton to the user."
-    image: sbs/img/sbs_hf_obs.png
-    keywords: [Human factors; Comfort; Body pressure; stairs]
+      musculoskeletal pressure applied by the exoskeleton to the user.
+      Initially designed by the Step by Step group for the walking on stair
+      scenario, this protocol can be used in any experiment involving an
+      exoskeleton."
+    image: sbs/img/sbs_hf_pressure.png
+    keywords: [Human factors; Comfort; Body pressure; stairs; stair]
     bipedal_system: [exoskeleton, human]
-    pi_algo: pi_sbs_human_factor
+    pi_algo: pi_sbs_lpp
     duration: "5 minutes"
     # controlled_variables:
     testbed:
       - item: questionnaire
         type: other
-        file_sheet: undef
+        file_sheet: See attached files
     step_description: "After the completion of the motor task, the experimenter
       will administer the Local Perceived Pressure questionnaire to the subject.
       The subject will then be asked to fill out the questionnaire to measure
@@ -259,7 +263,7 @@ protocol:
           after the participant has had the opportunity to try/use the
           exoskeleton."
       - description: "Instruction.
-          The experimenter provides instrutions to the participant."
+          The experimenter provides instructions to the participant."
         detail: "The instruction will be: We show you a picture that reports a
           human body divided into nine parts.
           Please, could you judge the degree of discomfort you felt for each
@@ -285,7 +289,7 @@ protocol:
       Questionnaire."
     image: sbs/img/sbs_hf_combined.png
     keywords: [Human factors; Human Robot Interaction; Motor performance;
-      Cognitive perfromance; Comfort; Body pressure; stairs]
+      Cognitive performance; Comfort; Body pressure; stairs]
     bipedal_system: [exoskeleton, human]
     pi_algo: pi_sbs_human_factor
     duration: "30 minutes"
@@ -321,7 +325,7 @@ protocol:
       that has to provide to the subject."
     step_list:
       - description: "Instructions.
-          The experimenter provides instrutions to the participant."
+          The experimenter provides instructions to the participant."
         detail: "The instruction will be: We ask you to go up and down the
           stairs wearing the exoskeleton.
           While you perform the task a video camera will record the execution of
@@ -333,7 +337,7 @@ protocol:
       - description: "Participant preparation.
           The participant wears the exoskeleton and positions him/herself in
           front of the stairs."
-        detail: "Mesure the time requested to donning the exoskeleton."
+        detail: "Measure the time requested to donning the exoskeleton."
       - description: "Single Task: Motor & User-Exoskeleton Interaction
           Observation.
           The participant goes up and down the stairs wearing the exoskeleton.
@@ -345,7 +349,7 @@ protocol:
           limbs when crutches are used) to avoid falling backward; During the
           Anterolateral shifting of body centre of gravity, is the swing leg
           adequately relieved to correctly initiate the stride; Number of error
-          messages by the HMI (Human Machin-Interface); Number of times the safe
+          messages by the HMI (Human Machine-Interface); Number of times the safe
           mode was been activated (the system switched off) when the situation
           requires it and did not require it."
       - description: "Participant preparation.
@@ -353,7 +357,7 @@ protocol:
         detail: "Mesure the time requested to doffing the exoskeleton."
       - description: "Stop camera recording."
       - description: "Check for data missing.
-          The experimenter watchs the video recorded, fulfilling the checklist
+          The experimenter watches the video recorded, fulfilling the checklist
           if data was missing or the observation was not appropriated.
           Delete the video recorded at the end."
       - description: "Setting preparation.
@@ -375,7 +379,7 @@ protocol:
           pressure are computed for each target body area and/or across body
           areas.
           Both round numbers and decimals can be used (up to experimenter)."
-      - description: "Single Task: Cognitive, Setting preparetion.
+      - description: "Single Task: Cognitive, Setting preparation.
           The experimenter runs OpenSesame.
           The participant wears the headphones (which records the participant''s
           vocal answers)."
@@ -391,14 +395,14 @@ protocol:
           Before the actual data collection, you will have the opportunity to
           learn about the task by trying it.”"
       - description: "Single Task: Practice.
-          While not wearing the exoskelton nor going up and down the stairs,
+          While not wearing the exoskeleton nor going up and down the stairs,
           the participant starts the pratice session."
         detail: "The practice session consists in 8 trials.
           At the end, a sheet will appear with the instruction: the Single Task:
           Cognitive data collection stars now."
       - description: "Single Task: Cognitive.
-          While not wearing the exoskelton nor going up and down the stairs, the
-          participant will hear a sequence of 60 phonems (alphabetical letters),
+          While not wearing the exoskeleton nor going up and down the stairs, the
+          participant will hear a sequence of 60 phonemes (alphabetical letters),
           vocally administered one at a time through speakers.
           The participant will be requested to respond yes if the administered
           letter is a repetition of the immediately preceding administered
@@ -424,12 +428,12 @@ protocol:
           The experimenter clicks on the right mouse button when the participant
           says no, and clicks on the left mouse button when the participant says
           yes.
-          Activate the cronometer and stopping it when the participant has
+          Activate the chronometer and stopping it when the participant has
           completed the task."
         detail: "Four values are measured: ascending time, descending time,
           reaction time and number of errors."
       - description: "The data collection ends.
-          The partcipant remouves the exoskeleton and headphones."
+          The participant remouves the exoskeleton and headphones."
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
@@ -437,7 +441,7 @@ protocol:
     name: "sbs_emg"
     name_readable: "Walking on stairs: emg analysis"
     definition: "The protocol aims at assessing the subject''s motor control
-      ability in stair ascendig/descending through the analysis of the EMG
+      ability in stair ascending/descending through the analysis of the EMG
       activation pattern.
       The proposed metrics rely on the use of surface electromyography (sEMG),
       a technique to record the electrical activity produced by muscles during
@@ -467,7 +471,7 @@ protocol:
       stance_perc _left, swing_perc_left, stride_perc_left."
     image: undef
     keywords: [Lower-limb exoskeletons (LLEs), stairs, stair ascending,
-      stair descending, human-robot interaction, EMG activity]
+               stair descending, human-robot interaction, EMG activity]
     bipedal_system: [exoskeleton, human, prosthesis]
     pi_algo: pi_sbs_emg
     duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
@@ -518,7 +522,7 @@ protocol:
       - description: "Stop acquisition.
           The acquisition is stopped once the subject stands with both feet on
           the ground"
-      - description: "Trials repeations.
+      - description: "Trials repetitions.
           Steps 3 to 6 are repeated (4 other trials)"
       - description: "Change the staircase inclination.
           The operator changes the staircase inclination using the platform
@@ -532,7 +536,7 @@ protocol:
     name: "sbs_weight_bearing"
     name_readable: "Walking on stairs: ground and handrail reaction forces"
     definition: "The protocol aims at assessing the subject''s motor control
-      ability in stair ascendig/descending through the analysis of weight
+      ability in stair ascending/descending through the analysis of weight
       bearing.
       The proposed metrics rely on the analysis of the ground reaction forces
       and the progression of the Center of Pressure (CoP).
@@ -554,7 +558,7 @@ protocol:
       stance_perc _left, swing_perc_left, stride_perc_left."
     image: undef
     keywords: [Lower-limb exoskeletons (LLEs), stairs, stair ascending,
-      stair descending, human-robot interaction, EMG activity]
+               stair descending, human-robot interaction, EMG activity]
     bipedal_system: [exoskeleton, human, prosthesis]
     pi_algo: pi_sbs_wb
     duration: "60min=2min/runx5runsx2 stair inclination[20 min]+20min for subj preparation and setup proc.[40 min]"
@@ -611,7 +615,7 @@ protocol:
       - description: "Stop acquisition.
           The acquisition is stopped once the subject stands with both feet on
           the ground"
-      - description: "Trials repeations.
+      - description: "Trials repetitions.
           Steps 3 to 6 are repeated (4 other trials)"
       - description: "Change the staircase inclination.
           The operator changes the staircase inclination using the platform
@@ -877,7 +881,65 @@ pi:
     visu: undef
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
-
+  - name: lpp
+    name_readable: "Local Perceived Pressure metric"
+    description: "LPP (Local Perceived Pressure, also known as the Localized
+      Musculoskeletal Discomfort, LMD) is rated on a scale from 0 (no pressure
+      at all/no discomfort at all) to 10 (extremely strong pressure/extreme
+      discomfort, almost maximum).
+      A discomfort level of little discomfort is defined as the cut-off point
+      for the peak discomfort measure.
+      Mean ratings of perceived pressure are computed for each target body area
+      and/or across body areas."
+    unit: "integer"
+    output: vector
+    intra_run_aggregation: [[0, mean]]
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: uei
+    name_readable: "User-Exoskeleton Interaction (UEI)"
+    description: "The observational analysis is performed by means of a
+      quantitative checklist, which items reflect the quality of the interaction
+      occurring between the wearer and the LLE (lower-limb exoskeleton)."
+    unit: "integer"
+    output: scalar
+    intra_run_aggregation: [[0, mean]]
+    inter_run_aggregation: [[0, mean]]
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: execution_time
+    name_readable: "Execution time difference"
+    description: "Comparison of the execution time with and without the exoskeleton"
+    unit: "na"
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: response_time
+    name_readable: "Response time difference"
+    description: "Comparison of the response time to question, with and without the exoskeleton"
+    unit: "na"
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: total_error
+    name_readable: "Response time difference"
+    description: "Comparison of the number of wrong answers, with and without the exoskeleton"
+    unit: "na"
+    output: vector
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
 pi_algo:
   - name: pi_sbs_biomechanics
     description: This app is based on Python and is only one executable script
@@ -916,5 +978,54 @@ pi_algo:
     input_command:
       - run_protocol_1
       - platformData.csv
+    language: python
+    implemented: true
+  - name: pi_sbs_lpp
+    description: This app is based on Python and is only one executable script
+      containing all metrics computations
+    url_paper: undef
+    url_code: https://github.com/STEPbySTEPproj/HF_metrics
+    docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    pi:
+      - lpp
+    input_files: [questionnaire_lpp_input.csv]
+    input_command:
+      - run_lpp
+      - questionnaire_lpp_input.csv
+    language: python
+    implemented: true
+  - name: pi_sbs_uei
+    description: This app is based on Python and is only one executable script
+      containing all metrics computations
+    url_paper: undef
+    url_code: https://github.com/STEPbySTEPproj/HF_metrics
+    docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    pi:
+      - uei
+    input_files: [questionnaire_uei_input.csv]
+    input_command:
+      - run_uei
+      - questionnaire_uei_input.csv
+    language: python
+    implemented: true
+  - name: pi_sbs_hf_dualtask
+    description: This app is based on Python and is only one executable script
+      containing all metrics computations
+    url_paper: undef
+    url_code: https://github.com/STEPbySTEPproj/HF_metrics
+    docker_host: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    docker_name: eurobenchtest/pi_sbs_human_factor:v1.0.0
+    pi:
+      - execution_time
+      - response_time
+      - total_error
+    input_files: [platformData_exo.csv, platformData_noexo.csv, condition.yaml]
+    input_command:
+      - run_dualtask
+      - platformData_exo.csv
+      - platformData_noexo.csv
+      - condition.yaml
     language: python
     implemented: true
