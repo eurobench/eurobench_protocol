@@ -342,7 +342,7 @@ pi_algo:
     input_command:
       - ''
       - part_sit_physiological.csv
-      - part_walk_physiological_ecg.csv
+      - part_sit_physiological_ecg.csv
       - part_walk_physiological.csv
       - part_walk_physiological_ecg.csv
     language: matlab
