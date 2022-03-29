@@ -331,7 +331,10 @@ The hyperlinks refer to:
 #### dysturbance
 
 * [code](https://github.com/CentroEPiaggio/dysturbance),
-  [template](data/dysturbance/dysturbance.xlsx)
+  [template](data/dysturbance/dysturbance.xlsx),
+  [yaml_file](data/dysturbance.yaml)
+  [original_repo]()
+  [eurobench repo]()
 * current state:
   * 16.12.2021 waiting for answer.
 * Integrated: 4 protocols, **NO PDF**
@@ -379,7 +382,6 @@ Related to humanoid
   * Contains 3 protocols
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
-
 
 #### waterloo
 
