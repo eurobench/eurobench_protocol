@@ -487,8 +487,8 @@ pi_algo:
     description: 'This algorithm analyses the data related to the Impulsive
       Disturbance protocol and provides the related PI evaluation'
     url_paper: na
-    url_code: https://github.com/CentroEPiaggio/dysturbance/tree/master/Code_Dysturbance/src
-    docker_host: 
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host:
     docker_name:
     pi:
       - impulsive_absorbed_energy
@@ -509,8 +509,8 @@ pi_algo:
     description: 'This algorithm analyses the data related to the Sinusoidal
       Force Disturbance protocol and provides the related PI evaluation'
     url_paper: na
-    url_code: https://github.com/CentroEPiaggio/dysturbance/tree/master/Code_Dysturbance/src
-    docker_host: 
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host:
     docker_name:
     pi:
       - sinusoidal_force_fall_check
@@ -531,7 +531,7 @@ pi_algo:
     description: 'This algorithm analyses the data related to the Sinusoidal
       displacement Disturbance protocol and provides the related PI evaluation'
     url_paper: na
-    url_code: https://github.com/CentroEPiaggio/dysturbance/tree/master/Code_Dysturbance/src
+    url_code: https://github.com/CentroEPiaggio/dysturbance
     docker_host:
     docker_name:
     pi:
@@ -552,8 +552,8 @@ pi_algo:
     description: 'This algorithm analyses the data related to the quasistatic
     force disturbance protocol and provides the related PI evaluation.'
     url_paper: na
-    url_code: https://github.com/CentroEPiaggio/dysturbance/tree/master/Code_Dysturbance/src
-    docker_host: 
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host:
     docker_name:
     pi:
       - quasi_static_force_fall_check
@@ -573,8 +573,8 @@ pi_algo:
     description: 'This algorithm analyses the data related to the quasistatic
       displacement disturbance protocol and provides the related PI evaluation.'
     url_paper: na
-    url_code: https://github.com/CentroEPiaggio/dysturbance/tree/master/Code_Dysturbance/src
-    docker_host: 
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host:
     docker_name:
     pi:
       - quasi_static_displacement_fall_check
