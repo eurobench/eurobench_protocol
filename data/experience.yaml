@@ -325,8 +325,8 @@ pi_algo:
       psychophysiological state of the user starting from physiological data."
     url_paper: undef
     url_code: https://git.code.tecnalia.com/eurobench/pi_psychophysiological
-    docker_host: eurobenchtest/pi_experience_psycho:v0.0.0
-    docker_name: eurobenchtest/pi_experience_psycho:v0.0.0
+    docker_host: eurobenchtest/pi_experience_psycho:v0.1.0
+    docker_name: eurobenchtest/pi_experience_psycho:v0.1.0
     pi:
       - stress
       - fatigue
@@ -342,7 +342,7 @@ pi_algo:
     input_command:
       - ''
       - part_sit_physiological.csv
-      - part_walk_physiological_ecg.csv
+      - part_sit_physiological_ecg.csv
       - part_walk_physiological.csv
       - part_walk_physiological_ecg.csv
     language: matlab
