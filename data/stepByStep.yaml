@@ -940,6 +940,107 @@ pi:
     visu: undef
     inter_cond_aggregation: undef.
     inter_subject_aggregation: undef.
+# emg related "metrics"
+  - name: pi_actindex_DeAn_r
+    name_readable: "Activiation index channel DeAn"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_actindex_DePo_r
+    name_readable: "Activiation index channel DePo"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_actindex_GlMe_r
+    name_readable: "Activiation index channel GlMe"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_actindex_LaDo_r
+    name_readable: "Activiation index channel LaDo"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_actindex_ReAb_r
+    name_readable: "Activiation index channel ReAb"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_cocoindex_ReFe_l-vs-BiFe_l
+    name_readable: "CoContraction index channel ReFe_l vs BiFe_l"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_cocoindex_ReFe_r-vs-BiFe_r
+    name_readable: "CoContraction index channel ReFe_r vs BiFe_r"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_cocoindex_TiAn_r-vs-GaMe_r
+    name_readable: "CoContraction index channel TiAn_r vs GaMe_r"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_gaitphases_perc
+    name_readable: "Gait phases in percentage"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
+  - name: pi_gaitphases_time
+    name_readable: "Gait phases"
+    description: "undefined"
+    unit: "na"
+    output: matrix
+    intra_run_aggregation: na
+    inter_run_aggregation: na
+    visu: undef
+    inter_cond_aggregation: undef.
+    inter_subject_aggregation: undef.
 pi_algo:
   - name: pi_sbs_biomechanics
     description: This app is based on Python and is only one executable script
@@ -1028,4 +1129,29 @@ pi_algo:
       - platformData_noexo.csv
       - condition.yaml
     language: python
+    implemented: true
+  - name: pi_sbs_emg
+    description: undefined
+    url_paper: undef
+    url_code: https://github.com/eurobench/sbs_emg
+    docker_host: eurobenchtest/pi_sbs_emg:v0.0.0
+    docker_name: eurobenchtest/pi_sbs_emg:v0.0.0
+    pi:
+      - pi_actindex_DeAn_r
+      - pi_actindex_DePo_r
+      - pi_actindex_GlMe_r
+      - pi_actindex_LaDo_r
+      - pi_actindex_ReAb_r
+      - pi_cocoindex_ReFe_l-vs-BiFe_l
+      - pi_cocoindex_ReFe_r-vs-BiFe_r
+      - pi_cocoindex_TiAn_r-vs-GaMe_r
+      - pi_gaitphases_perc
+      - pi_gaitphases_time
+    input_files: [emg.csv, phases.yaml, CHforINDEXES.yaml]
+    input_command:
+      - ''
+      - emg.csv
+      - phases.yml
+      - CHforINDEXES.yml
+    language: matlab
     implemented: true
