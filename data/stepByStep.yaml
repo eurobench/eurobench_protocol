@@ -1151,7 +1151,7 @@ pi_algo:
     input_command:
       - ''
       - emg.csv
-      - phases.yaml
-      - CHforINDEXES.yaml
+      - phases.yml
+      - CHforINDEXES.yml
     language: matlab
     implemented: true
