@@ -64,7 +64,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | under dev
 | Moving in narrow spaces	| discarded
 | Standing on a moving surface | [COMTEST](#comtest) | 3 | yes |
-| Walking/Standing during pushes | [Dysturbance](#dysturbance) | 4 | no |
+| Walking/Standing during pushes | [Dysturbance](#dysturbance) | 4 | yes |
 
 ## Code integration status
 
