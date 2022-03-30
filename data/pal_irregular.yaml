@@ -28,11 +28,6 @@ protocol:
         type: int
         range: [1, any]
         unit: na
-      - name: step duration
-        definition: step duration for each step.
-        type: float
-        range: any
-        unit: sec
     testbed:
       - item: "3000x1000mm passive platform with fixed wooden board"
         type: other
