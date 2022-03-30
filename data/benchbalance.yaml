@@ -113,7 +113,7 @@ protocol:
     has_multiple_condition: true
     has_multiple_subject: true
 pi:
-  - name: body_sway
+  - name: bodysway
     name_readable: "Body sway"
     description: "The maximum body sway angle in response to a perturbation.
       For antero-posterior perturbations: considering in the sagittal plane the
@@ -133,7 +133,7 @@ pi:
     visu: Bar plot
     inter_cond_aggregation: unclear
     inter_subject_aggregation: unclear
-  - name: recovery_time
+  - name: recoverytime
     name_readable: "Recovery time"
     description: "Time to recover from a perturbation.
       This is calculated as the time needed for the CoM to go back to the rest
@@ -154,11 +154,11 @@ pi_algo:
     description: "Perturbed balance algorithm."
     url_paper: undef
     url_code: https://github.com/fraBent/PI_BenchBalance
-    docker_host: eurobenchtest/pi_benchbalance:v0.0.0
-    docker_name: eurobenchtest/pi_benchbalance:v0.0.0
+    docker_host: eurobenchtest/pi_benchbalance:latest
+    docker_name: eurobenchtest/pi_benchbalance:latest
     pi:
-      - body_sway
-      - recovery_time
+      - bodysway
+      - recoverytime
     input_files:
       - jointAngles.csv
       - pushstick.csv
@@ -166,10 +166,11 @@ pi_algo:
       - condition.yaml
       - subject_info.yaml
     input_command:
-      - run_pi
+      - ''
       - jointAngles.csv
       - pushstick.csv
       - smartgarment.csv
       - condition.yaml
       - subject_info.yaml
     language: matlab
+    implemented: true

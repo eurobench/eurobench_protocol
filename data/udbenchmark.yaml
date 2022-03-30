@@ -1,7 +1,7 @@
 ---
 user_name: "udbenchmarking"
 scenario:
-  name: Walking on Slopes"
+  name: Walking on treadmill
   description: "The stability of bipedal locomotion is challenged when walking
     on an inclined surface.
     Changes of surface orientation asks for adequate adaption to the new
@@ -13,7 +13,8 @@ scenario:
   image: udbenchmark/img0.png
 
 protocol:
-  - name: "udbenchmarking"
+  - id: 54
+    name: "udbenchmarking"
     name_readable: "Walking on an inclined treadmill"
     definition: "Participants walk in an Computer Assisted Rehabilitation
       environment (CAREN, Motek, Forcelink, Amsterdam, The Netherlands), which
@@ -26,7 +27,8 @@ protocol:
       Participants walk on varying treadmill orientations in both fore-aft and
       lateral directions, with varying treadmill speeds.
       Three dimensional full-body kinematics of participant and treadmill are
-      recorded using a Vicon motion capture system."
+      recorded using a Vicon motion capture system. NOTE: This protocol cannot
+      be performed in the wearable robots facility."
     image: undef
     keywords: [Walking, walking stability, gait stability]
     bipedal_system: [Humanoid, Prosthesis, Exoskeleton, Human]
@@ -54,19 +56,16 @@ protocol:
         range: [0.3, 15]
         unit: m/s
     testbed:
-      - item: "motion capture system"
+      - item: "Motion capture system"
         type: sensor
-        file_sheet: UDBenchmarking documentation
-      - item: "instrumented treadmill"
+        file_sheet: Vicon
+      - item: "Instrumented treadmill"
         type: combined
-        file_sheet: UDBenchmarking documentation
+        file_sheet: Inclined treadmill in sagittal and frontal plane
     step_description: "undef"
     step_list:
-      - description: Walk
-        detail: Participants walk on a treadmill with varying walking surface
-          orientations and treadmill speeds.
-          Participants are instructed to walk normal, and while walking to keep
-          looking straight ahead.
+      - description: Participants walk on a treadmill with varying walking surface orientations and treadmill speeds.
+        detail: Participants are instructed to walk normal, and while walking to keep looking straight ahead.
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: true

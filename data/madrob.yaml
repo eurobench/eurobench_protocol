@@ -7,7 +7,8 @@ scenario:
   image: undef
 
 protocol:
-  - name: "madrob"
+  - id: 52
+    name: "madrob"
     name_readable: "MADROB: using a door"
     definition: "The benchmark evaluates the capability of the robot to
       correctly operate standard (hinged) doors for human use.
@@ -223,8 +224,8 @@ pi_algo:
     description: undef
     url_paper: undef
     url_code: https://github.com/madrob-beast/madrob_beast_pi
-    docker_host: eurobenchtest/pi_madrob_beast:v1.0.0
-    docker_name: eurobenchtest/pi_madrob_beast:v1.0.0
+    docker_host: eurobenchtest/pi_madrob_beast:v2.0.0
+    docker_name: eurobenchtest/pi_madrob_beast:v2.0.0
     pi:
       - execution_time
       - time_to_handle

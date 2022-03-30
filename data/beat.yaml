@@ -838,8 +838,8 @@ pi_algo:
       is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - mrom
       - cov
@@ -862,8 +862,8 @@ pi_algo:
       uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - mrom
       - cov
@@ -889,8 +889,8 @@ pi_algo:
       terms of  stability when static balance on even surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - pl
       - plap
@@ -908,8 +908,8 @@ pi_algo:
       terms of  stability when static balance on uneven surface is performed
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - pl
       - plap
@@ -928,8 +928,8 @@ pi_algo:
       subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - romp
       - plp
@@ -949,8 +949,8 @@ pi_algo:
       are provided and subjects stand on uneven surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - romp
       - plp
@@ -973,8 +973,8 @@ pi_algo:
       provided and subjects stand on even surface
     url_paper: undef
     url_code: https://github.com/aremazeilles/beat_routine
-    docker_host: eurobenchtest/pi_beat:v0.1.0
-    docker_name: eurobenchtest/pi_beat:v0.1.0
+    docker_host: eurobenchtest/pi_beat:v0.1.1
+    docker_name: eurobenchtest/pi_beat:v0.1.1
     pi:
       - plp
       - eap
