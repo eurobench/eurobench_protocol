@@ -1,162 +1,262 @@
 ---
 user_name: "pal"
 scenario:
-  name: "Walking over irregular terrains with Humanoids"
-  description: "The robot must cross the platform from one side to the other while the robot is stepping over the different oriented
-platforms, while maintaining a safe walking trajectory."
-  image:
+  name: "Walking over irregular hard terrains with Humanoids"
+  description: "Assessment of the motion capability of the robot in hard
+    irregular terrains."
+  image: pal/img/pal_irregular_terrains.png
 
 protocol:
   - id: 86
-    name: "pal_irregular_open"
-    name_readable: "Walking over irregular terrains, open trial"
-    definition: "The robot crosses the platform.
-      Not yet implemented."
-    image: pal/img/pal_irregular.png
-    keywords: [irregular, humanoid robot]
+    name: "pal_irregular_flat"
+    name_readable: "Walking over flat surfaces with different heights"
+    definition: "Assess the balance of the robot of walking during 3m flat hard
+      terrain trial"
+    image: pal/img/pal_irregular_flat.png
+    keywords: [irregular, Uneven hard terrain, Walking, Humanoid Robots]
     bipedal_system: [humanoid]
-    pi_algo: pal_irregular
-    duration: "undef"
+    pi_algo: locomotionbench
+    duration: "1.5 hours"
+    controlled_variables:
+      - name: step duration
+        definition: step duration for each step.
+        type: float
+        range: any
+        unit: sec
+      - name: step amount
+        definition: amount of steps to span 4 meters.
+        type: int
+        range: [1, any]
+        unit: na
     testbed:
-      - item: Irregular terrain
+      - item: "3000x1000mm passive platform with fixed wooden board"
         type: other
         file_sheet: na
-    has_multiple_run: false
-    has_multiple_condition: false
-    has_multiple_subject: false
-  - id: 87
-    name: "pal_irregular_fixed_vel"
-    name_readable: "Walking over irregular terrains, fixed velocity"
-    definition: "The robot crosses the platform at a certain velocity.
-      Not yet implemented."
-    image: pal/img/pal_irregular.png
-    keywords: [irregular, humanoid robot]
-    bipedal_system: [humanoid]
-    pi_algo: pal_irregular
-    duration: "undef"
-    testbed:
-      - item: Irregular terrain
-        type: other
+      - item: "IMU close to robotic free-flyer or internal IMU"
+        type: sensor
         file_sheet: na
-    has_multiple_run: false
-    has_multiple_condition: false
-    has_multiple_subject: false
-  - id: 88
-    name: "pal_irregular_endurance"
-    name_readable: "Walking over irregular terrains, endurance"
-    definition: "The robot crosses the platform for a certain amount of time.
-      Not yet implemented."
-    image: pal/img/pal_irregular.png
-    keywords: [irregular, humanoid robot]
-    bipedal_system: [humanoid]
-    pi_algo: pal_irregular
-    duration: "undef"
-    testbed:
-      - item: Irregular terrain
-        type: other
+      - item: "GRF sensors (Robot internal force torque sensors or force plate)"
+        type: sensor
         file_sheet: na
+    step_description: undef
+    step_list:
+      - description: "Place the robot at the starting position and start
+          recording data on the robot"
+        detail: "Record data to create walking data files compliant with
+          EUROBENCH format.
+          Desired files: joint angles, joint velocities, joint accelerations,
+          joint torques, ground reaction forces, imu"
+      - description: "initiate the walking sequence"
+        detail: "The robot walks three meters. Continue to step 4 after
+          successful execution of the walking sequence"
+      - description: "Stop the data collection software"
+      - description: "Put the robot back to start"
+      - description: "Repeat steps 1-4 three times"
+        detail: "The required amount of successful repetitions is set to 3"
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: false
+  - id: 87
+    name: "pal_irregular_x_inclined"
+    name_readable: "Walking over flat surfaces with x-axis inclination"
+    definition: "Assess the balance of the robot of walking during 3m flat hard
+      terrain trial."
+    image: pal/img/pal_irregular_x_inclined.png
+    keywords: [irregular, Uneven hard terrain, Walking, Humanoid Robots]
+    bipedal_system: [humanoid]
+    pi_algo: locomotionbench
+    duration: "3 hours"
+    controlled_variables:
+      - name: step duration
+        definition: step duration for each step.
+        type: float
+        range: any
+        unit: sec
+      - name: step amount
+        definition: amount of steps to span 4 meters.
+        type: int
+        range: [1, any]
+        unit: na
+    testbed:
+      - item: "3000x1000mm passive platform with fixed wooden board"
+        type: other
+        file_sheet: na
+      - item: "IMU close to robotic free-flyer or internal IMU"
+        type: sensor
+        file_sheet: na
+      - item: "GRF sensors (Robot internal force torque sensors or force plate)"
+        type: sensor
+        file_sheet: na
+    step_description: undef
+    step_list:
+      - description: "Place the robot at the starting position and start
+          recording data on the robot"
+        detail: "Record data to create walking data files compliant with
+          EUROBENCH format."
+      - description: "initiate the walking sequence"
+        detail: "The robot walks three meters.
+          Continue to step 4 after successful execution of the walking sequence"
+      - description: "Stop the data collection software"
+      - description: "Put the robot back to start"
+      - description: "Repeat steps 1-4 three times"
+        detail: "The required amount of successful repetitions is set to 3"
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 88
+    name: "pal_irregular_y_inclined"
+    name_readable: "Walking over flat surfaces with y-axis concave inclination"
+    definition: "Assess the balance of the robot of walking during 3m flat hard
+      terrain trial."
+    image: pal/img/pal_irregular_y_inclined.png
+    keywords: [irregular, Uneven hard terrain, Walking, Humanoid Robots]
+    bipedal_system: [humanoid]
+    pi_algo: locomotionbench
+    duration: "3 hours"
+    controlled_variables:
+      - name: step duration
+        definition: step duration for each step.
+        type: float
+        range: any
+        unit: sec
+      - name: step amount
+        definition: amount of steps to span 4 meters.
+        type: int
+        range: [1, any]
+        unit: na
+    testbed:
+      - item: "3000x1000mm passive platform with fixed wooden board"
+        type: other
+        file_sheet: na
+      - item: "IMU close to robotic free-flyer or internal IMU"
+        type: sensor
+        file_sheet: na
+      - item: "GRF sensors (Robot internal force torque sensors or force plate)"
+        type: sensor
+        file_sheet: na
+    step_description: undef
+    step_list:
+      - description: Configure testbed
+        detail: Configure testbed with 5 degree inclination
+      - description: "Place the robot at the starting position and start
+          recording data on the robot"
+        detail: "Record data to create walking data files compliant with
+          EUROBENCH format."
+      - description: "initiate the walking sequence"
+        detail: "The robot walks three meters.
+          Continue to step 4 after successful execution of the walking sequence"
+      - description: "Stop the data collection software"
+      - description: "Put the robot back to start"
+      - description: "Repeat steps 2-5 three times"
+        detail: "If the robot succeed with the current inclination increase
+          the configuration of the testbed 5 degrees"
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+
 pi:
-  - name: execution_time
-    name_readable: "Execution time"
-    description: "Time it takes to execute the trajectory"
-    unit: s
-    output: scalar
+  - name: base_ori
+    name_readable: "base_ori"
+    description: "Accumulated error w.r.t the vertical orientation of the base link"
+    unit: deg
+    output: vector
     intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: max_repet
-    name_readable: "Maximum repetition"
-    description: "Maximum amount of successive crossings"
-    unit: undef
+    inter_run_aggregation: unclear
+    visu: line chart
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: cop_bos
+    name_readable: "cop_bos"
+    description: "Distance of the center of pressure to base of support."
+    unit: cm
+    output: vector
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: line chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
+  - name: cp_bos
+    name_readable: "cp_bos"
+    description: "Distance of the capture point to the base of support"
+    unit: cm
+    output: vector
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: line chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
+  - name: fo_imp
+    name_readable: "fo_imp"
+    description: "Maximum impact during walking cycle"
+    unit: Nm
     output: scalar
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: success
-    name_readable: "Success rate"
-    description: "Amount of successful repetitions per protocol"
-    unit: undef
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: bar plot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
+  - name: n_dist
+    name_readable: "n_dist"
+    description: "Calculates the normalized distance travelled"
+    unit: na
     output: scalar
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: tracking_error
-    name_readable: "Trackign error"
-    description: "Tracking error from the planned trajectory"
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: bar plot
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
+  - name: ang_mo_com
+    name_readable: "ang_mo_com"
+    description: "Angular momentum at Center of Mass"
+    unit: rad/s
+    output: vector
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: line chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
+  - name: gr_react
+    name_readable: "gr_react"
+    description: "Ground reaction forces"
+    unit: na
+    output: vector
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: line chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
+  - name: fpe_dist
+    name_readable: "fpe_dist"
+    description: "Distance Foot Place Estimator to the nearest Board of Support"
     unit: m
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: robot_dynamics
-    name_readable: "Robot Dynamics"
-    description: "Forces acting on the robot mechanism especially the knee joint"
-    unit: N
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: mechanical_energy
-    name_readable: "Mechanical energy"
-    description: "Energy consumed normalized over trajectory and execution time"
-    unit: J
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: cost_transport
-    name_readable: "Cost of transport"
-    description: "Mechanical cost of transport "
-    unit: undef
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
-  - name: human_likelyness
-    name_readable: "Human likelyness"
-    description: "Spatio-temporal comparison of kinematic indicators"
-    unit: m
-    output: vector
-    intra_run_aggregation: undef
-    inter_run_aggregation: undef
-    visu: undef
-    inter_cond_aggregation: undef.
-    inter_subject_aggregation: undef.
+    output: scalar
+    intra_run_aggregation: unclear
+    inter_run_aggregation: unclear
+    visu: line chart
+    inter_cond_aggregation: undef
+    inter_subject_aggregation: na
 
 pi_algo:
-  - name: pal_irregular
-    description: Benchmarking toolkit to benchmark irregular terrain walking by humanoids
+  - name: locomotion_bench
+    description: Benchmarking toolkit to calculate a variety of gait performance indicators
     url_paper: undef
-    url_code: undef
+    url_code: https://gitlab.com/orb-benchmarking/eb_hum_bench
     docker_host: undef
     docker_name: undef
     pi:
-      - execution_time
-      - max_repet
-      - success
-      - tracking_error
-      - robot_dynamics
-      - mechanical_energy
-      - cost_transport
-      - human_likelyness
+      - h_c
+      - cop_bos
+      - fpe_bos
+      - cp_bos
+      - base_ori
+      - impact
+      - fc_vel
+      - fo_imp
+      - n_dist
+      - ang_mo_com
+      - gr_react
+      - fpe_dist
     input_files: []
-    input_command: []
+    input_command: [python3 bin/i3sa.py -r bin/conf/robot.yaml -e bin/conf/experiment.yaml]
     language: python
     implemented: false
