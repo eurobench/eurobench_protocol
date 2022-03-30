@@ -36,7 +36,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Opening closing doors | Eurobench-CSIC | 0
 | Overcoming obstacles | Eurobench-CSIC | 0
 | Straight walking | Eurobench-CSIC | 0
-| Ascending/Descending stairs | [stepByStep](#stepByStep) |  5 of 7 | yes |
+| Ascending/Descending stairs | [stepByStep](#stepByStep) |  6 of 7 | yes |
 | Kinematics of stair walking of non-impared individuals | [RRD](#rrd) | 1 | yes |
 | Sit-to-Stand, Stand-to-Sit | [Bench](#bench) | 2 | yes |
 | Walking/Standing during pushes | [benchbalance](#benchbalance) | 1 | yes |
