@@ -437,13 +437,13 @@ pi_algo:
       - Fall_check
       - Stability_margin
     input_files:
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     input_command:
       - ''
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     language: matlab
     implemented: true
@@ -459,13 +459,13 @@ pi_algo:
       - Stability_margin
       - Equivalent_impedance
     input_files:
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     input_command:
       - ''
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     language: matlab
     implemented: true
@@ -481,13 +481,13 @@ pi_algo:
       - Stability_margin
       - Equivalent_impedance
     input_files:
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     input_command:
       - ''
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     language: matlab
     implemented: true
@@ -502,13 +502,13 @@ pi_algo:
       - Fall_check
       - Stability_margin
     input_files:
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     input_command:
       - ''
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     language: matlab
     implemented: true
@@ -523,13 +523,13 @@ pi_algo:
       - Fall_check
       - Stability_margin
     input_files:
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     input_command:
       - ''
-      - platform_data.csv
-      - testbed.yaml
+      - platformData.csv
+      - condition.yaml
       - subject_info.yaml
     language: matlab
     implemented: true
