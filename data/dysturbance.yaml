@@ -229,7 +229,7 @@ protocol:
     has_multiple_subject: false
   - name: 'dysturbance_reaction_quasistatic_force'
     name_readable: 'Reaction to external Quasistatic Force Disturbance'
-    description: 'This test evaluates the capability of the system to adapt
+    definition: 'This test evaluates the capability of the system to adapt
       and resist an almost constant push, and to find the maximum value of
       quasi-static load the system is capable to resist without falling.
       We provide a Time-Linear quasi-static Force/Displacement perturbation.'
@@ -294,7 +294,7 @@ protocol:
     has_multiple_subject: false
   - name: 'dysturbance_reaction_quasistatic_disp'
     name_readable: 'Reaction to external Quasistatic Displacement Disturbance'
-    description: 'This test evaluates the capability of the system to adapt and
+    definition: 'This test evaluates the capability of the system to adapt and
       resist an almost constant push, and to find the maximum value of
       quasi-static load the system is capable to resist without falling.
       We provide a Time-Linear quasi-static Force/Displacement perturbation.'
