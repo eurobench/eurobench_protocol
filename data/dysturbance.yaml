@@ -24,7 +24,7 @@ protocol:
       corresponding to a given energy, and hits the agent.'
     image: 'dysturbance/dysturbance_impulsive.png'
     keywords: [impact, impulse, energy, resilience]
-    bipedal_systems: [humanoid, exoskeleton]
+    bipedal_system: [humanoid, exoskeleton]
     pi_algo: algo_impulsive_disturbance
     duration: '1 minute / run / subject'
     controlled_variables:
@@ -93,7 +93,7 @@ protocol:
       disturbances at a given frequency.'
     image: 'dysturbance/dysturbance_sinusoidal.png'
     keywords: [Force disturbance, Amplitude, Frequency]
-    bipedal_systems: [humanoid, exoskeleton]
+    bipedal_system: [humanoid, exoskeleton]
     pi_algo: algo_sinusoidal_force_disturbance
     duration: '5 minute / run / subject'
     controlled_variables:
@@ -164,7 +164,7 @@ protocol:
       displacement disturbances at a given frequency.'
     image: 'dysturbance/dysturbance_sinusoidal.png'
     keywords: [Force disturbance, Amplitude, Frequency]
-    bipedal_systems: [humanoid, exoskeleton]
+    bipedal_system: [humanoid, exoskeleton]
     pi_algo: algo_sinusoidal_displacement_disturbance
     duration: '5 minute / run / subject'
     controlled_variables:
@@ -235,7 +235,7 @@ protocol:
       We provide a Time-Linear quasi-static Force/Displacement perturbation.'
     image: 'dysturbance/dysturbance_sinusoidal.png'
     keywords: [external perturbation]
-    bipedal_systems: [humanoid, exoskeleton]
+    bipedal_system: [humanoid, exoskeleton]
     pi_algo: algo_quasistatic_force_disturbance
     duration: '5 minute / run / subject'
     controlled_variables:
@@ -300,7 +300,7 @@ protocol:
       We provide a Time-Linear quasi-static Force/Displacement perturbation.'
     image: 'dysturbance/dysturbance_sinusoidal.png'
     keywords: [external perturbation]
-    bipedal_systems: [humanoid, exoskeleton]
+    bipedal_system: [humanoid, exoskeleton]
     pi_algo: algo_quasistatic_displacement_disturbance
     duration: '5 minute / run / subject'
     controlled_variables:
