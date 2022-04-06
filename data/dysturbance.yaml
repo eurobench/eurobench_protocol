@@ -430,8 +430,8 @@ pi_algo:
       Disturbance protocol and provides the related PI evaluation'
     url_paper: na
     url_code: https://github.com/CentroEPiaggio/dysturbance
-    docker_host: eurobenchtest/pi_dysturbance:v0.0.0
-    docker_name: eurobenchtest/pi_dysturbance:v0.0.0
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
     pi:
       - Absorbed_energy
       - Fall_check
@@ -452,8 +452,8 @@ pi_algo:
       Force Disturbance protocol and provides the related PI evaluation'
     url_paper: na
     url_code: https://github.com/CentroEPiaggio/dysturbance
-    docker_host: eurobenchtest/pi_dysturbance:v0.0.0
-    docker_name: eurobenchtest/pi_dysturbance:v0.0.0
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
     pi:
       - Fall_check
       - Stability_margin
@@ -474,8 +474,8 @@ pi_algo:
       displacement Disturbance protocol and provides the related PI evaluation'
     url_paper: na
     url_code: https://github.com/CentroEPiaggio/dysturbance
-    docker_host: eurobenchtest/pi_dysturbance:v0.0.0
-    docker_name: eurobenchtest/pi_dysturbance:v0.0.0
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
     pi:
       - Fall_check
       - Stability_margin
@@ -496,8 +496,8 @@ pi_algo:
     force disturbance protocol and provides the related PI evaluation.'
     url_paper: na
     url_code: https://github.com/CentroEPiaggio/dysturbance
-    docker_host: eurobenchtest/pi_dysturbance:v0.0.0
-    docker_name: eurobenchtest/pi_dysturbance:v0.0.0
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
     pi:
       - Fall_check
       - Stability_margin
@@ -517,8 +517,8 @@ pi_algo:
       displacement disturbance protocol and provides the related PI evaluation.'
     url_paper: na
     url_code: https://github.com/CentroEPiaggio/dysturbance
-    docker_host: eurobenchtest/pi_dysturbance:v0.0.0
-    docker_name: eurobenchtest/pi_dysturbance:v0.0.0
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
     pi:
       - Fall_check
       - Stability_margin
