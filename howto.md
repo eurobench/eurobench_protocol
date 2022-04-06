@@ -77,7 +77,7 @@ The proposed methodology is inline with the information collected in this docume
 * The `Tecnalia GUI` is used to upload the protocol into a local database
 * The protocol uploaded is tested through the local database, with a experiment sample
 * If the computation is satisfactory, the protocol can be uploaded to the official database using the
-  `Tecnalia GUI`, and following the smae methodolofy as described above.
+  `Tecnalia GUI`, and following the same methodology as described above.
 
 We encourage to keep a trace of the generated `YAML` file, together with the related manual, as it is done in this repository, in particular if some updates is required later on.
 
@@ -89,7 +89,7 @@ But the protocol can be also (or should be) associated with manual (in pdf) or i
 We are collecting the ones uploaded to the Eurobench platform in this repository.
 
 On the Eurobench platform, this information is stored into the datafile system.
-The current methodology is to connect to the Platform machine, and uplaod manually the files into the appropriate folders.
+The current methodology is to connect to the Platform machine, and upload manually the files into the appropriate folders.
 
 **TO BE BETTER DESCRIBED**.
 
