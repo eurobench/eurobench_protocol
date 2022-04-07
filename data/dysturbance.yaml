@@ -1,0 +1,537 @@
+---
+user_name: "dysturbance"
+scenario:
+  name: 'External replicable disturbance'
+  description: 'Legged robots during standing or locomotion tasks must be
+    capable to react safely and reject external disturbances.
+    This testbed has the purpose to fully characterize their stability and
+    control behaviors against dynamic loads.
+    The system applies different types of replicable disturbance actions on a
+    agent.
+    Capability to provide controlled pushes is required to analyze the system
+    stability properties, and the control reaction.'
+  image: dysturbance/scenario.png
+
+protocol:
+  - id: 39
+    name: 'dysturbance_reaction_impulsive'
+    name_readable: 'Reaction to Impulsive Disturbance'
+    definition: 'This test characterizes the system stability when subjected to
+      external impacts.
+      The purpose is to define the maximum of impulsive force and energy that
+      the system is capable handle without incurring in instability.
+      During the tests, the pendulum falls down freely from a given height,
+      corresponding to a given energy, and hits the agent.'
+    image: 'dysturbance/dysturbance_impulsive.png'
+    keywords: [impact, impulse, energy, resilience]
+    bipedal_system: [humanoid, exoskeleton]
+    pi_algo: algo_impulsive_disturbance
+    duration: '1 minute / run / subject'
+    controlled_variables:
+      - name: Initial_energy
+        definition: Pendulum initial energy
+        type: scalar
+        range: [0, 200]
+        unit: J
+      - name: Pendulum_length
+        definition: Pendulum set length
+        type: scalar
+        range: [0.5-1-1.2]
+        unit: m
+      - name: Pendulum_added_mass
+        definition: Pendulum additional mass
+        type: scalar
+        range: [1, 5]
+        unit: kg
+      - name: Pendulum_height
+        definition: Pendulum base height
+        type: scalar
+        range: [1.2, 2]
+        unit: m
+    testbed:
+
+      - item: Motion Capture System
+        type: sensor
+      - item: Treadmill
+        type: actuator
+        file_sheet: to enable testing during walking, not mandatory)
+      - item: Instrumented actuated pendulum
+        type: actuator
+        file_sheet: 'testbed developed by the dysturbance consortium.
+          More details on its implementation are reported in the technical
+          sheets.
+          https://github.com/CentroEPiaggio/dysturbance/blob/master/Documentation/Dysturbance_TestBed_Description_.pdf'
+    step_description: 'The researcher should set up the structure and place the
+      subject (robot) in the correct position.
+      The robot should stay upright balancing within the setup.
+      After that, the test can start.
+      Detailed experimental steps are reported below.'
+    step_list:
+      - description: 'Set manually the pendulum base at the height
+          Pendulum_height'
+      - description: 'Set the additional mass M, and the length of the pendulum
+          Pendulum_length'
+      - description: 'Place the agent at the starting pose'
+      - description: 'Raise the pendulum up to the angle corresponding to the
+          pendulum energy Initial_energy'
+      - description: 'Start data acquisition'
+      - description: 'The pendulum falls and hits the agent'
+      - description: 'The pendulum oscillation is damped out'
+      - description: 'Stop data acquisition'
+      - description: 'Repeat from 3 to 8 to collect multiple data at same
+          experiment conditions (min. 10 runs)'
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+
+  - id: 40
+    name: 'dysturbance_reaction_sinusoidal_force'
+    name_readable: 'Reaction to Sinusoidal Force Disturbance'
+    definition: ' This test characterizes the system stability in the frequency
+      domain.
+      During the test, the system is subjected to repetitive sinusoidal force
+      disturbances at a given frequency.'
+    image: 'dysturbance/dysturbance_sinusoidal.png'
+    keywords: [Force disturbance, Amplitude, Frequency]
+    bipedal_system: [humanoid, exoskeleton]
+    pi_algo: algo_sinusoidal_force_disturbance
+    duration: '5 minute / run / subject'
+    controlled_variables:
+      - name: Force_amplitude
+        definition: Pendulum force magnitude
+        type: scalar
+        range: [0, 600]
+        unit: N
+      - name: Pendulum_frequency
+        definition: Pendulum oscillation frequency
+        type: scalar
+        range: [0, 2]
+        unit: Hz
+      - name: Cycles_number
+        definition: Number of cycles
+        type: scalar
+        range: [1, 100]
+        unit: N/A
+      - name: Pendulum_height
+        definition: Pendulum base height
+        type: scalar
+        range: [1.2, 2]
+        unit: m
+      - name: Pendulum_length
+        definition: Pendulum set length
+        type: scalar
+        range: [0.5-1-1.2]
+        unit: m
+    testbed:
+      - item: Motion Capture System
+        type: sensor
+      - item: Treadmill
+        type: actuator
+        file_sheet: to enable testing during walking, not mandatory)
+      - item: Instrumented actuated pendulum
+        type: actuator
+        file_sheet: 'testbed developed by the dysturbance consortium.
+          More details on its implementation are reported in the technical
+          sheets.
+          https://github.com/CentroEPiaggio/dysturbance/blob/master/Documentation/Dysturbance_TestBed_Description_.pdf'
+    step_description: 'The researcher should set up the structure and place the
+      subject (robot) in the correct position.
+      The robot should stay upright balancing within the setup.
+      After that, the test can start.
+      Detailed experimental steps are reported below.'
+    step_list:
+      - description: 'Set manually the pendulum base at the height H'
+      - description: 'Set the test parameters (disturb frequency and amplitude)
+          and the testbed variables mass M, and the length of the pendulum L'
+      - description: 'Place the agent at the starting point'
+      - description: 'The pendulum reaches the contact point with the robot
+          which sets the zero of the disturb'
+      - description: 'Start data acquisition'
+      - description: 'Start the sinusoidal disturbance'
+      - description: 'Stop data acquisition when the disturbance ends or when
+          interrupted by the user (robot fall)'
+      - description: 'Repeat from 3 to 7 to collect multiple data at same
+          experiment conditions (min. 10 times)'
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - id: 41
+    name: 'dysturbance_reaction_sinusoidal_disp'
+    name_readable: 'Reaction to Sinusoidal displacement Disturbance'
+    definition: 'This test characterizes the system stability in the frequency
+      domain.
+      During the test, the system is subjected to repetitive sinusoidal
+      displacement disturbances at a given frequency.'
+    image: 'dysturbance/dysturbance_sinusoidal.png'
+    keywords: [Force disturbance, Amplitude, Frequency]
+    bipedal_system: [humanoid, exoskeleton]
+    pi_algo: algo_sinusoidal_displacement_disturbance
+    duration: '5 minute / run / subject'
+    controlled_variables:
+      - name: Displacement_amplitude
+        definition: Pendulum oscillation amplitude
+        type: scalar
+        range: [0, 30]
+        unit: deg
+      - name: Pendulum_frequency
+        definition: Pendulum oscillation frequency
+        type: scalar
+        range: [0, 2]
+        unit: Hz
+      - name: Cycles_number
+        definition: Number of cycles
+        type: scalar
+        range: [1, 100]
+        unit: N/A
+      - name: Pendulum_height
+        definition: Pendulum base height
+        type: scalar
+        range: [1.2, 2]
+        unit: m
+      - name: Pendulum_length
+        definition: Pendulum set length
+        type: scalar
+        range: [0.5-1-1.2]
+        unit: m
+    testbed:
+      - item: Motion Capture System
+        type: sensor
+      - item: Treadmill
+        type: actuator
+        file_sheet: to enable testing during walking, not mandatory)
+      - item: Instrumented actuated pendulum
+        type: actuator
+        file_sheet: 'testbed developed by the dysturbance consortium.
+          More details on its implementation are reported in the technical
+          sheets.
+          https://github.com/CentroEPiaggio/dysturbance/blob/master/Documentation/Dysturbance_TestBed_Description_.pdf'
+    step_description: 'The researcher should set up the structure and place the
+      subject (robot) in the correct position.
+      The robot should stay upright balancing within the setup.
+      After that, the test can start.
+      Detailed experimental steps are reported below.'
+    step_list:
+      - description: 'Set manually the pendulum base at the height H'
+      - description: 'Set the test parameters (disturb frequency and amplitude)
+          and the testbed variables additional mass M, and the length of the
+          pendulum L'
+      - description: 'Place the agent at the starting point'
+      - description: 'The pendulum reaches the contact point with the robot
+          which sets the zero of the disturb'
+      - description: 'Start data acquisition'
+      - description: 'Start the sinusoidal disturb'
+      - description: 'Stop data acquisition when the disturb ends or when
+          interrupted by the user (robot fall)'
+      - description: 'Repeat from 3 to 7 to collect multiple data at same
+          experiment conditions (min. 10 times)'
+    has_multiple_run: true
+    has_multiple_condition: true
+    has_multiple_subject: false
+  - id: 105
+    name: 'dysturbance_reaction_quasistatic_force'
+    name_readable: 'Reaction to external Quasistatic Force Disturbance'
+    definition: 'This test evaluates the capability of the system to adapt
+      and resist an almost constant push, and to find the maximum value of
+      quasi-static load the system is capable to resist without falling.
+      We provide a Time-Linear quasi-static Force/Displacement perturbation.'
+    image: 'dysturbance/dysturbance_sinusoidal.png'
+    keywords: [external perturbation]
+    bipedal_system: [humanoid, exoskeleton]
+    pi_algo: algo_quasistatic_force_disturbance
+    duration: '5 minute / run / subject'
+    controlled_variables:
+      - name: Force_rate
+        definition: Force over time rate
+        type: scalar
+        range: [0, 300]
+        unit: N/s
+      - name: Displacement_rate
+        definition: Displacement over time rate
+        type: scalar
+        range: [0, 60]
+        unit: deg/s
+      - name: Pendulum_height
+        definition: Pendulum base height
+        type: scalar
+        range: [1.2, 2]
+        unit: m
+      - name: Pendulum_length
+        definition: Pendulum set length
+        type: scalar
+        range: [0.5-1-1.2]
+        unit: m
+    testbed:
+      - item: Motion Capture System
+        type: sensor
+      - item: Treadmill
+        type: actuator
+        file_sheet: to enable testing during walking, not mandatory)
+      - item: Instrumented actuated pendulum
+        type: actuator
+        file_sheet: 'testbed developed by the dysturbance consortium.
+          More details on its implementation are reported in the technical
+          sheets.
+          https://github.com/CentroEPiaggio/dysturbance/blob/master/Documentation/Dysturbance_TestBed_Description_.pdf'
+    step_description: 'The researcher should set up the structure and place the
+      subject (robot) in the correct position.
+      The robot should stay upright balancing within the setup.
+      After that, the test can start.
+      Detailed experimental steps are reported below.'
+    step_list:
+      - description: 'Set manually the pendulum base at the height H'
+      - description: 'Set the additional mass M, and the length of the
+          pendulum L'
+      - description: 'Place the agent at the starting point'
+      - description: 'The pendulum reaches the contact point with the robot
+          which sets the zero of the disturb'
+      - description: 'Start data acquisition'
+      - description: 'Start the linear disturb'
+      - description: 'Stop data acquisition when the disturb ends or when
+          interrupted by the user (robot fall)'
+      - description: 'Repeat from 3 to 7 to collect multiple data at same
+          experiment conditions (min. 10 times)'
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: false
+  - id: 106
+    name: 'dysturbance_reaction_quasistatic_disp'
+    name_readable: 'Reaction to external Quasistatic Displacement Disturbance'
+    definition: 'This test evaluates the capability of the system to adapt and
+      resist an almost constant push, and to find the maximum value of
+      quasi-static load the system is capable to resist without falling.
+      We provide a Time-Linear quasi-static Force/Displacement perturbation.'
+    image: 'dysturbance/dysturbance_sinusoidal.png'
+    keywords: [external perturbation]
+    bipedal_system: [humanoid, exoskeleton]
+    pi_algo: algo_quasistatic_displacement_disturbance
+    duration: '5 minute / run / subject'
+    controlled_variables:
+      - name: Force_rate
+        definition: Force over time rate
+        type: scalar
+        range: [0, 300]
+        unit: N/s
+      - name: Displacement_rate
+        definition: Displacement over time rate
+        type: scalar
+        range: [0, 60]
+        unit: deg/s
+      - name: Pendulum_height
+        definition: Pendulum base height
+        type: scalar
+        range: [1.2, 2]
+        unit: m
+      - name: Pendulum_length
+        definition: Pendulum set length
+        type: scalar
+        range: [0.5-1-1.2]
+        unit: m
+    testbed:
+      - item: Motion Capture System
+        type: sensor
+      - item: Treadmill
+        type: actuator
+        file_sheet: to enable testing during walking, not mandatory)
+      - item: Instrumented actuated pendulum
+        type: actuator
+        file_sheet: 'testbed developed by the dysturbance consortium.
+          More details on its implementation are reported in the technical
+          sheets.
+          https://github.com/CentroEPiaggio/dysturbance/blob/master/Documentation/Dysturbance_TestBed_Description_.pdf'
+    step_description: 'The researcher should set up the structure and place the
+      subject (robot) in the correct position.
+      The robot should stay upright balancing within the setup.
+      After that, the test can start.
+      Detailed experimental steps are reported below.'
+    step_list:
+      - description: 'Set manually the pendulum base at the height H'
+      - description: 'Set the additional mass M, and the length of the
+          pendulum L'
+      - description: 'Place the agent at the starting point'
+      - description: 'The pendulum reaches the contact point with the robot
+          which sets the zero of the disturb'
+      - description: 'Start data acquisition'
+      - description: 'Start the linear disturb'
+      - description: 'Stop data acquisition when the disturb ends or when
+          interrupted by the user (robot fall)'
+      - description: 'Repeat from 3 to 7 to collect multiple data at same
+          experiment conditions (min. 10 times)'
+    has_multiple_run: true
+    has_multiple_condition: false
+    has_multiple_subject: false
+pi:
+  - name: Fall_check
+    name_readable: Fall Check
+    description: It reports the state of the robot at the end of each protocol
+    unit: na
+    output: scalar
+    intra_run aggregation: na
+    inter_run_aggregation: percentage
+    visu: na
+    inter_cond_aggregation: na
+    inter_subject_aggregation: na
+  - name: Absorbed_energy
+    name_readable: Absorbed energy
+    description: 'The portion of the pendulum energy absorbed by the agent
+      during the impact.
+      This PI reflects the compliant behavior of the system.
+      The more energy it is returned to the pendulum during the impact is
+      proportional to the elastic reaction of the system.
+      Experimentally we saw that all the energy is absorbed by the robot when
+      the system fails. Vector containing the percentage of absorbed energy and
+      the initial energy'
+    unit: [-, Joule]
+    output: vector
+    intra_run aggregation: na
+    inter_run_aggregation: mean
+    visu: 'The results are shown in a bar plot showing the initial energy and
+      the percentage of energy absorbed by the system'
+    inter_cond_aggregation: 'We combined the results for runs with the same
+      conditions (mean and standard deviation).
+      Different conditions leads to different initial energies, so results are
+      used to create a energy plot.'
+    inter_subject_aggregation: na
+  - name: Stability_margin
+    name_readable: Stability margin
+    description: 'Maximum Amplitude of the Disturbance that the agent can
+      withstand without falling.
+      During the runs repetition with same conditions, it is considered that the
+      control fails if it happens at least 30% of the total runs.'
+    unit: na
+    output: vector
+    intra_run aggregation: na
+    inter_run_aggregation: na
+    visu: 'The PI is divided in a single score, plus a bar plot showing the
+      results with different conditions.'
+    inter_cond_aggregation: 'The obtained scores per condition are combined
+      looking at the minimum value that unstabilize the system.'
+    inter_subject_aggregation: na
+  - name: Equivalent_impedance
+    name_readable: Equivalent impedance
+    description: 'Analysis of the Equivalent impedance value of the system
+      (when compared to a second order system), varying the frequencies.
+      It evaluates the behavior of the system depending on the exciting
+      frequency.
+      The metric provides the elastic coefficient [N/m], the damping
+      coefficient [Ns/m], the inertia [gk/m^2], and the frequency [Hz]'
+    unit: na
+    output: vector
+    intra_run aggregation: mean
+    inter_run_aggregation: na
+    visu: 'A plot showing the variation of the impedance coefficients varying
+      the frequencies'
+    inter_cond_aggregation: 'The obtained score per condition are combined in
+      this way --> We evaluate the impedance coefficients for each frequencies
+      for the tests in which the robot does not experience a fall.
+      At a given frequency, we compute the mean values of all the impedance
+      coefficients found.'
+    inter_subject_aggregation: na
+pi_algo:
+  - name: algo_impulsive_disturbance
+    description: 'This algorithm analyses the data related to the Impulsive
+      Disturbance protocol and provides the related PI evaluation'
+    url_paper: na
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
+    pi:
+      - Absorbed_energy
+      - Fall_check
+      - Stability_margin
+    input_files:
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    input_command:
+      - ''
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    language: matlab
+    implemented: true
+  - name: algo_sinusoidal_force_disturbance
+    description: 'This algorithm analyses the data related to the Sinusoidal
+      Force Disturbance protocol and provides the related PI evaluation'
+    url_paper: na
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
+    pi:
+      - Fall_check
+      - Stability_margin
+      - Equivalent_impedance
+    input_files:
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    input_command:
+      - ''
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    language: matlab
+    implemented: true
+  - name: algo_sinusoidal_displacement_disturbance
+    description: 'This algorithm analyses the data related to the Sinusoidal
+      displacement Disturbance protocol and provides the related PI evaluation'
+    url_paper: na
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
+    pi:
+      - Fall_check
+      - Stability_margin
+      - Equivalent_impedance
+    input_files:
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    input_command:
+      - ''
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    language: matlab
+    implemented: true
+  - name: algo_quasistatic_force_disturbance
+    description: 'This algorithm analyses the data related to the quasistatic
+    force disturbance protocol and provides the related PI evaluation.'
+    url_paper: na
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
+    pi:
+      - Fall_check
+      - Stability_margin
+    input_files:
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    input_command:
+      - ''
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    language: matlab
+    implemented: true
+  - name: algo_quasistatic_displacement_disturbance
+    description: 'This algorithm analyses the data related to the quasistatic
+      displacement disturbance protocol and provides the related PI evaluation.'
+    url_paper: na
+    url_code: https://github.com/CentroEPiaggio/dysturbance
+    docker_host: eurobenchtest/pi_dysturbance:v0.1.0
+    docker_name: eurobenchtest/pi_dysturbance:v0.1.0
+    pi:
+      - Fall_check
+      - Stability_margin
+    input_files:
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    input_command:
+      - ''
+      - platformData.csv
+      - condition.yaml
+      - subject_info.yaml
+    language: matlab
+    implemented: true
