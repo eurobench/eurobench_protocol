@@ -43,7 +43,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Standing during manipulation | [Eurobench-CSIC](#csic_manipulation) | 2 | under dev |
 | Walking over irregular terrains | [Eurobench-CSIC](#csic_irregular_terrain) | 1 | yes
 | Characterization of user experience during exoskeleton-assisted walking | [Experience](#experience) | 2 | yes
-| Robot Actuation characterization system | Forecast | under progress | no
+| Robot Actuation characterization system | Forecast | under progress | **no**
 
 ### Humanoid
 
@@ -51,17 +51,17 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | ---- | --- | ------------------ | ----------- |
 | Pushing a shopping trolley or walker	| [BEAST](#beast) | 1 | yes |
 | Opening/Closing doors	Madrob | [madrob](#madrob) | 1 | yes |
-| Walking on flat ground |[Eurobench-UHEI](#uhei) | 1 | no |
-| Sit-to-Stand, Stand-to-Sit| Eurobench-UHEI | 2 | no |
-| Ascending/Descending slopes | Eurobench-UHEI | under dev
-| Ascending/Descending stairs | [Eurobench-Waterloo](#waterloo) | 5 | under dev |
-| Walking over irregular terrains | [Eurobench-PAL](#pal) | 3 | under dev |
+| Walking on flat ground |[Eurobench-UHEI](#uhei) | 1 | yes |
+| Sit-to-Stand, Stand-to-Sit| [Eurobench-UHEI](#uhei) | 2 | yes |
+| Ascending/Descending slopes | [Eurobench-UHEI](#uhei) | 3 | yes |
+| Ascending/Descending stairs | [Eurobench-Waterloo](#waterloo) | 5 | yes |
+| Walking over irregular terrains | [Eurobench-PAL](#pal) | 3 |  **no** |
 | Walking over soft terrains | *discarded* |||
-| Overcoming obstacles | [Eurobench-PAL](#pal) | 3 |under dev
-| Standing during manipulation | [Eurobench-Waterloo](#waterloo) | 3 | under dev |
-| Picking and carrying objects | [Eurobench-Waterloo](#waterloo) | 4 | under dev |
-| Walking on a treadmill | [Eurobench-IIT and Treadmill](#iit) | 3 | under dev
-| Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | under dev
+| Overcoming obstacles | [Eurobench-PAL](#pal) | 3 | **no** |
+| Standing during manipulation | [Eurobench-Waterloo](#waterloo) | 3 |  **no** |
+| Picking and carrying objects | [Eurobench-Waterloo](#waterloo) | 4 | yes |
+| Walking on a treadmill | [Eurobench-IIT and Treadmill](#iit) | 3 | yes  |
+| Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | 1 | yes |
 | Moving in narrow spaces	| discarded
 | Standing on a moving surface | [COMTEST](#comtest) | 3 | yes |
 | Walking/Standing during pushes | [Dysturbance](#dysturbance) | 4 | yes |
@@ -310,7 +310,32 @@ The hyperlinks refer to:
   * [Dysturbance - Reaction to external Quasistatic Disturbance](https://platform.eurobench2020.eu/protocols/info/40)
   * 
 
-### Under progress
+#### waterloo
+
+Related to humanoid
+
+* Protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+* Using code provided by [uhei](#uhei) for the stair and picking scenarios
+* **No code for the manipulation scenario**
+
+* [Ascending // Descending stairs with Humanoids](data/waterloo_stairs.yaml)
+  * [Ascending / Descending stairs: standardized steps](https://platform.eurobench2020.eu/protocols/info/81)
+  * [Ascending / Descending stairs: endurance steps](https://platform.eurobench2020.eu/protocols/info/82)
+  * [Ascending / Descending stairs: maximum step](https://platform.eurobench2020.eu/protocols/info/83)
+  * [Ascending / Descending stairs: fast steps](https://platform.eurobench2020.eu/protocols/info/84)
+  * [Ascending / Descending stairs: varying steps up](https://platform.eurobench2020.eu/protocols/info/85)
+
+* [standing during manipulation](data/waterloo_manipulation.yaml)
+  * [Standing during manipulation: PLace in box](https://platform.eurobench2020.eu/protocols/info/74)
+  * [Standing during manipulation: Place on shelf](https://platform.eurobench2020.eu/protocols/info/75)
+  * [Standing during manipulation: Max weight and height](https://platform.eurobench2020.eu/protocols/info/76)
+  * **NO CODE**
+
+* [Picking and carrying objects](data/waterloo_pick.yaml)
+  * [Picking and Carrying objects: basic carrying](https://platform.eurobench2020.eu/protocols/info/77)
+  * [icking and Carrying objects: increasing weight carrying](https://platform.eurobench2020.eu/protocols/info/78)
+  * [Picking and Carrying objects: increasing weight at given velocity](https://platform.eurobench2020.eu/protocols/info/79)
+  * [Picking and Carrying objects: endurance carrying](https://platform.eurobench2020.eu/protocols/info/80)
 
 #### uhei
 
@@ -318,16 +343,35 @@ The hyperlinks refer to:
   [new code](https://gitlab.com/orb-benchmarking/eb_hum_bench),
   [github version](https://github.com/eurobench/eb_hum_bench)
 * no Excel sheet available
-* 20.12.2021: pending on clarifying optional cases.
+* 20.12.2021:
   * issue for optional parameters.
-* docker mechanism inserted
-* integrated: **NO PROTOCOL**
+* integrated: **NO PROTOCOL details**.
+  Protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
 
-* Walking on slope
-  * [yaml file](data/uhei_slope.yaml)
-  * Contains 5 protocols
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL details**
+Several yaml files handled
+
+* [Walking on slope](data/uhei_slope.yaml)
+  * [Ascending / descending slope: basic slope walking](https://platform.eurobench2020.eu/protocols/info/92)
+  * [Ascending / descending slope: maximum angle](https://platform.eurobench2020.eu/protocols/info/93)
+  * [Ascending / descending slope: maximum velocity](https://platform.eurobench2020.eu/protocols/info/94)
+* [Flat Ground Walking](data/uhei_flat.yaml)
+  * [Flat Ground walking: I3SA - Increased Step Size Stability Assessment](https://platform.eurobench2020.eu/protocols/info/67)
+* [Sit to stand (Humanoid)](data/uhei_sts.yaml)
+  * [Sit to stand: Decreasing chair height assessment](https://platform.eurobench2020.eu/protocols/info/68)
+  * [Sit to stand: Foot Placement Handicap](https://platform.eurobench2020.eu/protocols/info/69)
+
+#### iit
+
+Related to humanoid
+
+* Protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
+* Using code provided by [uhei](#uhei)
+* [Walking on a treadmill](data/iit_treadmill.yaml)
+  * [Long time walking on level ground](https://platform.eurobench2020.eu/protocols/info/98)
+  * [Long time walking on a slope with pitch angle](https://platform.eurobench2020.eu/protocols/info/99)
+  * [Long time walking on a slope with roll angle](https://platform.eurobench2020.eu/protocols/info/100)
+* [Walking on laterally inclined surface](data/iit_inclined.yaml)
+  * [Walking on inclined terrain](https://platform.eurobench2020.eu/protocols/info/97)
 
 ### Very early stage
 
@@ -354,21 +398,6 @@ The hyperlinks refer to:
   * Not following the global spirit for metric computation.
 * integrated: **NO PROTOCOL**
 
-#### iit
-
-Related to humanoid
-
-* Walking on a treadmill
-  * [yaml file](data/iit_treadmill.yaml)
-  * Contains 3 protocols
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
-* Walking on laterally inclined surface
-  * [yaml file](data/iit_inclined.yaml)
-  * Contains 1 protocol
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
-
 #### pal
 
 Related to humanoid
@@ -384,25 +413,6 @@ Related to humanoid
   * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
   * **NO PROTOCOL, NO CODE**
 
-#### waterloo
-
-Related to humanoid
-
-* Stair scenario
-  * [yaml file](data/waterloo_stairs.yaml)
-  * Contains 5 protocols
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
-* Manipulation scenario
-  * [yaml file](data/waterloo_manipulation.yaml)
-  * Contains 3 protocols
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
-* Pick and carrying scenario
-  * [yaml file](data/waterloo_pick.yaml)
-  * Contains 4 protocols
-  * Status: protocols uploaded based on [Eurobench data](https://eurobench2020.eu/wp-content/uploads/2020/09/EUROBENCH-benchmarking-scenarios-description_v2.pdf)
-  * **NO PROTOCOL, NO CODE**
 
 ## Acknowledgements
 
