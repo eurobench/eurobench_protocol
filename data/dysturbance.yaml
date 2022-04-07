@@ -227,7 +227,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: true
     has_multiple_subject: false
-  - name: 'dysturbance_reaction_quasistatic_force'
+  - id: 105
+    name: 'dysturbance_reaction_quasistatic_force'
     name_readable: 'Reaction to external Quasistatic Force Disturbance'
     definition: 'This test evaluates the capability of the system to adapt
       and resist an almost constant push, and to find the maximum value of
@@ -292,7 +293,8 @@ protocol:
     has_multiple_run: true
     has_multiple_condition: false
     has_multiple_subject: false
-  - name: 'dysturbance_reaction_quasistatic_disp'
+  - id: 106
+    name: 'dysturbance_reaction_quasistatic_disp'
     name_readable: 'Reaction to external Quasistatic Displacement Disturbance'
     definition: 'This test evaluates the capability of the system to adapt and
       resist an almost constant push, and to find the maximum value of
