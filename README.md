@@ -293,8 +293,6 @@ The hyperlinks refer to:
 
 * integrated: **NO PROTOCOL**
 
-### Ready to be tested for insertion in database
-
 #### dysturbance
 
 * [code](https://github.com/CentroEPiaggio/dysturbance),
@@ -373,6 +371,8 @@ Related to humanoid
 * [Walking on laterally inclined surface](data/iit_inclined.yaml)
   * [Walking on inclined terrain](https://platform.eurobench2020.eu/protocols/info/97)
 
+
+### Ready to be tested for insertion in database
 ### Very early stage
 
 #### csic_manipulation
