@@ -63,7 +63,7 @@ Check [eurobench_tooling/README.md](eurobench_tooling/README.md).
 | Walking on a treadmill | [Eurobench-IIT and Treadmill](#iit) | 3 | yes  |
 | Walking on laterally inclined surfaces | [Eurobench-IIT](#iit) | 1 | yes |
 | Moving in narrow spaces	| discarded
-| Standing on a moving surface | [COMTEST](#comtest) | 3 | yes |
+| Standing on a moving surface | [comtest](#comtest) | 3 | yes |
 | Walking/Standing during pushes | [Dysturbance](#dysturbance) | 4 | yes |
 
 ## Code integration status
@@ -254,15 +254,10 @@ The hyperlinks refer to:
   [yaml](data/comtest.yaml),
   [docker](https://hub.docker.com/r/eurobenchtest/pi_comtest),
   [documentation](data/comtest/comtest-manual.pdf)
-* current state:
-  * docker mechanism ready, image available.
-* integrated: 2 protocols (to be strongly revised),
-  * [COMTEST - Step 1: Transient Test](https://platform.eurobench2020.eu/protocols/info/37)
-  * [COMTEST - Step 2: Response characterization on the basis of frequency response functions (FRFs) using the Pseudorandom Ternary Sequence Stimulus, PRTS.](https://platform.eurobench2020.eu/protocols/info/38)
-  * TODO: 3 protocols are now defined:
-    * Transient Test of Standing Balance with Moving Support Surface
-    * Body Sway Response characterization with frequency response functions (FRFs) to Support Surface moving with Pseudorandom (PRTS) profile
-    * Test of Standing Balance with Moving Support Surface with Sinusoidal profile
+* integrated: 3 protocols:
+  * [Transient Test of Standing Balance with Moving Support Surface](https://platform.eurobench2020.eu/protocols/info/102)
+  * [Body Sway Response characterization with frequency response functions (FRFs) to Support Surface moving with Pseudorandom (PRTS) profile](https://platform.eurobench2020.eu/protocols/info/103)
+  * [Test of Standing Balance with Moving Support Surface with Sinusoidal profile](https://platform.eurobench2020.eu/protocols/info/104)
 
 #### stepByStep
 
@@ -275,7 +270,6 @@ The hyperlinks refer to:
   [yaml](data/stepByStep.yaml)
   [manuals](data/stepByStep/doc/)
 * current state:
-  * code only covering the biomechanics protocol.
   * HF metrics implemented (dual task, lpp, uei).
 * Integrated: 7 protocols:
   * [Walking on stair: biomechanical analysis](https://15.237.22.1/protocols/info/60)
