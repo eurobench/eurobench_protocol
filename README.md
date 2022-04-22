@@ -198,11 +198,11 @@ The hyperlinks refer to:
 
 * [code](https://github.com/aremazeilles/beat_routine),
   [Eurobench repo](https://github.com/eurobench/pi_beat),
+  [manual](data/beat/beat_manual.pdf)
   [docker](https://hub.docker.com/repository/docker/eurobenchtest/pi_beat),
-  [excel](data/beat/beat-v4.3.xlsx)
+  [excel](data/beat/beat-v4.3.xlsx),
   [yaml](data/beat.yaml),
-* current state: waiting for PI output adjustment in code. Pending Merge Request.
-* integrated: 7 protocols, **NO PDF**
+* integrated: 7 protocols
   * [Static Balance - uneven surface](https://platform.eurobench2020.eu/protocols/info/23)
   * [Step perturbation - uneven surface](https://platform.eurobench2020.eu/protocols/info/25)
   * [Static Balance - even surface](https://platform.eurobench2020.eu/protocols/info/22)
